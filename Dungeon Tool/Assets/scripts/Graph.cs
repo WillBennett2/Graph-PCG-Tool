@@ -11,6 +11,7 @@ public class Graph
 {
     [Serializable] public struct NodeData
     {
+        public Vector2 position;
         public Color colour;
         public char symbol;
         public int terrain;
@@ -19,12 +20,12 @@ public class Graph
     }
     [Serializable] public class Vector2NodeDataLinker
     {
-        [SerializeField] public Vector2 m_position;
+        [SerializeField] public int m_index;
         [SerializeField] public NodeData m_nodeData;
 
-        public Vector2NodeDataLinker(Vector2 position,NodeData nodedata)
+        public Vector2NodeDataLinker(int index,NodeData nodedata)
         {
-            this.m_position = position;
+            this.m_index = index;
             this.m_nodeData = nodedata;
             this.m_nodeData.colour = Color.white;
         }
@@ -56,21 +57,26 @@ public class Graph
 
     [SerializeField] public List<Vector2NodeDataLinker> m_nodes;
     [SerializeField] public List<Vector2EdgeDataLinker> m_edges;
+    public int m_graphSize;
     //[SerializeField] public Dictionary<Vector2,NodeData> m_graph;
-    public Graph(int rows, int columns)
+    public Graph(int rows, int columns, char defaultSymbol)
     {
+        m_graphSize = rows*columns;
         m_nodes = new List<Vector2NodeDataLinker>();
         m_edges = new List<Vector2EdgeDataLinker>();
-
+        int index = 0;
         for (int x = 0; x < rows; x++)
         {
             for (int y = 0; y < columns; y++)
             {
-                Vector2 position = new Vector2(x, y);
+                //Vector2 position = new Vector2(x, y);
                 NodeData data = new NodeData();
                 //m_graph.Add(position, data);
-                var node = new Vector2NodeDataLinker(new Vector2(x, y),  data);
+                data.position = new Vector2(x, y);
+                data.symbol = defaultSymbol;
+                var node = new Vector2NodeDataLinker(index,  data);
                 m_nodes.Add(node);
+                index++;
             }
         }
 
@@ -89,13 +95,7 @@ public class Graph
                     var edge = new Vector2EdgeDataLinker(new Vector2(x, y), data);
                     m_edges.Add(edge);
                 }
-            }
-        }
-        for (int x = 0; x < rows; x++)
-        {
-            for (int y = 0; y < columns; y++)
-            {
-                if (x!= columns - 1)
+                if (x != columns - 1)
                 {
                     Vector2 position = new Vector2(x, y);
                     EdgeData data = new EdgeData();
@@ -117,33 +117,3 @@ public static class GraphInfo
 {
     public static Graph m_graphInfo;
 }
-
-
-
-
-//[Serializable]
-//public class Graph<TNodeType, TEdgeType>
-//{
-//    public Graph()
-//    {
-//        Nodes = new List<Node<TNodeType>>();
-//        Edges = new List<Edge<TEdgeType, TNodeType>>();
-//    }
-//    public List<Node<TNodeType>> Nodes { get; private set; }
-//    public List<Edge<TEdgeType, TNodeType>> Edges { get; private set; }
-//}
-//[Serializable]
-//public class Node<Vector2>
-//{
-//    public Color NodeColour { get; set; }
-//    public Vector2 Value { get; set; }
-//}
-//[Serializable]
-//public class Edge<TEdgeType, TNodeType>
-//{
-//    public Color EdgeColour { get; set; }
-//    public TEdgeType Value { get; set; }
-//    public Node<TNodeType> From { get; set; }
-//    public Node<TNodeType> To { get; set; }
-//}
-
