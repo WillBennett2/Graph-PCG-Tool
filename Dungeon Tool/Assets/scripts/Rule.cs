@@ -29,7 +29,7 @@ public class Rule : MonoBehaviour
     private void Awake()
     {
         m_ruleRef = m_rule;
-        m_position = m_rule.m_nodePosition;
+        m_position = m_rule.m_firstNodePos;
     }
     public void Replace(List<Vector2NodeDataLinker> nodes)
     {
@@ -42,7 +42,7 @@ public class Rule : MonoBehaviour
         {
             for (int i = 0; i < m_rule.m_nodeDataList.Count; i++)
             {
-                if (i >= 1 && m_rule.m_nodeDataList.Count >= 1)
+                if (i >= 1 && 1<= m_rule.m_nodeDataList.Count)
                 {
                     Debug.Log("loops done = " + i);
                     matchingNode = GetNeighbouringNodes();
@@ -58,9 +58,8 @@ public class Rule : MonoBehaviour
                     m_position = new Vector2(-1, -1);
                     PopulateMatchingNodes(nodes);
                 }
-                else if (m_rule.m_nodeDataList.Count > 1)
+                else if (1 < m_rule.m_nodeDataList.Count)
                 {
-
                     matchingNode = GetMatchingNodes();
                     m_nodesToChange.Add(matchingNode);
                     matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
@@ -209,7 +208,7 @@ public class Rule : MonoBehaviour
         {
             node = m_matchingNodes[index];
             m_originFoundIndex = node.m_index;
-            if (m_rule.m_nodeDataList.Count == 1)
+            if (1 < m_rule.m_nodeDataList.Count ) //was equal to one
                 m_matchingNodes.Remove(node);
 
         }

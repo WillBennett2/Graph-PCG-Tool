@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_runOnce: 0
   m_maxIterations: 3
-  m_nodePosition: {x: -1, y: -1}
-  m_symbol: 110
+  m_firstNodePos: {x: 0, y: 0}
+  m_leftHand:
+  - m_nodePosition: {x: 0, y: 0}
+    m_symbol: 0
   m_nodeDataList:
   - position: {x: 0, y: 0}
     colour: {r: 0, g: 0, b: 0, a: 0.69411767}
