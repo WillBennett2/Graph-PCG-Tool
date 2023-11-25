@@ -12,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
   m_Name: TestRule
   m_EditorClassIdentifier: 
-  m_runOnce: 0
+  m_nodePosition: {x: 0, y: 0}
+  m_symbol: 0
+  m_runOnce: 1
   m_maxIterations: 3
   m_firstNodePos: {x: 0, y: 0}
   m_leftHand:
-  - m_nodePosition: {x: 0, y: 0}
-    m_symbol: 0
+  - m_nodePosition: {x: -1, y: -1}
+    m_symbol: 110
+  - m_nodePosition: {x: 0, y: 1}
+    m_symbol: 110
+  - m_nodePosition: {x: 1, y: 0}
+    m_symbol: 110
+  - m_nodePosition: {x: 0, y: -1}
+    m_symbol: 110
   m_nodeDataList:
   - position: {x: 0, y: 0}
     colour: {r: 0, g: 0, b: 0, a: 0.69411767}
@@ -32,13 +40,13 @@ MonoBehaviour:
     item: 0
     enemy: 0
   - position: {x: 0, y: 0}
-    colour: {r: 0.21183564, g: 0.9607843, b: 0.023529435, a: 0.68235296}
+    colour: {r: 0.023529435, g: 0.9607843, b: 0.05681499, a: 0.68235296}
     symbol: 103
     terrain: 0
     item: 0
     enemy: 0
   - position: {x: 0, y: 0}
-    colour: {r: 1, g: 0.74542975, b: 0.07075471, a: 0.77254903}
+    colour: {r: 0.9433962, g: 0.6900593, b: 0.057849795, a: 0.68235296}
     symbol: 111
     terrain: 0
     item: 0

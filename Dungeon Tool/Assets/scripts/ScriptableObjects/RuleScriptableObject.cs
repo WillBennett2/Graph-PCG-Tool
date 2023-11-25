@@ -14,8 +14,6 @@ public class RuleScriptableObject : ScriptableObject
         public Vector2 m_nodePosition;
         public char m_symbol;
     }
-    public Vector2 m_nodePosition;
-    public char m_symbol;
 
     [Header("Run Info")]
     public bool m_runOnce;
