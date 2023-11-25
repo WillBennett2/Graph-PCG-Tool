@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.UIElements;
 using static Graph;
 
 [ExecuteInEditMode]
@@ -23,7 +24,7 @@ public class Rule : MonoBehaviour
     [SerializeField] private List<Vector2NodeDataLinker> m_matchingNodes = new List<Vector2NodeDataLinker>();
     [SerializeField] private List<Vector2NodeDataLinker> m_matchingDirectionNodes = new List<Vector2NodeDataLinker>();
     private int m_originFoundIndex;
-    [SerializeField]private List<Vector2NodeDataLinker> m_nodesToChange = new List<Vector2NodeDataLinker>();
+    [SerializeField] private List<Vector2NodeDataLinker> m_nodesToChange = new List<Vector2NodeDataLinker>();
 
     public RuleScriptableObject m_ruleRef { get; private set; }
 
@@ -50,7 +51,7 @@ public class Rule : MonoBehaviour
                 m_orientation = "Left";
                 break;
         }
-        Debug.Log("orientation is "+m_orientation);
+        Debug.Log("orientation is " + m_orientation);
     }
     private Vector2 ChangeOrientation(Vector2 direction)
     {
@@ -60,13 +61,13 @@ public class Rule : MonoBehaviour
                 direction = new Vector2(direction.x, direction.y);
                 break;
             case ("Right"):
-                direction = new Vector2(direction.y, direction.x*-1);
+                direction = new Vector2(direction.y, direction.x * -1);
                 break;
             case ("Left"):
-                direction = new Vector2(direction.y*-1, direction.x);
+                direction = new Vector2(direction.y * -1, direction.x);
                 break;
             case ("Down"):
-                direction = new Vector2(direction.x*-1, direction.y*-1);
+                direction = new Vector2(direction.x * -1, direction.y * -1);
                 break;
         }
 
@@ -78,77 +79,89 @@ public class Rule : MonoBehaviour
         m_matchingNodes.Clear();
         m_graph = nodes;
         Vector2NodeDataLinker matchingNode = null;
+        bool ruleDone = false;
 
-        PopulateMatchingNodes(nodes,0);
+        PopulateMatchingNodes(nodes, 0);
 
-        for (int j = 0; j < m_maxTries; j++)
+        for (int n = 0; n < m_maxTries; n++)
         {
-            Debug.Log("a");
-            for (int i = 0; i < m_rule.m_leftHand.Count; i++)
+            if (m_rule.m_runOnce)
             {
-                Debug.Log("This node = " + i);
-                if (1 <= i)
+                for (int i = 0; i < m_rule.m_leftHand.Count; i++)
                 {
-                    matchingNode = GetNeighbouringNodes(i);
-                    if (matchingNode != null)
+                    Debug.Log("This node = " + i);
+                    if (1 <= i)
                     {
-                        m_nodesToChange.Add(matchingNode);
-                        matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-                        matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                        matchingNode = GetNeighbouringNodes(i);
+                        if (matchingNode != null)
+                        {
+                            m_nodesToChange.Add(matchingNode);
+                            matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
+                            matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                        }
+                    }
+                    else if (1 < m_rule.m_leftHand.Count)
+                    {
+                        matchingNode = GetMatchingNodes();
+                        if (matchingNode != null)
+                        {
+                            m_nodesToChange.Add(matchingNode);
+                            matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
+                            matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                        }
+                        SetOrientation();
                     }
                 }
-                else if (1 < m_rule.m_leftHand.Count)
+
+                if (ApplyChanges())
                 {
-                    matchingNode = GetMatchingNodes();
-                    if (matchingNode != null)
-                    {
-                        m_nodesToChange.Add(matchingNode);
-                        matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-                        matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
-                    }
-                    SetOrientation();
+                    break;
                 }
             }
-            if(ApplyChanges())
+            else
             {
-                break;
+                for (int j = 1; j <= m_rule.m_maxIterations; j++)
+                {
+                    for (int i = 0; i < m_rule.m_leftHand.Count; i++)
+                    {
+                        Debug.Log("This node = " + i);
+                        if (1 <= i)
+                        {
+                            matchingNode = GetNeighbouringNodes(i);
+                            if (matchingNode != null)
+                            {
+                                m_nodesToChange.Add(matchingNode);
+                                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
+                                matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                            }
+                        }
+                        else if (1 < m_rule.m_leftHand.Count)
+                        {
+                            matchingNode = GetMatchingNodes();
+                            if (matchingNode != null)
+                            {
+                                m_nodesToChange.Add(matchingNode);
+                                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
+                                matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                            }
+                            SetOrientation();
+                        }
+                    }
+                    if (!ApplyChanges())
+                    {
+                        j--;
+                    }
+                    else
+                    {
+                        n = m_maxTries;
+                    }
+
+                }
             }
         }
+        
 
-        //if (!m_rule.m_runOnce)
-        //{
-        //    for (int j = 1; j <= m_rule.m_maxIterations; j++)
-        //    {
-        //        for (int i = 0; i < m_rule.m_nodeDataList.Count; i++)
-        //        {
-        //            if (i >= 1 && m_rule.m_nodeDataList.Count >= 1)
-        //            {
-        //                Debug.Log("loops done = " + i);
-        //                matchingNode = GetNeighbouringNodes();
-        //                if (matchingNode != null)
-        //                {
-        //                    m_nodesToChange.Add(matchingNode);
-        //                    matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-        //                    matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
-        //                }
 
-        //                //reset
-        //                m_matchingNodes.Clear();
-        //                m_position = new Vector2(-1, -1);
-        //                PopulateMatchingNodes(nodes);
-        //            }
-        //            else if (m_rule.m_nodeDataList.Count > 1)
-        //            {
-
-        //                matchingNode = GetMatchingNodes();
-        //                m_nodesToChange.Add(matchingNode);
-        //                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-        //                matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
-        //            }
-        //        }
-        //        ApplyChanges();
-        //    }
-        //}
     }
     private void PopulateMatchingNodes(List<Vector2NodeDataLinker> nodes, int index)
     {
