@@ -23,13 +23,13 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] private GameObject m_nodePrefab;
     void Start()
     {
-        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol);
+        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
         m_nodes = GraphInfo.m_graphInfo.m_nodes;
         m_edges = GraphInfo.m_graphInfo.m_edges;
     }
     private void InitGraph()
     {
-        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol);
+        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol,GetComponent<Alphabet>());
         m_nodes = GraphInfo.m_graphInfo.m_nodes;
         m_edges = GraphInfo.m_graphInfo.m_edges;
     }

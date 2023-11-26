@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using static Alphabet;
 using static Graph;
 
 [ExecuteInEditMode]
@@ -16,6 +17,7 @@ public class Rule : MonoBehaviour
     //[SerializeField] private char m_symbol = ' ';
     ////[SerializeField] private NodeData m_newNodeData;
     //[SerializeField] private List<NodeData> m_nodeDataList;
+    private Alphabet m_alphabet;
     [SerializeField] private RuleScriptableObject m_rule;
     private string m_orientation;
     [SerializeField] private int m_maxTries = 10;
@@ -30,6 +32,7 @@ public class Rule : MonoBehaviour
     private void Awake()
     {
         m_ruleRef = m_rule;
+        m_alphabet = GetComponent<Alphabet>();
     }
 
     private void SetOrientation()
@@ -83,7 +86,6 @@ public class Rule : MonoBehaviour
 
         for (int j = 0; j < m_maxTries; j++)
         {
-            Debug.Log("a");
             for (int i = 0; i < m_rule.m_leftHand.Count; i++)
             {
                 Debug.Log("This node = " + i);
@@ -94,7 +96,11 @@ public class Rule : MonoBehaviour
                     {
                         m_nodesToChange.Add(matchingNode);
                         matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-                        matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                        foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                        {
+                            if (matchingNode.m_nodeData.symbol == data.m_symbol)
+                                matchingNode.m_nodeData.colour = data.m_colour;
+                        }
                     }
                 }
                 else if (1 < m_rule.m_leftHand.Count)
@@ -104,7 +110,11 @@ public class Rule : MonoBehaviour
                     {
                         m_nodesToChange.Add(matchingNode);
                         matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-                        matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
+                        foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                        {
+                            if (matchingNode.m_nodeData.symbol == data.m_symbol)
+                                matchingNode.m_nodeData.colour = data.m_colour;
+                        }
                     }
                     SetOrientation();
                 }
@@ -131,7 +141,7 @@ public class Rule : MonoBehaviour
         //                    matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
         //                    matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
         //                }
-
+        //
         //                //reset
         //                m_matchingNodes.Clear();
         //                m_position = new Vector2(-1, -1);
@@ -139,7 +149,7 @@ public class Rule : MonoBehaviour
         //            }
         //            else if (m_rule.m_nodeDataList.Count > 1)
         //            {
-
+        //
         //                matchingNode = GetMatchingNodes();
         //                m_nodesToChange.Add(matchingNode);
         //                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
@@ -149,6 +159,7 @@ public class Rule : MonoBehaviour
         //        ApplyChanges();
         //    }
         //}
+
     }
     private void PopulateMatchingNodes(List<Vector2NodeDataLinker> nodes, int index)
     {
@@ -227,7 +238,11 @@ public class Rule : MonoBehaviour
             for (int i = 0; i < m_nodesToChange.Count; i++)
             {
                 m_nodesToChange[i].m_nodeData.symbol = m_rule.m_leftHand[i].m_symbol;
-                m_nodesToChange[i].m_nodeData.colour = Color.white; //reminder to set to default colour down the line? (or lock default to white)
+                foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                {
+                    if(m_nodesToChange[i].m_nodeData.symbol == data.m_symbol)
+                        m_nodesToChange[i].m_nodeData.colour = data.m_colour;
+                }
             }
         }
         else

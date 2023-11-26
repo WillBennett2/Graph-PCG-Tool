@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
   m_Name: TestRule
   m_EditorClassIdentifier: 
-  m_nodePosition: {x: 0, y: 0}
-  m_symbol: 0
   m_runOnce: 1
-  m_maxIterations: 3
-  m_firstNodePos: {x: 0, y: 0}
+  m_maxIterations: 7
   m_leftHand:
   - m_nodePosition: {x: -1, y: -1}
     m_symbol: 110
@@ -26,6 +23,23 @@ MonoBehaviour:
     m_symbol: 110
   - m_nodePosition: {x: 0, y: -1}
     m_symbol: 110
+  m_leftHandEdge:
+  - m_symbol: 0
+    m_fromNode: 0
+    m_toNode: 0
+    m_directional: 0
+  - m_symbol: 0
+    m_fromNode: 0
+    m_toNode: 0
+    m_directional: 0
+  - m_symbol: 0
+    m_fromNode: 0
+    m_toNode: 0
+    m_directional: 0
+  - m_symbol: 0
+    m_fromNode: 0
+    m_toNode: 0
+    m_directional: 0
   m_nodeDataList:
   - position: {x: 0, y: 0}
     colour: {r: 0, g: 0, b: 0, a: 0.69411767}
