@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -11,19 +12,12 @@ using static Graph;
 [ExecuteInEditMode]
 public class Rule : MonoBehaviour
 {
-    //[SerializeField] public bool m_runOnce;
-    //[HideInInspector] public int m_maxIterations { get; set; }
-    //[SerializeField] private Vector2 m_nodePosition = new Vector2(-1, -1);
-    //[SerializeField] private char m_symbol = ' ';
-    ////[SerializeField] private NodeData m_newNodeData;
-    //[SerializeField] private List<NodeData> m_nodeDataList;
     private Alphabet m_alphabet;
     [SerializeField] private RuleScriptableObject m_rule;
     private string m_orientation;
     [SerializeField] private int m_maxTries = 10;
     private List<Vector2NodeDataLinker> m_graph = new List<Vector2NodeDataLinker>();
     [SerializeField] private List<Vector2NodeDataLinker> m_matchingNodes = new List<Vector2NodeDataLinker>();
-    [SerializeField] private List<Vector2NodeDataLinker> m_matchingDirectionNodes = new List<Vector2NodeDataLinker>();
     private int m_originFoundIndex;
     [SerializeField]private List<Vector2NodeDataLinker> m_nodesToChange = new List<Vector2NodeDataLinker>();
 
@@ -72,8 +66,6 @@ public class Rule : MonoBehaviour
                 direction = new Vector2(direction.x*-1, direction.y*-1);
                 break;
         }
-
-
         return direction;
     }
     public void Replace(List<Vector2NodeDataLinker> nodes)
@@ -125,6 +117,7 @@ public class Rule : MonoBehaviour
             }
         }
 
+        #region multiple_applications
         //if (!m_rule.m_runOnce)
         //{
         //    for (int j = 1; j <= m_rule.m_maxIterations; j++)
@@ -141,7 +134,7 @@ public class Rule : MonoBehaviour
         //                    matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
         //                    matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
         //                }
-        //
+
         //                //reset
         //                m_matchingNodes.Clear();
         //                m_position = new Vector2(-1, -1);
@@ -149,7 +142,7 @@ public class Rule : MonoBehaviour
         //            }
         //            else if (m_rule.m_nodeDataList.Count > 1)
         //            {
-        //
+
         //                matchingNode = GetMatchingNodes();
         //                m_nodesToChange.Add(matchingNode);
         //                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
@@ -159,6 +152,7 @@ public class Rule : MonoBehaviour
         //        ApplyChanges();
         //    }
         //}
+        #endregion
 
     }
     private void PopulateMatchingNodes(List<Vector2NodeDataLinker> nodes, int index)
@@ -223,8 +217,7 @@ public class Rule : MonoBehaviour
             node = m_matchingNodes[index];
             m_originFoundIndex = node.m_index;
             //if (1 < m_rule.m_nodeDataList.Count) //was equal to one
-                //m_matchingNodes.Remove(node);
-
+            //m_matchingNodes.Remove(node);
         }
 
         return node;

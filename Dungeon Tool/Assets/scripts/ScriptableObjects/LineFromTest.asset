@@ -14,12 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_runOnce: 1
   m_maxIterations: 1
-  m_firstNodePos: {x: 0, y: 0}
   m_leftHand:
   - m_nodePosition: {x: -1, y: -1}
     m_symbol: 111
   - m_nodePosition: {x: 0, y: 1}
     m_symbol: 110
-  - m_nodePosition: {x: 1, y: 0}
-    m_symbol: 110
-  m_nodeDataList: []
+  m_leftHandEdge: []
+  m_nodeDataList:
+  - position: {x: 0, y: 0}
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    symbol: 112
+    terrain: 0
+    item: 0
+    enemy: 0
+  - position: {x: 0, y: 0}
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    symbol: 112
+    terrain: 0
+    item: 0
+    enemy: 0

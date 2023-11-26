@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9178f915b347d4198d2c11d2f6d2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RuleReference: {fileID: 36570847}
+  m_ruleReference: {fileID: 36570847}
   m_rows: 5
   m_columns: 5
   m_defaultSymbol: 110
@@ -177,601 +177,601 @@ MonoBehaviour:
   - m_index: 0
     m_nodeData:
       position: {x: 0, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 1
     m_nodeData:
       position: {x: 0, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 2
     m_nodeData:
       position: {x: 0, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 3
     m_nodeData:
       position: {x: 0, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 4
     m_nodeData:
       position: {x: 0, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 5
     m_nodeData:
       position: {x: 1, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 6
     m_nodeData:
       position: {x: 1, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 7
     m_nodeData:
       position: {x: 1, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 8
     m_nodeData:
       position: {x: 1, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 9
     m_nodeData:
       position: {x: 1, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 10
     m_nodeData:
       position: {x: 2, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 11
     m_nodeData:
       position: {x: 2, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 12
     m_nodeData:
       position: {x: 2, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 13
     m_nodeData:
       position: {x: 2, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 14
     m_nodeData:
       position: {x: 2, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 15
     m_nodeData:
       position: {x: 3, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 16
     m_nodeData:
       position: {x: 3, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 17
     m_nodeData:
       position: {x: 3, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 18
     m_nodeData:
       position: {x: 3, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 19
     m_nodeData:
       position: {x: 3, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 20
     m_nodeData:
       position: {x: 4, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 21
     m_nodeData:
       position: {x: 4, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 22
     m_nodeData:
       position: {x: 4, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 23
     m_nodeData:
       position: {x: 4, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   - m_index: 24
     m_nodeData:
       position: {x: 4, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      symbol: 114
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      symbol: 110
       terrain: 0
       item: 0
       enemy: 0
   m_edges:
   - m_index: 0
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 0
-      to: 0
+      to: 1
       fromPos: {x: 0, y: 0}
       toPos: {x: 0, y: 1}
       directional: 0
   - m_index: 1
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 0
-      to: 0
+      to: 5
       fromPos: {x: 0, y: 0}
       toPos: {x: 1, y: 0}
       directional: 0
   - m_index: 2
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 1
+      to: 2
       fromPos: {x: 0, y: 1}
       toPos: {x: 0, y: 2}
       directional: 0
   - m_index: 3
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 1
+      to: 6
       fromPos: {x: 0, y: 1}
       toPos: {x: 1, y: 1}
       directional: 0
   - m_index: 4
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 2
+      to: 3
       fromPos: {x: 0, y: 2}
       toPos: {x: 0, y: 3}
       directional: 0
   - m_index: 5
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 2
+      to: 7
       fromPos: {x: 0, y: 2}
       toPos: {x: 1, y: 2}
       directional: 0
   - m_index: 6
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 4
       fromPos: {x: 0, y: 3}
       toPos: {x: 0, y: 4}
       directional: 0
   - m_index: 7
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 8
       fromPos: {x: 0, y: 3}
       toPos: {x: 1, y: 3}
       directional: 0
   - m_index: 8
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 0, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 0
-      to: 4
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 9
       fromPos: {x: 0, y: 4}
       toPos: {x: 1, y: 4}
       directional: 0
   - m_index: 9
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 1
-      to: 0
+      to: 2
       fromPos: {x: 1, y: 0}
       toPos: {x: 1, y: 1}
       directional: 0
   - m_index: 10
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 1
-      to: 0
+      to: 6
       fromPos: {x: 1, y: 0}
       toPos: {x: 2, y: 0}
       directional: 0
   - m_index: 11
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 2
+      to: 3
       fromPos: {x: 1, y: 1}
       toPos: {x: 1, y: 2}
       directional: 0
   - m_index: 12
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 2
+      to: 7
       fromPos: {x: 1, y: 1}
       toPos: {x: 2, y: 1}
       directional: 0
   - m_index: 13
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 4
       fromPos: {x: 1, y: 2}
       toPos: {x: 1, y: 3}
       directional: 0
   - m_index: 14
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 8
       fromPos: {x: 1, y: 2}
       toPos: {x: 2, y: 2}
       directional: 0
   - m_index: 15
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 5
       fromPos: {x: 1, y: 3}
       toPos: {x: 1, y: 4}
       directional: 0
   - m_index: 16
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 9
       fromPos: {x: 1, y: 3}
       toPos: {x: 2, y: 3}
       directional: 0
   - m_index: 17
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 1, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 1
-      to: 4
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 10
       fromPos: {x: 1, y: 4}
       toPos: {x: 2, y: 4}
       directional: 0
   - m_index: 18
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 2
-      to: 0
+      to: 3
       fromPos: {x: 2, y: 0}
       toPos: {x: 2, y: 1}
       directional: 0
   - m_index: 19
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 2
-      to: 0
+      to: 7
       fromPos: {x: 2, y: 0}
       toPos: {x: 3, y: 0}
       directional: 0
   - m_index: 20
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 4
       fromPos: {x: 2, y: 1}
       toPos: {x: 2, y: 2}
       directional: 0
   - m_index: 21
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 3
+      to: 8
       fromPos: {x: 2, y: 1}
       toPos: {x: 3, y: 1}
       directional: 0
   - m_index: 22
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 5
       fromPos: {x: 2, y: 2}
       toPos: {x: 2, y: 3}
       directional: 0
   - m_index: 23
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 9
       fromPos: {x: 2, y: 2}
       toPos: {x: 3, y: 2}
       directional: 0
   - m_index: 24
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 6
       fromPos: {x: 2, y: 3}
       toPos: {x: 2, y: 4}
       directional: 0
   - m_index: 25
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 10
       fromPos: {x: 2, y: 3}
       toPos: {x: 3, y: 3}
       directional: 0
   - m_index: 26
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 2, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 2
-      to: 4
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 6
+      to: 11
       fromPos: {x: 2, y: 4}
       toPos: {x: 3, y: 4}
       directional: 0
   - m_index: 27
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 3
-      to: 0
+      to: 4
       fromPos: {x: 3, y: 0}
       toPos: {x: 3, y: 1}
       directional: 0
   - m_index: 28
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 3
-      to: 0
+      to: 8
       fromPos: {x: 3, y: 0}
       toPos: {x: 4, y: 0}
       directional: 0
   - m_index: 29
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 5
       fromPos: {x: 3, y: 1}
       toPos: {x: 3, y: 2}
       directional: 0
   - m_index: 30
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 4
+      to: 9
       fromPos: {x: 3, y: 1}
       toPos: {x: 4, y: 1}
       directional: 0
   - m_index: 31
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 6
       fromPos: {x: 3, y: 2}
       toPos: {x: 3, y: 3}
       directional: 0
   - m_index: 32
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 10
       fromPos: {x: 3, y: 2}
       toPos: {x: 4, y: 2}
       directional: 0
   - m_index: 33
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 6
+      to: 7
       fromPos: {x: 3, y: 3}
       toPos: {x: 3, y: 4}
       directional: 0
   - m_index: 34
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 6
+      to: 11
       fromPos: {x: 3, y: 3}
       toPos: {x: 4, y: 3}
       directional: 0
   - m_index: 35
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 3, y: 4}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 3
-      to: 4
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 7
+      to: 12
       fromPos: {x: 3, y: 4}
       toPos: {x: 4, y: 4}
       directional: 0
   - m_index: 36
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 4, y: 0}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       from: 4
-      to: 0
+      to: 5
       fromPos: {x: 4, y: 0}
       toPos: {x: 4, y: 1}
       directional: 0
   - m_index: 37
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 4, y: 1}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 4
-      to: 1
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 5
+      to: 6
       fromPos: {x: 4, y: 1}
       toPos: {x: 4, y: 2}
       directional: 0
   - m_index: 38
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 4, y: 2}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 4
-      to: 2
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 6
+      to: 7
       fromPos: {x: 4, y: 2}
       toPos: {x: 4, y: 3}
       directional: 0
   - m_index: 39
     m_edgeData:
-      symbol: 114
+      symbol: 110
       position: {x: 4, y: 3}
-      colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
-      from: 4
-      to: 3
+      colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
+      from: 7
+      to: 8
       fromPos: {x: 4, y: 3}
       toPos: {x: 4, y: 4}
       directional: 0
@@ -791,7 +791,6 @@ MonoBehaviour:
   m_rule: {fileID: 11400000, guid: ef376c42831c80146b1d1fe3143e4201, type: 2}
   m_maxTries: 10
   m_matchingNodes: []
-  m_matchingDirectionNodes: []
   m_nodesToChange: []
 --- !u!114 &36570848
 MonoBehaviour:
@@ -814,8 +813,10 @@ MonoBehaviour:
     m_symbol: 114
   - m_colour: {r: 0.3578414, g: 0.9137255, b: 0.023529395, a: 0.94509804}
     m_symbol: 103
-  - m_colour: {r: 0.9137255, g: 0.4970066, b: 0.023529395, a: 0.94509804}
+  - m_colour: {r: 0.8301887, g: 0.5686975, b: 0.27020293, a: 0.94509804}
     m_symbol: 111
+  - m_colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+    m_symbol: 112
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

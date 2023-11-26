@@ -12,7 +12,7 @@ using static Graph;
 [ExecuteInEditMode]
 public class GraphComponent : MonoBehaviour
 {
-    [SerializeField] public Rule m_RuleReference;
+    [SerializeField] public Rule m_ruleReference;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private char m_defaultSymbol = '/';
@@ -46,7 +46,6 @@ public class GraphComponent : MonoBehaviour
         {
             Gizmos.color = node.m_nodeData.colour;
             Gizmos.DrawSphere(node.m_nodeData.position, 0.125f);
-            //Instantiate(m_nodePrefab, node.m_position,Quaternion.identity);
         }
         //drawing edges
         foreach (var edge in m_edges)

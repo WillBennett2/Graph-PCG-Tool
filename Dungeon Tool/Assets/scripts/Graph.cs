@@ -13,7 +13,7 @@ public class Graph
     [Serializable] public struct NodeData
     {
         [HideInInspector]public Vector2 position;
-        public Color colour;
+        [HideInInspector]public Color colour;
         public char symbol;
         public int terrain;
         public int item;
@@ -94,8 +94,8 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
                     data.position = new Vector2(x, y);
-                    data.from = x;
-                    data.to = y;
+                    data.from = x + y;
+                    data.to = (x + y) + 1;
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x, y + 1);
                     var edge = new Vector2EdgeDataLinker(index, data);
@@ -108,8 +108,8 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
                     data.position = new Vector2(x, y);
-                    data.from = x;
-                    data.to = y;
+                    data.from = x+y;
+                    data.to = (x + y) + (int)MathF.Sqrt(rows*columns);
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x + 1, y);
                     var edge = new Vector2EdgeDataLinker(index, data);
