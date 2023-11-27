@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -16,11 +17,18 @@ public class Rule : MonoBehaviour
     [SerializeField] private RuleScriptableObject m_rule;
     private string m_orientation;
     [SerializeField] private int m_maxTries = 10;
-    private List<Vector2NodeDataLinker> m_graph = new List<Vector2NodeDataLinker>();
+    private List<Vector2NodeDataLinker> m_nodeGraph = new List<Vector2NodeDataLinker>();
     [SerializeField] private List<Vector2NodeDataLinker> m_matchingNodes = new List<Vector2NodeDataLinker>();
     private int m_originFoundIndex;
     [SerializeField]private List<Vector2NodeDataLinker> m_nodesToChange = new List<Vector2NodeDataLinker>();
 
+    private List<Vector2EdgeDataLinker> m_edgeGraph = new List<Vector2EdgeDataLinker>();
+    [SerializeField] private bool m_LoopNode = true;
+    private int m_fromNodeIndex;
+    private int m_toNodeIndex;
+    private int m_edgeCount = 0;
+    private int m_firstNodeIndex =-1;
+    private int m_lastNodeIndex =-1;
     public RuleScriptableObject m_ruleRef { get; private set; }
 
     private void Awake()
@@ -68,21 +76,27 @@ public class Rule : MonoBehaviour
         }
         return direction;
     }
-    public void Replace(List<Vector2NodeDataLinker> nodes)
+    public void Replace(List<Vector2NodeDataLinker> nodes, List<Vector2EdgeDataLinker> edges)
     {
         m_matchingNodes.Clear();
-        m_graph = nodes;
+        m_nodesToChange.Clear();
+        //_rule.m_leftHandEdge.Clear();
+        m_nodeGraph = nodes;
+        m_edgeGraph = edges;
         Vector2NodeDataLinker matchingNode = null;
 
         PopulateMatchingNodes(nodes,0);
 
         for (int j = 0; j < m_maxTries; j++)
         {
+            m_edgeCount = 0;
             for (int i = 0; i < m_rule.m_leftHand.Count; i++)
             {
                 Debug.Log("This node = " + i);
                 if (1 <= i)
                 {
+                    if (matchingNode != null)
+                        SetFromNode(matchingNode.m_index);
                     matchingNode = GetNeighbouringNodes(i);
                     if (matchingNode != null)
                     {
@@ -93,7 +107,17 @@ public class Rule : MonoBehaviour
                             if (matchingNode.m_nodeData.symbol == data.m_symbol)
                                 matchingNode.m_nodeData.colour = data.m_colour;
                         }
+                        SetToNode(matchingNode.m_index);
+                        m_lastNodeIndex = m_toNodeIndex;
+                        if (m_toNodeIndex < m_fromNodeIndex)
+                        {
+                            int temp = m_fromNodeIndex;
+                            m_fromNodeIndex = m_toNodeIndex;
+                            m_toNodeIndex = temp;
+                        }
+                        SetEdge();
                     }
+
                 }
                 else if (1 < m_rule.m_leftHand.Count)
                 {
@@ -107,12 +131,66 @@ public class Rule : MonoBehaviour
                             if (matchingNode.m_nodeData.symbol == data.m_symbol)
                                 matchingNode.m_nodeData.colour = data.m_colour;
                         }
+                        SetFromNode(matchingNode.m_index);
+                        m_firstNodeIndex = m_fromNodeIndex;
                     }
                     SetOrientation();
                 }
             }
+            if (m_LoopNode && m_rule.m_leftHandEdge.Count== m_rule.m_leftHand.Count)
+            {
+                Debug.Log("first node index = " + m_firstNodeIndex);
+                Debug.Log("last node index = " + m_lastNodeIndex);
+                if (m_firstNodeIndex < m_lastNodeIndex)
+                {
+                    int temp = m_lastNodeIndex;
+                    m_lastNodeIndex = m_firstNodeIndex;
+                    m_firstNodeIndex = temp;
+                }
+                foreach (var edge in m_edgeGraph)
+                {
+                    if (edge.m_edgeData.to == m_firstNodeIndex)
+                    {
+                        if (edge.m_edgeData.from == m_lastNodeIndex)
+                        {
+                            if (edge.m_edgeData.symbol == m_rule.m_leftHandEdge[m_rule.m_leftHandEdge.Count - 1].m_symbol)
+                            {
+                                Debug.Log("setting last link edge");
+                                SetFromNode(m_lastNodeIndex);
+                                SetToNode(m_firstNodeIndex);
+                                SetEdge();
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
             if(ApplyChanges())
             {
+                foreach (Vector2EdgeDataLinker edgeData in m_edgeGraph)
+                {
+                    for (int i = 0; i < m_rule.m_leftHandEdge.Count; i++)
+                    {
+                        if (edgeData.m_edgeData.from == m_rule.m_leftHandEdge[i].m_fromNode
+                            && edgeData.m_edgeData.to == m_rule.m_leftHandEdge[i].m_toNode)
+                        {
+                            Debug.Log(edgeData.m_edgeData.from + " vs " + m_rule.m_leftHandEdge[i].m_fromNode);
+                            Debug.Log(edgeData.m_edgeData.to + " vs " + m_rule.m_leftHandEdge[i].m_toNode);
+
+                            edgeData.m_edgeData.symbol = m_rule.m_edgeDataList[i].symbol;
+                            edgeData.m_edgeData.directional = m_rule.m_edgeDataList[i].directional;
+                            foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                            {
+                                if (edgeData.m_edgeData.symbol == data.m_symbol)
+                                {
+                                    edgeData.m_edgeData.colour = data.m_colour;
+                                    Debug.Log("egde change done");
+                                }
+                            }
+                        }
+                    }
+
+                }
                 break;
             }
         }
@@ -171,16 +249,14 @@ public class Rule : MonoBehaviour
     private Vector2NodeDataLinker GetNeighbouringNodes(int index)
     {
         Vector2NodeDataLinker node = null;
-        Vector2NodeDataLinker lastNode = m_graph[m_originFoundIndex]; //hint
+        Vector2NodeDataLinker lastNode = m_nodeGraph[m_originFoundIndex]; //hint
 
         Vector2 directionToCheck = lastNode.m_nodeData.position + ChangeOrientation(m_rule.m_leftHand[index].m_nodePosition);
 
-        node = CheckNode(m_graph,index ,directionToCheck);
+        node = CheckNode(m_nodeGraph,index ,directionToCheck);
         if(node != null)
         {
-            Debug.Log("old index =" + m_originFoundIndex);
             m_originFoundIndex = node.m_index;
-            Debug.Log("new index =" + m_originFoundIndex);
         }
         else
         {
@@ -248,5 +324,26 @@ public class Rule : MonoBehaviour
         return applied;
     }
 
+    private void SetFromNode(int fromNode)
+    {
+        m_fromNodeIndex = fromNode;
+        Debug.Log("from node set " + m_fromNodeIndex);
+    }
+    private void SetToNode(int toNode)
+    {
+        m_toNodeIndex = toNode;
+        Debug.Log("to node set " + m_toNodeIndex);
+    }
+    private void SetEdge()
+    {
+        m_rule.m_leftHandEdge[m_edgeCount] = new RuleScriptableObject.LeftHandEdge(
+            m_rule.m_leftHandEdge[m_edgeCount].m_symbol,
+            m_fromNodeIndex,
+            m_toNodeIndex,
+            m_rule.m_leftHandEdge[m_edgeCount].m_directional
+            );
 
+        m_toNodeIndex = m_fromNodeIndex = -1;
+        m_edgeCount++;
+    }
 }

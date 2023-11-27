@@ -21,6 +21,14 @@ public class RuleScriptableObject : ScriptableObject
         public int m_fromNode;
         public int m_toNode;
         public bool m_directional;
+
+        public LeftHandEdge(char symbol,int fromNode, int toNode, bool directional)
+        {
+            m_symbol = symbol;
+            m_fromNode = fromNode;
+            m_toNode = toNode;
+            m_directional = directional;
+        }
     }
 
     [Header("Run Info")]
@@ -33,12 +41,11 @@ public class RuleScriptableObject : ScriptableObject
 
     [Header("Right Hand")]
     public List<NodeData> m_nodeDataList;
+    public List<EdgeData> m_edgeDataList;
 
 }
 
 /* PLAN FOR EDGES
- * 
- * sort to/from setting
  * 
  * 
  * 

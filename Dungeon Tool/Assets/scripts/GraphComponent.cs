@@ -18,7 +18,7 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] private char m_defaultSymbol = '/';
 
     [SerializeField] public List<Vector2NodeDataLinker> m_nodes=null;
-    [SerializeField] private List<Vector2EdgeDataLinker> m_edges=null;
+    [SerializeField] public List<Vector2EdgeDataLinker> m_edges=null;
 
     [SerializeField] private GameObject m_nodePrefab;
     void Start()

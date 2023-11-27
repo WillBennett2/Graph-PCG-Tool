@@ -84,6 +84,8 @@ public class Graph
         }
 
         index = 0;
+        int edgeFromIndex = 0;
+        int edgeToIndex = 5;
         for (int x = 0; x < rows; x++)
         {
             for (int y = 0; y < columns; y++)
@@ -93,9 +95,10 @@ public class Graph
                     //Vector2 position = new Vector2(x, y);
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
+                    data.colour = Color.white;
                     data.position = new Vector2(x, y);
-                    data.from = x + y;
-                    data.to = (x + y) + 1;
+                    data.from = edgeFromIndex;
+                    data.to = edgeFromIndex+1;
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x, y + 1);
                     var edge = new Vector2EdgeDataLinker(index, data);
@@ -107,15 +110,18 @@ public class Graph
                     //Vector2 position = new Vector2(x, y);
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
+                    data.colour = Color.white;
                     data.position = new Vector2(x, y);
-                    data.from = x+y;
-                    data.to = (x + y) + (int)MathF.Sqrt(rows*columns);
+                    data.from = edgeFromIndex;
+                    data.to = edgeToIndex;
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x + 1, y);
                     var edge = new Vector2EdgeDataLinker(index, data);
                     m_edges.Add(edge);
                     index++;
                 }
+                edgeFromIndex++;
+                edgeToIndex++;
             }
         }
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_runOnce: 1
   m_maxIterations: 7
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodePosition: {x: -1, y: -2}
     m_symbol: 110
   - m_nodePosition: {x: 0, y: 1}
     m_symbol: 110
@@ -24,21 +24,21 @@ MonoBehaviour:
   - m_nodePosition: {x: 0, y: -1}
     m_symbol: 110
   m_leftHandEdge:
-  - m_symbol: 0
-    m_fromNode: 0
-    m_toNode: 0
+  - m_symbol: 110
+    m_fromNode: 23
+    m_toNode: 24
     m_directional: 0
-  - m_symbol: 0
-    m_fromNode: 0
-    m_toNode: 0
+  - m_symbol: 110
+    m_fromNode: 18
+    m_toNode: 23
     m_directional: 0
-  - m_symbol: 0
-    m_fromNode: 0
-    m_toNode: 0
+  - m_symbol: 110
+    m_fromNode: 18
+    m_toNode: 19
     m_directional: 0
-  - m_symbol: 0
-    m_fromNode: 0
-    m_toNode: 0
+  - m_symbol: 110
+    m_fromNode: 19
+    m_toNode: 24
     m_directional: 0
   m_nodeDataList:
   - position: {x: 0, y: 0}
@@ -65,3 +65,36 @@ MonoBehaviour:
     terrain: 0
     item: 0
     enemy: 0
+  m_edgeDataList:
+  - symbol: 98
+    position: {x: 0, y: 0}
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    from: 0
+    to: 0
+    fromPos: {x: 0, y: 0}
+    toPos: {x: 0, y: 0}
+    directional: 1
+  - symbol: 98
+    position: {x: 0, y: 0}
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    from: 0
+    to: 0
+    fromPos: {x: 0, y: 0}
+    toPos: {x: 0, y: 0}
+    directional: 1
+  - symbol: 98
+    position: {x: 0, y: 0}
+    colour: {r: 0, g: 0, b: 0, a: 0}
+    from: 0
+    to: 0
+    fromPos: {x: 0, y: 0}
+    toPos: {x: 0, y: 0}
+    directional: 1
+  - symbol: 98
+    position: {x: 0, y: 0}
+    colour: {r: 0.8584906, g: 0.25511748, b: 0.25511748, a: 1}
+    from: 0
+    to: 0
+    fromPos: {x: 0, y: 0}
+    toPos: {x: 0, y: 0}
+    directional: 1
