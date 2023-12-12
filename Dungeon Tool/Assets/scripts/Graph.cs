@@ -57,14 +57,14 @@ public class Graph
     public struct EdgeData
     {
         public char symbol;
-        public Vector2 position;
+        [HideInInspector] public Vector2 position;
         [HideInInspector]public Color colour;
-        public int fromNode;
-        public int toNode;
-        [HideInInspector] public int directionalFromNode;
-        [HideInInspector] public int directionalToNode;
-        public Vector2 fromPos;
-        public Vector2 toPos;
+        [HideInInspector] public int fromNode;
+        [HideInInspector] public int toNode;
+        public int directionalFromNode;
+        public int directionalToNode;
+        [HideInInspector] public Vector2 fromPos;
+        [HideInInspector] public Vector2 toPos;
         public bool directional;
     }
     [Serializable]
