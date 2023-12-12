@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ruleReference: {fileID: 36570847}
-  m_rows: 5
-  m_columns: 5
+  m_rows: 10
+  m_columns: 10
   m_defaultSymbol: 110
   m_nodes:
   - m_index: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 1
     m_nodeData:
       position: {x: 0, y: 1}
@@ -190,6 +191,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 2
     m_nodeData:
       position: {x: 0, y: 2}
@@ -198,6 +200,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 3
     m_nodeData:
       position: {x: 0, y: 3}
@@ -206,6 +209,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 4
     m_nodeData:
       position: {x: 0, y: 4}
@@ -214,6 +218,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 5
     m_nodeData:
       position: {x: 1, y: 0}
@@ -222,6 +227,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 6
     m_nodeData:
       position: {x: 1, y: 1}
@@ -230,6 +236,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 7
     m_nodeData:
       position: {x: 1, y: 2}
@@ -238,6 +245,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 8
     m_nodeData:
       position: {x: 1, y: 3}
@@ -246,6 +254,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 9
     m_nodeData:
       position: {x: 1, y: 4}
@@ -254,6 +263,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 10
     m_nodeData:
       position: {x: 2, y: 0}
@@ -262,6 +272,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 11
     m_nodeData:
       position: {x: 2, y: 1}
@@ -270,6 +281,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 12
     m_nodeData:
       position: {x: 2, y: 2}
@@ -278,6 +290,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 13
     m_nodeData:
       position: {x: 2, y: 3}
@@ -286,6 +299,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 14
     m_nodeData:
       position: {x: 2, y: 4}
@@ -294,6 +308,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 15
     m_nodeData:
       position: {x: 3, y: 0}
@@ -302,6 +317,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 16
     m_nodeData:
       position: {x: 3, y: 1}
@@ -310,6 +326,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 17
     m_nodeData:
       position: {x: 3, y: 2}
@@ -318,6 +335,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 18
     m_nodeData:
       position: {x: 3, y: 3}
@@ -326,6 +344,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 19
     m_nodeData:
       position: {x: 3, y: 4}
@@ -334,6 +353,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 20
     m_nodeData:
       position: {x: 4, y: 0}
@@ -342,6 +362,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 21
     m_nodeData:
       position: {x: 4, y: 1}
@@ -350,6 +371,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 22
     m_nodeData:
       position: {x: 4, y: 2}
@@ -358,6 +380,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 23
     m_nodeData:
       position: {x: 4, y: 3}
@@ -366,6 +389,7 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   - m_index: 24
     m_nodeData:
       position: {x: 4, y: 4}
@@ -374,405 +398,486 @@ MonoBehaviour:
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
   m_edges:
   - m_index: 0
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 0
-      to: 1
-      fromPos: {x: 0, y: 0}
+      fromNode: 0
+      toNode: 1
+      directionalFromNode: 0
+      directionalToNode: 1
+      fromPos: {x: 0, y: 0.1}
       toPos: {x: 0, y: 1}
       directional: 0
   - m_index: 1
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 0}
+      position: {x: 0.1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 0
-      to: 5
-      fromPos: {x: 0, y: 0}
+      fromNode: 0
+      toNode: 5
+      directionalFromNode: 0
+      directionalToNode: 5
+      fromPos: {x: 0.1, y: 0}
       toPos: {x: 1, y: 0}
       directional: 0
   - m_index: 2
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 1}
+      position: {x: 0, y: 1.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 1
-      to: 2
-      fromPos: {x: 0, y: 1}
+      fromNode: 1
+      toNode: 2
+      directionalFromNode: 1
+      directionalToNode: 2
+      fromPos: {x: 0, y: 1.1}
       toPos: {x: 0, y: 2}
       directional: 0
   - m_index: 3
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 1}
+      position: {x: 0.1, y: 1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 1
-      to: 6
-      fromPos: {x: 0, y: 1}
+      fromNode: 1
+      toNode: 6
+      directionalFromNode: 1
+      directionalToNode: 6
+      fromPos: {x: 0.1, y: 1}
       toPos: {x: 1, y: 1}
       directional: 0
   - m_index: 4
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 2}
+      position: {x: 0, y: 2.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 2
-      to: 3
-      fromPos: {x: 0, y: 2}
+      fromNode: 2
+      toNode: 3
+      directionalFromNode: 2
+      directionalToNode: 3
+      fromPos: {x: 0, y: 2.1}
       toPos: {x: 0, y: 3}
       directional: 0
   - m_index: 5
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 2}
+      position: {x: 0.1, y: 2}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 2
-      to: 7
-      fromPos: {x: 0, y: 2}
+      fromNode: 2
+      toNode: 7
+      directionalFromNode: 2
+      directionalToNode: 7
+      fromPos: {x: 0.1, y: 2}
       toPos: {x: 1, y: 2}
       directional: 0
   - m_index: 6
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 3}
+      position: {x: 0, y: 3.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 3
-      to: 4
-      fromPos: {x: 0, y: 3}
+      fromNode: 3
+      toNode: 4
+      directionalFromNode: 3
+      directionalToNode: 4
+      fromPos: {x: 0, y: 3.1}
       toPos: {x: 0, y: 4}
       directional: 0
   - m_index: 7
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 3}
+      position: {x: 0.1, y: 3}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 3
-      to: 8
-      fromPos: {x: 0, y: 3}
+      fromNode: 3
+      toNode: 8
+      directionalFromNode: 3
+      directionalToNode: 8
+      fromPos: {x: 0.1, y: 3}
       toPos: {x: 1, y: 3}
       directional: 0
   - m_index: 8
     m_edgeData:
       symbol: 110
-      position: {x: 0, y: 4}
+      position: {x: 0.1, y: 4}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 4
-      to: 9
-      fromPos: {x: 0, y: 4}
+      fromNode: 4
+      toNode: 9
+      directionalFromNode: 4
+      directionalToNode: 9
+      fromPos: {x: 0.1, y: 4}
       toPos: {x: 1, y: 4}
       directional: 0
   - m_index: 9
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 0}
+      position: {x: 1, y: 0.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 5
-      to: 6
-      fromPos: {x: 1, y: 0}
+      fromNode: 5
+      toNode: 6
+      directionalFromNode: 5
+      directionalToNode: 6
+      fromPos: {x: 1, y: 0.1}
       toPos: {x: 1, y: 1}
       directional: 0
   - m_index: 10
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 0}
+      position: {x: 1.1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 5
-      to: 10
-      fromPos: {x: 1, y: 0}
+      fromNode: 5
+      toNode: 10
+      directionalFromNode: 5
+      directionalToNode: 10
+      fromPos: {x: 1.1, y: 0}
       toPos: {x: 2, y: 0}
       directional: 0
   - m_index: 11
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 1}
+      position: {x: 1, y: 1.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 6
-      to: 7
-      fromPos: {x: 1, y: 1}
+      fromNode: 6
+      toNode: 7
+      directionalFromNode: 6
+      directionalToNode: 7
+      fromPos: {x: 1, y: 1.1}
       toPos: {x: 1, y: 2}
       directional: 0
   - m_index: 12
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 1}
+      position: {x: 1.1, y: 1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 6
-      to: 11
-      fromPos: {x: 1, y: 1}
+      fromNode: 6
+      toNode: 11
+      directionalFromNode: 6
+      directionalToNode: 11
+      fromPos: {x: 1.1, y: 1}
       toPos: {x: 2, y: 1}
       directional: 0
   - m_index: 13
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 2}
+      position: {x: 1, y: 2.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 7
-      to: 8
-      fromPos: {x: 1, y: 2}
+      fromNode: 7
+      toNode: 8
+      directionalFromNode: 7
+      directionalToNode: 8
+      fromPos: {x: 1, y: 2.1}
       toPos: {x: 1, y: 3}
       directional: 0
   - m_index: 14
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 2}
+      position: {x: 1.1, y: 2}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 7
-      to: 12
-      fromPos: {x: 1, y: 2}
+      fromNode: 7
+      toNode: 12
+      directionalFromNode: 7
+      directionalToNode: 12
+      fromPos: {x: 1.1, y: 2}
       toPos: {x: 2, y: 2}
       directional: 0
   - m_index: 15
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 3}
+      position: {x: 1, y: 3.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 8
-      to: 9
-      fromPos: {x: 1, y: 3}
+      fromNode: 8
+      toNode: 9
+      directionalFromNode: 8
+      directionalToNode: 9
+      fromPos: {x: 1, y: 3.1}
       toPos: {x: 1, y: 4}
       directional: 0
   - m_index: 16
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 3}
+      position: {x: 1.1, y: 3}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 8
-      to: 13
-      fromPos: {x: 1, y: 3}
+      fromNode: 8
+      toNode: 13
+      directionalFromNode: 8
+      directionalToNode: 13
+      fromPos: {x: 1.1, y: 3}
       toPos: {x: 2, y: 3}
       directional: 0
   - m_index: 17
     m_edgeData:
       symbol: 110
-      position: {x: 1, y: 4}
+      position: {x: 1.1, y: 4}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 9
-      to: 14
-      fromPos: {x: 1, y: 4}
+      fromNode: 9
+      toNode: 14
+      directionalFromNode: 9
+      directionalToNode: 14
+      fromPos: {x: 1.1, y: 4}
       toPos: {x: 2, y: 4}
       directional: 0
   - m_index: 18
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 0}
+      position: {x: 2, y: 0.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 10
-      to: 11
-      fromPos: {x: 2, y: 0}
+      fromNode: 10
+      toNode: 11
+      directionalFromNode: 10
+      directionalToNode: 11
+      fromPos: {x: 2, y: 0.1}
       toPos: {x: 2, y: 1}
       directional: 0
   - m_index: 19
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 0}
+      position: {x: 2.1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 10
-      to: 15
-      fromPos: {x: 2, y: 0}
+      fromNode: 10
+      toNode: 15
+      directionalFromNode: 10
+      directionalToNode: 15
+      fromPos: {x: 2.1, y: 0}
       toPos: {x: 3, y: 0}
       directional: 0
   - m_index: 20
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 1}
+      position: {x: 2, y: 1.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 11
-      to: 12
-      fromPos: {x: 2, y: 1}
+      fromNode: 11
+      toNode: 12
+      directionalFromNode: 11
+      directionalToNode: 12
+      fromPos: {x: 2, y: 1.1}
       toPos: {x: 2, y: 2}
       directional: 0
   - m_index: 21
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 1}
+      position: {x: 2.1, y: 1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 11
-      to: 16
-      fromPos: {x: 2, y: 1}
+      fromNode: 11
+      toNode: 16
+      directionalFromNode: 11
+      directionalToNode: 16
+      fromPos: {x: 2.1, y: 1}
       toPos: {x: 3, y: 1}
       directional: 0
   - m_index: 22
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 2}
+      position: {x: 2, y: 2.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 12
-      to: 13
-      fromPos: {x: 2, y: 2}
+      fromNode: 12
+      toNode: 13
+      directionalFromNode: 12
+      directionalToNode: 13
+      fromPos: {x: 2, y: 2.1}
       toPos: {x: 2, y: 3}
       directional: 0
   - m_index: 23
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 2}
+      position: {x: 2.1, y: 2}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 12
-      to: 17
-      fromPos: {x: 2, y: 2}
+      fromNode: 12
+      toNode: 17
+      directionalFromNode: 12
+      directionalToNode: 17
+      fromPos: {x: 2.1, y: 2}
       toPos: {x: 3, y: 2}
       directional: 0
   - m_index: 24
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 3}
+      position: {x: 2, y: 3.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 13
-      to: 14
-      fromPos: {x: 2, y: 3}
+      fromNode: 13
+      toNode: 14
+      directionalFromNode: 13
+      directionalToNode: 14
+      fromPos: {x: 2, y: 3.1}
       toPos: {x: 2, y: 4}
       directional: 0
   - m_index: 25
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 3}
+      position: {x: 2.1, y: 3}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 13
-      to: 18
-      fromPos: {x: 2, y: 3}
+      fromNode: 13
+      toNode: 18
+      directionalFromNode: 13
+      directionalToNode: 18
+      fromPos: {x: 2.1, y: 3}
       toPos: {x: 3, y: 3}
       directional: 0
   - m_index: 26
     m_edgeData:
       symbol: 110
-      position: {x: 2, y: 4}
+      position: {x: 2.1, y: 4}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 14
-      to: 19
-      fromPos: {x: 2, y: 4}
+      fromNode: 14
+      toNode: 19
+      directionalFromNode: 14
+      directionalToNode: 19
+      fromPos: {x: 2.1, y: 4}
       toPos: {x: 3, y: 4}
       directional: 0
   - m_index: 27
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 0}
+      position: {x: 3, y: 0.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 15
-      to: 16
-      fromPos: {x: 3, y: 0}
+      fromNode: 15
+      toNode: 16
+      directionalFromNode: 15
+      directionalToNode: 16
+      fromPos: {x: 3, y: 0.1}
       toPos: {x: 3, y: 1}
       directional: 0
   - m_index: 28
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 0}
+      position: {x: 3.1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 15
-      to: 20
-      fromPos: {x: 3, y: 0}
+      fromNode: 15
+      toNode: 20
+      directionalFromNode: 15
+      directionalToNode: 20
+      fromPos: {x: 3.1, y: 0}
       toPos: {x: 4, y: 0}
       directional: 0
   - m_index: 29
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 1}
+      position: {x: 3, y: 1.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 16
-      to: 17
-      fromPos: {x: 3, y: 1}
+      fromNode: 16
+      toNode: 17
+      directionalFromNode: 16
+      directionalToNode: 17
+      fromPos: {x: 3, y: 1.1}
       toPos: {x: 3, y: 2}
       directional: 0
   - m_index: 30
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 1}
+      position: {x: 3.1, y: 1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 16
-      to: 21
-      fromPos: {x: 3, y: 1}
+      fromNode: 16
+      toNode: 21
+      directionalFromNode: 16
+      directionalToNode: 21
+      fromPos: {x: 3.1, y: 1}
       toPos: {x: 4, y: 1}
       directional: 0
   - m_index: 31
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 2}
+      position: {x: 3, y: 2.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 17
-      to: 18
-      fromPos: {x: 3, y: 2}
+      fromNode: 17
+      toNode: 18
+      directionalFromNode: 17
+      directionalToNode: 18
+      fromPos: {x: 3, y: 2.1}
       toPos: {x: 3, y: 3}
       directional: 0
   - m_index: 32
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 2}
+      position: {x: 3.1, y: 2}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 17
-      to: 22
-      fromPos: {x: 3, y: 2}
+      fromNode: 17
+      toNode: 22
+      directionalFromNode: 17
+      directionalToNode: 22
+      fromPos: {x: 3.1, y: 2}
       toPos: {x: 4, y: 2}
       directional: 0
   - m_index: 33
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 3}
+      position: {x: 3, y: 3.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 18
-      to: 19
-      fromPos: {x: 3, y: 3}
+      fromNode: 18
+      toNode: 19
+      directionalFromNode: 18
+      directionalToNode: 19
+      fromPos: {x: 3, y: 3.1}
       toPos: {x: 3, y: 4}
       directional: 0
   - m_index: 34
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 3}
+      position: {x: 3.1, y: 3}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 18
-      to: 23
-      fromPos: {x: 3, y: 3}
+      fromNode: 18
+      toNode: 23
+      directionalFromNode: 18
+      directionalToNode: 23
+      fromPos: {x: 3.1, y: 3}
       toPos: {x: 4, y: 3}
       directional: 0
   - m_index: 35
     m_edgeData:
       symbol: 110
-      position: {x: 3, y: 4}
+      position: {x: 3.1, y: 4}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 19
-      to: 24
-      fromPos: {x: 3, y: 4}
+      fromNode: 19
+      toNode: 24
+      directionalFromNode: 19
+      directionalToNode: 24
+      fromPos: {x: 3.1, y: 4}
       toPos: {x: 4, y: 4}
       directional: 0
   - m_index: 36
     m_edgeData:
       symbol: 110
-      position: {x: 4, y: 0}
+      position: {x: 4, y: 0.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 20
-      to: 21
-      fromPos: {x: 4, y: 0}
+      fromNode: 20
+      toNode: 21
+      directionalFromNode: 20
+      directionalToNode: 21
+      fromPos: {x: 4, y: 0.1}
       toPos: {x: 4, y: 1}
       directional: 0
   - m_index: 37
     m_edgeData:
       symbol: 110
-      position: {x: 4, y: 1}
+      position: {x: 4, y: 1.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 20
-      to: 21
-      fromPos: {x: 4, y: 1}
+      fromNode: 21
+      toNode: 22
+      directionalFromNode: 21
+      directionalToNode: 22
+      fromPos: {x: 4, y: 1.1}
       toPos: {x: 4, y: 2}
       directional: 0
   - m_index: 38
     m_edgeData:
       symbol: 110
-      position: {x: 4, y: 2}
+      position: {x: 4, y: 2.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 20
-      to: 21
-      fromPos: {x: 4, y: 2}
+      fromNode: 22
+      toNode: 23
+      directionalFromNode: 22
+      directionalToNode: 23
+      fromPos: {x: 4, y: 2.1}
       toPos: {x: 4, y: 3}
       directional: 0
   - m_index: 39
     m_edgeData:
       symbol: 110
-      position: {x: 4, y: 3}
+      position: {x: 4, y: 3.1}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
-      from: 20
-      to: 21
-      fromPos: {x: 4, y: 3}
+      fromNode: 23
+      toNode: 24
+      directionalFromNode: 23
+      directionalToNode: 24
+      fromPos: {x: 4, y: 3.1}
       toPos: {x: 4, y: 4}
       directional: 0
   m_nodePrefab: {fileID: 6696166388566408420, guid: e4298492a64d1e14f92c769e92b9676d, type: 3}
@@ -788,10 +893,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7495b416597280348a599f03832ed62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rule: {fileID: 11400000, guid: ef376c42831c80146b1d1fe3143e4201, type: 2}
+  m_rules:
+  - {fileID: 11400000, guid: ef376c42831c80146b1d1fe3143e4201, type: 2}
+  - {fileID: 11400000, guid: 0e9f53d96350f4a419a5b64e7193b68c, type: 2}
   m_maxTries: 10
-  m_matchingNodes: []
-  m_nodesToChange: []
+  m_matchingNodes:
+  - m_index: 12
+    m_nodeData:
+      position: {x: 2, y: 2}
+      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: 112
+      terrain: 0
+      item: 0
+      enemy: 0
+      storedNodes:
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 32
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 33
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 34
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 35
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+  m_nodesToChange:
+  - m_index: 12
+    m_nodeData:
+      position: {x: 2, y: 2}
+      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: 112
+      terrain: 0
+      item: 0
+      enemy: 0
+      storedNodes:
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 32
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 33
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 34
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        index: 35
+        symbol: 98
+        parentIndex: 12
+        terrain: 0
+        item: 0
+        enemy: 0
+  - m_index: 7
+    m_nodeData:
+      position: {x: 1, y: 2}
+      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: 112
+      terrain: 0
+      item: 0
+      enemy: 0
+      storedNodes: []
+  m_LoopNode: 1
 --- !u!114 &36570848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +1006,7 @@ MonoBehaviour:
   m_alphabet:
   - m_colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
     m_symbol: 110
-  - m_colour: {r: 0, g: 0, b: 0, a: 0.94509804}
+  - m_colour: {r: 0.01886791, g: 0.01664292, b: 0.01664292, a: 0.94509804}
     m_symbol: 98
   - m_colour: {r: 0.9150943, g: 0.02158241, b: 0.02158241, a: 0.94509804}
     m_symbol: 114
@@ -817,6 +1016,8 @@ MonoBehaviour:
     m_symbol: 111
   - m_colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
     m_symbol: 112
+  - m_colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+    m_symbol: 105
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

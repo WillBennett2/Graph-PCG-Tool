@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Dynamic;
 using UnityEngine;
 using static Graph;
 
@@ -9,10 +7,11 @@ using static Graph;
 public class RuleScriptableObject : ScriptableObject
 {
     [Serializable]
-    public struct LeftHand
+    public struct LeftHandNode
     {
         public Vector2 m_nodePosition;
         public char m_symbol;
+        public List<char> m_storedNodes;
     }
     [Serializable]
     public struct LeftHandEdge
@@ -22,7 +21,7 @@ public class RuleScriptableObject : ScriptableObject
         public int m_toNode;
         public bool m_directional;
 
-        public LeftHandEdge(char symbol,int fromNode, int toNode, bool directional)
+        public LeftHandEdge(char symbol, int fromNode, int toNode, bool directional)
         {
             m_symbol = symbol;
             m_fromNode = fromNode;
@@ -32,31 +31,17 @@ public class RuleScriptableObject : ScriptableObject
     }
 
     [Header("Run Info")]
-    public bool m_runOnce;
+    public bool m_runOnce = true;
     public int m_maxIterations = 1;
+    [Range(0,1)]public float m_probability = 1;
 
     [Header("Left Hand")]
-    public List<LeftHand> m_leftHand;
+    public List<LeftHandNode> m_leftHand;
     public List<LeftHandEdge> m_leftHandEdge;
 
     [Header("Right Hand")]
+    [Range(0, 1)] public float m_rightHandProbability = 1;//multiple right hand options
     public List<NodeData> m_nodeDataList;
     public List<EdgeData> m_edgeDataList;
 
 }
-
-/* PLAN FOR EDGES
- * 
- * 
- * 
- * set from node when first node found
- * when second node from -> set to node
- * then replace from node for next index
- * repeat for rest
- * 
- * this will fill out edge list
- * after nodes have been placed 
- * replace list with RH edges
- * 
- * 
- */
