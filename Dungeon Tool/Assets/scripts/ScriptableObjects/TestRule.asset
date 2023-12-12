@@ -30,169 +30,161 @@ MonoBehaviour:
     m_storedNodes: 
   m_leftHandEdge:
   - m_symbol: 110
-    m_fromNode: 4
-    m_toNode: 9
+    m_fromNode: 39
+    m_toNode: 38
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 9
-    m_toNode: 8
+    m_fromNode: 38
+    m_toNode: 28
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 8
-    m_toNode: 3
+    m_fromNode: 28
+    m_toNode: 29
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 3
-    m_toNode: 4
+    m_fromNode: 29
+    m_toNode: 39
     m_directional: 1
-  m_rightHandProbability: 0.5
-  m_nodeDataList:
-  - position: {x: 0, y: 0}
-    colour: {r: 0, g: 0, b: 0, a: 0.69411767}
-    symbol: 105
-    terrain: 0
-    item: 0
-    enemy: 0
-    storedNodes:
+  m_rightHand:
+  - m_rightHandProbability: 1
+    m_nodeDataList:
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 112
-      parentIndex: 0
+      symbol: 105
       terrain: 0
       item: 0
       enemy: 0
-  - position: {x: 0, y: 0}
-    colour: {r: 0.9622642, g: 0.022694906, b: 0.022694906, a: 0.68235296}
-    symbol: 114
-    terrain: 0
-    item: 0
-    enemy: 0
-    storedNodes:
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 114
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 103
       terrain: 0
       item: 0
       enemy: 0
-  - position: {x: 0, y: 0}
-    colour: {r: 0.023529435, g: 0.9607843, b: 0.05681499, a: 0.68235296}
-    symbol: 103
-    terrain: 0
-    item: 0
-    enemy: 0
-    storedNodes:
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 111
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
+    m_edgeDataList:
+    - symbol: 98
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+    - symbol: 98
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+    - symbol: 98
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+    - symbol: 98
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+  - m_rightHandProbability: 1
+    m_nodeDataList:
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 105
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 105
       terrain: 0
       item: 0
       enemy: 0
-  - position: {x: 0, y: 0}
-    colour: {r: 0.023529435, g: 0.9607843, b: 0.05681499, a: 0.68235296}
-    symbol: 111
-    terrain: 0
-    item: 0
-    enemy: 0
-    storedNodes:
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 105
       terrain: 0
       item: 0
       enemy: 0
+      storedNodes: []
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
+      symbol: 105
       terrain: 0
       item: 0
       enemy: 0
-    - position: {x: 0, y: 0}
+      storedNodes: []
+    m_edgeDataList:
+    - symbol: 111
+      position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
-      terrain: 0
-      item: 0
-      enemy: 0
-    - position: {x: 0, y: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+    - symbol: 111
+      position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      index: 0
-      symbol: 98
-      parentIndex: 0
-      terrain: 0
-      item: 0
-      enemy: 0
-  m_edgeDataList:
-  - symbol: 98
-    position: {x: 0, y: 0}
-    colour: {r: 0, g: 0, b: 0, a: 0}
-    fromNode: 0
-    toNode: 0
-    directionalFromNode: 0
-    directionalToNode: 0
-    fromPos: {x: 0, y: 0}
-    toPos: {x: 0, y: 0}
-    directional: 1
-  - symbol: 98
-    position: {x: 0, y: 0}
-    colour: {r: 0, g: 0, b: 0, a: 0}
-    fromNode: 0
-    toNode: 0
-    directionalFromNode: 0
-    directionalToNode: 0
-    fromPos: {x: 0, y: 0}
-    toPos: {x: 0, y: 0}
-    directional: 1
-  - symbol: 98
-    position: {x: 0, y: 0}
-    colour: {r: 0, g: 0, b: 0, a: 0}
-    fromNode: 0
-    toNode: 0
-    directionalFromNode: 0
-    directionalToNode: 0
-    fromPos: {x: 0, y: 0}
-    toPos: {x: 0, y: 0}
-    directional: 1
-  - symbol: 98
-    position: {x: 0, y: 0}
-    colour: {r: 0, g: 0, b: 0, a: 1}
-    fromNode: 0
-    toNode: 0
-    directionalFromNode: 0
-    directionalToNode: 0
-    fromPos: {x: 0, y: 0}
-    toPos: {x: 0, y: 0}
-    directional: 1
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 0
+    - symbol: 111
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 1
+    - symbol: 111
+      position: {x: 0, y: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0}
+      toPos: {x: 0, y: 0}
+      directional: 0

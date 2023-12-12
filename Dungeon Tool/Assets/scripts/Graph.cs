@@ -41,15 +41,15 @@ public class Graph
     [Serializable]
     public class Index2NodeDataLinker
     {
-        [SerializeField] public int m_index;
-        [SerializeField] public NodeData m_nodeData;
+        [SerializeField] public int index;
+        [SerializeField] public NodeData nodeData;
 
         public Index2NodeDataLinker(int index, NodeData nodedata)
         {
-            this.m_index = index;
-            this.m_nodeData = nodedata;
-            this.m_nodeData.colour = nodedata.colour;
-            this.m_nodeData.storedNodes = new List<StoredNodeData>();
+            this.index = index;
+            this.nodeData = nodedata;
+            this.nodeData.colour = nodedata.colour;
+            this.nodeData.storedNodes = new List<StoredNodeData>();
         }
     }
 
@@ -59,10 +59,10 @@ public class Graph
         public char symbol;
         [HideInInspector] public Vector2 position;
         [HideInInspector]public Color colour;
-        [HideInInspector] public int fromNode;
-        [HideInInspector] public int toNode;
-        public int directionalFromNode;
-        public int directionalToNode;
+        [HideInInspector] public int graphFromNode;
+        [HideInInspector] public int graphToNode;
+        public int fromNode;
+        public int toNode;
         [HideInInspector] public Vector2 fromPos;
         [HideInInspector] public Vector2 toPos;
         public bool directional;
@@ -70,30 +70,30 @@ public class Graph
     [Serializable]
     public class Index2EdgeDataLinker
     {
-        [SerializeField] public int m_index;
-        [SerializeField] public EdgeData m_edgeData;
+        [SerializeField] public int index;
+        [SerializeField] public EdgeData edgeData;
 
         public Index2EdgeDataLinker(int index, EdgeData edgeData)
         {
-            this.m_index = index;
-            this.m_edgeData = edgeData;
-            this.m_edgeData.colour = edgeData.colour;
-            this.m_edgeData.directionalFromNode = m_edgeData.fromNode;
-            this.m_edgeData.directionalToNode = m_edgeData.toNode;
+            this.index = index;
+            this.edgeData = edgeData;
+            this.edgeData.colour = edgeData.colour;
+            this.edgeData.fromNode = this.edgeData.graphFromNode;
+            this.edgeData.toNode = this.edgeData.graphToNode;
         }
     }
 
-    [SerializeField] public List<Index2NodeDataLinker> m_nodes;
-    [SerializeField] public List<Index2EdgeDataLinker> m_edges;
+    [SerializeField] public List<Index2NodeDataLinker> nodes;
+    [SerializeField] public List<Index2EdgeDataLinker> edges;
 
     private int m_graphSize;
-    public int m_nodeIndexCounter;
-    //[SerializeField] public Dictionary<Vector2,NodeData> m_graph;
+    public int nodeIndexCounter;
+
     public Graph(int rows, int columns, char defaultSymbol, Alphabet alphabet)
     {
-        m_nodeIndexCounter = m_graphSize = rows * columns;
-        m_nodes = new List<Index2NodeDataLinker>();
-        m_edges = new List<Index2EdgeDataLinker>();
+        nodeIndexCounter = m_graphSize = rows * columns;
+        nodes = new List<Index2NodeDataLinker>();
+        edges = new List<Index2EdgeDataLinker>();
         int index = 0;
         for (int x = 0; x < rows; x++)
         {
@@ -103,7 +103,7 @@ public class Graph
                 data.position = new Vector2(x, y);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
-                m_nodes.Add(node);
+                nodes.Add(node);
                 index++;
             }
         }
@@ -121,12 +121,12 @@ public class Graph
                     data.symbol = defaultSymbol;
                     data.colour = Color.white;
                     data.position = new Vector2(x , y + 0.1f);
-                    data.fromNode = edgeFromIndex;
-                    data.toNode = edgeFromIndex + 1;
+                    data.graphFromNode = edgeFromIndex;
+                    data.graphToNode = edgeFromIndex + 1;
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x, y + 1f);
                     var edge = new Index2EdgeDataLinker(index, data);
-                    m_edges.Add(edge);
+                    edges.Add(edge);
                     index++;
                 }
                 if (x != columns - 1) //right
@@ -135,12 +135,12 @@ public class Graph
                     data.symbol = defaultSymbol;
                     data.colour = Color.white;
                     data.position = new Vector2(x + 0.1f, y);
-                    data.fromNode = edgeFromIndex;
-                    data.toNode = edgeToIndex;
+                    data.graphFromNode = edgeFromIndex;
+                    data.graphToNode = edgeToIndex;
                     data.fromPos = data.position;
                     data.toPos = new Vector2(x+1f, y);
                     var edge = new Index2EdgeDataLinker(index, data);
-                    m_edges.Add(edge);
+                    edges.Add(edge);
                     index++;
                 }
                 edgeFromIndex++;
@@ -150,18 +150,18 @@ public class Graph
 
         foreach (AlphabetLinker data in alphabet.m_alphabet)
         {
-            for (int i = 0; i < m_nodes.Count; i++)
+            for (int i = 0; i < nodes.Count; i++)
             {
-                if (m_nodes[i].m_nodeData.symbol == data.m_symbol)
-                    m_nodes[i].m_nodeData.colour = data.m_colour;
+                if (nodes[i].nodeData.symbol == data.m_symbol)
+                    nodes[i].nodeData.colour = data.m_colour;
             }
         }
         foreach (AlphabetLinker data in alphabet.m_alphabet)
         {
-            for (int i = 0; i < m_edges.Count; i++)
+            for (int i = 0; i < edges.Count; i++)
             {
-                if (m_edges[i].m_edgeData.symbol == data.m_symbol)
-                    m_edges[i].m_edgeData.colour = data.m_colour;
+                if (edges[i].edgeData.symbol == data.m_symbol)
+                    edges[i].edgeData.colour = data.m_colour;
             }
         }
 
@@ -171,5 +171,5 @@ public class Graph
 [Serializable]
 public static class GraphInfo
 {
-    public static Graph m_graphInfo;
+    public static Graph graphInfo;
 }

@@ -16,15 +16,15 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] private GameObject m_nodePrefab;
     void Start()
     {
-        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
-        m_nodes = GraphInfo.m_graphInfo.m_nodes;
-        m_edges = GraphInfo.m_graphInfo.m_edges;
+        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
+        m_nodes = GraphInfo.graphInfo.nodes;
+        m_edges = GraphInfo.graphInfo.edges;
     }
     private void InitGraph()
     {
-        GraphInfo.m_graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
-        m_nodes = GraphInfo.m_graphInfo.m_nodes;
-        m_edges = GraphInfo.m_graphInfo.m_edges;
+        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
+        m_nodes = GraphInfo.graphInfo.nodes;
+        m_edges = GraphInfo.graphInfo.edges;
     }
 
 
@@ -38,16 +38,16 @@ public class GraphComponent : MonoBehaviour
         //drawing nodes
         foreach (var node in m_nodes)
         {
-            Gizmos.color = node.m_nodeData.colour;
-            Gizmos.DrawSphere(node.m_nodeData.position, 0.125f);
+            Gizmos.color = node.nodeData.colour;
+            Gizmos.DrawSphere(node.nodeData.position, 0.125f);
         }
         //drawing edges
 
         foreach (var edge in m_edges)
         {
-            if (edge.m_edgeData.directional)
+            if (edge.edgeData.directional)
             {
-                int offset = edge.m_edgeData.directionalToNode - edge.m_edgeData.directionalFromNode;
+                int offset = edge.edgeData.toNode - edge.edgeData.fromNode;
                 Vector3 direction = new Vector3();
                 Vector3 positionModifier = new Vector3(0, 0, 0);
                 if (offset == 1)
@@ -72,12 +72,12 @@ public class GraphComponent : MonoBehaviour
                     direction = new Vector3(-0.8f, 0, 0);
                     positionModifier = new Vector3(0.8f, 0, 0);
                 }
-                DrawArrow(new Vector3(edge.m_edgeData.position.x, edge.m_edgeData.position.y) + positionModifier, new Vector3(direction.x, direction.y, 0), edge.m_edgeData.colour);
+                DrawArrow(new Vector3(edge.edgeData.position.x, edge.edgeData.position.y) + positionModifier, new Vector3(direction.x, direction.y, 0), edge.edgeData.colour);
             }
             else
             {
-                Gizmos.color = edge.m_edgeData.colour;
-                Gizmos.DrawLine(edge.m_edgeData.fromPos, edge.m_edgeData.toPos);
+                Gizmos.color = edge.edgeData.colour;
+                Gizmos.DrawLine(edge.edgeData.fromPos, edge.edgeData.toPos);
             }
         }
         //check if directional and then add a second small diag line
