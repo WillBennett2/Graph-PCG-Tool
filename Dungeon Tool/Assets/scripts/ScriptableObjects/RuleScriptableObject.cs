@@ -9,7 +9,7 @@ public class RuleScriptableObject : ScriptableObject
     [Serializable]
     public struct LeftHandNode
     {
-        public Vector3 m_nodePosition;
+        public Vector2 m_nodePosition;
         public char m_symbol;
         //public List<char> m_storedNodes;
     }
@@ -32,7 +32,7 @@ public class RuleScriptableObject : ScriptableObject
     [Serializable]
     public struct RightHandStoredNodeData
     {
-        [HideInInspector] public Vector3 position;
+        [HideInInspector] public Vector2 position;
         [HideInInspector] public Color colour;
         public int index;
         public char symbol;

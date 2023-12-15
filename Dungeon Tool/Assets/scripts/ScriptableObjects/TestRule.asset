@@ -12,38 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
   m_Name: TestRule
   m_EditorClassIdentifier: 
-  m_runOnce: 0
+  m_runOnce: 1
   m_maxIterations: 2
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1, z: 0}
+  - m_nodePosition: {x: -1, y: -1}
     m_symbol: 110
-    m_storedNodes: 
-  - m_nodePosition: {x: 0, y: 1, z: 0}
+  - m_nodePosition: {x: 0, y: 1}
     m_symbol: 110
-    m_storedNodes: 
-  - m_nodePosition: {x: 1, y: 0, z: 0}
+  - m_nodePosition: {x: 1, y: 0}
     m_symbol: 110
-    m_storedNodes: 
-  - m_nodePosition: {x: 0, y: -1, z: 0}
+  - m_nodePosition: {x: 0, y: -1}
     m_symbol: 110
-    m_storedNodes: 
   m_leftHandEdge:
   - m_symbol: 110
-    m_fromNode: 14
-    m_toNode: 19
+    m_fromNode: 55
+    m_toNode: 65
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 19
-    m_toNode: 18
+    m_fromNode: 65
+    m_toNode: 64
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 18
-    m_toNode: 13
+    m_fromNode: 64
+    m_toNode: 54
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 14
-    m_toNode: 19
+    m_fromNode: 54
+    m_toNode: 55
     m_directional: 1
   m_rightHand:
   - m_rightHandProbability: 1

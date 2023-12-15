@@ -56,26 +56,6 @@ public class Rule : MonoBehaviour
         }
         Debug.Log("orientation is " + m_orientation);
     }
-    private Vector3 ChangeOrientation(Vector2 direction)
-    {
-        switch (m_orientation)
-        {
-            case ("Up"):
-                direction = new Vector2(direction.x, direction.y);
-                break;
-            case ("Right"):
-                direction = new Vector2(direction.y, direction.x * -1);
-                break;
-            case ("Left"):
-                direction = new Vector2(direction.y * -1, direction.x);
-                break;
-            case ("Down"):
-                direction = new Vector2(direction.x * -1, direction.y * -1);
-                break;
-        }
-        return direction;
-    }
-
     private int GetRightHandRuleIndex(RuleScriptableObject rule)
     {
         List<RightHand> tempRightHand = new List<RightHand>(rule.m_rightHand);
@@ -211,13 +191,26 @@ public class Rule : MonoBehaviour
         foreach (Index2NodeDataLinker node in nodes)
         {
             if (node.nodeData.symbol == rule.m_leftHand[index].m_symbol
-                && (node.nodeData.position == rule.m_leftHand[index].m_nodePosition
-                || rule.m_leftHand[index].m_nodePosition == new Vector3(-1, -1, 0)))
+                && (node.nodeData.position == new Vector3(rule.m_leftHand[index].m_nodePosition.x, rule.m_leftHand[index].m_nodePosition.y)
+                || rule.m_leftHand[index].m_nodePosition == new Vector2(-1, -1)))
             {
                 m_matchingNodes.Add(node);
             }
         }
 
+    }
+    private Index2NodeDataLinker GetMatchingNodes()
+    {
+        Index2NodeDataLinker node = null;
+        int index = Random.Range(0, m_matchingNodes.Count);
+
+        if (0 < m_matchingNodes.Count)
+        {
+            node = m_matchingNodes[index];
+            m_originFoundIndex = node.index;
+        }
+
+        return node;
     }
     private Index2NodeDataLinker GetNeighbouringNodes(RuleScriptableObject rule, int index)
     {
@@ -237,18 +230,24 @@ public class Rule : MonoBehaviour
         }
         return node;
     }
-    private Index2NodeDataLinker GetMatchingNodes()
+    private Vector3 ChangeOrientation(Vector2 direction)
     {
-        Index2NodeDataLinker node = null;
-        int index = Random.Range(0, m_matchingNodes.Count);
-
-        if (0 < m_matchingNodes.Count)
+        switch (m_orientation)
         {
-            node = m_matchingNodes[index];
-            m_originFoundIndex = node.index;
+            case ("Up"):
+                direction = new Vector2(direction.x, direction.y);
+                break;
+            case ("Right"):
+                direction = new Vector2(direction.y, direction.x * -1);
+                break;
+            case ("Left"):
+                direction = new Vector2(direction.y * -1, direction.x);
+                break;
+            case ("Down"):
+                direction = new Vector2(direction.x * -1, direction.y * -1);
+                break;
         }
-
-        return node;
+        return direction;
     }
     private Index2NodeDataLinker CheckNode(RuleScriptableObject rule, List<Index2NodeDataLinker> graph, int index, Vector3 direction)
     {
