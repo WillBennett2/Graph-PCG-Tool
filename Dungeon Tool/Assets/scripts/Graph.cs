@@ -7,36 +7,38 @@ using static Alphabet;
 public class Graph
 {
     [Serializable]
+    public class Index2StoredNodeDataLinker
+    {
+        [SerializeField] public int index;
+        [SerializeField] public StoredNodeData storedNodeData;
+        public Index2StoredNodeDataLinker(int index, StoredNodeData storedNodeData)
+        {
+            this.index = index;
+            this.storedNodeData = storedNodeData;
+            this.storedNodeData.colour = storedNodeData.colour;      
+            this.storedNodeData.position = storedNodeData.position;
+        }
+    }
+    [Serializable]
     public struct StoredNodeData
     {
-        [HideInInspector] public Vector2 position;
+        [HideInInspector] public Vector3 position;
         [HideInInspector] public Color colour;
-        public int index;
         public char symbol;
         public int parentIndex;
         public int terrain;
         public int item;
         public int enemy;
-
-        public void SetIndex(int graphIndex)
-        {
-            index = graphIndex;
-        }
-        public void SetParentIndex(int index)
-        {
-            parentIndex = index;
-        }
     }
     [Serializable]
     public struct NodeData
     {
-        public Vector2 position;
+        public Vector3 position;
         [HideInInspector] public Color colour;
         public char symbol;
         public int terrain;
         public int item;
         public int enemy;
-        public List<StoredNodeData> storedNodes;
     }
     [Serializable]
     public class Index2NodeDataLinker
@@ -49,7 +51,6 @@ public class Graph
             this.index = index;
             this.nodeData = nodedata;
             this.nodeData.colour = nodedata.colour;
-            this.nodeData.storedNodes = new List<StoredNodeData>();
         }
     }
 
@@ -57,14 +58,14 @@ public class Graph
     public struct EdgeData
     {
         public char symbol;
-        [HideInInspector] public Vector2 position;
-        [HideInInspector]public Color colour;
+        public Vector3 position;
+        [HideInInspector] public Color colour;
         [HideInInspector] public int graphFromNode;
         [HideInInspector] public int graphToNode;
         public int fromNode;
         public int toNode;
-        [HideInInspector] public Vector2 fromPos;
-        [HideInInspector] public Vector2 toPos;
+         public Vector3 fromPos;
+         public Vector3 toPos;
         public bool directional;
     }
     [Serializable]
@@ -84,6 +85,7 @@ public class Graph
     }
 
     [SerializeField] public List<Index2NodeDataLinker> nodes;
+    [SerializeField] public List<Index2StoredNodeDataLinker> storedNodes;
     [SerializeField] public List<Index2EdgeDataLinker> edges;
 
     private int m_graphSize;
@@ -93,6 +95,7 @@ public class Graph
     {
         nodeIndexCounter = m_graphSize = rows * columns;
         nodes = new List<Index2NodeDataLinker>();
+        storedNodes = new List<Index2StoredNodeDataLinker>();
         edges = new List<Index2EdgeDataLinker>();
         int index = 0;
         for (int x = 0; x < rows; x++)
@@ -100,7 +103,7 @@ public class Graph
             for (int y = 0; y < columns; y++)
             {
                 NodeData data = new NodeData();
-                data.position = new Vector2(x, y);
+                data.position = new Vector3(x, y);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
                 nodes.Add(node);
@@ -120,7 +123,7 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
                     data.colour = Color.white;
-                    data.position = new Vector2(x , y + 0.1f);
+                    data.position = new Vector2(x, y + 0.1f);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeFromIndex + 1;
                     data.fromPos = data.position;
@@ -134,11 +137,11 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = defaultSymbol;
                     data.colour = Color.white;
-                    data.position = new Vector2(x + 0.1f, y);
+                    data.position = new Vector3(x + 0.1f, y);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeToIndex;
                     data.fromPos = data.position;
-                    data.toPos = new Vector2(x+1f, y);
+                    data.toPos = new Vector3(x + 1f, y);
                     var edge = new Index2EdgeDataLinker(index, data);
                     edges.Add(edge);
                     index++;
@@ -155,15 +158,18 @@ public class Graph
                 if (nodes[i].nodeData.symbol == data.m_symbol)
                     nodes[i].nodeData.colour = data.m_colour;
             }
-        }
-        foreach (AlphabetLinker data in alphabet.m_alphabet)
-        {
+            for (int j = 0; j <storedNodes.Count; j++)
+            {
+                if (storedNodes[j].storedNodeData.symbol == data.m_symbol)
+                    storedNodes[j].storedNodeData.colour = data.m_colour;
+            }
             for (int i = 0; i < edges.Count; i++)
             {
                 if (edges[i].edgeData.symbol == data.m_symbol)
                     edges[i].edgeData.colour = data.m_colour;
             }
         }
+
 
     }
 

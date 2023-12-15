@@ -9,9 +9,9 @@ public class RuleScriptableObject : ScriptableObject
     [Serializable]
     public struct LeftHandNode
     {
-        public Vector2 m_nodePosition;
+        public Vector3 m_nodePosition;
         public char m_symbol;
-        public List<char> m_storedNodes;
+        //public List<char> m_storedNodes;
     }
     [Serializable]
     public struct LeftHandEdge
@@ -30,10 +30,52 @@ public class RuleScriptableObject : ScriptableObject
         }
     }
     [Serializable]
+    public struct RightHandStoredNodeData
+    {
+        [HideInInspector] public Vector3 position;
+        [HideInInspector] public Color colour;
+        public int index;
+        public char symbol;
+        public int parentIndex;
+        public int terrain;
+        public int item;
+        public int enemy;
+
+        public void SetColour(Color colour)
+        {
+            this.colour = colour;
+        }
+        public void SetIndex(int graphIndex)
+        {
+            index = graphIndex;
+        }
+        public void SetParentIndex(int index)
+        {
+            parentIndex = index;
+            SetPosition();
+        }
+        private void SetPosition()
+        {
+            position = GraphInfo.graphInfo.nodes[parentIndex].nodeData.position;
+        }
+    }
+    [Serializable]
+    public struct RightHandNodeData
+    {
+        public Vector3 position;
+        [HideInInspector] public Color colour;
+        public char symbol;
+        public int terrain;
+        public int item;
+        public int enemy;
+        public List<StoredNodeData> storedNodes;
+    }
+    [Serializable]
     public struct RightHand
     {
-        [Range(0, 1)] public float m_rightHandProbability;//multiple right hand options
-        public List<NodeData> m_nodeDataList;
+        [Range(0, 1)] public float m_rightHandProbability;
+        public bool m_LoopNode;
+        public List<RightHandNodeData> m_nodeDataList;
         public List<EdgeData> m_edgeDataList;
     }
 
@@ -48,8 +90,5 @@ public class RuleScriptableObject : ScriptableObject
 
     [Header("Right Hand")]
     public List<RightHand> m_rightHand;
-    //[Range(0, 1)] public float m_rightHandProbability = 1;//multiple right hand options
-    //public List<NodeData> m_nodeDataList;
-    //public List<EdgeData> m_edgeDataList;
 
 }

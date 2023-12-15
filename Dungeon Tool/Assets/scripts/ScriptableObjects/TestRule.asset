@@ -12,64 +12,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
   m_Name: TestRule
   m_EditorClassIdentifier: 
-  m_runOnce: 1
-  m_maxIterations: 1
+  m_runOnce: 0
+  m_maxIterations: 2
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodePosition: {x: -1, y: -1, z: 0}
     m_symbol: 110
     m_storedNodes: 
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodePosition: {x: 0, y: 1, z: 0}
     m_symbol: 110
     m_storedNodes: 
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodePosition: {x: 1, y: 0, z: 0}
     m_symbol: 110
     m_storedNodes: 
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodePosition: {x: 0, y: -1, z: 0}
     m_symbol: 110
     m_storedNodes: 
   m_leftHandEdge:
   - m_symbol: 110
-    m_fromNode: 39
-    m_toNode: 38
+    m_fromNode: 14
+    m_toNode: 19
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 38
-    m_toNode: 28
+    m_fromNode: 19
+    m_toNode: 18
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 28
-    m_toNode: 29
+    m_fromNode: 18
+    m_toNode: 13
     m_directional: 1
   - m_symbol: 110
-    m_fromNode: 29
-    m_toNode: 39
+    m_fromNode: 14
+    m_toNode: 19
     m_directional: 1
   m_rightHand:
   - m_rightHandProbability: 1
+    m_LoopNode: 1
     m_nodeDataList:
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      symbol: 105
-      terrain: 0
-      item: 0
-      enemy: 0
-      storedNodes: []
-    - position: {x: 0, y: 0}
+      symbol: 99
+      terrain: 1
+      item: 1
+      enemy: 1
+      storedNodes:
+      - position: {x: 0, y: 0, z: 0}
+        colour: {r: 0.4056604, g: 0.38843897, b: 0.38843897, a: 0.6745098}
+        symbol: 112
+        parentIndex: 0
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0, z: 0}
+        colour: {r: 0.4056604, g: 0.38843897, b: 0.38843897, a: 0.6745098}
+        symbol: 112
+        parentIndex: 0
+        terrain: 0
+        item: 0
+        enemy: 0
+      - position: {x: 0, y: 0, z: 0}
+        colour: {r: 0.4056604, g: 0.38843897, b: 0.38843897, a: 0.6745098}
+        symbol: 112
+        parentIndex: 0
+        terrain: 0
+        item: 0
+        enemy: 0
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 114
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 103
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 111
       terrain: 0
@@ -78,69 +100,70 @@ MonoBehaviour:
       storedNodes: []
     m_edgeDataList:
     - symbol: 98
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
     - symbol: 98
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
     - symbol: 98
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
     - symbol: 98
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
   - m_rightHandProbability: 1
+    m_LoopNode: 0
     m_nodeDataList:
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 105
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 105
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 105
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       symbol: 105
       terrain: 0
@@ -149,42 +172,42 @@ MonoBehaviour:
       storedNodes: []
     m_edgeDataList:
     - symbol: 111
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
     - symbol: 111
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 0
     - symbol: 111
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1
     - symbol: 111
-      position: {x: 0, y: 0}
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
-      directional: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1

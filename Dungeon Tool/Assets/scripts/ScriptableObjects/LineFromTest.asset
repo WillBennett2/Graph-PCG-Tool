@@ -24,11 +24,12 @@ MonoBehaviour:
     m_storedNodes: 
   m_leftHandEdge:
   - m_symbol: 110
-    m_fromNode: 75
-    m_toNode: 74
+    m_fromNode: 17
+    m_toNode: 18
     m_directional: 0
   m_rightHand:
   - m_rightHandProbability: 1
+    m_LoopNode: 0
     m_nodeDataList:
     - position: {x: 0, y: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}

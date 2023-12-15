@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using static Graph;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 [ExecuteInEditMode]
 public class GraphComponent : MonoBehaviour
@@ -12,18 +15,21 @@ public class GraphComponent : MonoBehaviour
 
     [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
     [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
+    [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
 
     [SerializeField] private GameObject m_nodePrefab;
     void Start()
     {
         GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
         m_nodes = GraphInfo.graphInfo.nodes;
+        m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
     }
     private void InitGraph()
     {
         GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
         m_nodes = GraphInfo.graphInfo.nodes;
+        m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
     }
 
@@ -36,13 +42,20 @@ public class GraphComponent : MonoBehaviour
         }
         int rootOfGraph = (int)Mathf.Sqrt(m_rows * m_columns);
         //drawing nodes
-        foreach (var node in m_nodes)
+        foreach (Index2NodeDataLinker node in m_nodes)
         {
             Gizmos.color = node.nodeData.colour;
             Gizmos.DrawSphere(node.nodeData.position, 0.125f);
         }
-        //drawing edges
+        //drawing contained nodes
+        foreach (Index2StoredNodeDataLinker storednode in m_storedNodes)
+        {
+            Gizmos.color = storednode.storedNodeData.colour;
+            Gizmos.DrawSphere(new Vector3(storednode.storedNodeData.position.x, storednode.storedNodeData.position.y, 1f), 0.125f);
+        }
 
+
+        //drawing edges
         foreach (var edge in m_edges)
         {
             if (edge.edgeData.directional)
@@ -72,7 +85,15 @@ public class GraphComponent : MonoBehaviour
                     direction = new Vector3(-0.8f, 0, 0);
                     positionModifier = new Vector3(0.8f, 0, 0);
                 }
-                DrawArrow(new Vector3(edge.edgeData.position.x, edge.edgeData.position.y) + positionModifier, new Vector3(direction.x, direction.y, 0), edge.edgeData.colour);
+                else
+                {
+                    if (m_storedNodes.Count == 0)
+                        break;
+                    direction = m_nodes[edge.edgeData.toNode].nodeData.position - m_storedNodes[edge.edgeData.fromNode - (m_rows*m_columns) - 1].storedNodeData.position; // new Vector3(0, 0, -0.8f);
+                    positionModifier = new Vector3(0, 0, 0);
+                }
+                DrawArrow(new Vector3(edge.edgeData.position.x, edge.edgeData.position.y, edge.edgeData.position.z) + positionModifier,
+                    new Vector3(direction.x, direction.y, direction.z), edge.edgeData.colour);
             }
             else
             {

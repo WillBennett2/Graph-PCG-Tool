@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static Alphabet;
 using static Graph;
 using static RuleScriptableObject;
@@ -18,10 +19,10 @@ public class Rule : MonoBehaviour
     private List<Index2NodeDataLinker> m_nodeGraph = new List<Index2NodeDataLinker>();
     [SerializeField] private List<Index2NodeDataLinker> m_matchingNodes = new List<Index2NodeDataLinker>();
     [SerializeField] private List<Index2NodeDataLinker> m_nodesToChange = new List<Index2NodeDataLinker>();
+    private List<Index2StoredNodeDataLinker> m_storedNodesGraph;
 
     [Header("Edge Data")]
     private List<Index2EdgeDataLinker> m_edgeGraph = new List<Index2EdgeDataLinker>();
-    [SerializeField] private bool m_LoopNode = true;
     private int m_fromNodeIndex;
     private int m_toNodeIndex;
     private int m_edgeCount = 0;
@@ -55,7 +56,7 @@ public class Rule : MonoBehaviour
         }
         Debug.Log("orientation is " + m_orientation);
     }
-    private Vector2 ChangeOrientation(Vector2 direction)
+    private Vector3 ChangeOrientation(Vector2 direction)
     {
         switch (m_orientation)
         {
@@ -92,136 +93,117 @@ public class Rule : MonoBehaviour
         }
         return -1;
     }
-    public void Replace(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges)
+    public void RunRule(List<Index2NodeDataLinker> nodes,List<Index2StoredNodeDataLinker> storedNodes ,List<Index2EdgeDataLinker> edges)
     {
         foreach (RuleScriptableObject rule in m_rules)
         {
-            m_matchingNodes.Clear();
-            m_nodesToChange.Clear();
-            m_nodeGraph = nodes;
-            m_edgeGraph = edges;
-            Index2NodeDataLinker matchingNode = null;
-
-            //find a right hand to use.
-            int rightHandIndex = GetRightHandRuleIndex(rule);
-            if(rightHandIndex == -1)
+            if (!rule.m_runOnce)
             {
-                Debug.Log("right hand rolled bad");
-                break;
-            }
-            if(Random.Range(0, 100) > rule.m_rightHand[rightHandIndex].m_rightHandProbability*100)
-            {
-                Debug.Log(rule.name + " rolled bad");
-                break;
-            }
-            Debug.Log("Trying " + rule.name);
-            PopulateMatchingNodes(rule, nodes, 0);
-            if(m_matchingNodes.Count == 0)
-            {
-                Debug.LogWarning("No matching nodes found");
-                break;
-            }
-
-            for (int j = 0; j < m_maxTries; j++)
-            {
-                m_edgeCount = 0;
-                for (int i = 0; i < rule.m_leftHand.Count; i++)
+                for (int x = 1; x <= rule.m_maxIterations; x++)
                 {
-                    Debug.Log("This node = " + i);
-                    if (1 <= i)
-                    {
-
-                        if (matchingNode != null)
-                            SetFromNode(matchingNode.index);
-                        matchingNode = GetNeighbouringNodes(rule, i);
-                        if (matchingNode == null)
-                        {
-                            break;
-                        }
-                        SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
-                        SetToNode(matchingNode.index);
-
-                        m_lastNodeIndex = m_toNodeIndex;
-                        SetEdge(rule);
-
-                    }
-                    else if (1 < rule.m_leftHand.Count)
-                    {
-                        matchingNode = GetMatchingNodes();
-                        if (matchingNode == null)
-                        {
-                            break;
-                        }
-                        SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
-                        SetFromNode(matchingNode.index);
-                        m_firstNodeIndex = m_fromNodeIndex;
-                        SetOrientation();
-                    }
+                    Replace(nodes, storedNodes, edges, rule);
                 }
-                if (m_LoopNode && rule.m_leftHandEdge.Count == rule.m_leftHand.Count)
+            }
+            else
+            {
+                if (Replace(nodes, storedNodes, edges, rule))
                 {
-                    LoopEdge(rule);
-                }
-
-                if (ApplyNodeChanges(rule, rule.m_rightHand[rightHandIndex]))
-                {
-                    ApplyEdgeChanges(rule, rule.m_rightHand[rightHandIndex]);
-
-                    //sort stored nodes
-                    for (int i = 0; i < m_nodesToChange.Count; i++)
-                    {
-                        foreach (StoredNodeData storedNode in rule.m_rightHand[rightHandIndex].m_nodeDataList[i].storedNodes)
-                        {
-                            storedNode.SetParentIndex(m_nodesToChange[i].index);
-                            GraphInfo.graphInfo.nodeIndexCounter++;
-                            storedNode.SetIndex(GraphInfo.graphInfo.nodeIndexCounter);
-                            m_nodesToChange[i].nodeData.storedNodes.Add(storedNode);
-                        }
-                    }
-
                     break;
                 }
-                m_nodesToChange.Clear();
             }
         }
 
-        #region multiple_applications
-        //if (!m_rule.m_runOnce)
-        //{
-        //    for (int j = 1; j <= m_rule.m_maxIterations; j++)
-        //    {
-        //        for (int i = 0; i < m_rule.m_nodeDataList.Count; i++)
-        //        {
-        //            if (i >= 1 && m_rule.m_nodeDataList.Count >= 1)
-        //            {
-        //                Debug.Log("loops done = " + i);
-        //                matchingNode = GetNeighbouringNodes();
-        //                if (matchingNode != null)
-        //                {
-        //                    m_nodesToChange.Add(matchingNode);
-        //                    matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-        //                    matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
-        //                }
 
-        //                //reset
-        //                m_matchingNodes.Clear();
-        //                m_position = new Vector2(-1, -1);
-        //                PopulateMatchingNodes(nodes);
-        //            }
-        //            else if (m_rule.m_nodeDataList.Count > 1)
-        //            {
+    }
+    private bool Replace(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges, RuleScriptableObject rule)
+    {
+        int rightHandIndex = GetRightHandRuleIndex(rule);
+        if (!SetUp(nodes, storedNodes, edges, rule, rightHandIndex))
+        {
+            return false;
+        }
+        Index2NodeDataLinker matchingNode = null;
+        for (int j = 0; j < m_maxTries; j++)
+        {
+            m_edgeCount = 0;
+            for (int i = 0; i < rule.m_leftHand.Count; i++)
+            {
+                Debug.Log("This node = " + i);
+                if (1 <= i)
+                {
 
-        //                matchingNode = GetMatchingNodes();
-        //                m_nodesToChange.Add(matchingNode);
-        //                matchingNode.m_nodeData.symbol = m_rule.m_nodeDataList[i].symbol;
-        //                matchingNode.m_nodeData.colour = m_rule.m_nodeDataList[i].colour;
-        //            }
-        //        }
-        //        ApplyChanges();
-        //    }
-        //}
-        #endregion
+                    if (matchingNode != null)
+                        SetFromNode(matchingNode.index);
+                    matchingNode = GetNeighbouringNodes(rule, i);
+                    if (matchingNode == null)
+                    {
+                        break;
+                    }
+                    SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
+                    SetToNode(matchingNode.index);
 
+                    m_lastNodeIndex = m_toNodeIndex;
+                    SetEdge(rule);
+
+                }
+                else if (1 < rule.m_leftHand.Count)
+                {
+                    matchingNode = GetMatchingNodes();
+                    if (matchingNode == null)
+                    {
+                        break;
+                    }
+                    SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
+                    SetFromNode(matchingNode.index);
+                    m_firstNodeIndex = m_fromNodeIndex;
+                    SetOrientation();
+                }
+            }
+            if (rule.m_rightHand[rightHandIndex].m_LoopNode && rule.m_leftHandEdge.Count == rule.m_leftHand.Count)
+            {
+                LoopEdge(rule);
+            }
+
+            if (ApplyNodeChanges(rule, rule.m_rightHand[rightHandIndex]))
+            {
+                ApplyEdgeChanges(rule, rule.m_rightHand[rightHandIndex]);
+
+                //sort stored nodes
+                ChangeStoredNodeData(rule, rightHandIndex);
+                break;
+            }
+            m_nodesToChange.Clear();
+        }
+        return true;
+    }
+    private bool SetUp(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges, RuleScriptableObject rule, int rightHandIndex)
+    {
+        m_matchingNodes.Clear();
+        m_nodesToChange.Clear();
+        m_nodeGraph = nodes;
+        m_storedNodesGraph = storedNodes;
+        m_edgeGraph = edges;
+
+        //find a right hand to use.
+        if (rightHandIndex == -1)
+        {
+            Debug.Log("right hand rolled bad");
+            return false;
+        }
+        if (Random.Range(0, 100) > rule.m_rightHand[rightHandIndex].m_rightHandProbability * 100)
+        {
+            Debug.Log(rule.name + " rolled bad");
+            return false;
+        }
+        Debug.Log("Trying " + rule.name);
+        PopulateMatchingNodes(rule, nodes, 0);
+        if (m_matchingNodes.Count == 0)
+        {
+            Debug.LogWarning("No matching nodes found");
+            return false;
+        }
+
+        return true;
     }
 
     private void PopulateMatchingNodes(RuleScriptableObject rule, List<Index2NodeDataLinker> nodes, int index)
@@ -230,7 +212,7 @@ public class Rule : MonoBehaviour
         {
             if (node.nodeData.symbol == rule.m_leftHand[index].m_symbol
                 && (node.nodeData.position == rule.m_leftHand[index].m_nodePosition
-                || rule.m_leftHand[index].m_nodePosition == new Vector2(-1, -1)))
+                || rule.m_leftHand[index].m_nodePosition == new Vector3(-1, -1, 0)))
             {
                 m_matchingNodes.Add(node);
             }
@@ -242,7 +224,7 @@ public class Rule : MonoBehaviour
         Index2NodeDataLinker node = null;
         Index2NodeDataLinker lastNode = m_nodeGraph[m_originFoundIndex];
 
-        Vector2 directionToCheck = lastNode.nodeData.position + ChangeOrientation(rule.m_leftHand[index].m_nodePosition);
+        Vector3 directionToCheck = lastNode.nodeData.position + ChangeOrientation(rule.m_leftHand[index].m_nodePosition);
 
         node = CheckNode(rule, m_nodeGraph, index, directionToCheck);
         if (node != null)
@@ -268,7 +250,7 @@ public class Rule : MonoBehaviour
 
         return node;
     }
-    private Index2NodeDataLinker CheckNode(RuleScriptableObject rule, List<Index2NodeDataLinker> graph, int index, Vector2 direction)
+    private Index2NodeDataLinker CheckNode(RuleScriptableObject rule, List<Index2NodeDataLinker> graph, int index, Vector3 direction)
     {
         Index2NodeDataLinker node = null;
         Index2NodeDataLinker nodeToCheck = null;
@@ -322,7 +304,6 @@ public class Rule : MonoBehaviour
     private bool ApplyNodeChanges(RuleScriptableObject rule, RightHand rightHand)
     {
         bool applied = false;
-        List<StoredNodeData> storedNodesToDelete = new List<StoredNodeData>();
         if (m_nodesToChange.Count != rightHand.m_nodeDataList.Count)
         {
             ResetRule(rule);
@@ -347,7 +328,7 @@ public class Rule : MonoBehaviour
         {
             for (int i = 0; i < rule.m_leftHandEdge.Count; i++)
             {
-                if(m_LoopNode == false && (i == rule.m_leftHandEdge.Count-1 && rule.m_leftHandEdge.Count>1))
+                if(rightHand.m_LoopNode == false && (i == rule.m_leftHandEdge.Count-1 && rule.m_leftHandEdge.Count>1))
                 {
                     break;
                 }    
@@ -402,7 +383,7 @@ public class Rule : MonoBehaviour
     }
     private void SetEdge(RuleScriptableObject rule)
     {
-        rule.m_leftHandEdge[m_edgeCount] = new RuleScriptableObject.LeftHandEdge(
+        rule.m_leftHandEdge[m_edgeCount] = new LeftHandEdge(
             rule.m_leftHandEdge[m_edgeCount].m_symbol,
             m_fromNodeIndex,
             m_toNodeIndex,
@@ -413,4 +394,45 @@ public class Rule : MonoBehaviour
         m_edgeCount++;
     }
 
+    private void ChangeStoredNodeData(RuleScriptableObject rule, int rightHandIndex)
+    {
+        for (int i = 0; i < m_nodesToChange.Count; i++)
+        {
+            foreach (StoredNodeData storedNode in rule.m_rightHand[rightHandIndex].m_nodeDataList[i].storedNodes)
+            {
+                GraphInfo.graphInfo.nodeIndexCounter++;
+                Index2StoredNodeDataLinker newStoredNode = new Index2StoredNodeDataLinker(GraphInfo.graphInfo.nodeIndexCounter, storedNode);
+                newStoredNode.storedNodeData.parentIndex = m_nodesToChange[i].index;
+                float randomPosMod = Random.Range(-0.25f, 0.25f);
+                newStoredNode.storedNodeData.position = new Vector3(m_nodesToChange[i].nodeData.position.x + randomPosMod, m_nodesToChange[i].nodeData.position.y + randomPosMod, 1f);
+                foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                {
+                    if (newStoredNode.storedNodeData.symbol == data.m_symbol)
+                    {
+                        newStoredNode.storedNodeData.colour = data.m_colour;
+                    }
+                }
+                m_storedNodesGraph.Add(newStoredNode);
+
+                EdgeData edgeData = new EdgeData();
+                edgeData.symbol = 'b';
+                foreach (AlphabetLinker data in m_alphabet.m_alphabet)
+                {
+                    if (edgeData.symbol == data.m_symbol)
+                    {
+                        edgeData.colour = data.m_colour;
+                    }
+                }
+                edgeData.directional = true;
+                edgeData.fromNode = GraphInfo.graphInfo.nodeIndexCounter;
+                edgeData.toNode = m_nodesToChange[i].index;
+                edgeData.graphFromNode = GraphInfo.graphInfo.nodeIndexCounter;
+                edgeData.graphToNode = m_nodesToChange[i].index;
+                edgeData.position = new Vector3(newStoredNode.storedNodeData.position.x, newStoredNode.storedNodeData.position.y, newStoredNode.storedNodeData.position.z);
+                Index2EdgeDataLinker newEdge = new Index2EdgeDataLinker(GraphInfo.graphInfo.edges.Count, edgeData);
+
+                m_edgeGraph.Add(newEdge);
+            }
+        }
+    }
 }
