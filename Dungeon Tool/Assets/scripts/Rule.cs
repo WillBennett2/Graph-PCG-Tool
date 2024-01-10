@@ -88,7 +88,7 @@ public class Rule : MonoBehaviour
             {
                 if (Replace(nodes, storedNodes, edges, rule))
                 {
-                    break;
+                    
                 }
             }
         }
@@ -111,7 +111,6 @@ public class Rule : MonoBehaviour
                 Debug.Log("This node = " + i);
                 if (1 <= i)
                 {
-
                     if (matchingNode != null)
                         SetFromNode(matchingNode.index);
                     matchingNode = GetNeighbouringNodes(rule, i);
@@ -414,7 +413,7 @@ public class Rule : MonoBehaviour
                 m_storedNodesGraph.Add(newStoredNode);
 
                 EdgeData edgeData = new EdgeData();
-                edgeData.symbol = 'b';
+                edgeData.symbol = "e";
                 foreach (AlphabetLinker data in m_alphabet.m_alphabet)
                 {
                     if (edgeData.symbol == data.m_symbol)

@@ -22,9 +22,9 @@ public class Graph
     [Serializable]
     public struct StoredNodeData
     {
+        public string symbol;
         [HideInInspector] public Vector3 position;
         [HideInInspector] public Color colour;
-        public char symbol;
         public int parentIndex;
         public int terrain;
         public int item;
@@ -33,9 +33,10 @@ public class Graph
     [Serializable]
     public struct NodeData
     {
-        public Vector3 position;
+        public string symbol;
+        [HideInInspector] public Vector3 position;
+        public Vector2 gridCoordinates;
         [HideInInspector] public Color colour;
-        public char symbol;
         public int terrain;
         public int item;
         public int enemy;
@@ -57,7 +58,7 @@ public class Graph
     [Serializable]
     public struct EdgeData
     {
-        public char symbol;
+        public string symbol;
         public Vector3 position;
         [HideInInspector] public Color colour;
         [HideInInspector] public int graphFromNode;
@@ -91,7 +92,7 @@ public class Graph
     private int m_graphSize;
     public int nodeIndexCounter;
 
-    public Graph(int rows, int columns, char defaultSymbol, Alphabet alphabet)
+    public Graph(int rows, int columns, string defaultSymbol, Alphabet alphabet)
     {
         nodeIndexCounter = m_graphSize = rows * columns;
         nodes = new List<Index2NodeDataLinker>();
@@ -103,6 +104,7 @@ public class Graph
             for (int y = 0; y < columns; y++)
             {
                 NodeData data = new NodeData();
+                data.gridCoordinates = new Vector2 (x, y);
                 data.position = new Vector3(x, y);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
@@ -121,7 +123,7 @@ public class Graph
                 if (y != rows - 1) //up
                 {
                     EdgeData data = new EdgeData();
-                    data.symbol = defaultSymbol;
+                    data.symbol = "edge";
                     data.colour = Color.white;
                     data.position = new Vector2(x, y + 0.1f);
                     data.graphFromNode = edgeFromIndex;
@@ -135,7 +137,7 @@ public class Graph
                 if (x != columns - 1) //right
                 {
                     EdgeData data = new EdgeData();
-                    data.symbol = defaultSymbol;
+                    data.symbol = "edge";
                     data.colour = Color.white;
                     data.position = new Vector3(x + 0.1f, y);
                     data.graphFromNode = edgeFromIndex;

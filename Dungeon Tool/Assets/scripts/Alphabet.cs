@@ -9,13 +9,13 @@ public class Alphabet : MonoBehaviour
     [Serializable]public struct AlphabetData
     {
         public Color m_colour;
-        public char m_symbol;
+        public string m_symbol;
     }
 
     [Serializable] public class AlphabetLinker
     {
         [SerializeField] public Color m_colour;
-        [SerializeField] public char m_symbol;
+        [SerializeField] public string m_symbol;
 
         public AlphabetLinker(AlphabetData alphabetData)
         {

@@ -10,18 +10,18 @@ public class RuleScriptableObject : ScriptableObject
     public struct LeftHandNode
     {
         public Vector2 m_nodePosition;
-        public char m_symbol;
+        public string m_symbol;
         //public List<char> m_storedNodes;
     }
     [Serializable]
     public struct LeftHandEdge
     {
-        public char m_symbol;
+        public string m_symbol;
         public int m_fromNode;
         public int m_toNode;
         public bool m_directional;
 
-        public LeftHandEdge(char symbol, int fromNode, int toNode, bool directional)
+        public LeftHandEdge(string symbol, int fromNode, int toNode, bool directional)
         {
             m_symbol = symbol;
             m_fromNode = fromNode;
@@ -35,7 +35,7 @@ public class RuleScriptableObject : ScriptableObject
         [HideInInspector] public Vector2 position;
         [HideInInspector] public Color colour;
         public int index;
-        public char symbol;
+        public string symbol;
         public int parentIndex;
         public int terrain;
         public int item;
@@ -62,9 +62,9 @@ public class RuleScriptableObject : ScriptableObject
     [Serializable]
     public struct RightHandNodeData
     {
+        public string symbol;
         public Vector3 position;
         [HideInInspector] public Color colour;
-        public char symbol;
         public int terrain;
         public int item;
         public int enemy;

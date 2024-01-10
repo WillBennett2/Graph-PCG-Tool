@@ -15,5 +15,11 @@ public class GraphComponentEditor : Editor
             graphComponent.m_ruleReference.RunRule(graphComponent.m_nodes, graphComponent.m_storedNodes,graphComponent.m_edges);
             Debug.Log("Rule has been run");
         }
+
+        if (GUILayout.Button("Print Graph."))
+        {
+            graphComponent.PrintGraph();
+            Debug.Log("Graph outputted.");
+        }
     }
 }

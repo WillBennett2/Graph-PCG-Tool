@@ -17,42 +17,40 @@ MonoBehaviour:
   m_probability: 1
   m_leftHand:
   - m_nodePosition: {x: -1, y: -1}
-    m_symbol: 111
-    m_storedNodes: 
+    m_symbol: Wood
   - m_nodePosition: {x: 0, y: 1}
-    m_symbol: 110
-    m_storedNodes: 
+    m_symbol: u
   m_leftHandEdge:
-  - m_symbol: 110
-    m_fromNode: 17
-    m_toNode: 18
-    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 47
+    m_toNode: 37
+    m_directional: 1
   m_rightHand:
   - m_rightHandProbability: 1
     m_LoopNode: 0
     m_nodeDataList:
-    - position: {x: 0, y: 0}
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      symbol: 112
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
-    - position: {x: 0, y: 0}
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
-      symbol: 112
       terrain: 0
       item: 0
       enemy: 0
       storedNodes: []
     m_edgeDataList:
-    - symbol: 112
-      position: {x: 0, y: 0}
+    - symbol: e
+      position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
       fromNode: 0
       toNode: 0
-      fromPos: {x: 0, y: 0}
-      toPos: {x: 0, y: 0}
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
       directional: 1

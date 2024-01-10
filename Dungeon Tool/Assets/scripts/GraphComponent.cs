@@ -11,7 +11,7 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] public Rule m_ruleReference;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
-    [SerializeField] private char m_defaultSymbol = '/';
+    [SerializeField] private string m_defaultSymbol = "unused";
 
     [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
     [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
@@ -113,6 +113,47 @@ public class GraphComponent : MonoBehaviour
         Vector3 left = Quaternion.LookRotation(direction) * Quaternion.Euler(0, 180 - arrowHeadAngle, 0) * new Vector3(0, 0, 1);
         Gizmos.DrawRay(pos + direction, right * arrowHeadLength);
         Gizmos.DrawRay(pos + direction, left * arrowHeadLength);
+    }
+
+    public void PrintGraph()
+    {
+        string output = "";
+        output += ("GRAPH");
+        foreach (Index2NodeDataLinker node in m_nodes)
+        {
+
+            output += (" ");
+            output += (node.nodeData.symbol);
+            output +=("(");
+            output +=("x="+node.nodeData.position.x + ", ");
+            output +=("y="+node.nodeData.position.y + ", ");
+            output +=("tileX=" + node.nodeData.position.x + ", ");
+            output +=("tileY=" + node.nodeData.position.y);
+            output +=(")");
+        }
+        foreach (Index2EdgeDataLinker edge in m_edges)
+        {
+            output +=(" ");
+            output +=(edge.edgeData.symbol);
+            output +=("(");
+            output +=(edge.edgeData.fromNode + ", ");
+            output += (edge.edgeData.toNode);
+            if(!edge.edgeData.directional)
+                output += (", d=" + edge.edgeData.directional.ToString().ToLower());
+            output += (")");
+        }
+        foreach (Index2StoredNodeDataLinker node in m_storedNodes)
+        {
+            output +=(" ");
+            output +=(node.storedNodeData.symbol);
+            output +=(" contain");
+            output +=("(");
+            output +=(node.index + ", ");
+            output +=(node.storedNodeData.parentIndex + ", ");
+            output +=("c=true");
+            output +=(")");
+        }
+        Debug.Log(output);
     }
 
 }
