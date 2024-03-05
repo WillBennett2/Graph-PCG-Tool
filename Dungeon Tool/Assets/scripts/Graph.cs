@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using static Alphabet;
 
@@ -63,6 +64,7 @@ public class Graph
         [HideInInspector] public Color colour;
         [HideInInspector] public int graphFromNode;
         [HideInInspector] public int graphToNode;
+        [HideInInspector] public Quaternion rotation;
         public int fromNode;
         public int toNode;
          public Vector3 fromPos;
@@ -101,11 +103,11 @@ public class Graph
         int index = 0;
         for (int x = 0; x < rows; x++)
         {
-            for (int y = 0; y < columns; y++)
+            for (int z = 0; z < columns; z++)
             {
                 NodeData data = new NodeData();
-                data.gridCoordinates = new Vector2 (x, y);
-                data.position = new Vector3(x, y);
+                data.gridCoordinates = new Vector3 (x, 0,z);
+                data.position = new Vector3(x, 0,z);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
                 nodes.Add(node);
@@ -118,18 +120,19 @@ public class Graph
         int edgeToIndex = (int)MathF.Sqrt(rows * columns);
         for (float x = 0; x < rows; x++)
         {
-            for (float y = 0; y < columns; y++)
+            for (float z = 0; z < columns; z++)
             {
-                if (y != rows - 1) //up
+                if (z != rows - 1) //up
                 {
                     EdgeData data = new EdgeData();
                     data.symbol = "edge";
                     data.colour = Color.white;
-                    data.position = new Vector2(x, y + 0.1f);
+                    data.position = new Vector3(x,0 ,z + 0.5f);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeFromIndex + 1;
                     data.fromPos = data.position;
-                    data.toPos = new Vector2(x, y + 1f);
+                    data.toPos = new Vector3(x,0 ,z + 1f);
+                    data.rotation = SetNormalRotation(data);
                     var edge = new Index2EdgeDataLinker(index, data);
                     edges.Add(edge);
                     index++;
@@ -139,11 +142,13 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = "edge";
                     data.colour = Color.white;
-                    data.position = new Vector3(x + 0.1f, y);
+                    data.position = new Vector3(x + 0.6f, 0,z);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeToIndex;
                     data.fromPos = data.position;
-                    data.toPos = new Vector3(x + 1f, y);
+                    data.toPos = new Vector3(x + 1f, 0,z);
+                    //function
+                    data.rotation = SetNormalRotation(data);
                     var edge = new Index2EdgeDataLinker(index, data);
                     edges.Add(edge);
                     index++;
@@ -174,6 +179,60 @@ public class Graph
 
 
     }
+
+    public Quaternion SetRotation(EdgeData data)
+    {
+        //figure out direction needed
+        if(data.toNode - data.fromNode == 1)
+        {
+            //set data rotation to upward
+            data.rotation = Quaternion.Euler(90, 0, 0);
+        }
+        else if(data.toNode - data.fromNode == -1)
+        {
+            //set data rotation to downward
+            data.rotation = Quaternion.Euler(-90, 0, 0);
+        }
+        else if(data.toNode - data.fromNode == Mathf.Round( Mathf.Sqrt(m_graphSize)))
+        {
+            //right
+            data.rotation = Quaternion.Euler(90, 0, -90);
+        }
+        else if(data.toNode - data.fromNode == -Mathf.Round(Mathf.Sqrt(m_graphSize)))
+        {
+            //left
+            data.rotation = Quaternion.Euler(90, 0, 90);
+        }
+
+        return data.rotation;
+    }
+    public Quaternion SetNormalRotation(EdgeData data)
+    {
+        //figure out direction needed
+        if (data.graphToNode - data.graphFromNode == 1)
+        {
+            //set data rotation to upward
+            data.rotation = Quaternion.Euler(90, 0, 0);
+        }
+        else if (data.graphToNode - data.graphFromNode == -1)
+        {
+            //set data rotation to downward
+            data.rotation = Quaternion.Euler(-90, 0, 0);
+        }
+        else if (data.graphToNode - data.graphFromNode == Mathf.Round(Mathf.Sqrt(m_graphSize)))
+        {
+            //right
+            data.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else if (data.graphToNode - data.graphFromNode == -Mathf.Round(Mathf.Sqrt(m_graphSize)))
+        {
+            //left
+            data.rotation = Quaternion.Euler(0, 0, -90);
+        }
+
+        return data.rotation;
+    }
+
 
 }
 [Serializable]

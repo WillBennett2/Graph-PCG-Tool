@@ -9,6 +9,7 @@ using static RuleScriptableObject;
 [ExecuteInEditMode]
 public class Rule : MonoBehaviour
 {
+    private GraphSpace m_graphSpace;
     private Alphabet m_alphabet;
     [HideInInspector] private RuleScriptableObject m_rule;
     [SerializeField] private List<RuleScriptableObject> m_rules;
@@ -34,6 +35,7 @@ public class Rule : MonoBehaviour
     {
         m_ruleRef = m_rule;
         m_alphabet = GetComponent<Alphabet>();
+        m_graphSpace = GetComponent<GraphSpace>();
     }
 
     private void SetOrientation()
@@ -92,6 +94,7 @@ public class Rule : MonoBehaviour
                 }
             }
         }
+        m_graphSpace.CreateSpace(nodes,storedNodes,edges);
 
 
     }
@@ -229,21 +232,21 @@ public class Rule : MonoBehaviour
         }
         return node;
     }
-    private Vector3 ChangeOrientation(Vector2 direction)
+    private Vector3 ChangeOrientation(Vector3 direction)
     {
         switch (m_orientation)
         {
             case ("Up"):
-                direction = new Vector2(direction.x, direction.y);
+                direction = new Vector3(direction.x, 0,direction.y);
                 break;
             case ("Right"):
-                direction = new Vector2(direction.y, direction.x * -1);
+                direction = new Vector3(direction.y, 0,direction.x * -1);
                 break;
             case ("Left"):
-                direction = new Vector2(direction.y * -1, direction.x);
+                direction = new Vector3(direction.y * -1, 0,direction.x);
                 break;
             case ("Down"):
-                direction = new Vector2(direction.x * -1, direction.y * -1);
+                direction = new Vector3(direction.x * -1, 0,direction.y * -1);
                 break;
         }
         return direction;
@@ -402,7 +405,7 @@ public class Rule : MonoBehaviour
                 Index2StoredNodeDataLinker newStoredNode = new Index2StoredNodeDataLinker(GraphInfo.graphInfo.nodeIndexCounter, storedNode);
                 newStoredNode.storedNodeData.parentIndex = m_nodesToChange[i].index;
                 float randomPosMod = Random.Range(-0.25f, 0.25f);
-                newStoredNode.storedNodeData.position = new Vector3(m_nodesToChange[i].nodeData.position.x + randomPosMod, m_nodesToChange[i].nodeData.position.y + randomPosMod, 1f);
+                newStoredNode.storedNodeData.position = new Vector3(m_nodesToChange[i].nodeData.position.x + randomPosMod,1f,m_nodesToChange[i].nodeData.position.z + randomPosMod);
                 foreach (AlphabetLinker data in m_alphabet.m_alphabet)
                 {
                     if (newStoredNode.storedNodeData.symbol == data.m_symbol)

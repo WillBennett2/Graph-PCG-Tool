@@ -51,7 +51,7 @@ public class GraphComponent : MonoBehaviour
         foreach (Index2StoredNodeDataLinker storednode in m_storedNodes)
         {
             Gizmos.color = storednode.storedNodeData.colour;
-            Gizmos.DrawSphere(new Vector3(storednode.storedNodeData.position.x, storednode.storedNodeData.position.y, 1f), 0.125f);
+            Gizmos.DrawSphere(new Vector3(storednode.storedNodeData.position.x, 1f, storednode.storedNodeData.position.z), 0.125f);
         }
 
 
@@ -66,13 +66,13 @@ public class GraphComponent : MonoBehaviour
                 if (offset == 1)
                 {
                     //up
-                    direction = new Vector3(0, 0.8f, 0);
+                    direction = new Vector3(0, 0, 0.8f);
                 }
                 else if (offset == -1)
                 {
                     //down
-                    direction = new Vector3(0, -0.8f, 0);
-                    positionModifier = new Vector3(0, 0.8f, 0);
+                    direction = new Vector3(0,0, -0.8f);
+                    positionModifier = new Vector3(0,  0,0.8f);
                 }
                 else if (offset == +rootOfGraph)
                 {

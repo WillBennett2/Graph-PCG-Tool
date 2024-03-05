@@ -135,13 +135,14 @@ GameObject:
   - component: {fileID: 36570848}
   - component: {fileID: 36570846}
   - component: {fileID: 36570847}
+  - component: {fileID: 36570849}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &36570845
 Transform:
   m_ObjectHideFlags: 0
@@ -186,8 +187,8 @@ MonoBehaviour:
   - index: 1
     nodeData:
       symbol: u
-      position: {x: 0, y: 1, z: 0}
-      gridCoordinates: {x: 0, y: 1}
+      position: {x: 0, y: 0, z: 1}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -195,8 +196,8 @@ MonoBehaviour:
   - index: 2
     nodeData:
       symbol: u
-      position: {x: 0, y: 2, z: 0}
-      gridCoordinates: {x: 0, y: 2}
+      position: {x: 0, y: 0, z: 2}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -204,8 +205,8 @@ MonoBehaviour:
   - index: 3
     nodeData:
       symbol: u
-      position: {x: 0, y: 3, z: 0}
-      gridCoordinates: {x: 0, y: 3}
+      position: {x: 0, y: 0, z: 3}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -213,8 +214,8 @@ MonoBehaviour:
   - index: 4
     nodeData:
       symbol: u
-      position: {x: 0, y: 4, z: 0}
-      gridCoordinates: {x: 0, y: 4}
+      position: {x: 0, y: 0, z: 4}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -222,8 +223,8 @@ MonoBehaviour:
   - index: 5
     nodeData:
       symbol: u
-      position: {x: 0, y: 5, z: 0}
-      gridCoordinates: {x: 0, y: 5}
+      position: {x: 0, y: 0, z: 5}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -231,8 +232,8 @@ MonoBehaviour:
   - index: 6
     nodeData:
       symbol: u
-      position: {x: 0, y: 6, z: 0}
-      gridCoordinates: {x: 0, y: 6}
+      position: {x: 0, y: 0, z: 6}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -240,8 +241,8 @@ MonoBehaviour:
   - index: 7
     nodeData:
       symbol: u
-      position: {x: 0, y: 7, z: 0}
-      gridCoordinates: {x: 0, y: 7}
+      position: {x: 0, y: 0, z: 7}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -249,8 +250,8 @@ MonoBehaviour:
   - index: 8
     nodeData:
       symbol: u
-      position: {x: 0, y: 8, z: 0}
-      gridCoordinates: {x: 0, y: 8}
+      position: {x: 0, y: 0, z: 8}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -258,8 +259,8 @@ MonoBehaviour:
   - index: 9
     nodeData:
       symbol: u
-      position: {x: 0, y: 9, z: 0}
-      gridCoordinates: {x: 0, y: 9}
+      position: {x: 0, y: 0, z: 9}
+      gridCoordinates: {x: 0, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -276,8 +277,8 @@ MonoBehaviour:
   - index: 11
     nodeData:
       symbol: u
-      position: {x: 1, y: 1, z: 0}
-      gridCoordinates: {x: 1, y: 1}
+      position: {x: 1, y: 0, z: 1}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -285,8 +286,8 @@ MonoBehaviour:
   - index: 12
     nodeData:
       symbol: u
-      position: {x: 1, y: 2, z: 0}
-      gridCoordinates: {x: 1, y: 2}
+      position: {x: 1, y: 0, z: 2}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -294,8 +295,8 @@ MonoBehaviour:
   - index: 13
     nodeData:
       symbol: u
-      position: {x: 1, y: 3, z: 0}
-      gridCoordinates: {x: 1, y: 3}
+      position: {x: 1, y: 0, z: 3}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -303,8 +304,8 @@ MonoBehaviour:
   - index: 14
     nodeData:
       symbol: u
-      position: {x: 1, y: 4, z: 0}
-      gridCoordinates: {x: 1, y: 4}
+      position: {x: 1, y: 0, z: 4}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -312,8 +313,8 @@ MonoBehaviour:
   - index: 15
     nodeData:
       symbol: u
-      position: {x: 1, y: 5, z: 0}
-      gridCoordinates: {x: 1, y: 5}
+      position: {x: 1, y: 0, z: 5}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -321,8 +322,8 @@ MonoBehaviour:
   - index: 16
     nodeData:
       symbol: u
-      position: {x: 1, y: 6, z: 0}
-      gridCoordinates: {x: 1, y: 6}
+      position: {x: 1, y: 0, z: 6}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -330,8 +331,8 @@ MonoBehaviour:
   - index: 17
     nodeData:
       symbol: u
-      position: {x: 1, y: 7, z: 0}
-      gridCoordinates: {x: 1, y: 7}
+      position: {x: 1, y: 0, z: 7}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -339,8 +340,8 @@ MonoBehaviour:
   - index: 18
     nodeData:
       symbol: u
-      position: {x: 1, y: 8, z: 0}
-      gridCoordinates: {x: 1, y: 8}
+      position: {x: 1, y: 0, z: 8}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -348,8 +349,8 @@ MonoBehaviour:
   - index: 19
     nodeData:
       symbol: u
-      position: {x: 1, y: 9, z: 0}
-      gridCoordinates: {x: 1, y: 9}
+      position: {x: 1, y: 0, z: 9}
+      gridCoordinates: {x: 1, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -366,8 +367,8 @@ MonoBehaviour:
   - index: 21
     nodeData:
       symbol: u
-      position: {x: 2, y: 1, z: 0}
-      gridCoordinates: {x: 2, y: 1}
+      position: {x: 2, y: 0, z: 1}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -375,8 +376,8 @@ MonoBehaviour:
   - index: 22
     nodeData:
       symbol: u
-      position: {x: 2, y: 2, z: 0}
-      gridCoordinates: {x: 2, y: 2}
+      position: {x: 2, y: 0, z: 2}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -384,8 +385,8 @@ MonoBehaviour:
   - index: 23
     nodeData:
       symbol: u
-      position: {x: 2, y: 3, z: 0}
-      gridCoordinates: {x: 2, y: 3}
+      position: {x: 2, y: 0, z: 3}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -393,8 +394,8 @@ MonoBehaviour:
   - index: 24
     nodeData:
       symbol: u
-      position: {x: 2, y: 4, z: 0}
-      gridCoordinates: {x: 2, y: 4}
+      position: {x: 2, y: 0, z: 4}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -402,8 +403,8 @@ MonoBehaviour:
   - index: 25
     nodeData:
       symbol: u
-      position: {x: 2, y: 5, z: 0}
-      gridCoordinates: {x: 2, y: 5}
+      position: {x: 2, y: 0, z: 5}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -411,8 +412,8 @@ MonoBehaviour:
   - index: 26
     nodeData:
       symbol: u
-      position: {x: 2, y: 6, z: 0}
-      gridCoordinates: {x: 2, y: 6}
+      position: {x: 2, y: 0, z: 6}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -420,8 +421,8 @@ MonoBehaviour:
   - index: 27
     nodeData:
       symbol: u
-      position: {x: 2, y: 7, z: 0}
-      gridCoordinates: {x: 2, y: 7}
+      position: {x: 2, y: 0, z: 7}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -429,8 +430,8 @@ MonoBehaviour:
   - index: 28
     nodeData:
       symbol: u
-      position: {x: 2, y: 8, z: 0}
-      gridCoordinates: {x: 2, y: 8}
+      position: {x: 2, y: 0, z: 8}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -438,8 +439,8 @@ MonoBehaviour:
   - index: 29
     nodeData:
       symbol: u
-      position: {x: 2, y: 9, z: 0}
-      gridCoordinates: {x: 2, y: 9}
+      position: {x: 2, y: 0, z: 9}
+      gridCoordinates: {x: 2, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -456,8 +457,8 @@ MonoBehaviour:
   - index: 31
     nodeData:
       symbol: u
-      position: {x: 3, y: 1, z: 0}
-      gridCoordinates: {x: 3, y: 1}
+      position: {x: 3, y: 0, z: 1}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -465,8 +466,8 @@ MonoBehaviour:
   - index: 32
     nodeData:
       symbol: u
-      position: {x: 3, y: 2, z: 0}
-      gridCoordinates: {x: 3, y: 2}
+      position: {x: 3, y: 0, z: 2}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -474,8 +475,8 @@ MonoBehaviour:
   - index: 33
     nodeData:
       symbol: u
-      position: {x: 3, y: 3, z: 0}
-      gridCoordinates: {x: 3, y: 3}
+      position: {x: 3, y: 0, z: 3}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -483,8 +484,8 @@ MonoBehaviour:
   - index: 34
     nodeData:
       symbol: u
-      position: {x: 3, y: 4, z: 0}
-      gridCoordinates: {x: 3, y: 4}
+      position: {x: 3, y: 0, z: 4}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -492,8 +493,8 @@ MonoBehaviour:
   - index: 35
     nodeData:
       symbol: u
-      position: {x: 3, y: 5, z: 0}
-      gridCoordinates: {x: 3, y: 5}
+      position: {x: 3, y: 0, z: 5}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -501,8 +502,8 @@ MonoBehaviour:
   - index: 36
     nodeData:
       symbol: u
-      position: {x: 3, y: 6, z: 0}
-      gridCoordinates: {x: 3, y: 6}
+      position: {x: 3, y: 0, z: 6}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -510,8 +511,8 @@ MonoBehaviour:
   - index: 37
     nodeData:
       symbol: u
-      position: {x: 3, y: 7, z: 0}
-      gridCoordinates: {x: 3, y: 7}
+      position: {x: 3, y: 0, z: 7}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -519,8 +520,8 @@ MonoBehaviour:
   - index: 38
     nodeData:
       symbol: u
-      position: {x: 3, y: 8, z: 0}
-      gridCoordinates: {x: 3, y: 8}
+      position: {x: 3, y: 0, z: 8}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -528,8 +529,8 @@ MonoBehaviour:
   - index: 39
     nodeData:
       symbol: u
-      position: {x: 3, y: 9, z: 0}
-      gridCoordinates: {x: 3, y: 9}
+      position: {x: 3, y: 0, z: 9}
+      gridCoordinates: {x: 3, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -546,8 +547,8 @@ MonoBehaviour:
   - index: 41
     nodeData:
       symbol: u
-      position: {x: 4, y: 1, z: 0}
-      gridCoordinates: {x: 4, y: 1}
+      position: {x: 4, y: 0, z: 1}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -555,8 +556,8 @@ MonoBehaviour:
   - index: 42
     nodeData:
       symbol: u
-      position: {x: 4, y: 2, z: 0}
-      gridCoordinates: {x: 4, y: 2}
+      position: {x: 4, y: 0, z: 2}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -564,8 +565,8 @@ MonoBehaviour:
   - index: 43
     nodeData:
       symbol: u
-      position: {x: 4, y: 3, z: 0}
-      gridCoordinates: {x: 4, y: 3}
+      position: {x: 4, y: 0, z: 3}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -573,8 +574,8 @@ MonoBehaviour:
   - index: 44
     nodeData:
       symbol: u
-      position: {x: 4, y: 4, z: 0}
-      gridCoordinates: {x: 4, y: 4}
+      position: {x: 4, y: 0, z: 4}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -582,8 +583,8 @@ MonoBehaviour:
   - index: 45
     nodeData:
       symbol: u
-      position: {x: 4, y: 5, z: 0}
-      gridCoordinates: {x: 4, y: 5}
+      position: {x: 4, y: 0, z: 5}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -591,8 +592,8 @@ MonoBehaviour:
   - index: 46
     nodeData:
       symbol: u
-      position: {x: 4, y: 6, z: 0}
-      gridCoordinates: {x: 4, y: 6}
+      position: {x: 4, y: 0, z: 6}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -600,8 +601,8 @@ MonoBehaviour:
   - index: 47
     nodeData:
       symbol: u
-      position: {x: 4, y: 7, z: 0}
-      gridCoordinates: {x: 4, y: 7}
+      position: {x: 4, y: 0, z: 7}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -609,8 +610,8 @@ MonoBehaviour:
   - index: 48
     nodeData:
       symbol: u
-      position: {x: 4, y: 8, z: 0}
-      gridCoordinates: {x: 4, y: 8}
+      position: {x: 4, y: 0, z: 8}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -618,8 +619,8 @@ MonoBehaviour:
   - index: 49
     nodeData:
       symbol: u
-      position: {x: 4, y: 9, z: 0}
-      gridCoordinates: {x: 4, y: 9}
+      position: {x: 4, y: 0, z: 9}
+      gridCoordinates: {x: 4, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -636,8 +637,8 @@ MonoBehaviour:
   - index: 51
     nodeData:
       symbol: u
-      position: {x: 5, y: 1, z: 0}
-      gridCoordinates: {x: 5, y: 1}
+      position: {x: 5, y: 0, z: 1}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -645,8 +646,8 @@ MonoBehaviour:
   - index: 52
     nodeData:
       symbol: u
-      position: {x: 5, y: 2, z: 0}
-      gridCoordinates: {x: 5, y: 2}
+      position: {x: 5, y: 0, z: 2}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -654,8 +655,8 @@ MonoBehaviour:
   - index: 53
     nodeData:
       symbol: u
-      position: {x: 5, y: 3, z: 0}
-      gridCoordinates: {x: 5, y: 3}
+      position: {x: 5, y: 0, z: 3}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -663,8 +664,8 @@ MonoBehaviour:
   - index: 54
     nodeData:
       symbol: u
-      position: {x: 5, y: 4, z: 0}
-      gridCoordinates: {x: 5, y: 4}
+      position: {x: 5, y: 0, z: 4}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -672,8 +673,8 @@ MonoBehaviour:
   - index: 55
     nodeData:
       symbol: u
-      position: {x: 5, y: 5, z: 0}
-      gridCoordinates: {x: 5, y: 5}
+      position: {x: 5, y: 0, z: 5}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -681,8 +682,8 @@ MonoBehaviour:
   - index: 56
     nodeData:
       symbol: u
-      position: {x: 5, y: 6, z: 0}
-      gridCoordinates: {x: 5, y: 6}
+      position: {x: 5, y: 0, z: 6}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -690,8 +691,8 @@ MonoBehaviour:
   - index: 57
     nodeData:
       symbol: u
-      position: {x: 5, y: 7, z: 0}
-      gridCoordinates: {x: 5, y: 7}
+      position: {x: 5, y: 0, z: 7}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -699,8 +700,8 @@ MonoBehaviour:
   - index: 58
     nodeData:
       symbol: u
-      position: {x: 5, y: 8, z: 0}
-      gridCoordinates: {x: 5, y: 8}
+      position: {x: 5, y: 0, z: 8}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -708,8 +709,8 @@ MonoBehaviour:
   - index: 59
     nodeData:
       symbol: u
-      position: {x: 5, y: 9, z: 0}
-      gridCoordinates: {x: 5, y: 9}
+      position: {x: 5, y: 0, z: 9}
+      gridCoordinates: {x: 5, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -726,8 +727,8 @@ MonoBehaviour:
   - index: 61
     nodeData:
       symbol: u
-      position: {x: 6, y: 1, z: 0}
-      gridCoordinates: {x: 6, y: 1}
+      position: {x: 6, y: 0, z: 1}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -735,8 +736,8 @@ MonoBehaviour:
   - index: 62
     nodeData:
       symbol: u
-      position: {x: 6, y: 2, z: 0}
-      gridCoordinates: {x: 6, y: 2}
+      position: {x: 6, y: 0, z: 2}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -744,8 +745,8 @@ MonoBehaviour:
   - index: 63
     nodeData:
       symbol: u
-      position: {x: 6, y: 3, z: 0}
-      gridCoordinates: {x: 6, y: 3}
+      position: {x: 6, y: 0, z: 3}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -753,8 +754,8 @@ MonoBehaviour:
   - index: 64
     nodeData:
       symbol: u
-      position: {x: 6, y: 4, z: 0}
-      gridCoordinates: {x: 6, y: 4}
+      position: {x: 6, y: 0, z: 4}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -762,8 +763,8 @@ MonoBehaviour:
   - index: 65
     nodeData:
       symbol: u
-      position: {x: 6, y: 5, z: 0}
-      gridCoordinates: {x: 6, y: 5}
+      position: {x: 6, y: 0, z: 5}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -771,8 +772,8 @@ MonoBehaviour:
   - index: 66
     nodeData:
       symbol: u
-      position: {x: 6, y: 6, z: 0}
-      gridCoordinates: {x: 6, y: 6}
+      position: {x: 6, y: 0, z: 6}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -780,8 +781,8 @@ MonoBehaviour:
   - index: 67
     nodeData:
       symbol: u
-      position: {x: 6, y: 7, z: 0}
-      gridCoordinates: {x: 6, y: 7}
+      position: {x: 6, y: 0, z: 7}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -789,8 +790,8 @@ MonoBehaviour:
   - index: 68
     nodeData:
       symbol: u
-      position: {x: 6, y: 8, z: 0}
-      gridCoordinates: {x: 6, y: 8}
+      position: {x: 6, y: 0, z: 8}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -798,8 +799,8 @@ MonoBehaviour:
   - index: 69
     nodeData:
       symbol: u
-      position: {x: 6, y: 9, z: 0}
-      gridCoordinates: {x: 6, y: 9}
+      position: {x: 6, y: 0, z: 9}
+      gridCoordinates: {x: 6, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -816,8 +817,8 @@ MonoBehaviour:
   - index: 71
     nodeData:
       symbol: u
-      position: {x: 7, y: 1, z: 0}
-      gridCoordinates: {x: 7, y: 1}
+      position: {x: 7, y: 0, z: 1}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -825,8 +826,8 @@ MonoBehaviour:
   - index: 72
     nodeData:
       symbol: u
-      position: {x: 7, y: 2, z: 0}
-      gridCoordinates: {x: 7, y: 2}
+      position: {x: 7, y: 0, z: 2}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -834,8 +835,8 @@ MonoBehaviour:
   - index: 73
     nodeData:
       symbol: u
-      position: {x: 7, y: 3, z: 0}
-      gridCoordinates: {x: 7, y: 3}
+      position: {x: 7, y: 0, z: 3}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -843,8 +844,8 @@ MonoBehaviour:
   - index: 74
     nodeData:
       symbol: u
-      position: {x: 7, y: 4, z: 0}
-      gridCoordinates: {x: 7, y: 4}
+      position: {x: 7, y: 0, z: 4}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -852,8 +853,8 @@ MonoBehaviour:
   - index: 75
     nodeData:
       symbol: u
-      position: {x: 7, y: 5, z: 0}
-      gridCoordinates: {x: 7, y: 5}
+      position: {x: 7, y: 0, z: 5}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -861,8 +862,8 @@ MonoBehaviour:
   - index: 76
     nodeData:
       symbol: u
-      position: {x: 7, y: 6, z: 0}
-      gridCoordinates: {x: 7, y: 6}
+      position: {x: 7, y: 0, z: 6}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -870,8 +871,8 @@ MonoBehaviour:
   - index: 77
     nodeData:
       symbol: u
-      position: {x: 7, y: 7, z: 0}
-      gridCoordinates: {x: 7, y: 7}
+      position: {x: 7, y: 0, z: 7}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -879,8 +880,8 @@ MonoBehaviour:
   - index: 78
     nodeData:
       symbol: u
-      position: {x: 7, y: 8, z: 0}
-      gridCoordinates: {x: 7, y: 8}
+      position: {x: 7, y: 0, z: 8}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -888,8 +889,8 @@ MonoBehaviour:
   - index: 79
     nodeData:
       symbol: u
-      position: {x: 7, y: 9, z: 0}
-      gridCoordinates: {x: 7, y: 9}
+      position: {x: 7, y: 0, z: 9}
+      gridCoordinates: {x: 7, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -906,8 +907,8 @@ MonoBehaviour:
   - index: 81
     nodeData:
       symbol: u
-      position: {x: 8, y: 1, z: 0}
-      gridCoordinates: {x: 8, y: 1}
+      position: {x: 8, y: 0, z: 1}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -915,8 +916,8 @@ MonoBehaviour:
   - index: 82
     nodeData:
       symbol: u
-      position: {x: 8, y: 2, z: 0}
-      gridCoordinates: {x: 8, y: 2}
+      position: {x: 8, y: 0, z: 2}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -924,8 +925,8 @@ MonoBehaviour:
   - index: 83
     nodeData:
       symbol: u
-      position: {x: 8, y: 3, z: 0}
-      gridCoordinates: {x: 8, y: 3}
+      position: {x: 8, y: 0, z: 3}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -933,8 +934,8 @@ MonoBehaviour:
   - index: 84
     nodeData:
       symbol: u
-      position: {x: 8, y: 4, z: 0}
-      gridCoordinates: {x: 8, y: 4}
+      position: {x: 8, y: 0, z: 4}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -942,8 +943,8 @@ MonoBehaviour:
   - index: 85
     nodeData:
       symbol: u
-      position: {x: 8, y: 5, z: 0}
-      gridCoordinates: {x: 8, y: 5}
+      position: {x: 8, y: 0, z: 5}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -951,8 +952,8 @@ MonoBehaviour:
   - index: 86
     nodeData:
       symbol: u
-      position: {x: 8, y: 6, z: 0}
-      gridCoordinates: {x: 8, y: 6}
+      position: {x: 8, y: 0, z: 6}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -960,8 +961,8 @@ MonoBehaviour:
   - index: 87
     nodeData:
       symbol: u
-      position: {x: 8, y: 7, z: 0}
-      gridCoordinates: {x: 8, y: 7}
+      position: {x: 8, y: 0, z: 7}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -969,8 +970,8 @@ MonoBehaviour:
   - index: 88
     nodeData:
       symbol: u
-      position: {x: 8, y: 8, z: 0}
-      gridCoordinates: {x: 8, y: 8}
+      position: {x: 8, y: 0, z: 8}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -978,8 +979,8 @@ MonoBehaviour:
   - index: 89
     nodeData:
       symbol: u
-      position: {x: 8, y: 9, z: 0}
-      gridCoordinates: {x: 8, y: 9}
+      position: {x: 8, y: 0, z: 9}
+      gridCoordinates: {x: 8, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -996,8 +997,8 @@ MonoBehaviour:
   - index: 91
     nodeData:
       symbol: u
-      position: {x: 9, y: 1, z: 0}
-      gridCoordinates: {x: 9, y: 1}
+      position: {x: 9, y: 0, z: 1}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1005,8 +1006,8 @@ MonoBehaviour:
   - index: 92
     nodeData:
       symbol: u
-      position: {x: 9, y: 2, z: 0}
-      gridCoordinates: {x: 9, y: 2}
+      position: {x: 9, y: 0, z: 2}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1014,8 +1015,8 @@ MonoBehaviour:
   - index: 93
     nodeData:
       symbol: u
-      position: {x: 9, y: 3, z: 0}
-      gridCoordinates: {x: 9, y: 3}
+      position: {x: 9, y: 0, z: 3}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1023,8 +1024,8 @@ MonoBehaviour:
   - index: 94
     nodeData:
       symbol: u
-      position: {x: 9, y: 4, z: 0}
-      gridCoordinates: {x: 9, y: 4}
+      position: {x: 9, y: 0, z: 4}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1032,8 +1033,8 @@ MonoBehaviour:
   - index: 95
     nodeData:
       symbol: u
-      position: {x: 9, y: 5, z: 0}
-      gridCoordinates: {x: 9, y: 5}
+      position: {x: 9, y: 0, z: 5}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1041,8 +1042,8 @@ MonoBehaviour:
   - index: 96
     nodeData:
       symbol: u
-      position: {x: 9, y: 6, z: 0}
-      gridCoordinates: {x: 9, y: 6}
+      position: {x: 9, y: 0, z: 6}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1050,8 +1051,8 @@ MonoBehaviour:
   - index: 97
     nodeData:
       symbol: u
-      position: {x: 9, y: 7, z: 0}
-      gridCoordinates: {x: 9, y: 7}
+      position: {x: 9, y: 0, z: 7}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1059,8 +1060,8 @@ MonoBehaviour:
   - index: 98
     nodeData:
       symbol: u
-      position: {x: 9, y: 8, z: 0}
-      gridCoordinates: {x: 9, y: 8}
+      position: {x: 9, y: 0, z: 8}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1068,8 +1069,8 @@ MonoBehaviour:
   - index: 99
     nodeData:
       symbol: u
-      position: {x: 9, y: 9, z: 0}
-      gridCoordinates: {x: 9, y: 9}
+      position: {x: 9, y: 0, z: 9}
+      gridCoordinates: {x: 9, y: 0}
       colour: {r: 0.9716981, g: 0.96099657, b: 0.9487807, a: 0.94509804}
       terrain: 0
       item: 0
@@ -1078,2162 +1079,2342 @@ MonoBehaviour:
   - index: 0
     edgeData:
       symbol: edge
-      position: {x: 0, y: 0.1, z: 0}
+      position: {x: 0, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 0
       graphToNode: 1
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 0
       toNode: 1
-      fromPos: {x: 0, y: 0.1, z: 0}
-      toPos: {x: 0, y: 1, z: 0}
+      fromPos: {x: 0, y: 0, z: 0.5}
+      toPos: {x: 0, y: 0, z: 1}
       directional: 0
   - index: 1
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 0, z: 0}
+      position: {x: 0.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 0
       graphToNode: 10
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 0
       toNode: 10
-      fromPos: {x: 0.1, y: 0, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 0}
       toPos: {x: 1, y: 0, z: 0}
       directional: 0
   - index: 2
     edgeData:
       symbol: edge
-      position: {x: 0, y: 1.1, z: 0}
+      position: {x: 0, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 1
       graphToNode: 2
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 1
       toNode: 2
-      fromPos: {x: 0, y: 1.1, z: 0}
-      toPos: {x: 0, y: 2, z: 0}
+      fromPos: {x: 0, y: 0, z: 1.5}
+      toPos: {x: 0, y: 0, z: 2}
       directional: 0
   - index: 3
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 1, z: 0}
+      position: {x: 0.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 1
       graphToNode: 11
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 1
       toNode: 11
-      fromPos: {x: 0.1, y: 1, z: 0}
-      toPos: {x: 1, y: 1, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 1}
+      toPos: {x: 1, y: 0, z: 1}
       directional: 0
   - index: 4
     edgeData:
       symbol: edge
-      position: {x: 0, y: 2.1, z: 0}
+      position: {x: 0, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 2
       graphToNode: 3
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 2
       toNode: 3
-      fromPos: {x: 0, y: 2.1, z: 0}
-      toPos: {x: 0, y: 3, z: 0}
+      fromPos: {x: 0, y: 0, z: 2.5}
+      toPos: {x: 0, y: 0, z: 3}
       directional: 0
   - index: 5
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 2, z: 0}
+      position: {x: 0.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 2
       graphToNode: 12
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 2
       toNode: 12
-      fromPos: {x: 0.1, y: 2, z: 0}
-      toPos: {x: 1, y: 2, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 2}
+      toPos: {x: 1, y: 0, z: 2}
       directional: 0
   - index: 6
     edgeData:
       symbol: edge
-      position: {x: 0, y: 3.1, z: 0}
+      position: {x: 0, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 3
       graphToNode: 4
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 3
       toNode: 4
-      fromPos: {x: 0, y: 3.1, z: 0}
-      toPos: {x: 0, y: 4, z: 0}
+      fromPos: {x: 0, y: 0, z: 3.5}
+      toPos: {x: 0, y: 0, z: 4}
       directional: 0
   - index: 7
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 3, z: 0}
+      position: {x: 0.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 3
       graphToNode: 13
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 3
       toNode: 13
-      fromPos: {x: 0.1, y: 3, z: 0}
-      toPos: {x: 1, y: 3, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 3}
+      toPos: {x: 1, y: 0, z: 3}
       directional: 0
   - index: 8
     edgeData:
       symbol: edge
-      position: {x: 0, y: 4.1, z: 0}
+      position: {x: 0, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 4
       graphToNode: 5
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 4
       toNode: 5
-      fromPos: {x: 0, y: 4.1, z: 0}
-      toPos: {x: 0, y: 5, z: 0}
+      fromPos: {x: 0, y: 0, z: 4.5}
+      toPos: {x: 0, y: 0, z: 5}
       directional: 0
   - index: 9
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 4, z: 0}
+      position: {x: 0.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 4
       graphToNode: 14
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 4
       toNode: 14
-      fromPos: {x: 0.1, y: 4, z: 0}
-      toPos: {x: 1, y: 4, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 4}
+      toPos: {x: 1, y: 0, z: 4}
       directional: 0
   - index: 10
     edgeData:
       symbol: edge
-      position: {x: 0, y: 5.1, z: 0}
+      position: {x: 0, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 5
       graphToNode: 6
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 5
       toNode: 6
-      fromPos: {x: 0, y: 5.1, z: 0}
-      toPos: {x: 0, y: 6, z: 0}
+      fromPos: {x: 0, y: 0, z: 5.5}
+      toPos: {x: 0, y: 0, z: 6}
       directional: 0
   - index: 11
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 5, z: 0}
+      position: {x: 0.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 5
       graphToNode: 15
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 5
       toNode: 15
-      fromPos: {x: 0.1, y: 5, z: 0}
-      toPos: {x: 1, y: 5, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 5}
+      toPos: {x: 1, y: 0, z: 5}
       directional: 0
   - index: 12
     edgeData:
       symbol: edge
-      position: {x: 0, y: 6.1, z: 0}
+      position: {x: 0, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 6
       graphToNode: 7
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 6
       toNode: 7
-      fromPos: {x: 0, y: 6.1, z: 0}
-      toPos: {x: 0, y: 7, z: 0}
+      fromPos: {x: 0, y: 0, z: 6.5}
+      toPos: {x: 0, y: 0, z: 7}
       directional: 0
   - index: 13
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 6, z: 0}
+      position: {x: 0.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 6
       graphToNode: 16
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 6
       toNode: 16
-      fromPos: {x: 0.1, y: 6, z: 0}
-      toPos: {x: 1, y: 6, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 6}
+      toPos: {x: 1, y: 0, z: 6}
       directional: 0
   - index: 14
     edgeData:
       symbol: edge
-      position: {x: 0, y: 7.1, z: 0}
+      position: {x: 0, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 7
       graphToNode: 8
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 7
       toNode: 8
-      fromPos: {x: 0, y: 7.1, z: 0}
-      toPos: {x: 0, y: 8, z: 0}
+      fromPos: {x: 0, y: 0, z: 7.5}
+      toPos: {x: 0, y: 0, z: 8}
       directional: 0
   - index: 15
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 7, z: 0}
+      position: {x: 0.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 7
       graphToNode: 17
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 7
       toNode: 17
-      fromPos: {x: 0.1, y: 7, z: 0}
-      toPos: {x: 1, y: 7, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 7}
+      toPos: {x: 1, y: 0, z: 7}
       directional: 0
   - index: 16
     edgeData:
       symbol: edge
-      position: {x: 0, y: 8.1, z: 0}
+      position: {x: 0, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 8
       graphToNode: 9
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 8
       toNode: 9
-      fromPos: {x: 0, y: 8.1, z: 0}
-      toPos: {x: 0, y: 9, z: 0}
+      fromPos: {x: 0, y: 0, z: 8.5}
+      toPos: {x: 0, y: 0, z: 9}
       directional: 0
   - index: 17
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 8, z: 0}
+      position: {x: 0.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 8
       graphToNode: 18
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 8
       toNode: 18
-      fromPos: {x: 0.1, y: 8, z: 0}
-      toPos: {x: 1, y: 8, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 8}
+      toPos: {x: 1, y: 0, z: 8}
       directional: 0
   - index: 18
     edgeData:
       symbol: edge
-      position: {x: 0.1, y: 9, z: 0}
+      position: {x: 0.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 9
       graphToNode: 19
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 9
       toNode: 19
-      fromPos: {x: 0.1, y: 9, z: 0}
-      toPos: {x: 1, y: 9, z: 0}
+      fromPos: {x: 0.6, y: 0, z: 9}
+      toPos: {x: 1, y: 0, z: 9}
       directional: 0
   - index: 19
     edgeData:
       symbol: edge
-      position: {x: 1, y: 0.1, z: 0}
+      position: {x: 1, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 10
       graphToNode: 11
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 10
       toNode: 11
-      fromPos: {x: 1, y: 0.1, z: 0}
-      toPos: {x: 1, y: 1, z: 0}
+      fromPos: {x: 1, y: 0, z: 0.5}
+      toPos: {x: 1, y: 0, z: 1}
       directional: 0
   - index: 20
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 0, z: 0}
+      position: {x: 1.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 10
       graphToNode: 20
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 10
       toNode: 20
-      fromPos: {x: 1.1, y: 0, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 0}
       toPos: {x: 2, y: 0, z: 0}
       directional: 0
   - index: 21
     edgeData:
       symbol: edge
-      position: {x: 1, y: 1.1, z: 0}
+      position: {x: 1, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 11
       graphToNode: 12
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 11
       toNode: 12
-      fromPos: {x: 1, y: 1.1, z: 0}
-      toPos: {x: 1, y: 2, z: 0}
+      fromPos: {x: 1, y: 0, z: 1.5}
+      toPos: {x: 1, y: 0, z: 2}
       directional: 0
   - index: 22
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 1, z: 0}
+      position: {x: 1.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 11
       graphToNode: 21
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 11
       toNode: 21
-      fromPos: {x: 1.1, y: 1, z: 0}
-      toPos: {x: 2, y: 1, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 1}
+      toPos: {x: 2, y: 0, z: 1}
       directional: 0
   - index: 23
     edgeData:
       symbol: edge
-      position: {x: 1, y: 2.1, z: 0}
+      position: {x: 1, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 12
       graphToNode: 13
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 12
       toNode: 13
-      fromPos: {x: 1, y: 2.1, z: 0}
-      toPos: {x: 1, y: 3, z: 0}
+      fromPos: {x: 1, y: 0, z: 2.5}
+      toPos: {x: 1, y: 0, z: 3}
       directional: 0
   - index: 24
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 2, z: 0}
+      position: {x: 1.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 12
       graphToNode: 22
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 12
       toNode: 22
-      fromPos: {x: 1.1, y: 2, z: 0}
-      toPos: {x: 2, y: 2, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 2}
+      toPos: {x: 2, y: 0, z: 2}
       directional: 0
   - index: 25
     edgeData:
       symbol: edge
-      position: {x: 1, y: 3.1, z: 0}
+      position: {x: 1, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 13
       graphToNode: 14
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 13
       toNode: 14
-      fromPos: {x: 1, y: 3.1, z: 0}
-      toPos: {x: 1, y: 4, z: 0}
+      fromPos: {x: 1, y: 0, z: 3.5}
+      toPos: {x: 1, y: 0, z: 4}
       directional: 0
   - index: 26
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 3, z: 0}
+      position: {x: 1.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 13
       graphToNode: 23
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 13
       toNode: 23
-      fromPos: {x: 1.1, y: 3, z: 0}
-      toPos: {x: 2, y: 3, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 3}
+      toPos: {x: 2, y: 0, z: 3}
       directional: 0
   - index: 27
     edgeData:
       symbol: edge
-      position: {x: 1, y: 4.1, z: 0}
+      position: {x: 1, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 14
       graphToNode: 15
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 14
       toNode: 15
-      fromPos: {x: 1, y: 4.1, z: 0}
-      toPos: {x: 1, y: 5, z: 0}
+      fromPos: {x: 1, y: 0, z: 4.5}
+      toPos: {x: 1, y: 0, z: 5}
       directional: 0
   - index: 28
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 4, z: 0}
+      position: {x: 1.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 14
       graphToNode: 24
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 14
       toNode: 24
-      fromPos: {x: 1.1, y: 4, z: 0}
-      toPos: {x: 2, y: 4, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 4}
+      toPos: {x: 2, y: 0, z: 4}
       directional: 0
   - index: 29
     edgeData:
       symbol: edge
-      position: {x: 1, y: 5.1, z: 0}
+      position: {x: 1, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 15
       graphToNode: 16
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 15
       toNode: 16
-      fromPos: {x: 1, y: 5.1, z: 0}
-      toPos: {x: 1, y: 6, z: 0}
+      fromPos: {x: 1, y: 0, z: 5.5}
+      toPos: {x: 1, y: 0, z: 6}
       directional: 0
   - index: 30
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 5, z: 0}
+      position: {x: 1.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 15
       graphToNode: 25
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 15
       toNode: 25
-      fromPos: {x: 1.1, y: 5, z: 0}
-      toPos: {x: 2, y: 5, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 5}
+      toPos: {x: 2, y: 0, z: 5}
       directional: 0
   - index: 31
     edgeData:
       symbol: edge
-      position: {x: 1, y: 6.1, z: 0}
+      position: {x: 1, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 16
       graphToNode: 17
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 16
       toNode: 17
-      fromPos: {x: 1, y: 6.1, z: 0}
-      toPos: {x: 1, y: 7, z: 0}
+      fromPos: {x: 1, y: 0, z: 6.5}
+      toPos: {x: 1, y: 0, z: 7}
       directional: 0
   - index: 32
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 6, z: 0}
+      position: {x: 1.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 16
       graphToNode: 26
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 16
       toNode: 26
-      fromPos: {x: 1.1, y: 6, z: 0}
-      toPos: {x: 2, y: 6, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 6}
+      toPos: {x: 2, y: 0, z: 6}
       directional: 0
   - index: 33
     edgeData:
       symbol: edge
-      position: {x: 1, y: 7.1, z: 0}
+      position: {x: 1, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 17
       graphToNode: 18
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 17
       toNode: 18
-      fromPos: {x: 1, y: 7.1, z: 0}
-      toPos: {x: 1, y: 8, z: 0}
+      fromPos: {x: 1, y: 0, z: 7.5}
+      toPos: {x: 1, y: 0, z: 8}
       directional: 0
   - index: 34
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 7, z: 0}
+      position: {x: 1.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 17
       graphToNode: 27
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 17
       toNode: 27
-      fromPos: {x: 1.1, y: 7, z: 0}
-      toPos: {x: 2, y: 7, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 7}
+      toPos: {x: 2, y: 0, z: 7}
       directional: 0
   - index: 35
     edgeData:
       symbol: edge
-      position: {x: 1, y: 8.1, z: 0}
+      position: {x: 1, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 18
       graphToNode: 19
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 18
       toNode: 19
-      fromPos: {x: 1, y: 8.1, z: 0}
-      toPos: {x: 1, y: 9, z: 0}
+      fromPos: {x: 1, y: 0, z: 8.5}
+      toPos: {x: 1, y: 0, z: 9}
       directional: 0
   - index: 36
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 8, z: 0}
+      position: {x: 1.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 18
       graphToNode: 28
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 18
       toNode: 28
-      fromPos: {x: 1.1, y: 8, z: 0}
-      toPos: {x: 2, y: 8, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 8}
+      toPos: {x: 2, y: 0, z: 8}
       directional: 0
   - index: 37
     edgeData:
       symbol: edge
-      position: {x: 1.1, y: 9, z: 0}
+      position: {x: 1.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 19
       graphToNode: 29
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 19
       toNode: 29
-      fromPos: {x: 1.1, y: 9, z: 0}
-      toPos: {x: 2, y: 9, z: 0}
+      fromPos: {x: 1.6, y: 0, z: 9}
+      toPos: {x: 2, y: 0, z: 9}
       directional: 0
   - index: 38
     edgeData:
       symbol: edge
-      position: {x: 2, y: 0.1, z: 0}
+      position: {x: 2, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 20
       graphToNode: 21
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 20
       toNode: 21
-      fromPos: {x: 2, y: 0.1, z: 0}
-      toPos: {x: 2, y: 1, z: 0}
+      fromPos: {x: 2, y: 0, z: 0.5}
+      toPos: {x: 2, y: 0, z: 1}
       directional: 0
   - index: 39
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 0, z: 0}
+      position: {x: 2.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 20
       graphToNode: 30
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 20
       toNode: 30
-      fromPos: {x: 2.1, y: 0, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 0}
       toPos: {x: 3, y: 0, z: 0}
       directional: 0
   - index: 40
     edgeData:
       symbol: edge
-      position: {x: 2, y: 1.1, z: 0}
+      position: {x: 2, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 21
       graphToNode: 22
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 21
       toNode: 22
-      fromPos: {x: 2, y: 1.1, z: 0}
-      toPos: {x: 2, y: 2, z: 0}
+      fromPos: {x: 2, y: 0, z: 1.5}
+      toPos: {x: 2, y: 0, z: 2}
       directional: 0
   - index: 41
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 1, z: 0}
+      position: {x: 2.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 21
       graphToNode: 31
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 21
       toNode: 31
-      fromPos: {x: 2.1, y: 1, z: 0}
-      toPos: {x: 3, y: 1, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 1}
+      toPos: {x: 3, y: 0, z: 1}
       directional: 0
   - index: 42
     edgeData:
       symbol: edge
-      position: {x: 2, y: 2.1, z: 0}
+      position: {x: 2, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 22
       graphToNode: 23
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 22
       toNode: 23
-      fromPos: {x: 2, y: 2.1, z: 0}
-      toPos: {x: 2, y: 3, z: 0}
+      fromPos: {x: 2, y: 0, z: 2.5}
+      toPos: {x: 2, y: 0, z: 3}
       directional: 0
   - index: 43
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 2, z: 0}
+      position: {x: 2.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 22
       graphToNode: 32
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 22
       toNode: 32
-      fromPos: {x: 2.1, y: 2, z: 0}
-      toPos: {x: 3, y: 2, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 2}
+      toPos: {x: 3, y: 0, z: 2}
       directional: 0
   - index: 44
     edgeData:
       symbol: edge
-      position: {x: 2, y: 3.1, z: 0}
+      position: {x: 2, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 23
       graphToNode: 24
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 23
       toNode: 24
-      fromPos: {x: 2, y: 3.1, z: 0}
-      toPos: {x: 2, y: 4, z: 0}
+      fromPos: {x: 2, y: 0, z: 3.5}
+      toPos: {x: 2, y: 0, z: 4}
       directional: 0
   - index: 45
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 3, z: 0}
+      position: {x: 2.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 23
       graphToNode: 33
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 23
       toNode: 33
-      fromPos: {x: 2.1, y: 3, z: 0}
-      toPos: {x: 3, y: 3, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 3}
+      toPos: {x: 3, y: 0, z: 3}
       directional: 0
   - index: 46
     edgeData:
       symbol: edge
-      position: {x: 2, y: 4.1, z: 0}
+      position: {x: 2, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 24
       graphToNode: 25
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 24
       toNode: 25
-      fromPos: {x: 2, y: 4.1, z: 0}
-      toPos: {x: 2, y: 5, z: 0}
+      fromPos: {x: 2, y: 0, z: 4.5}
+      toPos: {x: 2, y: 0, z: 5}
       directional: 0
   - index: 47
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 4, z: 0}
+      position: {x: 2.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 24
       graphToNode: 34
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 24
       toNode: 34
-      fromPos: {x: 2.1, y: 4, z: 0}
-      toPos: {x: 3, y: 4, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 4}
+      toPos: {x: 3, y: 0, z: 4}
       directional: 0
   - index: 48
     edgeData:
       symbol: edge
-      position: {x: 2, y: 5.1, z: 0}
+      position: {x: 2, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 25
       graphToNode: 26
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 25
       toNode: 26
-      fromPos: {x: 2, y: 5.1, z: 0}
-      toPos: {x: 2, y: 6, z: 0}
+      fromPos: {x: 2, y: 0, z: 5.5}
+      toPos: {x: 2, y: 0, z: 6}
       directional: 0
   - index: 49
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 5, z: 0}
+      position: {x: 2.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 25
       graphToNode: 35
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 25
       toNode: 35
-      fromPos: {x: 2.1, y: 5, z: 0}
-      toPos: {x: 3, y: 5, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 5}
+      toPos: {x: 3, y: 0, z: 5}
       directional: 0
   - index: 50
     edgeData:
       symbol: edge
-      position: {x: 2, y: 6.1, z: 0}
+      position: {x: 2, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 26
       graphToNode: 27
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 26
       toNode: 27
-      fromPos: {x: 2, y: 6.1, z: 0}
-      toPos: {x: 2, y: 7, z: 0}
+      fromPos: {x: 2, y: 0, z: 6.5}
+      toPos: {x: 2, y: 0, z: 7}
       directional: 0
   - index: 51
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 6, z: 0}
+      position: {x: 2.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 26
       graphToNode: 36
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 26
       toNode: 36
-      fromPos: {x: 2.1, y: 6, z: 0}
-      toPos: {x: 3, y: 6, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 6}
+      toPos: {x: 3, y: 0, z: 6}
       directional: 0
   - index: 52
     edgeData:
       symbol: edge
-      position: {x: 2, y: 7.1, z: 0}
+      position: {x: 2, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 27
       graphToNode: 28
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 27
       toNode: 28
-      fromPos: {x: 2, y: 7.1, z: 0}
-      toPos: {x: 2, y: 8, z: 0}
+      fromPos: {x: 2, y: 0, z: 7.5}
+      toPos: {x: 2, y: 0, z: 8}
       directional: 0
   - index: 53
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 7, z: 0}
+      position: {x: 2.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 27
       graphToNode: 37
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 27
       toNode: 37
-      fromPos: {x: 2.1, y: 7, z: 0}
-      toPos: {x: 3, y: 7, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 7}
+      toPos: {x: 3, y: 0, z: 7}
       directional: 0
   - index: 54
     edgeData:
       symbol: edge
-      position: {x: 2, y: 8.1, z: 0}
+      position: {x: 2, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 28
       graphToNode: 29
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 28
       toNode: 29
-      fromPos: {x: 2, y: 8.1, z: 0}
-      toPos: {x: 2, y: 9, z: 0}
+      fromPos: {x: 2, y: 0, z: 8.5}
+      toPos: {x: 2, y: 0, z: 9}
       directional: 0
   - index: 55
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 8, z: 0}
+      position: {x: 2.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 28
       graphToNode: 38
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 28
       toNode: 38
-      fromPos: {x: 2.1, y: 8, z: 0}
-      toPos: {x: 3, y: 8, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 8}
+      toPos: {x: 3, y: 0, z: 8}
       directional: 0
   - index: 56
     edgeData:
       symbol: edge
-      position: {x: 2.1, y: 9, z: 0}
+      position: {x: 2.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 29
       graphToNode: 39
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 29
       toNode: 39
-      fromPos: {x: 2.1, y: 9, z: 0}
-      toPos: {x: 3, y: 9, z: 0}
+      fromPos: {x: 2.6, y: 0, z: 9}
+      toPos: {x: 3, y: 0, z: 9}
       directional: 0
   - index: 57
     edgeData:
       symbol: edge
-      position: {x: 3, y: 0.1, z: 0}
+      position: {x: 3, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 30
       graphToNode: 31
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 30
       toNode: 31
-      fromPos: {x: 3, y: 0.1, z: 0}
-      toPos: {x: 3, y: 1, z: 0}
+      fromPos: {x: 3, y: 0, z: 0.5}
+      toPos: {x: 3, y: 0, z: 1}
       directional: 0
   - index: 58
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 0, z: 0}
+      position: {x: 3.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 30
       graphToNode: 40
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 30
       toNode: 40
-      fromPos: {x: 3.1, y: 0, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 0}
       toPos: {x: 4, y: 0, z: 0}
       directional: 0
   - index: 59
     edgeData:
       symbol: edge
-      position: {x: 3, y: 1.1, z: 0}
+      position: {x: 3, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 31
       graphToNode: 32
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 31
       toNode: 32
-      fromPos: {x: 3, y: 1.1, z: 0}
-      toPos: {x: 3, y: 2, z: 0}
+      fromPos: {x: 3, y: 0, z: 1.5}
+      toPos: {x: 3, y: 0, z: 2}
       directional: 0
   - index: 60
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 1, z: 0}
+      position: {x: 3.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 31
       graphToNode: 41
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 31
       toNode: 41
-      fromPos: {x: 3.1, y: 1, z: 0}
-      toPos: {x: 4, y: 1, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 1}
+      toPos: {x: 4, y: 0, z: 1}
       directional: 0
   - index: 61
     edgeData:
       symbol: edge
-      position: {x: 3, y: 2.1, z: 0}
+      position: {x: 3, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 32
       graphToNode: 33
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 32
       toNode: 33
-      fromPos: {x: 3, y: 2.1, z: 0}
-      toPos: {x: 3, y: 3, z: 0}
+      fromPos: {x: 3, y: 0, z: 2.5}
+      toPos: {x: 3, y: 0, z: 3}
       directional: 0
   - index: 62
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 2, z: 0}
+      position: {x: 3.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 32
       graphToNode: 42
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 32
       toNode: 42
-      fromPos: {x: 3.1, y: 2, z: 0}
-      toPos: {x: 4, y: 2, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 2}
+      toPos: {x: 4, y: 0, z: 2}
       directional: 0
   - index: 63
     edgeData:
       symbol: edge
-      position: {x: 3, y: 3.1, z: 0}
+      position: {x: 3, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 33
       graphToNode: 34
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 33
       toNode: 34
-      fromPos: {x: 3, y: 3.1, z: 0}
-      toPos: {x: 3, y: 4, z: 0}
+      fromPos: {x: 3, y: 0, z: 3.5}
+      toPos: {x: 3, y: 0, z: 4}
       directional: 0
   - index: 64
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 3, z: 0}
+      position: {x: 3.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 33
       graphToNode: 43
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 33
       toNode: 43
-      fromPos: {x: 3.1, y: 3, z: 0}
-      toPos: {x: 4, y: 3, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 3}
+      toPos: {x: 4, y: 0, z: 3}
       directional: 0
   - index: 65
     edgeData:
       symbol: edge
-      position: {x: 3, y: 4.1, z: 0}
+      position: {x: 3, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 34
       graphToNode: 35
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 34
       toNode: 35
-      fromPos: {x: 3, y: 4.1, z: 0}
-      toPos: {x: 3, y: 5, z: 0}
+      fromPos: {x: 3, y: 0, z: 4.5}
+      toPos: {x: 3, y: 0, z: 5}
       directional: 0
   - index: 66
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 4, z: 0}
+      position: {x: 3.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 34
       graphToNode: 44
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 34
       toNode: 44
-      fromPos: {x: 3.1, y: 4, z: 0}
-      toPos: {x: 4, y: 4, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 4}
+      toPos: {x: 4, y: 0, z: 4}
       directional: 0
   - index: 67
     edgeData:
       symbol: edge
-      position: {x: 3, y: 5.1, z: 0}
+      position: {x: 3, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 35
       graphToNode: 36
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 35
       toNode: 36
-      fromPos: {x: 3, y: 5.1, z: 0}
-      toPos: {x: 3, y: 6, z: 0}
+      fromPos: {x: 3, y: 0, z: 5.5}
+      toPos: {x: 3, y: 0, z: 6}
       directional: 0
   - index: 68
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 5, z: 0}
+      position: {x: 3.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 35
       graphToNode: 45
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 35
       toNode: 45
-      fromPos: {x: 3.1, y: 5, z: 0}
-      toPos: {x: 4, y: 5, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 5}
+      toPos: {x: 4, y: 0, z: 5}
       directional: 0
   - index: 69
     edgeData:
       symbol: edge
-      position: {x: 3, y: 6.1, z: 0}
+      position: {x: 3, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 36
       graphToNode: 37
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 36
       toNode: 37
-      fromPos: {x: 3, y: 6.1, z: 0}
-      toPos: {x: 3, y: 7, z: 0}
+      fromPos: {x: 3, y: 0, z: 6.5}
+      toPos: {x: 3, y: 0, z: 7}
       directional: 0
   - index: 70
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 6, z: 0}
+      position: {x: 3.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 36
       graphToNode: 46
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 36
       toNode: 46
-      fromPos: {x: 3.1, y: 6, z: 0}
-      toPos: {x: 4, y: 6, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 6}
+      toPos: {x: 4, y: 0, z: 6}
       directional: 0
   - index: 71
     edgeData:
       symbol: edge
-      position: {x: 3, y: 7.1, z: 0}
+      position: {x: 3, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 37
       graphToNode: 38
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 37
       toNode: 38
-      fromPos: {x: 3, y: 7.1, z: 0}
-      toPos: {x: 3, y: 8, z: 0}
+      fromPos: {x: 3, y: 0, z: 7.5}
+      toPos: {x: 3, y: 0, z: 8}
       directional: 0
   - index: 72
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 7, z: 0}
+      position: {x: 3.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 37
       graphToNode: 47
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 37
       toNode: 47
-      fromPos: {x: 3.1, y: 7, z: 0}
-      toPos: {x: 4, y: 7, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 7}
+      toPos: {x: 4, y: 0, z: 7}
       directional: 0
   - index: 73
     edgeData:
       symbol: edge
-      position: {x: 3, y: 8.1, z: 0}
+      position: {x: 3, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 38
       graphToNode: 39
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 38
       toNode: 39
-      fromPos: {x: 3, y: 8.1, z: 0}
-      toPos: {x: 3, y: 9, z: 0}
+      fromPos: {x: 3, y: 0, z: 8.5}
+      toPos: {x: 3, y: 0, z: 9}
       directional: 0
   - index: 74
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 8, z: 0}
+      position: {x: 3.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 38
       graphToNode: 48
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 38
       toNode: 48
-      fromPos: {x: 3.1, y: 8, z: 0}
-      toPos: {x: 4, y: 8, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 8}
+      toPos: {x: 4, y: 0, z: 8}
       directional: 0
   - index: 75
     edgeData:
       symbol: edge
-      position: {x: 3.1, y: 9, z: 0}
+      position: {x: 3.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 39
       graphToNode: 49
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 39
       toNode: 49
-      fromPos: {x: 3.1, y: 9, z: 0}
-      toPos: {x: 4, y: 9, z: 0}
+      fromPos: {x: 3.6, y: 0, z: 9}
+      toPos: {x: 4, y: 0, z: 9}
       directional: 0
   - index: 76
     edgeData:
       symbol: edge
-      position: {x: 4, y: 0.1, z: 0}
+      position: {x: 4, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 40
       graphToNode: 41
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 40
       toNode: 41
-      fromPos: {x: 4, y: 0.1, z: 0}
-      toPos: {x: 4, y: 1, z: 0}
+      fromPos: {x: 4, y: 0, z: 0.5}
+      toPos: {x: 4, y: 0, z: 1}
       directional: 0
   - index: 77
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 0, z: 0}
+      position: {x: 4.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 40
       graphToNode: 50
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 40
       toNode: 50
-      fromPos: {x: 4.1, y: 0, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 0}
       toPos: {x: 5, y: 0, z: 0}
       directional: 0
   - index: 78
     edgeData:
       symbol: edge
-      position: {x: 4, y: 1.1, z: 0}
+      position: {x: 4, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 41
       graphToNode: 42
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 41
       toNode: 42
-      fromPos: {x: 4, y: 1.1, z: 0}
-      toPos: {x: 4, y: 2, z: 0}
+      fromPos: {x: 4, y: 0, z: 1.5}
+      toPos: {x: 4, y: 0, z: 2}
       directional: 0
   - index: 79
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 1, z: 0}
+      position: {x: 4.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 41
       graphToNode: 51
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 41
       toNode: 51
-      fromPos: {x: 4.1, y: 1, z: 0}
-      toPos: {x: 5, y: 1, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 1}
+      toPos: {x: 5, y: 0, z: 1}
       directional: 0
   - index: 80
     edgeData:
       symbol: edge
-      position: {x: 4, y: 2.1, z: 0}
+      position: {x: 4, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 42
       graphToNode: 43
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 42
       toNode: 43
-      fromPos: {x: 4, y: 2.1, z: 0}
-      toPos: {x: 4, y: 3, z: 0}
+      fromPos: {x: 4, y: 0, z: 2.5}
+      toPos: {x: 4, y: 0, z: 3}
       directional: 0
   - index: 81
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 2, z: 0}
+      position: {x: 4.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 42
       graphToNode: 52
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 42
       toNode: 52
-      fromPos: {x: 4.1, y: 2, z: 0}
-      toPos: {x: 5, y: 2, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 2}
+      toPos: {x: 5, y: 0, z: 2}
       directional: 0
   - index: 82
     edgeData:
       symbol: edge
-      position: {x: 4, y: 3.1, z: 0}
+      position: {x: 4, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 43
       graphToNode: 44
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 43
       toNode: 44
-      fromPos: {x: 4, y: 3.1, z: 0}
-      toPos: {x: 4, y: 4, z: 0}
+      fromPos: {x: 4, y: 0, z: 3.5}
+      toPos: {x: 4, y: 0, z: 4}
       directional: 0
   - index: 83
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 3, z: 0}
+      position: {x: 4.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 43
       graphToNode: 53
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 43
       toNode: 53
-      fromPos: {x: 4.1, y: 3, z: 0}
-      toPos: {x: 5, y: 3, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 3}
+      toPos: {x: 5, y: 0, z: 3}
       directional: 0
   - index: 84
     edgeData:
       symbol: edge
-      position: {x: 4, y: 4.1, z: 0}
+      position: {x: 4, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 44
       graphToNode: 45
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 44
       toNode: 45
-      fromPos: {x: 4, y: 4.1, z: 0}
-      toPos: {x: 4, y: 5, z: 0}
+      fromPos: {x: 4, y: 0, z: 4.5}
+      toPos: {x: 4, y: 0, z: 5}
       directional: 0
   - index: 85
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 4, z: 0}
+      position: {x: 4.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 44
       graphToNode: 54
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 44
       toNode: 54
-      fromPos: {x: 4.1, y: 4, z: 0}
-      toPos: {x: 5, y: 4, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 4}
+      toPos: {x: 5, y: 0, z: 4}
       directional: 0
   - index: 86
     edgeData:
       symbol: edge
-      position: {x: 4, y: 5.1, z: 0}
+      position: {x: 4, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 45
       graphToNode: 46
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 45
       toNode: 46
-      fromPos: {x: 4, y: 5.1, z: 0}
-      toPos: {x: 4, y: 6, z: 0}
+      fromPos: {x: 4, y: 0, z: 5.5}
+      toPos: {x: 4, y: 0, z: 6}
       directional: 0
   - index: 87
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 5, z: 0}
+      position: {x: 4.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 45
       graphToNode: 55
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 45
       toNode: 55
-      fromPos: {x: 4.1, y: 5, z: 0}
-      toPos: {x: 5, y: 5, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 5}
+      toPos: {x: 5, y: 0, z: 5}
       directional: 0
   - index: 88
     edgeData:
       symbol: edge
-      position: {x: 4, y: 6.1, z: 0}
+      position: {x: 4, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 46
       graphToNode: 47
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 46
       toNode: 47
-      fromPos: {x: 4, y: 6.1, z: 0}
-      toPos: {x: 4, y: 7, z: 0}
+      fromPos: {x: 4, y: 0, z: 6.5}
+      toPos: {x: 4, y: 0, z: 7}
       directional: 0
   - index: 89
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 6, z: 0}
+      position: {x: 4.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 46
       graphToNode: 56
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 46
       toNode: 56
-      fromPos: {x: 4.1, y: 6, z: 0}
-      toPos: {x: 5, y: 6, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 6}
+      toPos: {x: 5, y: 0, z: 6}
       directional: 0
   - index: 90
     edgeData:
       symbol: edge
-      position: {x: 4, y: 7.1, z: 0}
+      position: {x: 4, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 47
       graphToNode: 48
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 47
       toNode: 48
-      fromPos: {x: 4, y: 7.1, z: 0}
-      toPos: {x: 4, y: 8, z: 0}
+      fromPos: {x: 4, y: 0, z: 7.5}
+      toPos: {x: 4, y: 0, z: 8}
       directional: 0
   - index: 91
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 7, z: 0}
+      position: {x: 4.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 47
       graphToNode: 57
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 47
       toNode: 57
-      fromPos: {x: 4.1, y: 7, z: 0}
-      toPos: {x: 5, y: 7, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 7}
+      toPos: {x: 5, y: 0, z: 7}
       directional: 0
   - index: 92
     edgeData:
       symbol: edge
-      position: {x: 4, y: 8.1, z: 0}
+      position: {x: 4, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 48
       graphToNode: 49
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 48
       toNode: 49
-      fromPos: {x: 4, y: 8.1, z: 0}
-      toPos: {x: 4, y: 9, z: 0}
+      fromPos: {x: 4, y: 0, z: 8.5}
+      toPos: {x: 4, y: 0, z: 9}
       directional: 0
   - index: 93
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 8, z: 0}
+      position: {x: 4.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 48
       graphToNode: 58
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 48
       toNode: 58
-      fromPos: {x: 4.1, y: 8, z: 0}
-      toPos: {x: 5, y: 8, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 8}
+      toPos: {x: 5, y: 0, z: 8}
       directional: 0
   - index: 94
     edgeData:
       symbol: edge
-      position: {x: 4.1, y: 9, z: 0}
+      position: {x: 4.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 49
       graphToNode: 59
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 49
       toNode: 59
-      fromPos: {x: 4.1, y: 9, z: 0}
-      toPos: {x: 5, y: 9, z: 0}
+      fromPos: {x: 4.6, y: 0, z: 9}
+      toPos: {x: 5, y: 0, z: 9}
       directional: 0
   - index: 95
     edgeData:
       symbol: edge
-      position: {x: 5, y: 0.1, z: 0}
+      position: {x: 5, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 50
       graphToNode: 51
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 50
       toNode: 51
-      fromPos: {x: 5, y: 0.1, z: 0}
-      toPos: {x: 5, y: 1, z: 0}
+      fromPos: {x: 5, y: 0, z: 0.5}
+      toPos: {x: 5, y: 0, z: 1}
       directional: 0
   - index: 96
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 0, z: 0}
+      position: {x: 5.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 50
       graphToNode: 60
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 50
       toNode: 60
-      fromPos: {x: 5.1, y: 0, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 0}
       toPos: {x: 6, y: 0, z: 0}
       directional: 0
   - index: 97
     edgeData:
       symbol: edge
-      position: {x: 5, y: 1.1, z: 0}
+      position: {x: 5, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 51
       graphToNode: 52
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 51
       toNode: 52
-      fromPos: {x: 5, y: 1.1, z: 0}
-      toPos: {x: 5, y: 2, z: 0}
+      fromPos: {x: 5, y: 0, z: 1.5}
+      toPos: {x: 5, y: 0, z: 2}
       directional: 0
   - index: 98
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 1, z: 0}
+      position: {x: 5.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 51
       graphToNode: 61
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 51
       toNode: 61
-      fromPos: {x: 5.1, y: 1, z: 0}
-      toPos: {x: 6, y: 1, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 1}
+      toPos: {x: 6, y: 0, z: 1}
       directional: 0
   - index: 99
     edgeData:
       symbol: edge
-      position: {x: 5, y: 2.1, z: 0}
+      position: {x: 5, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 52
       graphToNode: 53
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 52
       toNode: 53
-      fromPos: {x: 5, y: 2.1, z: 0}
-      toPos: {x: 5, y: 3, z: 0}
+      fromPos: {x: 5, y: 0, z: 2.5}
+      toPos: {x: 5, y: 0, z: 3}
       directional: 0
   - index: 100
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 2, z: 0}
+      position: {x: 5.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 52
       graphToNode: 62
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 52
       toNode: 62
-      fromPos: {x: 5.1, y: 2, z: 0}
-      toPos: {x: 6, y: 2, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 2}
+      toPos: {x: 6, y: 0, z: 2}
       directional: 0
   - index: 101
     edgeData:
       symbol: edge
-      position: {x: 5, y: 3.1, z: 0}
+      position: {x: 5, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 53
       graphToNode: 54
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 53
       toNode: 54
-      fromPos: {x: 5, y: 3.1, z: 0}
-      toPos: {x: 5, y: 4, z: 0}
+      fromPos: {x: 5, y: 0, z: 3.5}
+      toPos: {x: 5, y: 0, z: 4}
       directional: 0
   - index: 102
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 3, z: 0}
+      position: {x: 5.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 53
       graphToNode: 63
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 53
       toNode: 63
-      fromPos: {x: 5.1, y: 3, z: 0}
-      toPos: {x: 6, y: 3, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 3}
+      toPos: {x: 6, y: 0, z: 3}
       directional: 0
   - index: 103
     edgeData:
       symbol: edge
-      position: {x: 5, y: 4.1, z: 0}
+      position: {x: 5, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 54
       graphToNode: 55
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 54
       toNode: 55
-      fromPos: {x: 5, y: 4.1, z: 0}
-      toPos: {x: 5, y: 5, z: 0}
+      fromPos: {x: 5, y: 0, z: 4.5}
+      toPos: {x: 5, y: 0, z: 5}
       directional: 0
   - index: 104
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 4, z: 0}
+      position: {x: 5.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 54
       graphToNode: 64
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 54
       toNode: 64
-      fromPos: {x: 5.1, y: 4, z: 0}
-      toPos: {x: 6, y: 4, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 4}
+      toPos: {x: 6, y: 0, z: 4}
       directional: 0
   - index: 105
     edgeData:
       symbol: edge
-      position: {x: 5, y: 5.1, z: 0}
+      position: {x: 5, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 55
       graphToNode: 56
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 55
       toNode: 56
-      fromPos: {x: 5, y: 5.1, z: 0}
-      toPos: {x: 5, y: 6, z: 0}
+      fromPos: {x: 5, y: 0, z: 5.5}
+      toPos: {x: 5, y: 0, z: 6}
       directional: 0
   - index: 106
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 5, z: 0}
+      position: {x: 5.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 55
       graphToNode: 65
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 55
       toNode: 65
-      fromPos: {x: 5.1, y: 5, z: 0}
-      toPos: {x: 6, y: 5, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 5}
+      toPos: {x: 6, y: 0, z: 5}
       directional: 0
   - index: 107
     edgeData:
       symbol: edge
-      position: {x: 5, y: 6.1, z: 0}
+      position: {x: 5, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 56
       graphToNode: 57
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 56
       toNode: 57
-      fromPos: {x: 5, y: 6.1, z: 0}
-      toPos: {x: 5, y: 7, z: 0}
+      fromPos: {x: 5, y: 0, z: 6.5}
+      toPos: {x: 5, y: 0, z: 7}
       directional: 0
   - index: 108
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 6, z: 0}
+      position: {x: 5.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 56
       graphToNode: 66
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 56
       toNode: 66
-      fromPos: {x: 5.1, y: 6, z: 0}
-      toPos: {x: 6, y: 6, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 6}
+      toPos: {x: 6, y: 0, z: 6}
       directional: 0
   - index: 109
     edgeData:
       symbol: edge
-      position: {x: 5, y: 7.1, z: 0}
+      position: {x: 5, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 57
       graphToNode: 58
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 57
       toNode: 58
-      fromPos: {x: 5, y: 7.1, z: 0}
-      toPos: {x: 5, y: 8, z: 0}
+      fromPos: {x: 5, y: 0, z: 7.5}
+      toPos: {x: 5, y: 0, z: 8}
       directional: 0
   - index: 110
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 7, z: 0}
+      position: {x: 5.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 57
       graphToNode: 67
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 57
       toNode: 67
-      fromPos: {x: 5.1, y: 7, z: 0}
-      toPos: {x: 6, y: 7, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 7}
+      toPos: {x: 6, y: 0, z: 7}
       directional: 0
   - index: 111
     edgeData:
       symbol: edge
-      position: {x: 5, y: 8.1, z: 0}
+      position: {x: 5, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 58
       graphToNode: 59
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 58
       toNode: 59
-      fromPos: {x: 5, y: 8.1, z: 0}
-      toPos: {x: 5, y: 9, z: 0}
+      fromPos: {x: 5, y: 0, z: 8.5}
+      toPos: {x: 5, y: 0, z: 9}
       directional: 0
   - index: 112
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 8, z: 0}
+      position: {x: 5.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 58
       graphToNode: 68
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 58
       toNode: 68
-      fromPos: {x: 5.1, y: 8, z: 0}
-      toPos: {x: 6, y: 8, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 8}
+      toPos: {x: 6, y: 0, z: 8}
       directional: 0
   - index: 113
     edgeData:
       symbol: edge
-      position: {x: 5.1, y: 9, z: 0}
+      position: {x: 5.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 59
       graphToNode: 69
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 59
       toNode: 69
-      fromPos: {x: 5.1, y: 9, z: 0}
-      toPos: {x: 6, y: 9, z: 0}
+      fromPos: {x: 5.6, y: 0, z: 9}
+      toPos: {x: 6, y: 0, z: 9}
       directional: 0
   - index: 114
     edgeData:
       symbol: edge
-      position: {x: 6, y: 0.1, z: 0}
+      position: {x: 6, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 60
       graphToNode: 61
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 60
       toNode: 61
-      fromPos: {x: 6, y: 0.1, z: 0}
-      toPos: {x: 6, y: 1, z: 0}
+      fromPos: {x: 6, y: 0, z: 0.5}
+      toPos: {x: 6, y: 0, z: 1}
       directional: 0
   - index: 115
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 0, z: 0}
+      position: {x: 6.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 60
       graphToNode: 70
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 60
       toNode: 70
-      fromPos: {x: 6.1, y: 0, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 0}
       toPos: {x: 7, y: 0, z: 0}
       directional: 0
   - index: 116
     edgeData:
       symbol: edge
-      position: {x: 6, y: 1.1, z: 0}
+      position: {x: 6, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 61
       graphToNode: 62
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 61
       toNode: 62
-      fromPos: {x: 6, y: 1.1, z: 0}
-      toPos: {x: 6, y: 2, z: 0}
+      fromPos: {x: 6, y: 0, z: 1.5}
+      toPos: {x: 6, y: 0, z: 2}
       directional: 0
   - index: 117
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 1, z: 0}
+      position: {x: 6.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 61
       graphToNode: 71
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 61
       toNode: 71
-      fromPos: {x: 6.1, y: 1, z: 0}
-      toPos: {x: 7, y: 1, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 1}
+      toPos: {x: 7, y: 0, z: 1}
       directional: 0
   - index: 118
     edgeData:
       symbol: edge
-      position: {x: 6, y: 2.1, z: 0}
+      position: {x: 6, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 62
       graphToNode: 63
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 62
       toNode: 63
-      fromPos: {x: 6, y: 2.1, z: 0}
-      toPos: {x: 6, y: 3, z: 0}
+      fromPos: {x: 6, y: 0, z: 2.5}
+      toPos: {x: 6, y: 0, z: 3}
       directional: 0
   - index: 119
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 2, z: 0}
+      position: {x: 6.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 62
       graphToNode: 72
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 62
       toNode: 72
-      fromPos: {x: 6.1, y: 2, z: 0}
-      toPos: {x: 7, y: 2, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 2}
+      toPos: {x: 7, y: 0, z: 2}
       directional: 0
   - index: 120
     edgeData:
       symbol: edge
-      position: {x: 6, y: 3.1, z: 0}
+      position: {x: 6, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 63
       graphToNode: 64
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 63
       toNode: 64
-      fromPos: {x: 6, y: 3.1, z: 0}
-      toPos: {x: 6, y: 4, z: 0}
+      fromPos: {x: 6, y: 0, z: 3.5}
+      toPos: {x: 6, y: 0, z: 4}
       directional: 0
   - index: 121
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 3, z: 0}
+      position: {x: 6.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 63
       graphToNode: 73
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 63
       toNode: 73
-      fromPos: {x: 6.1, y: 3, z: 0}
-      toPos: {x: 7, y: 3, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 3}
+      toPos: {x: 7, y: 0, z: 3}
       directional: 0
   - index: 122
     edgeData:
       symbol: edge
-      position: {x: 6, y: 4.1, z: 0}
+      position: {x: 6, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 64
       graphToNode: 65
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 64
       toNode: 65
-      fromPos: {x: 6, y: 4.1, z: 0}
-      toPos: {x: 6, y: 5, z: 0}
+      fromPos: {x: 6, y: 0, z: 4.5}
+      toPos: {x: 6, y: 0, z: 5}
       directional: 0
   - index: 123
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 4, z: 0}
+      position: {x: 6.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 64
       graphToNode: 74
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 64
       toNode: 74
-      fromPos: {x: 6.1, y: 4, z: 0}
-      toPos: {x: 7, y: 4, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 4}
+      toPos: {x: 7, y: 0, z: 4}
       directional: 0
   - index: 124
     edgeData:
       symbol: edge
-      position: {x: 6, y: 5.1, z: 0}
+      position: {x: 6, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 65
       graphToNode: 66
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 65
       toNode: 66
-      fromPos: {x: 6, y: 5.1, z: 0}
-      toPos: {x: 6, y: 6, z: 0}
+      fromPos: {x: 6, y: 0, z: 5.5}
+      toPos: {x: 6, y: 0, z: 6}
       directional: 0
   - index: 125
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 5, z: 0}
+      position: {x: 6.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 65
       graphToNode: 75
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 65
       toNode: 75
-      fromPos: {x: 6.1, y: 5, z: 0}
-      toPos: {x: 7, y: 5, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 5}
+      toPos: {x: 7, y: 0, z: 5}
       directional: 0
   - index: 126
     edgeData:
       symbol: edge
-      position: {x: 6, y: 6.1, z: 0}
+      position: {x: 6, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 66
       graphToNode: 67
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 66
       toNode: 67
-      fromPos: {x: 6, y: 6.1, z: 0}
-      toPos: {x: 6, y: 7, z: 0}
+      fromPos: {x: 6, y: 0, z: 6.5}
+      toPos: {x: 6, y: 0, z: 7}
       directional: 0
   - index: 127
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 6, z: 0}
+      position: {x: 6.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 66
       graphToNode: 76
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 66
       toNode: 76
-      fromPos: {x: 6.1, y: 6, z: 0}
-      toPos: {x: 7, y: 6, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 6}
+      toPos: {x: 7, y: 0, z: 6}
       directional: 0
   - index: 128
     edgeData:
       symbol: edge
-      position: {x: 6, y: 7.1, z: 0}
+      position: {x: 6, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 67
       graphToNode: 68
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 67
       toNode: 68
-      fromPos: {x: 6, y: 7.1, z: 0}
-      toPos: {x: 6, y: 8, z: 0}
+      fromPos: {x: 6, y: 0, z: 7.5}
+      toPos: {x: 6, y: 0, z: 8}
       directional: 0
   - index: 129
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 7, z: 0}
+      position: {x: 6.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 67
       graphToNode: 77
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 67
       toNode: 77
-      fromPos: {x: 6.1, y: 7, z: 0}
-      toPos: {x: 7, y: 7, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 7}
+      toPos: {x: 7, y: 0, z: 7}
       directional: 0
   - index: 130
     edgeData:
       symbol: edge
-      position: {x: 6, y: 8.1, z: 0}
+      position: {x: 6, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 68
       graphToNode: 69
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 68
       toNode: 69
-      fromPos: {x: 6, y: 8.1, z: 0}
-      toPos: {x: 6, y: 9, z: 0}
+      fromPos: {x: 6, y: 0, z: 8.5}
+      toPos: {x: 6, y: 0, z: 9}
       directional: 0
   - index: 131
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 8, z: 0}
+      position: {x: 6.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 68
       graphToNode: 78
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 68
       toNode: 78
-      fromPos: {x: 6.1, y: 8, z: 0}
-      toPos: {x: 7, y: 8, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 8}
+      toPos: {x: 7, y: 0, z: 8}
       directional: 0
   - index: 132
     edgeData:
       symbol: edge
-      position: {x: 6.1, y: 9, z: 0}
+      position: {x: 6.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 69
       graphToNode: 79
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 69
       toNode: 79
-      fromPos: {x: 6.1, y: 9, z: 0}
-      toPos: {x: 7, y: 9, z: 0}
+      fromPos: {x: 6.6, y: 0, z: 9}
+      toPos: {x: 7, y: 0, z: 9}
       directional: 0
   - index: 133
     edgeData:
       symbol: edge
-      position: {x: 7, y: 0.1, z: 0}
+      position: {x: 7, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 70
       graphToNode: 71
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 70
       toNode: 71
-      fromPos: {x: 7, y: 0.1, z: 0}
-      toPos: {x: 7, y: 1, z: 0}
+      fromPos: {x: 7, y: 0, z: 0.5}
+      toPos: {x: 7, y: 0, z: 1}
       directional: 0
   - index: 134
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 0, z: 0}
+      position: {x: 7.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 70
       graphToNode: 80
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 70
       toNode: 80
-      fromPos: {x: 7.1, y: 0, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 0}
       toPos: {x: 8, y: 0, z: 0}
       directional: 0
   - index: 135
     edgeData:
       symbol: edge
-      position: {x: 7, y: 1.1, z: 0}
+      position: {x: 7, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 71
       graphToNode: 72
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 71
       toNode: 72
-      fromPos: {x: 7, y: 1.1, z: 0}
-      toPos: {x: 7, y: 2, z: 0}
+      fromPos: {x: 7, y: 0, z: 1.5}
+      toPos: {x: 7, y: 0, z: 2}
       directional: 0
   - index: 136
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 1, z: 0}
+      position: {x: 7.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 71
       graphToNode: 81
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 71
       toNode: 81
-      fromPos: {x: 7.1, y: 1, z: 0}
-      toPos: {x: 8, y: 1, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 1}
+      toPos: {x: 8, y: 0, z: 1}
       directional: 0
   - index: 137
     edgeData:
       symbol: edge
-      position: {x: 7, y: 2.1, z: 0}
+      position: {x: 7, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 72
       graphToNode: 73
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 72
       toNode: 73
-      fromPos: {x: 7, y: 2.1, z: 0}
-      toPos: {x: 7, y: 3, z: 0}
+      fromPos: {x: 7, y: 0, z: 2.5}
+      toPos: {x: 7, y: 0, z: 3}
       directional: 0
   - index: 138
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 2, z: 0}
+      position: {x: 7.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 72
       graphToNode: 82
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 72
       toNode: 82
-      fromPos: {x: 7.1, y: 2, z: 0}
-      toPos: {x: 8, y: 2, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 2}
+      toPos: {x: 8, y: 0, z: 2}
       directional: 0
   - index: 139
     edgeData:
       symbol: edge
-      position: {x: 7, y: 3.1, z: 0}
+      position: {x: 7, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 73
       graphToNode: 74
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 73
       toNode: 74
-      fromPos: {x: 7, y: 3.1, z: 0}
-      toPos: {x: 7, y: 4, z: 0}
+      fromPos: {x: 7, y: 0, z: 3.5}
+      toPos: {x: 7, y: 0, z: 4}
       directional: 0
   - index: 140
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 3, z: 0}
+      position: {x: 7.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 73
       graphToNode: 83
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 73
       toNode: 83
-      fromPos: {x: 7.1, y: 3, z: 0}
-      toPos: {x: 8, y: 3, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 3}
+      toPos: {x: 8, y: 0, z: 3}
       directional: 0
   - index: 141
     edgeData:
       symbol: edge
-      position: {x: 7, y: 4.1, z: 0}
+      position: {x: 7, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 74
       graphToNode: 75
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 74
       toNode: 75
-      fromPos: {x: 7, y: 4.1, z: 0}
-      toPos: {x: 7, y: 5, z: 0}
+      fromPos: {x: 7, y: 0, z: 4.5}
+      toPos: {x: 7, y: 0, z: 5}
       directional: 0
   - index: 142
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 4, z: 0}
+      position: {x: 7.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 74
       graphToNode: 84
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 74
       toNode: 84
-      fromPos: {x: 7.1, y: 4, z: 0}
-      toPos: {x: 8, y: 4, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 4}
+      toPos: {x: 8, y: 0, z: 4}
       directional: 0
   - index: 143
     edgeData:
       symbol: edge
-      position: {x: 7, y: 5.1, z: 0}
+      position: {x: 7, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 75
       graphToNode: 76
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 75
       toNode: 76
-      fromPos: {x: 7, y: 5.1, z: 0}
-      toPos: {x: 7, y: 6, z: 0}
+      fromPos: {x: 7, y: 0, z: 5.5}
+      toPos: {x: 7, y: 0, z: 6}
       directional: 0
   - index: 144
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 5, z: 0}
+      position: {x: 7.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 75
       graphToNode: 85
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 75
       toNode: 85
-      fromPos: {x: 7.1, y: 5, z: 0}
-      toPos: {x: 8, y: 5, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 5}
+      toPos: {x: 8, y: 0, z: 5}
       directional: 0
   - index: 145
     edgeData:
       symbol: edge
-      position: {x: 7, y: 6.1, z: 0}
+      position: {x: 7, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 76
       graphToNode: 77
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 76
       toNode: 77
-      fromPos: {x: 7, y: 6.1, z: 0}
-      toPos: {x: 7, y: 7, z: 0}
+      fromPos: {x: 7, y: 0, z: 6.5}
+      toPos: {x: 7, y: 0, z: 7}
       directional: 0
   - index: 146
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 6, z: 0}
+      position: {x: 7.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 76
       graphToNode: 86
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 76
       toNode: 86
-      fromPos: {x: 7.1, y: 6, z: 0}
-      toPos: {x: 8, y: 6, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 6}
+      toPos: {x: 8, y: 0, z: 6}
       directional: 0
   - index: 147
     edgeData:
       symbol: edge
-      position: {x: 7, y: 7.1, z: 0}
+      position: {x: 7, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 77
       graphToNode: 78
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 77
       toNode: 78
-      fromPos: {x: 7, y: 7.1, z: 0}
-      toPos: {x: 7, y: 8, z: 0}
+      fromPos: {x: 7, y: 0, z: 7.5}
+      toPos: {x: 7, y: 0, z: 8}
       directional: 0
   - index: 148
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 7, z: 0}
+      position: {x: 7.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 77
       graphToNode: 87
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 77
       toNode: 87
-      fromPos: {x: 7.1, y: 7, z: 0}
-      toPos: {x: 8, y: 7, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 7}
+      toPos: {x: 8, y: 0, z: 7}
       directional: 0
   - index: 149
     edgeData:
       symbol: edge
-      position: {x: 7, y: 8.1, z: 0}
+      position: {x: 7, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 78
       graphToNode: 79
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 78
       toNode: 79
-      fromPos: {x: 7, y: 8.1, z: 0}
-      toPos: {x: 7, y: 9, z: 0}
+      fromPos: {x: 7, y: 0, z: 8.5}
+      toPos: {x: 7, y: 0, z: 9}
       directional: 0
   - index: 150
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 8, z: 0}
+      position: {x: 7.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 78
       graphToNode: 88
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 78
       toNode: 88
-      fromPos: {x: 7.1, y: 8, z: 0}
-      toPos: {x: 8, y: 8, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 8}
+      toPos: {x: 8, y: 0, z: 8}
       directional: 0
   - index: 151
     edgeData:
       symbol: edge
-      position: {x: 7.1, y: 9, z: 0}
+      position: {x: 7.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 79
       graphToNode: 89
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 79
       toNode: 89
-      fromPos: {x: 7.1, y: 9, z: 0}
-      toPos: {x: 8, y: 9, z: 0}
+      fromPos: {x: 7.6, y: 0, z: 9}
+      toPos: {x: 8, y: 0, z: 9}
       directional: 0
   - index: 152
     edgeData:
       symbol: edge
-      position: {x: 8, y: 0.1, z: 0}
+      position: {x: 8, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 80
       graphToNode: 81
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 80
       toNode: 81
-      fromPos: {x: 8, y: 0.1, z: 0}
-      toPos: {x: 8, y: 1, z: 0}
+      fromPos: {x: 8, y: 0, z: 0.5}
+      toPos: {x: 8, y: 0, z: 1}
       directional: 0
   - index: 153
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 0, z: 0}
+      position: {x: 8.6, y: 0, z: 0}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 80
       graphToNode: 90
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 80
       toNode: 90
-      fromPos: {x: 8.1, y: 0, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 0}
       toPos: {x: 9, y: 0, z: 0}
       directional: 0
   - index: 154
     edgeData:
       symbol: edge
-      position: {x: 8, y: 1.1, z: 0}
+      position: {x: 8, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 81
       graphToNode: 82
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 81
       toNode: 82
-      fromPos: {x: 8, y: 1.1, z: 0}
-      toPos: {x: 8, y: 2, z: 0}
+      fromPos: {x: 8, y: 0, z: 1.5}
+      toPos: {x: 8, y: 0, z: 2}
       directional: 0
   - index: 155
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 1, z: 0}
+      position: {x: 8.6, y: 0, z: 1}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 81
       graphToNode: 91
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 81
       toNode: 91
-      fromPos: {x: 8.1, y: 1, z: 0}
-      toPos: {x: 9, y: 1, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 1}
+      toPos: {x: 9, y: 0, z: 1}
       directional: 0
   - index: 156
     edgeData:
       symbol: edge
-      position: {x: 8, y: 2.1, z: 0}
+      position: {x: 8, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 82
       graphToNode: 83
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 82
       toNode: 83
-      fromPos: {x: 8, y: 2.1, z: 0}
-      toPos: {x: 8, y: 3, z: 0}
+      fromPos: {x: 8, y: 0, z: 2.5}
+      toPos: {x: 8, y: 0, z: 3}
       directional: 0
   - index: 157
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 2, z: 0}
+      position: {x: 8.6, y: 0, z: 2}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 82
       graphToNode: 92
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 82
       toNode: 92
-      fromPos: {x: 8.1, y: 2, z: 0}
-      toPos: {x: 9, y: 2, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 2}
+      toPos: {x: 9, y: 0, z: 2}
       directional: 0
   - index: 158
     edgeData:
       symbol: edge
-      position: {x: 8, y: 3.1, z: 0}
+      position: {x: 8, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 83
       graphToNode: 84
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 83
       toNode: 84
-      fromPos: {x: 8, y: 3.1, z: 0}
-      toPos: {x: 8, y: 4, z: 0}
+      fromPos: {x: 8, y: 0, z: 3.5}
+      toPos: {x: 8, y: 0, z: 4}
       directional: 0
   - index: 159
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 3, z: 0}
+      position: {x: 8.6, y: 0, z: 3}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 83
       graphToNode: 93
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 83
       toNode: 93
-      fromPos: {x: 8.1, y: 3, z: 0}
-      toPos: {x: 9, y: 3, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 3}
+      toPos: {x: 9, y: 0, z: 3}
       directional: 0
   - index: 160
     edgeData:
       symbol: edge
-      position: {x: 8, y: 4.1, z: 0}
+      position: {x: 8, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 84
       graphToNode: 85
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 84
       toNode: 85
-      fromPos: {x: 8, y: 4.1, z: 0}
-      toPos: {x: 8, y: 5, z: 0}
+      fromPos: {x: 8, y: 0, z: 4.5}
+      toPos: {x: 8, y: 0, z: 5}
       directional: 0
   - index: 161
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 4, z: 0}
+      position: {x: 8.6, y: 0, z: 4}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 84
       graphToNode: 94
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 84
       toNode: 94
-      fromPos: {x: 8.1, y: 4, z: 0}
-      toPos: {x: 9, y: 4, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 4}
+      toPos: {x: 9, y: 0, z: 4}
       directional: 0
   - index: 162
     edgeData:
       symbol: edge
-      position: {x: 8, y: 5.1, z: 0}
+      position: {x: 8, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 85
       graphToNode: 86
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 85
       toNode: 86
-      fromPos: {x: 8, y: 5.1, z: 0}
-      toPos: {x: 8, y: 6, z: 0}
+      fromPos: {x: 8, y: 0, z: 5.5}
+      toPos: {x: 8, y: 0, z: 6}
       directional: 0
   - index: 163
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 5, z: 0}
+      position: {x: 8.6, y: 0, z: 5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 85
       graphToNode: 95
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 85
       toNode: 95
-      fromPos: {x: 8.1, y: 5, z: 0}
-      toPos: {x: 9, y: 5, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 5}
+      toPos: {x: 9, y: 0, z: 5}
       directional: 0
   - index: 164
     edgeData:
       symbol: edge
-      position: {x: 8, y: 6.1, z: 0}
+      position: {x: 8, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 86
       graphToNode: 87
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 86
       toNode: 87
-      fromPos: {x: 8, y: 6.1, z: 0}
-      toPos: {x: 8, y: 7, z: 0}
+      fromPos: {x: 8, y: 0, z: 6.5}
+      toPos: {x: 8, y: 0, z: 7}
       directional: 0
   - index: 165
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 6, z: 0}
+      position: {x: 8.6, y: 0, z: 6}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 86
       graphToNode: 96
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 86
       toNode: 96
-      fromPos: {x: 8.1, y: 6, z: 0}
-      toPos: {x: 9, y: 6, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 6}
+      toPos: {x: 9, y: 0, z: 6}
       directional: 0
   - index: 166
     edgeData:
       symbol: edge
-      position: {x: 8, y: 7.1, z: 0}
+      position: {x: 8, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 87
       graphToNode: 88
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 87
       toNode: 88
-      fromPos: {x: 8, y: 7.1, z: 0}
-      toPos: {x: 8, y: 8, z: 0}
+      fromPos: {x: 8, y: 0, z: 7.5}
+      toPos: {x: 8, y: 0, z: 8}
       directional: 0
   - index: 167
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 7, z: 0}
+      position: {x: 8.6, y: 0, z: 7}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 87
       graphToNode: 97
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 87
       toNode: 97
-      fromPos: {x: 8.1, y: 7, z: 0}
-      toPos: {x: 9, y: 7, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 7}
+      toPos: {x: 9, y: 0, z: 7}
       directional: 0
   - index: 168
     edgeData:
       symbol: edge
-      position: {x: 8, y: 8.1, z: 0}
+      position: {x: 8, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 88
       graphToNode: 89
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 88
       toNode: 89
-      fromPos: {x: 8, y: 8.1, z: 0}
-      toPos: {x: 8, y: 9, z: 0}
+      fromPos: {x: 8, y: 0, z: 8.5}
+      toPos: {x: 8, y: 0, z: 9}
       directional: 0
   - index: 169
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 8, z: 0}
+      position: {x: 8.6, y: 0, z: 8}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 88
       graphToNode: 98
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 88
       toNode: 98
-      fromPos: {x: 8.1, y: 8, z: 0}
-      toPos: {x: 9, y: 8, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 8}
+      toPos: {x: 9, y: 0, z: 8}
       directional: 0
   - index: 170
     edgeData:
       symbol: edge
-      position: {x: 8.1, y: 9, z: 0}
+      position: {x: 8.6, y: 0, z: 9}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 89
       graphToNode: 99
+      rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
       fromNode: 89
       toNode: 99
-      fromPos: {x: 8.1, y: 9, z: 0}
-      toPos: {x: 9, y: 9, z: 0}
+      fromPos: {x: 8.6, y: 0, z: 9}
+      toPos: {x: 9, y: 0, z: 9}
       directional: 0
   - index: 171
     edgeData:
       symbol: edge
-      position: {x: 9, y: 0.1, z: 0}
+      position: {x: 9, y: 0, z: 0.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 90
       graphToNode: 91
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 90
       toNode: 91
-      fromPos: {x: 9, y: 0.1, z: 0}
-      toPos: {x: 9, y: 1, z: 0}
+      fromPos: {x: 9, y: 0, z: 0.5}
+      toPos: {x: 9, y: 0, z: 1}
       directional: 0
   - index: 172
     edgeData:
       symbol: edge
-      position: {x: 9, y: 1.1, z: 0}
+      position: {x: 9, y: 0, z: 1.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 91
       graphToNode: 92
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 91
       toNode: 92
-      fromPos: {x: 9, y: 1.1, z: 0}
-      toPos: {x: 9, y: 2, z: 0}
+      fromPos: {x: 9, y: 0, z: 1.5}
+      toPos: {x: 9, y: 0, z: 2}
       directional: 0
   - index: 173
     edgeData:
       symbol: edge
-      position: {x: 9, y: 2.1, z: 0}
+      position: {x: 9, y: 0, z: 2.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 92
       graphToNode: 93
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 92
       toNode: 93
-      fromPos: {x: 9, y: 2.1, z: 0}
-      toPos: {x: 9, y: 3, z: 0}
+      fromPos: {x: 9, y: 0, z: 2.5}
+      toPos: {x: 9, y: 0, z: 3}
       directional: 0
   - index: 174
     edgeData:
       symbol: edge
-      position: {x: 9, y: 3.1, z: 0}
+      position: {x: 9, y: 0, z: 3.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 93
       graphToNode: 94
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 93
       toNode: 94
-      fromPos: {x: 9, y: 3.1, z: 0}
-      toPos: {x: 9, y: 4, z: 0}
+      fromPos: {x: 9, y: 0, z: 3.5}
+      toPos: {x: 9, y: 0, z: 4}
       directional: 0
   - index: 175
     edgeData:
       symbol: edge
-      position: {x: 9, y: 4.1, z: 0}
+      position: {x: 9, y: 0, z: 4.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 94
       graphToNode: 95
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 94
       toNode: 95
-      fromPos: {x: 9, y: 4.1, z: 0}
-      toPos: {x: 9, y: 5, z: 0}
+      fromPos: {x: 9, y: 0, z: 4.5}
+      toPos: {x: 9, y: 0, z: 5}
       directional: 0
   - index: 176
     edgeData:
       symbol: edge
-      position: {x: 9, y: 5.1, z: 0}
+      position: {x: 9, y: 0, z: 5.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 95
       graphToNode: 96
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 95
       toNode: 96
-      fromPos: {x: 9, y: 5.1, z: 0}
-      toPos: {x: 9, y: 6, z: 0}
+      fromPos: {x: 9, y: 0, z: 5.5}
+      toPos: {x: 9, y: 0, z: 6}
       directional: 0
   - index: 177
     edgeData:
       symbol: edge
-      position: {x: 9, y: 6.1, z: 0}
+      position: {x: 9, y: 0, z: 6.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 96
       graphToNode: 97
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 96
       toNode: 97
-      fromPos: {x: 9, y: 6.1, z: 0}
-      toPos: {x: 9, y: 7, z: 0}
+      fromPos: {x: 9, y: 0, z: 6.5}
+      toPos: {x: 9, y: 0, z: 7}
       directional: 0
   - index: 178
     edgeData:
       symbol: edge
-      position: {x: 9, y: 7.1, z: 0}
+      position: {x: 9, y: 0, z: 7.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 97
       graphToNode: 98
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 97
       toNode: 98
-      fromPos: {x: 9, y: 7.1, z: 0}
-      toPos: {x: 9, y: 8, z: 0}
+      fromPos: {x: 9, y: 0, z: 7.5}
+      toPos: {x: 9, y: 0, z: 8}
       directional: 0
   - index: 179
     edgeData:
       symbol: edge
-      position: {x: 9, y: 8.1, z: 0}
+      position: {x: 9, y: 0, z: 8.5}
       colour: {r: 1, g: 1, b: 1, a: 0.94509804}
       graphFromNode: 98
       graphToNode: 99
+      rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
       fromNode: 98
       toNode: 99
-      fromPos: {x: 9, y: 8.1, z: 0}
-      toPos: {x: 9, y: 9, z: 0}
+      fromPos: {x: 9, y: 0, z: 8.5}
+      toPos: {x: 9, y: 0, z: 9}
       directional: 0
   m_storedNodes: []
   m_nodePrefab: {fileID: 6696166388566408420, guid: e4298492a64d1e14f92c769e92b9676d, type: 3}
@@ -3256,38 +3437,83 @@ MonoBehaviour:
   m_matchingNodes:
   - index: 0
     nodeData:
-      symbol: 
+      symbol: Wood
       position: {x: 0, y: 0, z: 0}
       gridCoordinates: {x: 0, y: 0}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+      terrain: 0
+      item: 0
+      enemy: 0
+  - index: 24
+    nodeData:
+      symbol: Wood
+      position: {x: 2, y: 4, z: 0}
+      gridCoordinates: {x: 2, y: 4}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+      terrain: 0
+      item: 0
+      enemy: 0
+  - index: 36
+    nodeData:
+      symbol: Path
+      position: {x: 3, y: 6, z: 0}
+      gridCoordinates: {x: 3, y: 6}
       colour: {r: 0.8301887, g: 0.5686975, b: 0.27020293, a: 0.94509804}
       terrain: 0
       item: 0
       enemy: 0
-  - index: 8
+  - index: 40
     nodeData:
-      symbol: 
-      position: {x: 1, y: 3, z: 0}
-      gridCoordinates: {x: 0, y: 0}
-      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: Wood
+      position: {x: 4, y: 0, z: 0}
+      gridCoordinates: {x: 4, y: 0}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+      terrain: 0
+      item: 0
+      enemy: 0
+  - index: 62
+    nodeData:
+      symbol: Wood
+      position: {x: 6, y: 2, z: 0}
+      gridCoordinates: {x: 6, y: 2}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+      terrain: 0
+      item: 0
+      enemy: 0
+  - index: 87
+    nodeData:
+      symbol: Wood
+      position: {x: 8, y: 7, z: 0}
+      gridCoordinates: {x: 8, y: 7}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
+      terrain: 0
+      item: 0
+      enemy: 0
+  - index: 90
+    nodeData:
+      symbol: Wood
+      position: {x: 9, y: 0, z: 0}
+      gridCoordinates: {x: 9, y: 0}
+      colour: {r: 0.6572455, g: 0.62793696, b: 0.9716981, a: 0.94509804}
       terrain: 0
       item: 0
       enemy: 0
   m_nodesToChange:
-  - index: 8
+  - index: 36
     nodeData:
-      symbol: 
-      position: {x: 1, y: 3, z: 0}
-      gridCoordinates: {x: 0, y: 0}
-      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: Path
+      position: {x: 3, y: 6, z: 0}
+      gridCoordinates: {x: 3, y: 6}
+      colour: {r: 0.8301887, g: 0.5686975, b: 0.27020293, a: 0.94509804}
       terrain: 0
       item: 0
       enemy: 0
-  - index: 9
+  - index: 35
     nodeData:
-      symbol: 
-      position: {x: 1, y: 4, z: 0}
-      gridCoordinates: {x: 0, y: 0}
-      colour: {r: 0.83137256, g: 0.27058825, b: 0.65971226, a: 0.94509804}
+      symbol: Path
+      position: {x: 3, y: 5, z: 0}
+      gridCoordinates: {x: 3, y: 5}
+      colour: {r: 0.8301887, g: 0.5686975, b: 0.27020293, a: 0.94509804}
       terrain: 0
       item: 0
       enemy: 0
@@ -3322,6 +3548,70 @@ MonoBehaviour:
     m_symbol: end
   - m_colour: {r: 0, g: 0, b: 0, a: 0.94509804}
     m_symbol: e
+--- !u!114 &36570849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36570844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49266cd7df8f5804e9ad5ad8c75d703b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeholder: {fileID: 6696166388566408420, guid: e4298492a64d1e14f92c769e92b9676d, type: 3}
+  edgePlaceholder: {fileID: 4655388477797329997, guid: 03823787d6094834a93ad0e0753c6c8f, type: 3}
+  dirEdgePlaceholder: {fileID: 4655388477797329997, guid: 64650e19b36e40a438e04131063949e6, type: 3}
+--- !u!1 &233497147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233497148}
+  - component: {fileID: 233497149}
+  m_Layer: 0
+  m_Name: Cave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &233497148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233497147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233497149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233497147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ccae8c3d5ef54469b938b924d4832e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_width: 128
+  m_height: 72
+  m_seed: hello
+  m_useRandomSeed: 1
+  m_randomFillPercent: 49
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

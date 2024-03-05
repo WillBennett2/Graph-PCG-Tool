@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
   m_Name: TestRule
   m_EditorClassIdentifier: 
-  m_runOnce: 0
+  m_runOnce: 1
   m_maxIterations: 10
   m_probability: 1
   m_leftHand:
@@ -26,20 +26,20 @@ MonoBehaviour:
     m_symbol: u
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 0
-    m_toNode: 1
+    m_fromNode: 87
+    m_toNode: 86
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 1
-    m_toNode: 11
+    m_fromNode: 86
+    m_toNode: 76
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 11
-    m_toNode: 10
+    m_fromNode: 76
+    m_toNode: 77
     m_directional: 1
   - m_symbol: edge
-    m_fromNode: 54
-    m_toNode: 53
+    m_fromNode: 77
+    m_toNode: 87
     m_directional: 1
   m_rightHand:
   - m_rightHandProbability: 1
@@ -93,6 +93,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -103,6 +104,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -113,6 +115,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -123,6 +126,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -165,6 +169,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -175,6 +180,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -185,6 +191,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
@@ -195,6 +202,7 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       graphFromNode: 0
       graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
       fromNode: 0
       toNode: 0
       fromPos: {x: 0, y: 0, z: 0}
