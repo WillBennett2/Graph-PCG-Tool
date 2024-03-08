@@ -32,6 +32,24 @@ public class CaveGenerator : MonoBehaviour
         {
             SmoothMap();
         }
+
+        int borderSize = 1;
+        int[,] borderedMap = new int[m_width + borderSize * 2, m_height + borderSize * 2];
+        for (int x = 0; x < borderedMap.GetLength(0); x++)
+        {
+            for (int y = 0; y < borderedMap.GetLength(1); y++)
+            {
+                if (x >= borderSize && x < m_width + borderSize && y >= borderSize && y < m_height + borderSize) // within the map
+                {
+                    borderedMap[x, y] = m_map[x - borderSize, y - borderSize];
+                }
+                else
+                    borderedMap[x, y] = 1;
+            }
+        }
+
+        MeshGenerator meshGen = GetComponent<MeshGenerator>();
+        meshGen.GenerateMesh(borderedMap, 1);
     }
 
     void RandomFillMap()
@@ -100,19 +118,19 @@ public class CaveGenerator : MonoBehaviour
         return wallCount;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (m_map != null)
-        {
-            for (int x = 0; x < m_width; x++)
-            {
-                for (int y = 0; y < m_height; y++)
-                {
-                    Gizmos.color = (m_map[x, y] == 1) ? Color.black : Color.white;
-                    Vector3 position = new Vector3(-m_width / 2 + x + 0.5f, 0, -m_height / 2 + y + 0.5f);
-                    Gizmos.DrawCube(position, Vector3.one);
-                }
-            }
-        }
-    }
+    //private void OnDrawGizmos()
+    //{
+        //if (m_map != null)
+        //{
+        //    for (int x = 0; x < m_width; x++)
+        //    {
+        //        for (int y = 0; y < m_height; y++)
+        //        {
+        //            Gizmos.color = (m_map[x, y] == 1) ? Color.black : Color.white;
+        //            Vector3 position = new Vector3(-m_width / 2 + x + 0.5f, 0, -m_height / 2 + y + 0.5f);
+        //            Gizmos.DrawCube(position, Vector3.one);
+        //        }
+        //    }
+        //}
+    //}
 }
