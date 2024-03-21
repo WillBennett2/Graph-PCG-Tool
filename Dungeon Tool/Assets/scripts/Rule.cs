@@ -15,11 +15,13 @@ public class Rule : MonoBehaviour
     [SerializeField] private List<RuleScriptableObject> m_rules;
     private string m_orientation;
     [SerializeField] private int m_maxTries = 10;
-    [Header("Node Data")]
+
     private int m_originFoundIndex;
     private List<Index2NodeDataLinker> m_nodeGraph = new List<Index2NodeDataLinker>();
-    [SerializeField] private List<Index2NodeDataLinker> m_matchingNodes = new List<Index2NodeDataLinker>();
-    [SerializeField] private List<Index2NodeDataLinker> m_nodesToChange = new List<Index2NodeDataLinker>();
+    private List<Index2NodeDataLinker> m_matchingNodes = new List<Index2NodeDataLinker>();
+    private List<Index2NodeDataLinker> m_nodesToChange = new List<Index2NodeDataLinker>();
+    private List<Index2NodeDataLinker> m_nodeStore = new List<Index2NodeDataLinker>();
+
     private List<Index2StoredNodeDataLinker> m_storedNodesGraph;
 
     [Header("Edge Data")]
@@ -31,10 +33,10 @@ public class Rule : MonoBehaviour
     private int m_lastNodeIndex = -1;
     public RuleScriptableObject m_ruleRef { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
         m_ruleRef = m_rule;
-        m_alphabet = GetComponent<Alphabet>();
+        m_alphabet = GraphInfo.graphInfo.m_alphabet;
         m_graphSpace = GetComponent<GraphSpace>();
     }
 
@@ -162,6 +164,7 @@ public class Rule : MonoBehaviour
     {
         m_matchingNodes.Clear();
         m_nodesToChange.Clear();
+        m_nodeStore.Clear();
         m_nodeGraph = nodes;
         m_storedNodesGraph = storedNodes;
         m_edgeGraph = edges;
@@ -219,8 +222,7 @@ public class Rule : MonoBehaviour
         Index2NodeDataLinker node = null;
         Index2NodeDataLinker lastNode = m_nodeGraph[m_originFoundIndex];
 
-        Vector3 directionToCheck = lastNode.nodeData.position + ChangeOrientation(rule.m_leftHand[index].m_nodePosition);
-
+        Vector3 directionToCheck = lastNode.nodeData.position + ChangeOrientation(rule.m_leftHand[index].m_nodePosition * GraphInfo.graphInfo.m_scale);
         node = CheckNode(rule, m_nodeGraph, index, directionToCheck);
         if (node != null)
         {
@@ -273,12 +275,15 @@ public class Rule : MonoBehaviour
     private void SetNodeData(RightHand rightHand,int i, Index2NodeDataLinker matchingNode)
     {
         m_nodesToChange.Add(matchingNode);
+        m_nodeStore.Add(matchingNode);
         matchingNode.nodeData.symbol = rightHand.m_nodeDataList[i].symbol;
         foreach (AlphabetLinker data in m_alphabet.m_alphabet)
         {
             if (matchingNode.nodeData.symbol == data.m_symbol)
                 matchingNode.nodeData.colour = data.m_colour;
         }
+        matchingNode.nodeData.terrain = rightHand.m_nodeDataList[i].terrain;
+        matchingNode.nodeData.preAuthored = rightHand.m_nodeDataList[i].preAuthored;
     }
     private void LoopEdge(RuleScriptableObject rule)
     {
@@ -351,18 +356,22 @@ public class Rule : MonoBehaviour
         Debug.LogWarning("rule cant be applied");
         for (int i = 0; i < m_nodesToChange.Count; i++)
         {
-            m_nodesToChange[i].nodeData.symbol = rule.m_leftHand[i].m_symbol;
+            m_nodesToChange[i].nodeData.symbol = m_nodeStore[i].nodeData.symbol;
             foreach (AlphabetLinker data in m_alphabet.m_alphabet)
             {
                 if (m_nodesToChange[i].nodeData.symbol == data.m_symbol)
                     m_nodesToChange[i].nodeData.colour = data.m_colour;
             }
+            m_nodesToChange[i].nodeData.terrain = m_nodeStore[i].nodeData.terrain;
+            m_nodesToChange[i].nodeData.preAuthored = m_nodeStore[i].nodeData.preAuthored;
         }
+        m_nodeStore.Clear();
     }
     private void ChangeEdgeData(RuleScriptableObject rule, RightHand rightHand, Index2EdgeDataLinker edgeData, int i)
     {
         edgeData.edgeData.symbol = rightHand.m_edgeDataList[i].symbol;
         edgeData.edgeData.directional = rightHand.m_edgeDataList[i].directional;
+        edgeData.edgeData.terrian = rightHand.m_edgeDataList[i].terrian;
         edgeData.edgeData.fromNode = rule.m_leftHandEdge[i].m_fromNode;
         edgeData.edgeData.toNode = rule.m_leftHandEdge[i].m_toNode;
 

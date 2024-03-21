@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
@@ -8,31 +9,51 @@ using Vector3 = UnityEngine.Vector3;
 [ExecuteInEditMode]
 public class GraphComponent : MonoBehaviour
 {
+    [SerializeField]private CaveGenerator m_caveGenerator;
     [SerializeField] public Rule m_ruleReference;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
+    [SerializeField] private float m_scale = 1;
+    [SerializeField] private int m_offset = 1;
 
     [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
     [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
     [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
+    [SerializeField]private Alphabet m_alphabet;
 
     [SerializeField] private GameObject m_nodePrefab;
-    void Start()
+    void Awake ()
     {
-        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
+        ScaleSetup();
+        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
     }
     private void InitGraph()
     {
-        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_defaultSymbol, GetComponent<Alphabet>());
+        ScaleSetup();
+        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
     }
 
+    private void ScaleSetup()
+    {
+        //m_nodes[0].nodeData.terrain
+        m_caveGenerator.m_width = (int)((m_rows+m_offset) * (m_scale));
+        m_caveGenerator.m_height = (int)((m_columns+m_offset) * (m_scale));
+        m_caveGenerator.PopulateFromGraph(m_nodes,m_edges);
+    }
+
+    public void Generate()
+    {
+        m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
+        ScaleSetup();
+        m_caveGenerator.GenerateCave();
+    }
 
     void OnDrawGizmos()
     {

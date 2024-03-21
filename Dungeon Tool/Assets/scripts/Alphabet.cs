@@ -1,18 +1,20 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Graph;
 
-public class Alphabet : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CreateAlphabetEntry", order = 2)]
+
+public class Alphabet : ScriptableObject
 {
-    [Serializable]public struct AlphabetData
+    [Serializable]
+    public struct AlphabetData
     {
         public Color m_colour;
         public string m_symbol;
     }
 
-    [Serializable] public class AlphabetLinker
+    [Serializable]
+    public class AlphabetLinker
     {
         [SerializeField] public Color m_colour;
         [SerializeField] public string m_symbol;

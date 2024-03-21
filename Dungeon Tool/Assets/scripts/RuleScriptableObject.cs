@@ -66,8 +66,7 @@ public class RuleScriptableObject : ScriptableObject
         public Vector3 position;
         [HideInInspector] public Color colour;
         public int terrain;
-        public int item;
-        public int enemy;
+        public bool preAuthored;
         public List<StoredNodeData> storedNodes;
     }
     [Serializable]

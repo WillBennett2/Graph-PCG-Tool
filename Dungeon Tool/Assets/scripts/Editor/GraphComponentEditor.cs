@@ -12,7 +12,8 @@ public class GraphComponentEditor : Editor
 
         if (GUILayout.Button("Run Rule."))
         {
-            graphComponent.m_ruleReference.RunRule(graphComponent.m_nodes, graphComponent.m_storedNodes,graphComponent.m_edges);
+            graphComponent.Generate();
+            
             Debug.Log("Rule has been run");
         }
 

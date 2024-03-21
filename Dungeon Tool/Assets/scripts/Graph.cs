@@ -35,12 +35,12 @@ public class Graph
     public struct NodeData
     {
         public string symbol;
-        [HideInInspector] public Vector3 position;
+        //[HideInInspector] 
+        public Vector3 position;
         public Vector2 gridCoordinates;
         [HideInInspector] public Color colour;
         public int terrain;
-        public int item;
-        public int enemy;
+        public bool preAuthored;
     }
     [Serializable]
     public class Index2NodeDataLinker
@@ -53,6 +53,8 @@ public class Graph
             this.index = index;
             this.nodeData = nodedata;
             this.nodeData.colour = nodedata.colour;
+            this.nodeData.terrain = 1;
+            this.nodeData.preAuthored = false;
         }
     }
 
@@ -70,6 +72,7 @@ public class Graph
          public Vector3 fromPos;
          public Vector3 toPos;
         public bool directional;
+        public int terrian;
     }
     [Serializable]
     public class Index2EdgeDataLinker
@@ -84,18 +87,24 @@ public class Graph
             this.edgeData.colour = edgeData.colour;
             this.edgeData.fromNode = this.edgeData.graphFromNode;
             this.edgeData.toNode = this.edgeData.graphToNode;
+            this.edgeData.terrian = 1;
         }
     }
-
-    [SerializeField] public List<Index2NodeDataLinker> nodes;
-    [SerializeField] public List<Index2StoredNodeDataLinker> storedNodes;
-    [SerializeField] public List<Index2EdgeDataLinker> edges;
+    public Alphabet m_alphabet;
+    [HideInInspector] public float m_scale;
+    private int m_offset = 1;
+    public List<Index2NodeDataLinker> nodes;
+    public List<Index2StoredNodeDataLinker> storedNodes;
+    public List<Index2EdgeDataLinker> edges;
 
     private int m_graphSize;
     public int nodeIndexCounter;
 
-    public Graph(int rows, int columns, string defaultSymbol, Alphabet alphabet)
+    public Graph(int rows, int columns, float scale,int offset, string defaultSymbol, Alphabet alphabet)
     {
+        m_alphabet = alphabet;
+        m_scale = scale;
+        m_offset = offset;
         nodeIndexCounter = m_graphSize = rows * columns;
         nodes = new List<Index2NodeDataLinker>();
         storedNodes = new List<Index2StoredNodeDataLinker>();
@@ -107,7 +116,8 @@ public class Graph
             {
                 NodeData data = new NodeData();
                 data.gridCoordinates = new Vector3 (x, 0,z);
-                data.position = new Vector3(x, 0,z);
+                //data.position = new Vector3(-rows / 2 +x * scale, 0, -columns/2 +z * scale);
+                data.position = new Vector3((x+ m_offset) * scale, 0,(z + m_offset) * scale);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
                 nodes.Add(node);
@@ -127,11 +137,11 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = "edge";
                     data.colour = Color.white;
-                    data.position = new Vector3(x,0 ,z + 0.5f);
+                    data.position = new Vector3((x + m_offset) * scale, 0 ,(z + m_offset) * scale);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeFromIndex + 1;
                     data.fromPos = data.position;
-                    data.toPos = new Vector3(x,0 ,z + 1f);
+                    data.toPos = new Vector3((x + m_offset) * scale, 0 ,(z + m_offset + 1f) * scale);
                     data.rotation = SetNormalRotation(data);
                     var edge = new Index2EdgeDataLinker(index, data);
                     edges.Add(edge);
@@ -142,11 +152,11 @@ public class Graph
                     EdgeData data = new EdgeData();
                     data.symbol = "edge";
                     data.colour = Color.white;
-                    data.position = new Vector3(x + 0.6f, 0,z);
+                    data.position = new Vector3((x + m_offset) * scale, 0,(z + m_offset) * scale);
                     data.graphFromNode = edgeFromIndex;
                     data.graphToNode = edgeToIndex;
                     data.fromPos = data.position;
-                    data.toPos = new Vector3(x + 1f, 0,z);
+                    data.toPos = new Vector3((x + m_offset + 1f) * scale, 0,(z + m_offset) * scale);
                     //function
                     data.rotation = SetNormalRotation(data);
                     var edge = new Index2EdgeDataLinker(index, data);
@@ -158,7 +168,7 @@ public class Graph
             }
         }
 
-        foreach (AlphabetLinker data in alphabet.m_alphabet)
+        foreach (AlphabetLinker data in m_alphabet.m_alphabet)
         {
             for (int i = 0; i < nodes.Count; i++)
             {

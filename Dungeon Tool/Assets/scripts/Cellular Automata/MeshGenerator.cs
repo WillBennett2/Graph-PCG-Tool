@@ -58,7 +58,7 @@ public class MeshGenerator : MonoBehaviour
     public class SquareGrid
     {
         public Square[,] m_squares;
-        public SquareGrid(int[,] map, float squareSize)
+        public SquareGrid(int[,] map, float squareSize, int borderSize)
         {
             int nodeCountX = map.GetLength(0);
             int nodeCountY = map.GetLength(1);
@@ -71,7 +71,8 @@ public class MeshGenerator : MonoBehaviour
             {
                 for (int y = 0; y < nodeCountY; y++)
                 {
-                    Vector3 pos = new Vector3(-mapWidth / 2 + x * squareSize + squareSize / 2, 0, -mapHeight / 2 + y * squareSize + squareSize / 2);
+                    //Vector3 pos = new Vector3(-mapWidth / 2 + x , 0, -mapHeight / 2 + y );
+                    Vector3 pos = new Vector3(x - borderSize, 0, y - borderSize);
                     hostNodes[x, y] = new HostNode(pos, map[x, y] == 1, squareSize);
 
                 }
@@ -135,13 +136,13 @@ public class MeshGenerator : MonoBehaviour
     public MeshFilter m_walls;
     [SerializeField] private float m_wallHeight = 5f;
 
-    public void GenerateMesh(int[,] map, float squareSize)
+    public void GenerateMesh(int[,] map, float squareSize,int borderSize)
     {
         m_triangleDictionary.Clear();
         m_outlineEdges.Clear();
         m_clearedVertices.Clear();
 
-        m_squareGrid = new SquareGrid(map, squareSize);
+        m_squareGrid = new SquareGrid(map, squareSize, borderSize);
 
         m_vertices = new List<Vector3>();
         m_triangles = new List<int>();
@@ -165,7 +166,8 @@ public class MeshGenerator : MonoBehaviour
     }
     void CreateWallMesh()
     {
-        MeshOutlines();
+        //MeshOutlines();
+        Outline();
         List<Vector3> wallVertices = new List<Vector3>();
         List<int> wallTriangle = new List<int>();
         Mesh wallMesh = new Mesh();
@@ -310,10 +312,20 @@ public class MeshGenerator : MonoBehaviour
         }
     }
 
+    int counter = 0;
+    void Outline()
+    {
+        int vertexCount = m_vertices.Count;
+        counter = 0;
+        MeshOutlines();
+
+    }
     void MeshOutlines()
     {
-        for (int i = 0; i < m_vertices.Count; i++)
+        
+        for (int i = counter; i < m_vertices.Count; i++)
         {
+            
             if(!m_clearedVertices.Contains(i))
             {
                 int newOutlineVertex = GetOutlineVertex(i);

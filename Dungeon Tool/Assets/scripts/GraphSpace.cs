@@ -46,18 +46,23 @@ public class GraphSpace : MonoBehaviour
         }
         foreach (Index2EdgeDataLinker edge in edges)
         {
-            edge.edgeData.rotation = GraphInfo.graphInfo.SetRotation(edge.edgeData);
-            GameObject temp = null;
-            if (edge.edgeData.directional)
+            if (edge == null)
             {
-                temp = Instantiate(dirEdgePlaceholder, edge.edgeData.position, edge.edgeData.rotation);
+                edge.edgeData.rotation = GraphInfo.graphInfo.SetRotation(edge.edgeData);
+                GameObject temp = null;
+                if (edge.edgeData.directional)
+                {
+                    temp = Instantiate(dirEdgePlaceholder, (edge.edgeData.toPos + edge.edgeData.fromPos) / 2, edge.edgeData.rotation);
+                }
+                else if (edge.edgeData.directional == false)
+                {
+                    temp = Instantiate(edgePlaceholder,
+                        (edge.edgeData.toPos + edge.edgeData.fromPos) / 2
+                        , edge.edgeData.rotation);
+                }
+
+                temp.transform.SetParent(container.transform);
             }
-            else if (edge.edgeData.directional==false)
-            {
-                temp = Instantiate(edgePlaceholder, edge.edgeData.position, edge.edgeData.rotation);
-            }
-                
-            temp.transform.SetParent(container.transform);
         }
 
     }
