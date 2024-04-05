@@ -41,6 +41,8 @@ public class Graph
         [HideInInspector] public Color colour;
         public int terrain;
         public bool preAuthored;
+        public Index2EdgeDataLinker upperEdge;
+        public Index2EdgeDataLinker rightEdge;
     }
     [Serializable]
     public class Index2NodeDataLinker
@@ -53,7 +55,12 @@ public class Graph
             this.index = index;
             this.nodeData = nodedata;
             this.nodeData.colour = nodedata.colour;
-            this.nodeData.terrain = 1;
+            if(nodedata.terrain<0 || 1< nodedata.terrain)
+            {
+                this.nodeData.terrain = nodedata.terrain;
+            }
+            else
+                this.nodeData.terrain = 1; //default of walls
             this.nodeData.preAuthored = false;
         }
     }
@@ -91,7 +98,7 @@ public class Graph
         }
     }
     public Alphabet m_alphabet;
-    [HideInInspector] public float m_scale;
+    [HideInInspector] public int m_scale;
     private int m_offset = 1;
     public List<Index2NodeDataLinker> nodes;
     public List<Index2StoredNodeDataLinker> storedNodes;
@@ -100,7 +107,7 @@ public class Graph
     private int m_graphSize;
     public int nodeIndexCounter;
 
-    public Graph(int rows, int columns, float scale,int offset, string defaultSymbol, Alphabet alphabet)
+    public Graph(int rows, int columns, int scale,int offset, string defaultSymbol, Alphabet alphabet)
     {
         m_alphabet = alphabet;
         m_scale = scale;
@@ -125,6 +132,7 @@ public class Graph
             }
         }
 
+        int nodeIndex = 0;
         index = 0;
         int edgeFromIndex = 0;
         int edgeToIndex = (int)MathF.Sqrt(rows * columns);
@@ -132,39 +140,55 @@ public class Graph
         {
             for (float z = 0; z < columns; z++)
             {
+                EdgeData data = new EdgeData();
+                data.symbol = "edge";
+                data.colour = Color.white;
+                data.position = new Vector3((x + m_offset) * scale, 0, (z + m_offset) * scale);
+                data.graphFromNode = edgeFromIndex;
+                data.graphToNode = edgeFromIndex + 1;
+                data.fromPos = data.position;
+                data.toPos = new Vector3((x + m_offset) * scale, 0, (z + m_offset + 1f) * scale);
+                data.rotation = SetNormalRotation(data);
+                var edge = new Index2EdgeDataLinker(index, data);
+
                 if (z != rows - 1) //up
                 {
-                    EdgeData data = new EdgeData();
-                    data.symbol = "edge";
-                    data.colour = Color.white;
-                    data.position = new Vector3((x + m_offset) * scale, 0 ,(z + m_offset) * scale);
-                    data.graphFromNode = edgeFromIndex;
-                    data.graphToNode = edgeFromIndex + 1;
-                    data.fromPos = data.position;
-                    data.toPos = new Vector3((x + m_offset) * scale, 0 ,(z + m_offset + 1f) * scale);
-                    data.rotation = SetNormalRotation(data);
-                    var edge = new Index2EdgeDataLinker(index, data);
+                    nodes[nodeIndex].nodeData.upperEdge = edge;
                     edges.Add(edge);
                     index++;
                 }
+                else
+                {
+                    var edgeNull = new Index2EdgeDataLinker(-1, data);
+                    nodes[nodeIndex].nodeData.upperEdge = edgeNull;
+                }
+
+                data = new EdgeData();
+                data.symbol = "edge";
+                data.colour = Color.white;
+                data.position = new Vector3((x + m_offset) * scale, 0, (z + m_offset) * scale);
+                data.graphFromNode = edgeFromIndex;
+                data.graphToNode = edgeToIndex;
+                data.fromPos = data.position;
+                data.toPos = new Vector3((x + m_offset + 1f) * scale, 0, (z + m_offset) * scale);
+                data.rotation = SetNormalRotation(data);
+                edge = new Index2EdgeDataLinker(index, data);
+
                 if (x != columns - 1) //right
                 {
-                    EdgeData data = new EdgeData();
-                    data.symbol = "edge";
-                    data.colour = Color.white;
-                    data.position = new Vector3((x + m_offset) * scale, 0,(z + m_offset) * scale);
-                    data.graphFromNode = edgeFromIndex;
-                    data.graphToNode = edgeToIndex;
-                    data.fromPos = data.position;
-                    data.toPos = new Vector3((x + m_offset + 1f) * scale, 0,(z + m_offset) * scale);
-                    //function
-                    data.rotation = SetNormalRotation(data);
-                    var edge = new Index2EdgeDataLinker(index, data);
+                    nodes[nodeIndex].nodeData.rightEdge = edge;
                     edges.Add(edge);
                     index++;
                 }
+                else
+                {
+                    var edgeNull = new Index2EdgeDataLinker(-1, data);
+                    nodes[nodeIndex].nodeData.rightEdge = edgeNull;
+                }
+
                 edgeFromIndex++;
                 edgeToIndex++;
+                nodeIndex++;
             }
         }
 

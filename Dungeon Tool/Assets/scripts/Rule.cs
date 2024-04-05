@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static Alphabet;
@@ -20,7 +21,7 @@ public class Rule : MonoBehaviour
     private List<Index2NodeDataLinker> m_nodeGraph = new List<Index2NodeDataLinker>();
     private List<Index2NodeDataLinker> m_matchingNodes = new List<Index2NodeDataLinker>();
     private List<Index2NodeDataLinker> m_nodesToChange = new List<Index2NodeDataLinker>();
-    private List<Index2NodeDataLinker> m_nodeStore = new List<Index2NodeDataLinker>();
+    [SerializeField] private List<Index2NodeDataLinker> m_nodeStore = new List<Index2NodeDataLinker>();
 
     private List<Index2StoredNodeDataLinker> m_storedNodesGraph;
 
@@ -96,7 +97,7 @@ public class Rule : MonoBehaviour
                 }
             }
         }
-        m_graphSpace.CreateSpace(nodes,storedNodes,edges);
+        //m_graphSpace.CreateSpace(nodes,storedNodes,edges);
 
 
     }
@@ -110,6 +111,7 @@ public class Rule : MonoBehaviour
         Index2NodeDataLinker matchingNode = null;
         for (int j = 0; j < m_maxTries; j++)
         {
+            //m_nodeStore.Clear();
             m_edgeCount = 0;
             for (int i = 0; i < rule.m_leftHand.Count; i++)
             {
@@ -121,6 +123,8 @@ public class Rule : MonoBehaviour
                     matchingNode = GetNeighbouringNodes(rule, i);
                     if (matchingNode == null)
                     {
+                        //ResetRule(rule);
+                        Debug.Log("match node is null");
                         break;
                     }
                     SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
@@ -155,6 +159,10 @@ public class Rule : MonoBehaviour
                 //sort stored nodes
                 ChangeStoredNodeData(rule, rightHandIndex);
                 break;
+            }
+            else
+            {
+                ResetRule(rule);
             }
             m_nodesToChange.Clear();
         }
@@ -275,7 +283,10 @@ public class Rule : MonoBehaviour
     private void SetNodeData(RightHand rightHand,int i, Index2NodeDataLinker matchingNode)
     {
         m_nodesToChange.Add(matchingNode);
-        m_nodeStore.Add(matchingNode);
+        Index2NodeDataLinker nodeData = new Index2NodeDataLinker(matchingNode.index, matchingNode.nodeData);
+        m_nodeStore.Add(nodeData);
+        //m_nodeStore.Add(matchingNode);
+
         matchingNode.nodeData.symbol = rightHand.m_nodeDataList[i].symbol;
         foreach (AlphabetLinker data in m_alphabet.m_alphabet)
         {
@@ -354,6 +365,8 @@ public class Rule : MonoBehaviour
     private void ResetRule(RuleScriptableObject rule)
     {
         Debug.LogWarning("rule cant be applied");
+        if (m_nodeStore.Count == 0)
+            return;
         for (int i = 0; i < m_nodesToChange.Count; i++)
         {
             m_nodesToChange[i].nodeData.symbol = m_nodeStore[i].nodeData.symbol;
@@ -365,6 +378,7 @@ public class Rule : MonoBehaviour
             m_nodesToChange[i].nodeData.terrain = m_nodeStore[i].nodeData.terrain;
             m_nodesToChange[i].nodeData.preAuthored = m_nodeStore[i].nodeData.preAuthored;
         }
+
         m_nodeStore.Clear();
     }
     private void ChangeEdgeData(RuleScriptableObject rule, RightHand rightHand, Index2EdgeDataLinker edgeData, int i)

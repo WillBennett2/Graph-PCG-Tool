@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using UnityEditor;
 using UnityEngine;
 using static Graph;
 using Quaternion = UnityEngine.Quaternion;
@@ -11,16 +12,17 @@ public class GraphComponent : MonoBehaviour
 {
     [SerializeField]private CaveGenerator m_caveGenerator;
     [SerializeField] public Rule m_ruleReference;
+    [SerializeField] private TileMap m_tileMap;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
-    [SerializeField] private float m_scale = 1;
+    [SerializeField] private int m_scale = 1;
     [SerializeField] private int m_offset = 1;
 
     [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
     [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
     [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
-    [SerializeField]private Alphabet m_alphabet;
+    [SerializeField] public Alphabet m_alphabet;
 
     [SerializeField] private GameObject m_nodePrefab;
     void Awake ()
@@ -43,16 +45,29 @@ public class GraphComponent : MonoBehaviour
     private void ScaleSetup()
     {
         //m_nodes[0].nodeData.terrain
-        m_caveGenerator.m_width = (int)((m_rows+m_offset) * (m_scale));
-        m_caveGenerator.m_height = (int)((m_columns+m_offset) * (m_scale));
-        m_caveGenerator.PopulateFromGraph(m_nodes,m_edges);
+        int width = ((m_rows+m_offset) * (m_scale));
+        int height = ((m_columns+m_offset) * (m_scale));
+        m_caveGenerator.SetUpFromGraph(m_nodes,m_edges, m_rows, m_columns,m_offset, m_scale);
     }
 
     public void Generate()
     {
+        InitGraph();
         m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
         ScaleSetup();
         m_caveGenerator.GenerateCave();
+    }
+
+    public void Reset()
+    {
+        //clear graph data
+        m_nodes.Clear();
+        m_storedNodes.Clear();
+        m_edges.Clear();
+        //clear tilemap
+        m_tileMap.Clear();
+        //clear cave
+        m_caveGenerator.Clear();
     }
 
     void OnDrawGizmos()
@@ -135,6 +150,7 @@ public class GraphComponent : MonoBehaviour
         Gizmos.DrawRay(pos + direction, right * arrowHeadLength);
         Gizmos.DrawRay(pos + direction, left * arrowHeadLength);
     }
+
 
     public void PrintGraph()
     {

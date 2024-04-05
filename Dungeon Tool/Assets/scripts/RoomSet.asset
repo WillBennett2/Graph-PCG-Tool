@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc1038f3f927ba4ebe526cf3bc8ef75, type: 3}
+  m_Name: RoomSet
+  m_EditorClassIdentifier: 
+  m_roomSets:
+  - m_alphabetKey: u
+    m_roomPrefab: []
+  - m_alphabetKey: edge
+    m_roomPrefab: []
+  - m_alphabetKey: Water
+    m_roomPrefab:
+    - m_chanceOfAppearing: 100
+      m_roomSize: 5
+      m_roomPrefab: {fileID: 7225691650264395514, guid: cce063250365e0645966ef9b3f2db93d, type: 3}
+      m_roomDoorBlockerPrefab: {fileID: 3426639881804157744, guid: 0c6759cbad3d4e544bba2320e22f190a, type: 3}
+  - m_alphabetKey: Plain
+    m_roomPrefab: []
+  - m_alphabetKey: Path
+    m_roomPrefab:
+    - m_chanceOfAppearing: 0
+      m_roomSize: 5
+      m_roomPrefab: {fileID: 9200137748062281811, guid: 530b9da8933c61b468fd33de61e8d60f, type: 3}
+      m_roomDoorBlockerPrefab: {fileID: 3426639881804157744, guid: 0c6759cbad3d4e544bba2320e22f190a, type: 3}
+    - m_chanceOfAppearing: 100
+      m_roomSize: 5
+      m_roomPrefab: {fileID: 9200137748062281811, guid: d2350a297f2a13d4d81f5fe8c0438631, type: 3}
+      m_roomDoorBlockerPrefab: {fileID: 3426639881804157744, guid: 0c6759cbad3d4e544bba2320e22f190a, type: 3}
+  - m_alphabetKey: Monster
+    m_roomPrefab: []
+  - m_alphabetKey: Wood
+    m_roomPrefab: []
+  - m_alphabetKey: end
+    m_roomPrefab: []
+  - m_alphabetKey: e
+    m_roomPrefab:
+    - m_chanceOfAppearing: 100
+      m_roomSize: 5
+      m_roomPrefab: {fileID: 9200137748062281811, guid: 0f7de58d2f51d174b83e3bc4f05fc4e6, type: 3}
+      m_roomDoorBlockerPrefab: {fileID: 3426639881804157744, guid: 0c6759cbad3d4e544bba2320e22f190a, type: 3}

@@ -1,0 +1,360 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
+  m_Name: CreatePath
+  m_EditorClassIdentifier: 
+  m_runOnce: 1
+  m_maxIterations: 1
+  m_probability: 1
+  m_leftHand:
+  - m_nodePosition: {x: -1, y: -1}
+    m_symbol: u
+  - m_nodePosition: {x: 1, y: 0}
+    m_symbol: u
+  - m_nodePosition: {x: 1, y: 0}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: 1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: 1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: 1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: 1}
+    m_symbol: u
+  - m_nodePosition: {x: -1, y: 0}
+    m_symbol: u
+  - m_nodePosition: {x: -1, y: 0}
+    m_symbol: u
+  - m_nodePosition: {x: -1, y: 0}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: -1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: -1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: -1}
+    m_symbol: u
+  - m_nodePosition: {x: 0, y: -1}
+    m_symbol: u
+  m_leftHandEdge:
+  - m_symbol: edge
+    m_fromNode: 3
+    m_toNode: 2
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 2
+    m_toNode: 1
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 1
+    m_toNode: 7
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 7
+    m_toNode: 13
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 13
+    m_toNode: 19
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 19
+    m_toNode: 25
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 25
+    m_toNode: 26
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 26
+    m_toNode: 27
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 27
+    m_toNode: 28
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 28
+    m_toNode: 22
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 22
+    m_toNode: 16
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 16
+    m_toNode: 10
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 10
+    m_toNode: 4
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 4
+    m_toNode: 3
+    m_directional: 0
+  m_rightHand:
+  - m_rightHandProbability: 1
+    m_LoopNode: 1
+    m_nodeDataList:
+    - symbol: e
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 1
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes: []
+    m_edgeDataList:
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 0
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 0
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 0
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 0
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      graphFromNode: 0
+      graphToNode: 0
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+      fromNode: 0
+      toNode: 0
+      fromPos: {x: 0, y: 0, z: 0}
+      toPos: {x: 0, y: 0, z: 0}
+      directional: 1
+      terrian: -1
