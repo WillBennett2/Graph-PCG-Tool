@@ -123,7 +123,6 @@ public class Graph
             {
                 NodeData data = new NodeData();
                 data.gridCoordinates = new Vector3 (x, 0,z);
-                //data.position = new Vector3(-rows / 2 +x * scale, 0, -columns/2 +z * scale);
                 data.position = new Vector3((x+ m_offset) * scale, 0,(z + m_offset) * scale);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);

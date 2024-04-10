@@ -44,9 +44,6 @@ public class GraphComponent : MonoBehaviour
 
     private void ScaleSetup()
     {
-        //m_nodes[0].nodeData.terrain
-        int width = ((m_rows+m_offset) * (m_scale));
-        int height = ((m_columns+m_offset) * (m_scale));
         m_caveGenerator.SetUpFromGraph(m_nodes,m_edges, m_rows, m_columns,m_offset, m_scale);
     }
 

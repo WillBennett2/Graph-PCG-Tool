@@ -54,9 +54,9 @@ public class CaveGenerator : MonoBehaviour
     public void GenerateCave()
     {
         m_map = new int[m_width, m_height];
-        RandomFillMap();
+        ApplyGraphData();
 
-        for (int i = 0; i < m_smoothIterations; i++) // 5 isnt concrete but depends on the cave shape
+        for (int i = 0; i < m_smoothIterations; i++)
         {
             SmoothMap();
         }
@@ -87,7 +87,7 @@ public class CaveGenerator : MonoBehaviour
 
     }
 
-    void RandomFillMap()
+    void ApplyGraphData()
     {
         if (m_useRandomSeed)
         {
@@ -151,8 +151,8 @@ public class CaveGenerator : MonoBehaviour
                 SetSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, m_depth, -1);
                 int randomDepth = Random.Range(m_randomNodeDepthMin, m_randomNodeDepthMax);
                 if (m_useRandom)
-                    SetRandomSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, randomDepth, 0, rand);
-                SetCaveDeadZones((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.y, i, m_scale, 2);
+                    SetRandomSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, randomDepth, rand);
+                SetCaveDeadZones(i, m_scale, 2);
             }
 
         }
@@ -203,7 +203,7 @@ public class CaveGenerator : MonoBehaviour
                 {
                     if (neighbourX != gridX || neighbourY != gridY) //if not looking at self
                     {
-                        if (m_map[neighbourX, neighbourY] == -2)
+                        if (m_map[gridX, gridY] < 0 || 1 < m_map[gridX, gridY])
                             break;
                         wallCount += m_map[neighbourX, neighbourY]; //add its value to wallcount (0 is empty so it technically doesnt effect as its not a wall)
                     }
@@ -233,7 +233,7 @@ public class CaveGenerator : MonoBehaviour
             }
         }
     }
-    void SetRandomSurroundingCells(int gridX, int gridY, int depth, int value, System.Random rand)
+    void SetRandomSurroundingCells(int gridX, int gridY, int depth, System.Random rand)
     {
         for (int neighbourX = gridX - depth; neighbourX <= gridX + depth; neighbourX++) //LOOPS ROUND XY COORD
         {
@@ -241,22 +241,66 @@ public class CaveGenerator : MonoBehaviour
             {
                 if (neighbourX >= 0 && neighbourX < m_width && neighbourY >= 0 && neighbourY < m_height) //within the grid
                 {
-                    for(int i =0; i< depth; i++)
-                    {
-                        if (neighbourX == gridX - depth -i || neighbourX == gridX + depth - i 
-                            || neighbourY == gridY - depth - i || neighbourY == gridY + depth - i)
-                        {
-                            ChangeMapValue(neighbourX, neighbourY, (rand.Next(0, 100) < m_randomFillPercent) ? 1 : 0);
-                        }
-                    }
+                    ChangeMapValue(neighbourX, neighbourY, (rand.Next(0, 100) < m_randomFillPercent) ? 1 : 0);
+                }
+            }
+        }
+    }
+    void SetCaveDeadZones(int nodeIndex, int depth, int value)
+    {
+        if (m_nodes[nodeIndex].nodeData.upperEdge.index != -1
+            && (m_nodes[nodeIndex].nodeData.upperEdge.edgeData.directional || m_nodes[nodeIndex].nodeData.upperEdge.edgeData.symbol == "edge"))
+        {
+            //create up blocker
+            Vector3 posDifference = (m_nodes[nodeIndex].nodeData.upperEdge.edgeData.toPos + m_nodes[nodeIndex].nodeData.upperEdge.edgeData.fromPos) / 2;
+            for (int posX = (int)posDifference.x - depth / 2; posX < posDifference.x + depth / 2; posX++)
+            {
+                ChangeMapValue(posX, (int)posDifference.z, value);
+            }
+        }
+        if (m_nodes[nodeIndex].nodeData.rightEdge.index != -1
+            && (m_nodes[nodeIndex].nodeData.rightEdge.edgeData.directional || m_nodes[nodeIndex].nodeData.rightEdge.edgeData.symbol == "edge"))
+        {
+            //create right blocker
+            Vector3 posDifference = (m_nodes[nodeIndex].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex].nodeData.rightEdge.edgeData.fromPos) / 2;
+            for (int posY = (int)posDifference.z - depth / 2; posY < posDifference.z + depth / 2; posY++)
+            {
+                ChangeMapValue((int)posDifference.x, posY, value);
+            }
+        }
+        if (nodeIndex - m_graphWidth > 0)
+        {
+            if (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.index != -1
+                && (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.directional || m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.symbol == "edge"))
+            {
+                //create left blocker
+                Vector3 posDifference = (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.fromPos) / 2;
+                for (int posY = (int)posDifference.z - depth / 2; posY < posDifference.z + depth / 2; posY++)
+                {
+                    ChangeMapValue((int)posDifference.x, posY, value);
+                }
+            }
+        }
+        if (nodeIndex - 1 > 0)
+        {
+            if (m_nodes[nodeIndex - 1].nodeData.upperEdge.index != -1
+                && (m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.directional || m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.symbol == "edge"))
+            {
+                //create down blocker
+                Vector3 posDifference = (m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.toPos + m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.fromPos) / 2;
+                for (int posX = (int)posDifference.x - depth / 2; posX < posDifference.x + depth / 2; posX++)
+                {
+                    ChangeMapValue(posX, (int)posDifference.z, value);
                 }
             }
         }
     }
 
+
     void SetRoomCells(int gridX, int gridY, Index2NodeDataLinker node, int value)
     {
-        int roomSize=0;
+        int roomWidth=0, roomHeight =0;
+        
         GameObject roomPrefab;
         PreAuthoredRoomSO.Room roomRef = new PreAuthoredRoomSO.Room();
         System.Random rand = new System.Random();
@@ -271,7 +315,8 @@ public class CaveGenerator : MonoBehaviour
                     {
                         //get random room based on chance of appearing
                         roomRef = room;
-                        roomSize = room.m_roomSize;
+                        roomWidth = room.m_roomWidth/2;
+                        roomHeight = room.m_roomHeight/2;
                         roomPrefab = room.m_roomPrefab;
                         GameObject roomObject = Instantiate(roomPrefab, new Vector3(gridX + 0.5f, 0, gridY + 0.5f), Quaternion.identity);
                         m_createdRooms.Add(roomObject);
@@ -283,27 +328,26 @@ public class CaveGenerator : MonoBehaviour
         }
 
         //SETTING WALL BOUNDRY
-
-        for (int neighbourX = gridX - roomSize; neighbourX <= gridX + roomSize; neighbourX++) //LOOPS ROUND XY COORD
+        for (int neighbourX = gridX - roomWidth; neighbourX <= gridX + roomWidth; neighbourX++) //LOOPS ROUND XY COORD
         {
-            for (int neighbourY = gridY - roomSize; neighbourY <= gridY + roomSize; neighbourY++)
+            for (int neighbourY = gridY - roomHeight; neighbourY <= gridY + roomHeight; neighbourY++)
             {
                 if (neighbourX >= 0 && neighbourX < m_width && neighbourY >= 0 && neighbourY < m_height) //within the grid
                 {
                     //check for outer edge of depth set to extreme pos
-                    if(neighbourX == gridX - roomSize || neighbourX == gridX + roomSize || neighbourY == gridY - roomSize || neighbourY == gridY + roomSize)
+                    if(neighbourX == gridX - roomWidth || neighbourX == gridX + roomWidth || neighbourY == gridY - roomHeight || neighbourY == gridY + roomHeight)
                     {
                         if(0 < m_map[neighbourX, neighbourY])
                             m_map[neighbourX, neighbourY] = 2;
                         if(m_map[neighbourX, neighbourY] != 100)
                         {
-                            if (gridX == neighbourX && gridY + roomSize == neighbourY)
+                            if (gridX == neighbourX && gridY + roomHeight == neighbourY)
                                 SetUpDoor(node, neighbourX, neighbourY, roomRef);
-                            if (gridX + roomSize == neighbourX && gridY == neighbourY)
+                            if (gridX + roomWidth == neighbourX && gridY == neighbourY)
                                 SetRightDoor(node, neighbourX, neighbourY, roomRef);
-                            if (gridX == neighbourX && gridY - roomSize == neighbourY)
+                            if (gridX == neighbourX && gridY - roomHeight == neighbourY)
                                 SetDownDoor(node, neighbourX, neighbourY, roomRef);
-                            if (gridX - roomSize == neighbourX && gridY == neighbourY)
+                            if (gridX - roomWidth == neighbourX && gridY == neighbourY)
                                 SetLeftDoor(node, neighbourX, neighbourY, roomRef);
                         }
                     }
@@ -315,6 +359,42 @@ public class CaveGenerator : MonoBehaviour
                 }
             }
         }
+
+    }
+
+    bool CheckNeighbouringRooms(Index2NodeDataLinker node, int posX, int posY)
+    {
+        bool canSpawn = true;
+
+        //up
+        if (m_nodes[node.nodeData.upperEdge.edgeData.toNode].nodeData.preAuthored)
+        {
+            //get neighbouring nodes symbol and check the room sizes if one is smaller then change it to that
+            //check against SO if neighbouring room reaches this room
+            return false;
+        }
+        //right
+        if (m_nodes[node.nodeData.rightEdge.edgeData.toNode].nodeData.preAuthored)
+        {
+            return false;
+        }
+        //down
+        if (0 < node.index - 1)
+        {
+            if (m_nodes[m_nodes[node.index - 1].nodeData.upperEdge.edgeData.toNode].nodeData.preAuthored)
+            {
+                return false;
+            }
+        }
+        //left
+        if (0 < node.index - m_graphWidth)
+        {
+            if (m_nodes[m_nodes[node.index - m_graphWidth].nodeData.rightEdge.edgeData.toNode].nodeData.preAuthored)
+            {
+                return false;
+            }
+        }
+        return canSpawn;
     }
 
     void SetUpDoor(Index2NodeDataLinker node, int posX, int posY, PreAuthoredRoomSO.Room roomRef)
@@ -377,68 +457,6 @@ public class CaveGenerator : MonoBehaviour
         {
             GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 1f, 0, posY + 0.5f), Quaternion.identity);
             m_createdRooms.Add(blockerObj);
-        }
-    }
-
-    void SetCaveDeadZones(int gridX, int gridY, int nodeIndex, int depth, int value)
-    {
-        /* check 4 directions of nodes if neighbouring nodes are rooms or not
-        if node is non directional cave then no divide between
-        if node is directional cave then divider between
-
-        if room/cave then barrier
-        if room/room then smoosh rooms to touch (wall between)
-        */
-
-        if (m_nodes[nodeIndex].nodeData.upperEdge.index != -1 
-            && (m_nodes[nodeIndex].nodeData.upperEdge.edgeData.directional || m_nodes[nodeIndex].nodeData.upperEdge.edgeData.symbol == "edge"))
-        {
-            //create up blocker
-            Vector3 posDifference = (m_nodes[nodeIndex].nodeData.upperEdge.edgeData.toPos + m_nodes[nodeIndex].nodeData.upperEdge.edgeData.fromPos) / 2;
-            for (int posX = (int)posDifference.x - depth / 2; posX < posDifference.x + depth / 2; posX++)
-            {
-                //m_map[posX,(int)posDifference.z] = value;
-                ChangeMapValue(posX, (int)posDifference.z,value);
-            }
-        }
-        if (m_nodes[nodeIndex].nodeData.rightEdge.index != -1 
-            && (m_nodes[nodeIndex].nodeData.rightEdge.edgeData.directional || m_nodes[nodeIndex].nodeData.rightEdge.edgeData.symbol == "edge"))
-        {
-            //create right blocker
-            Vector3 posDifference = (m_nodes[nodeIndex].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex].nodeData.rightEdge.edgeData.fromPos)/2;
-            for (int posY = (int)posDifference.z-depth/2; posY < posDifference.z+depth/2; posY++)
-            {
-                //m_map[(int)posDifference.x,posY] = value;
-                ChangeMapValue((int)posDifference.x, posY,value);
-            }
-        }
-        if (nodeIndex - m_graphWidth > 0)
-        {
-            if (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.index != -1 
-                && (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.directional|| m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.symbol == "edge"))
-            {
-                //create left blocker
-                Vector3 posDifference = (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.fromPos) / 2;
-                for (int posY = (int)posDifference.z - depth / 2; posY < posDifference.z + depth / 2; posY++)
-                {
-                    //m_map[(int)posDifference.x, posY] = value;
-                    ChangeMapValue((int)posDifference.x, posY,value);
-                }
-            }
-        }
-        if (nodeIndex - 1 > 0)
-        {
-            if (m_nodes[nodeIndex - 1].nodeData.upperEdge.index != -1
-                && (m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.directional || m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.symbol == "edge"))
-            {
-                //create down blocker
-                Vector3 posDifference = (m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.toPos + m_nodes[nodeIndex - 1].nodeData.upperEdge.edgeData.fromPos) / 2;
-                for (int posX = (int)posDifference.x - depth / 2; posX < posDifference.x + depth / 2; posX++)
-                {
-                    //m_map[posX, (int)posDifference.z] = value;
-                    ChangeMapValue(posX, (int)posDifference.z,value);
-                }
-            }
         }
     }
 

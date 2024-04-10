@@ -71,7 +71,6 @@ public class MeshGenerator : MonoBehaviour
             {
                 for (int y = 0; y < nodeCountY; y++)
                 {
-                    //Vector3 pos = new Vector3(-mapWidth / 2 + x , 0, -mapHeight / 2 + y );
                     Vector3 pos = new Vector3(x - borderSize, 0, y - borderSize);
                     hostNodes[x, y] = new HostNode(pos, map[x, y] == 1, squareSize);
 
@@ -391,35 +390,4 @@ public class MeshGenerator : MonoBehaviour
         else
             return false;
     }
-    //private void OnDrawGizmos()
-    //{
-    //    //if (m_squareGrid != null)
-    //    //{
-    //    //    for (int x = 0; x < m_squareGrid.m_squares.GetLength(0); x++)
-    //    //    {
-    //    //        for (int y = 0; y < m_squareGrid.m_squares.GetLength(1); y++)
-    //    //        {
-    //    //            Gizmos.color = (m_squareGrid.m_squares[x, y].m_topLeft.m_active)?Color.black:Color.white;
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_topLeft.m_position, Vector3.one * 0.4f);
-
-    //    //            Gizmos.color = (m_squareGrid.m_squares[x, y].m_topRight.m_active) ? Color.black : Color.white;
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_topRight.m_position, Vector3.one * 0.4f);
-
-    //    //            Gizmos.color = (m_squareGrid.m_squares[x, y].m_bottomRight.m_active) ? Color.black : Color.white;
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_bottomRight.m_position, Vector3.one * 0.4f);
-
-    //    //            Gizmos.color = (m_squareGrid.m_squares[x, y].m_bottomLeft.m_active) ? Color.black : Color.white;
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_bottomLeft.m_position, Vector3.one * 0.4f);
-
-    //    //            Gizmos.color = Color.grey;
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_centreTop.m_position, Vector3.one * 0.15f);
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_centreRight.m_position, Vector3.one * 0.15f);
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_centreBottom.m_position, Vector3.one * 0.15f);
-    //    //            Gizmos.DrawCube(m_squareGrid.m_squares[x, y].m_centreLeft.m_position, Vector3.one * 0.15f);
-    //    //        }
-    //    //    }
-    //    //}
-    //}
-
-
 }

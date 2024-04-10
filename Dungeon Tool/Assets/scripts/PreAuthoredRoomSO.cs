@@ -11,7 +11,8 @@ public class PreAuthoredRoomSO : ScriptableObject
         [Tooltip("Always have a chance of 100 to allow at least 1 room to appear")]
         public int m_chanceOfAppearing;
         [Tooltip("This will dictate the size of blank space created")]
-        public int m_roomSize;
+        public int m_roomWidth;
+        public int m_roomHeight;
         public GameObject m_roomPrefab;
         public GameObject m_roomDoorBlockerPrefab;
     }
