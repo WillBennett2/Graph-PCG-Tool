@@ -41,14 +41,12 @@ public class TileMap : MonoBehaviour
     }
     public void SetTile(int xPos, int yPos, int zPos)
     {
-        //Debug.Log("set tile");
         if (yPos ==100)
         {
             return;
         }
         Vector3Int tilePos = new Vector3Int(xPos, yPos, zPos);
-        Vector3Int currentCell;// = tileMap.WorldToCell(tilePos);
-
+        Vector3Int currentCell;
 
         if (yPos <= 0)
         {
@@ -73,10 +71,6 @@ public class TileMap : MonoBehaviour
                 upperMap.SetTile(currentCell, m_tile);
             }
         }
-
-        //m_tile.gameObject = GetGameObject();
-
-        //tileMap.SetTile(new Vector3Int(0, 0, 0), m_tile);
     }
 
     public void Clear()

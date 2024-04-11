@@ -2622,7 +2622,6 @@ GameObject:
   m_Component:
   - component: {fileID: 233497148}
   - component: {fileID: 233497149}
-  - component: {fileID: 233497150}
   - component: {fileID: 233497153}
   - component: {fileID: 233497152}
   - component: {fileID: 233497151}
@@ -2672,20 +2671,6 @@ MonoBehaviour:
   m_randomNodeDepthMin: 3
   m_randomNodeDepthMax: 7
   m_roomSets: {fileID: 11400000, guid: d0c3a256cca385841b4640a48ff2a5fb, type: 2}
---- !u!114 &233497150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233497147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b694e8304f47a40abb8f14dad94873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_walls: {fileID: 1879834263}
-  m_wallHeight: 5
 --- !u!23 &233497151
 MeshRenderer:
   m_ObjectHideFlags: 0
