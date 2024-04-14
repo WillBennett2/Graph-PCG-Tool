@@ -28,6 +28,6 @@ MonoBehaviour:
   - m_colour: {r: 0.65882355, g: 0.627451, b: 0.9725491, a: 0.9019608}
     m_symbol: Wood
   - m_colour: {r: 0.07058824, g: 1, b: 1, a: 0.9019608}
-    m_symbol: end
+    m_symbol: End
   - m_colour: {r: 0, g: 0, b: 0, a: 1}
-    m_symbol: e
+    m_symbol: Start

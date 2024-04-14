@@ -27,9 +27,7 @@ public class Graph
         [HideInInspector] public Vector3 position;
         [HideInInspector] public Color colour;
         public int parentIndex;
-        public int terrain;
-        public int item;
-        public int enemy;
+        public EntitySpawnSetSO entitySet;
     }
     [Serializable]
     public struct NodeData
@@ -43,6 +41,13 @@ public class Graph
         public bool preAuthored;
         public Index2EdgeDataLinker upperEdge;
         public Index2EdgeDataLinker rightEdge;
+        public int spaceWidth;
+        public int spaceHeight;
+
+        [HideInInspector]public float fromStartCost; // Cost from start to this cell
+        [HideInInspector] public float heuristicCost; // Heuristic cost (estimated distance to goal)
+        [HideInInspector] public float totalCost => fromStartCost + heuristicCost; // Total cost (F = G + H)
+        [HideInInspector] public Index2NodeDataLinker parent; // Reference to the previous cell in the path
     }
     [Serializable]
     public class Index2NodeDataLinker

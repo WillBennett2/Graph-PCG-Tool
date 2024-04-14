@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 
 public class CaveGenerator : MonoBehaviour
 {
+    EntitySpawner m_entityScript;
+    TileMap m_tileMapGen;
+
     private int m_width;
     private int m_height;
     private int m_scale;
@@ -60,30 +63,30 @@ public class CaveGenerator : MonoBehaviour
         {
             SmoothMap();
         }
-
-        TileMap tileMapGen = GetComponent<TileMap>();
         for (int x = 0; x < m_map.GetLength(0); x++)
         {
             for (int y = 0; y < m_map.GetLength(1); y++)
             {
                 if (m_map[x, y] <= 0)
                 {
-                    tileMapGen.SetTile(x, 0, y);
+                    m_tileMapGen.SetTile(x, 0, y);
                 }
                 else if(m_map[x, y] == 2)
                 {
-                    tileMapGen.SetTile(x, 5, y);
+                    m_tileMapGen.SetTile(x, 5, y);
                 }
                 else if (m_map[x,y]==100)
                 {
-                    tileMapGen.SetTile(x, 100, y);
+                    m_tileMapGen.SetTile(x, 100, y);
                 }
                 else
                 {
-                    tileMapGen.SetTile(x, 10, y);
+                    m_tileMapGen.SetTile(x, 10, y);
                 }
             }
         }
+
+        m_entityScript.SetMapData(m_map);
 
     }
 
@@ -150,6 +153,7 @@ public class CaveGenerator : MonoBehaviour
                 m_map[(int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z] = m_nodes[i].nodeData.terrain;
                 SetSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, m_depth, -1);
                 int randomDepth = Random.Range(m_randomNodeDepthMin, m_randomNodeDepthMax);
+                m_nodes[i].nodeData.spaceWidth = m_nodes[i].nodeData.spaceHeight = randomDepth;
                 if (m_useRandom)
                     SetRandomSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, randomDepth, rand);
                 SetCaveDeadZones(i, m_scale, 2);
@@ -158,7 +162,7 @@ public class CaveGenerator : MonoBehaviour
         }
     }
 
-    public void SetUpFromGraph(List<Index2NodeDataLinker> nodes,List<Index2EdgeDataLinker> edges, int width, int height,int offset,int scale)
+    public void SetUpFromGraph(List<Index2NodeDataLinker> nodes,List<Index2EdgeDataLinker> edges, int width, int height,int offset,int scale,EntitySpawner entityScript, TileMap tileMapScript)
     {
         m_nodes = nodes;
         m_edges = edges;
@@ -169,6 +173,8 @@ public class CaveGenerator : MonoBehaviour
         m_graphWidth = width;
         m_graphHeight = height;
 
+        m_entityScript = entityScript;
+        m_tileMapGen = tileMapScript;
     }
 
     void SmoothMap()
@@ -326,6 +332,8 @@ public class CaveGenerator : MonoBehaviour
                 }
             }
         }
+        node.nodeData.spaceHeight = roomHeight;
+        node.nodeData.spaceWidth = roomWidth;
 
         //SETTING WALL BOUNDRY
         for (int neighbourX = gridX - roomWidth; neighbourX <= gridX + roomWidth; neighbourX++) //LOOPS ROUND XY COORD

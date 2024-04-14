@@ -13,6 +13,8 @@ public class GraphComponent : MonoBehaviour
     [SerializeField]private CaveGenerator m_caveGenerator;
     [SerializeField] public Rule m_ruleReference;
     [SerializeField] private TileMap m_tileMap;
+    [SerializeField] private EntitySpawner m_entitySpawner;
+    [SerializeField] private AStarPathfinder m_starPathfinder;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
@@ -32,6 +34,7 @@ public class GraphComponent : MonoBehaviour
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
+
     }
     private void InitGraph()
     {
@@ -40,11 +43,18 @@ public class GraphComponent : MonoBehaviour
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
+        SetUpData();
     }
 
     private void ScaleSetup()
     {
-        m_caveGenerator.SetUpFromGraph(m_nodes,m_edges, m_rows, m_columns,m_offset, m_scale);
+        m_caveGenerator.SetUpFromGraph(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale, m_entitySpawner, m_tileMap);
+    }
+
+    private void SetUpData()
+    {
+        m_entitySpawner.SetGraphData(m_nodes,m_storedNodes);
+        m_caveGenerator.SetUpFromGraph(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale, m_entitySpawner, m_tileMap);
     }
 
     public void Generate()
@@ -53,6 +63,29 @@ public class GraphComponent : MonoBehaviour
         m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
         ScaleSetup();
         m_caveGenerator.GenerateCave();
+        m_entitySpawner.CreateEntity();
+        m_starPathfinder.SetData(m_nodes, m_rows);
+        Index2NodeDataLinker startNode = null;
+        Index2NodeDataLinker endNode = null;
+        foreach (var node in m_nodes)
+        {
+            if (node.nodeData.symbol == "Start")
+            {
+                startNode = node;
+            }
+            if(node.nodeData.symbol =="End")
+            {
+                endNode = node;
+            }
+        }
+
+        List<Index2NodeDataLinker> path = m_starPathfinder.FindPath(startNode,endNode);
+        if (path == null)
+            Debug.Log("AHH");
+        foreach (var link in path)
+        {
+            Debug.Log("symbol= "+ link.nodeData.symbol+ " pos= "+link.nodeData.position);
+        }
     }
 
     public void Reset()
@@ -65,6 +98,8 @@ public class GraphComponent : MonoBehaviour
         m_tileMap.Clear();
         //clear cave
         m_caveGenerator.Clear();
+        //clear entites
+        m_entitySpawner.ClearData();
     }
 
     void OnDrawGizmos()

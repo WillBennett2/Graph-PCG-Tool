@@ -46,71 +46,87 @@ MonoBehaviour:
     m_symbol: u
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 29
-    m_toNode: 23
+    m_fromNode: 12
+    m_toNode: 18
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 23
-    m_toNode: 17
+    m_fromNode: 18
+    m_toNode: 24
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 17
-    m_toNode: 16
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 16
-    m_toNode: 15
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 15
-    m_toNode: 14
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 14
-    m_toNode: 13
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 13
-    m_toNode: 19
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 19
+    m_fromNode: 24
     m_toNode: 25
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 25
-    m_toNode: 31
+    m_toNode: 26
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 31
-    m_toNode: 32
+    m_fromNode: 26
+    m_toNode: 27
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 32
-    m_toNode: 33
+    m_fromNode: 27
+    m_toNode: 28
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 33
-    m_toNode: 34
+    m_fromNode: 28
+    m_toNode: 22
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 34
-    m_toNode: 35
+    m_fromNode: 22
+    m_toNode: 16
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 35
-    m_toNode: 29
+    m_fromNode: 16
+    m_toNode: 10
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 10
+    m_toNode: 9
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 9
+    m_toNode: 8
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 8
+    m_toNode: 7
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 7
+    m_toNode: 6
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 6
+    m_toNode: 12
     m_directional: 0
   m_rightHand:
   - m_rightHandProbability: 1
     m_LoopNode: 1
     m_nodeDataList:
-    - symbol: e
+    - symbol: Start
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 1
-      storedNodes: []
+      storedNodes:
+      - symbol: e
+        position: {x: 0, y: 0, z: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        parentIndex: 0
+        entitySet: {fileID: 11400000, guid: 2308d553b4922274fa487861b09cba51, type: 2}
+    - symbol: Water
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      storedNodes:
+      - symbol: e
+        position: {x: 0, y: 0, z: 0}
+        colour: {r: 0, g: 0, b: 0, a: 0}
+        parentIndex: 0
+        entitySet: {fileID: 11400000, guid: 2308d553b4922274fa487861b09cba51, type: 2}
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
@@ -177,13 +193,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       storedNodes: []
-    - symbol: Water
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      terrain: -1
-      preAuthored: 0
-      storedNodes: []
-    - symbol: Water
+    - symbol: End
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1

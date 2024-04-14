@@ -37,9 +37,9 @@ MonoBehaviour:
     m_roomPrefab: []
   - m_alphabetKey: Wood
     m_roomPrefab: []
-  - m_alphabetKey: end
+  - m_alphabetKey: End
     m_roomPrefab: []
-  - m_alphabetKey: e
+  - m_alphabetKey: Start
     m_roomPrefab:
     - m_chanceOfAppearing: 100
       m_roomWidth: 9
