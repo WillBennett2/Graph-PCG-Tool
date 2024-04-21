@@ -16,9 +16,12 @@ public class GraphComponentEditor : Editor
         if (GUILayout.Button("Run Rule."))
         {
             graphComponent.Reset();
-            graphComponent.Generate();
+            bool generated = graphComponent.Generate();
             
-            Debug.Log("Rule has been run");
+            if(generated)
+                Debug.Log("Map successfully generated");
+            else
+                Debug.Log("Map failed to generate");
         }
 
         if (GUILayout.Button("Reset."))

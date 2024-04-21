@@ -43,11 +43,7 @@ public class Graph
         public Index2EdgeDataLinker rightEdge;
         public int spaceWidth;
         public int spaceHeight;
-
-        [HideInInspector]public float fromStartCost; // Cost from start to this cell
-        [HideInInspector] public float heuristicCost; // Heuristic cost (estimated distance to goal)
-        [HideInInspector] public float totalCost => fromStartCost + heuristicCost; // Total cost (F = G + H)
-        [HideInInspector] public Index2NodeDataLinker parent; // Reference to the previous cell in the path
+        public int difficultyRating;
     }
     [Serializable]
     public class Index2NodeDataLinker
@@ -81,8 +77,8 @@ public class Graph
         [HideInInspector] public Quaternion rotation;
         public int fromNode;
         public int toNode;
-         public Vector3 fromPos;
-         public Vector3 toPos;
+        public Vector3 fromPos;
+        public Vector3 toPos;
         public bool directional;
         public int terrian;
     }
@@ -127,7 +123,7 @@ public class Graph
             for (int z = 0; z < columns; z++)
             {
                 NodeData data = new NodeData();
-                data.gridCoordinates = new Vector3 (x, 0,z);
+                data.gridCoordinates = new Vector2 (x,z);
                 data.position = new Vector3((x+ m_offset) * scale, 0,(z + m_offset) * scale);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);

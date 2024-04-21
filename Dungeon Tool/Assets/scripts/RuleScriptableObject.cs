@@ -67,6 +67,8 @@ public class RuleScriptableObject : ScriptableObject
         [HideInInspector] public Color colour;
         public int terrain;
         public bool preAuthored;
+        [Tooltip("Leave at 0 to apply no modifier")]
+        public int difficultyModifier;
         public List<StoredNodeData> storedNodes;
     }
     [Serializable]

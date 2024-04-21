@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
-  m_Name: ShortCut
+  m_Name: Circle
   m_EditorClassIdentifier: 
   m_runOnce: 1
   m_maxIterations: 1
@@ -18,24 +18,18 @@ MonoBehaviour:
   m_leftHand:
   - m_nodePosition: {x: -1, y: -1}
     m_symbol: Water
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodePosition: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
-    m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodePosition: {x: -1, y: 0}
     m_symbol: Water
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 7
-    m_toNode: 13
+    m_fromNode: 9
+    m_toNode: 15
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 13
-    m_toNode: 19
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 19
-    m_toNode: 25
+    m_fromNode: 15
+    m_toNode: 16
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 0
@@ -45,47 +39,28 @@ MonoBehaviour:
   - m_rightHandProbability: 1
     m_LoopNode: 0
     m_nodeDataList:
-    - symbol: Path
+    - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
       storedNodes: []
-    - symbol: Path
+    - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
-      difficultyModifier: 3
+      difficultyModifier: 0
       storedNodes: []
-    - symbol: Path
+    - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
-      difficultyModifier: 3
-      storedNodes: []
-    - symbol: Path
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      terrain: -1
-      preAuthored: 0
-      difficultyModifier: 3
+      difficultyModifier: 0
       storedNodes: []
     m_edgeDataList:
-    - symbol: Path
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      graphFromNode: 0
-      graphToNode: 0
-      rotation: {x: 0, y: 0, z: 0, w: 0}
-      fromNode: 0
-      toNode: 0
-      fromPos: {x: 0, y: 0, z: 0}
-      toPos: {x: 0, y: 0, z: 0}
-      directional: 0
-      terrian: -1
     - symbol: Path
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}

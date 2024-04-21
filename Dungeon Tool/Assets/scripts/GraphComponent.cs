@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.XR;
 using static Graph;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -14,7 +17,7 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] public Rule m_ruleReference;
     [SerializeField] private TileMap m_tileMap;
     [SerializeField] private EntitySpawner m_entitySpawner;
-    [SerializeField] private AStarPathfinder m_starPathfinder;
+    [SerializeField] private PathFinder m_pathFinder;
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
@@ -25,8 +28,10 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
     [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
     [SerializeField] public Alphabet m_alphabet;
-
+    [SerializeField] public List<Index2NodeDataLinker> m_pathList;
     [SerializeField] private GameObject m_nodePrefab;
+    public bool m_usePoisson;
+    public bool m_useJitter;
     void Awake ()
     {
         ScaleSetup();
@@ -57,35 +62,45 @@ public class GraphComponent : MonoBehaviour
         m_caveGenerator.SetUpFromGraph(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale, m_entitySpawner, m_tileMap);
     }
 
-    public void Generate()
+    public bool Generate()
     {
         InitGraph();
-        m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
-        ScaleSetup();
-        m_caveGenerator.GenerateCave();
-        m_entitySpawner.CreateEntity();
-        m_starPathfinder.SetData(m_nodes, m_rows);
-        Index2NodeDataLinker startNode = null;
-        Index2NodeDataLinker endNode = null;
-        foreach (var node in m_nodes)
+        bool ruleApplied = m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
+        if (ruleApplied)
         {
-            if (node.nodeData.symbol == "Start")
+            ScaleSetup();
+            m_caveGenerator.GenerateCave();
+            m_usePoisson = (m_useJitter == true ? false : true);
+            m_useJitter = (m_usePoisson == true ? false : true);
+            m_entitySpawner.m_usePoisson =m_usePoisson;
+            m_entitySpawner.m_useJitter = m_useJitter;
+            m_entitySpawner.CreateEntity();
+            Index2NodeDataLinker startNode = null;
+            Index2NodeDataLinker endNode = null;
+            foreach (var node in m_nodes)
             {
-                startNode = node;
+                if (node.nodeData.symbol == "Start")
+                {
+                    startNode = node;
+                }
+                if (node.nodeData.symbol == "End")
+                {
+                    endNode = node;
+                }
             }
-            if(node.nodeData.symbol =="End")
-            {
-                endNode = node;
-            }
-        }
 
-        List<Index2NodeDataLinker> path = m_starPathfinder.FindPath(startNode,endNode);
-        if (path == null)
-            Debug.Log("AHH");
-        foreach (var link in path)
-        {
-            Debug.Log("symbol= "+ link.nodeData.symbol+ " pos= "+link.nodeData.position);
+            m_pathList = m_pathFinder.RunSearch(m_nodes, endNode, startNode, m_rows);
+            m_pathList.Add(startNode);
+            m_pathList.Reverse();
+            for (int i = 0; i < m_pathList.Count; i++)
+            {
+                m_pathList[i].nodeData.difficultyRating += i;
+            }
+
+            return true;
         }
+        return false;
+
     }
 
     public void Reset()

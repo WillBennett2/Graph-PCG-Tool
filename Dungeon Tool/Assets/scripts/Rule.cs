@@ -78,28 +78,30 @@ public class Rule : MonoBehaviour
         }
         return -1;
     }
-    public void RunRule(List<Index2NodeDataLinker> nodes,List<Index2StoredNodeDataLinker> storedNodes ,List<Index2EdgeDataLinker> edges)
+    public bool RunRule(List<Index2NodeDataLinker> nodes,List<Index2StoredNodeDataLinker> storedNodes ,List<Index2EdgeDataLinker> edges)
     {
+        bool ruleRun = false;
         foreach (RuleScriptableObject rule in m_rules)
         {
             if (!rule.m_runOnce)
             {
                 for (int x = 1; x <= rule.m_maxIterations; x++)
                 {
-                    Replace(nodes, storedNodes, edges, rule);
+                    if (Replace(nodes, storedNodes, edges, rule))
+                        ruleRun = true;
                 }
             }
             else
             {
                 if (Replace(nodes, storedNodes, edges, rule))
                 {
-                    
+                    ruleRun = true;
                 }
             }
         }
         //m_graphSpace.CreateSpace(nodes,storedNodes,edges);
 
-
+        return ruleRun;
     }
     private bool Replace(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges, RuleScriptableObject rule)
     {
@@ -115,7 +117,7 @@ public class Rule : MonoBehaviour
             m_edgeCount = 0;
             for (int i = 0; i < rule.m_leftHand.Count; i++)
             {
-                Debug.Log("This node = " + i);
+                //Debug.Log("This node = " + i);
                 if (1 <= i)
                 {
                     if (matchingNode != null)
@@ -158,7 +160,8 @@ public class Rule : MonoBehaviour
 
                 //sort stored nodes
                 ChangeStoredNodeData(rule, rightHandIndex);
-                break;
+                Debug.Log(rule.name + " has been applied");
+                return true;
             }
             else
             {
@@ -166,7 +169,7 @@ public class Rule : MonoBehaviour
             }
             m_nodesToChange.Clear();
         }
-        return true;
+        return false;
     }
     private bool SetUp(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges, RuleScriptableObject rule, int rightHandIndex)
     {
@@ -294,12 +297,11 @@ public class Rule : MonoBehaviour
                 matchingNode.nodeData.colour = data.m_colour;
         }
         matchingNode.nodeData.terrain = rightHand.m_nodeDataList[i].terrain;
+        matchingNode.nodeData.difficultyRating = rightHand.m_nodeDataList[i].difficultyModifier;
         matchingNode.nodeData.preAuthored = rightHand.m_nodeDataList[i].preAuthored;
     }
     private void LoopEdge(RuleScriptableObject rule)
     {
-        Debug.Log("from node = " + m_firstNodeIndex);
-        Debug.Log("to node = " + m_lastNodeIndex);
         foreach (var edge in m_edgeGraph)
         {
             if (edge.edgeData.graphToNode == m_firstNodeIndex || edge.edgeData.graphToNode == m_lastNodeIndex)
@@ -327,7 +329,7 @@ public class Rule : MonoBehaviour
         }
         else
         {
-            Debug.Log("node changes applied");
+            //Debug.Log("node changes applied");
             applied = true;
         }
         return applied;
@@ -360,11 +362,11 @@ public class Rule : MonoBehaviour
             }
 
         }
-        Debug.Log("edge changes applied");
+        //Debug.Log("edge changes applied");
     }
     private void ResetRule(RuleScriptableObject rule)
     {
-        Debug.LogWarning("rule cant be applied");
+        Debug.LogWarning(rule.name+" can't be applied");
         if (m_nodeStore.Count == 0)
             return;
         for (int i = 0; i < m_nodesToChange.Count; i++)
