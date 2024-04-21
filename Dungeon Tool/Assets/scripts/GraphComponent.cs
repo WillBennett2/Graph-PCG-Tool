@@ -18,6 +18,8 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] private TileMap m_tileMap;
     [SerializeField] private EntitySpawner m_entitySpawner;
     [SerializeField] private PathFinder m_pathFinder;
+    [SerializeField] private DifficultyCurve m_difficultyCurve;
+
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
@@ -92,10 +94,7 @@ public class GraphComponent : MonoBehaviour
             m_pathList = m_pathFinder.RunSearch(m_nodes, endNode, startNode, m_rows);
             m_pathList.Add(startNode);
             m_pathList.Reverse();
-            for (int i = 0; i < m_pathList.Count; i++)
-            {
-                m_pathList[i].nodeData.difficultyRating += i;
-            }
+            m_difficultyCurve.ApplyCurve(m_pathList);
 
             return true;
         }

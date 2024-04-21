@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 36570849}
   - component: {fileID: 36570850}
   - component: {fileID: 36570852}
+  - component: {fileID: 36570853}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_tileMap: {fileID: 233497153}
   m_entitySpawner: {fileID: 36570850}
   m_pathFinder: {fileID: 36570852}
+  m_difficultyCurve: {fileID: 36570853}
   m_rows: 6
   m_columns: 6
   m_defaultSymbol: u
@@ -2523,7 +2525,171 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0531bb773c574446b9a5f73cabc4031, type: 2}
   - {fileID: 11400000, guid: 5187ae57db3b8dc4abbcbbb2cf21113b, type: 2}
   m_maxTries: 10
-  m_nodeStore: []
+  m_nodeStore:
+  - index: 16
+    nodeData:
+      symbol: Water
+      position: {x: 33, y: 0, z: 55}
+      gridCoordinates: {x: 2, y: 4}
+      colour: {r: 0.023529414, g: 0.03137255, b: 0.91372555, a: 0.9019608}
+      terrain: -1
+      preAuthored: 0
+      upperEdge:
+        index: 30
+        edgeData:
+          symbol: edge
+          position: {x: 33, y: 0, z: 55}
+          colour: {r: 1, g: 1, b: 1, a: 0.9019608}
+          graphFromNode: 16
+          graphToNode: 17
+          rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+          fromNode: 16
+          toNode: 17
+          fromPos: {x: 33, y: 0, z: 55}
+          toPos: {x: 33, y: 0, z: 66}
+          directional: 0
+          terrian: 1
+      rightEdge:
+        index: 31
+        edgeData:
+          symbol: Path
+          position: {x: 33, y: 0, z: 55}
+          colour: {r: 0.8313726, g: 0.5686275, b: 0.27058825, a: 0.9019608}
+          graphFromNode: 16
+          graphToNode: 22
+          rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+          fromNode: 22
+          toNode: 16
+          fromPos: {x: 33, y: 0, z: 55}
+          toPos: {x: 44, y: 0, z: 55}
+          directional: 1
+          terrian: -1
+      spaceWidth: 0
+      spaceHeight: 0
+      difficultyRating: 0
+  - index: 15
+    nodeData:
+      symbol: u
+      position: {x: 33, y: 0, z: 44}
+      gridCoordinates: {x: 2, y: 3}
+      colour: {r: 0.9725491, g: 0.9607844, b: 0.9490197, a: 0.9019608}
+      terrain: 1
+      preAuthored: 0
+      upperEdge:
+        index: 28
+        edgeData:
+          symbol: Path
+          position: {x: 33, y: 0, z: 44}
+          colour: {r: 0.8313726, g: 0.5686275, b: 0.27058825, a: 0.9019608}
+          graphFromNode: 15
+          graphToNode: 16
+          rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+          fromNode: 16
+          toNode: 15
+          fromPos: {x: 33, y: 0, z: 44}
+          toPos: {x: 33, y: 0, z: 55}
+          directional: 0
+          terrian: -1
+      rightEdge:
+        index: 29
+        edgeData:
+          symbol: edge
+          position: {x: 33, y: 0, z: 44}
+          colour: {r: 1, g: 1, b: 1, a: 0.9019608}
+          graphFromNode: 15
+          graphToNode: 21
+          rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+          fromNode: 15
+          toNode: 21
+          fromPos: {x: 33, y: 0, z: 44}
+          toPos: {x: 44, y: 0, z: 44}
+          directional: 0
+          terrian: 1
+      spaceWidth: 0
+      spaceHeight: 0
+      difficultyRating: 0
+  - index: 14
+    nodeData:
+      symbol: u
+      position: {x: 33, y: 0, z: 33}
+      gridCoordinates: {x: 2, y: 2}
+      colour: {r: 0.9725491, g: 0.9607844, b: 0.9490197, a: 0.9019608}
+      terrain: 1
+      preAuthored: 0
+      upperEdge:
+        index: 26
+        edgeData:
+          symbol: Path
+          position: {x: 33, y: 0, z: 33}
+          colour: {r: 0.8313726, g: 0.5686275, b: 0.27058825, a: 0.9019608}
+          graphFromNode: 14
+          graphToNode: 15
+          rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+          fromNode: 15
+          toNode: 14
+          fromPos: {x: 33, y: 0, z: 33}
+          toPos: {x: 33, y: 0, z: 44}
+          directional: 0
+          terrian: -1
+      rightEdge:
+        index: 27
+        edgeData:
+          symbol: edge
+          position: {x: 33, y: 0, z: 33}
+          colour: {r: 1, g: 1, b: 1, a: 0.9019608}
+          graphFromNode: 14
+          graphToNode: 20
+          rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+          fromNode: 14
+          toNode: 20
+          fromPos: {x: 33, y: 0, z: 33}
+          toPos: {x: 44, y: 0, z: 33}
+          directional: 0
+          terrian: 1
+      spaceWidth: 0
+      spaceHeight: 0
+      difficultyRating: 0
+  - index: 13
+    nodeData:
+      symbol: Water
+      position: {x: 33, y: 0, z: 22}
+      gridCoordinates: {x: 2, y: 1}
+      colour: {r: 0.023529414, g: 0.03137255, b: 0.91372555, a: 0.9019608}
+      terrain: -1
+      preAuthored: 0
+      upperEdge:
+        index: 24
+        edgeData:
+          symbol: Path
+          position: {x: 33, y: 0, z: 22}
+          colour: {r: 0.8313726, g: 0.5686275, b: 0.27058825, a: 0.9019608}
+          graphFromNode: 13
+          graphToNode: 14
+          rotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+          fromNode: 14
+          toNode: 13
+          fromPos: {x: 33, y: 0, z: 22}
+          toPos: {x: 33, y: 0, z: 33}
+          directional: 0
+          terrian: -1
+      rightEdge:
+        index: 25
+        edgeData:
+          symbol: Path
+          position: {x: 33, y: 0, z: 22}
+          colour: {r: 0.8313726, g: 0.5686275, b: 0.27058825, a: 0.9019608}
+          graphFromNode: 13
+          graphToNode: 19
+          rotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
+          fromNode: 13
+          toNode: 19
+          fromPos: {x: 33, y: 0, z: 22}
+          toPos: {x: 44, y: 0, z: 22}
+          directional: 0
+          terrian: -1
+      spaceWidth: 0
+      spaceHeight: 0
+      difficultyRating: 0
 --- !u!114 &36570849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,6 +2731,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacd4dc4560519439e10c93e4f74ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &36570853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36570844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7dad185fbb731468027813320ae40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.034118652
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 20
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 1
+    m_PostInfinity: 1
+    m_RotationOrder: 4
 --- !u!1 &233497147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_borderSize: 1
-  m_seed: 20/04/2024 17:35:21
+  m_seed: 21/04/2024 15:09:47
   m_useRandomSeed: 1
   m_useRandom: 1
   m_randomFillPercent: 49
