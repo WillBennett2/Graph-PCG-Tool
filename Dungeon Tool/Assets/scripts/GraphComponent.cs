@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.Build;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.XR;
 using static Graph;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -13,30 +10,44 @@ using Vector3 = UnityEngine.Vector3;
 [ExecuteInEditMode]
 public class GraphComponent : MonoBehaviour
 {
-    [SerializeField]private CaveGenerator m_caveGenerator;
-    [SerializeField] public Rule m_ruleReference;
-    [SerializeField] private TileMap m_tileMap;
-    [SerializeField] private EntitySpawner m_entitySpawner;
-    [SerializeField] private PathFinder m_pathFinder;
-    [SerializeField] private DifficultyCurve m_difficultyCurve;
+    public static event Action OnClearData;
+    public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, bool, bool> OnSpawnEntities;
+    public static event System.Action<List<Index2NodeDataLinker>, List<Index2EdgeDataLinker>, int, int, int, int> OnGenerateEnvrionment;
+    public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, List<Index2EdgeDataLinker>> OnRunGraphGrammar;
+    public static event Action<List<Index2NodeDataLinker>, Index2NodeDataLinker, Index2NodeDataLinker, int> OnFindValidPaths;
 
+    public static event Action<List<Index2NodeDataLinker>,AnimationCurve,int> OnApplyDifficultyCurve;
+
+
+    [Header("Graph Values")]
     [SerializeField] private int m_rows;
     [SerializeField] private int m_columns;
     [SerializeField] private string m_defaultSymbol = "unused";
     [SerializeField] private int m_scale = 1;
     [SerializeField] private int m_offset = 1;
 
-    [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
-    [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
-    [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
-    [SerializeField] public Alphabet m_alphabet;
-    [SerializeField] public List<Index2NodeDataLinker> m_pathList;
-    [SerializeField] private GameObject m_nodePrefab;
-    public bool m_usePoisson;
-    public bool m_useJitter;
-    void Awake ()
+    [Header("Graph Data")]
+    public Alphabet m_alphabet;
+    public List<Index2NodeDataLinker> m_nodes = null;
+    public List<Index2EdgeDataLinker> m_edges = null;
+    public List<Index2StoredNodeDataLinker> m_storedNodes = null;
+    public List<Index2NodeDataLinker> m_pathList;
+    private bool m_ruleApplied;
+
+    [Header("Difficulty Curve")]
+    [SerializeField] bool m_applyCurve = true;
+    [Tooltip("X axis should be 0 to 1")]
+    [SerializeField] private AnimationCurve m_difficultyCurve;
+    [Tooltip("Value represents range applied to difficulty applied")]
+    [Min(0)]
+    [SerializeField] private int m_difficultyInterval;
+
+    [Header("Entity Spawn Data")]
+    [SerializeField]bool m_usePoisson;
+    [SerializeField]bool m_useJitter;
+
+    void Awake()
     {
-        ScaleSetup();
         GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
@@ -45,38 +56,22 @@ public class GraphComponent : MonoBehaviour
     }
     private void InitGraph()
     {
-        ScaleSetup();
         GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
-        SetUpData();
-    }
-
-    private void ScaleSetup()
-    {
-        m_caveGenerator.SetUpFromGraph(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale, m_entitySpawner, m_tileMap);
-    }
-
-    private void SetUpData()
-    {
-        m_entitySpawner.SetGraphData(m_nodes,m_storedNodes);
-        m_caveGenerator.SetUpFromGraph(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale, m_entitySpawner, m_tileMap);
     }
 
     public bool Generate()
     {
         InitGraph();
-        bool ruleApplied = m_ruleReference.RunRule(m_nodes, m_storedNodes, m_edges);
-        if (ruleApplied)
+        OnRunGraphGrammar?.Invoke(m_nodes, m_storedNodes, m_edges);
+        if (m_ruleApplied)
         {
-            ScaleSetup();
-            m_caveGenerator.GenerateCave();
+            OnGenerateEnvrionment?.Invoke(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale);
             m_usePoisson = (m_useJitter == true ? false : true);
             m_useJitter = (m_usePoisson == true ? false : true);
-            m_entitySpawner.m_usePoisson =m_usePoisson;
-            m_entitySpawner.m_useJitter = m_useJitter;
-            m_entitySpawner.CreateEntity();
+            OnSpawnEntities?.Invoke(m_nodes, m_storedNodes, m_usePoisson, m_useJitter);
             Index2NodeDataLinker startNode = null;
             Index2NodeDataLinker endNode = null;
             foreach (var node in m_nodes)
@@ -91,10 +86,11 @@ public class GraphComponent : MonoBehaviour
                 }
             }
 
-            m_pathList = m_pathFinder.RunSearch(m_nodes, endNode, startNode, m_rows);
+            OnFindValidPaths?.Invoke(m_nodes, endNode, startNode, m_rows);
             m_pathList.Add(startNode);
             m_pathList.Reverse();
-            m_difficultyCurve.ApplyCurve(m_pathList);
+            if(m_applyCurve)
+                OnApplyDifficultyCurve?.Invoke(m_pathList,m_difficultyCurve,m_difficultyInterval);
 
             return true;
         }
@@ -104,16 +100,14 @@ public class GraphComponent : MonoBehaviour
 
     public void Reset()
     {
+        OnClearData?.Invoke();
         //clear graph data
         m_nodes.Clear();
         m_storedNodes.Clear();
         m_edges.Clear();
         //clear tilemap
-        m_tileMap.Clear();
         //clear cave
-        m_caveGenerator.Clear();
-        //clear entites
-        m_entitySpawner.ClearData();
+        //clear entites done
     }
 
     void OnDrawGizmos()
@@ -128,6 +122,7 @@ public class GraphComponent : MonoBehaviour
         {
             Gizmos.color = node.nodeData.colour;
             Gizmos.DrawSphere(node.nodeData.position, 0.125f);
+            Handles.Label(node.nodeData.position, node.nodeData.difficultyRating.ToString());
         }
         //drawing contained nodes
         foreach (Index2StoredNodeDataLinker storednode in m_storedNodes)
@@ -153,8 +148,8 @@ public class GraphComponent : MonoBehaviour
                 else if (offset == -1)
                 {
                     //down
-                    direction = new Vector3(0,0, -0.8f);
-                    positionModifier = new Vector3(0,  0,0.8f);
+                    direction = new Vector3(0, 0, -0.8f);
+                    positionModifier = new Vector3(0, 0, 0.8f);
                 }
                 else if (offset == +rootOfGraph)
                 {
@@ -171,7 +166,7 @@ public class GraphComponent : MonoBehaviour
                 {
                     if (m_storedNodes.Count == 0)
                         break;
-                    direction = m_nodes[edge.edgeData.toNode].nodeData.position - m_storedNodes[edge.edgeData.fromNode - (m_rows*m_columns) - 1].storedNodeData.position; // new Vector3(0, 0, -0.8f);
+                    direction = m_nodes[edge.edgeData.toNode].nodeData.position - m_storedNodes[edge.edgeData.fromNode - (m_rows * m_columns) - 1].storedNodeData.position; // new Vector3(0, 0, -0.8f);
                     positionModifier = new Vector3(0, 0, 0);
                 }
                 DrawArrow(new Vector3(edge.edgeData.position.x, edge.edgeData.position.y, edge.edgeData.position.z) + positionModifier,
@@ -186,7 +181,7 @@ public class GraphComponent : MonoBehaviour
         //check if directional and then add a second small diag line
     }
 
-    public static void DrawArrow(Vector3 pos, Vector3 direction, Color color, float arrowHeadLength = 0.25f, float arrowHeadAngle = 20)
+    public void DrawArrow(Vector3 pos, Vector3 direction, Color color, float arrowHeadLength = 0.25f, float arrowHeadAngle = 20)
     {
         Gizmos.color = color;
         Gizmos.DrawRay(pos, direction);
@@ -197,7 +192,6 @@ public class GraphComponent : MonoBehaviour
         Gizmos.DrawRay(pos + direction, left * arrowHeadLength);
     }
 
-
     public void PrintGraph()
     {
         string output = "";
@@ -207,36 +201,56 @@ public class GraphComponent : MonoBehaviour
 
             output += (" ");
             output += (node.nodeData.symbol);
-            output +=("(");
-            output +=("x="+node.nodeData.position.x + ", ");
-            output +=("y="+node.nodeData.position.y + ", ");
-            output +=("tileX=" + node.nodeData.position.x + ", ");
-            output +=("tileY=" + node.nodeData.position.y);
-            output +=(")");
+            output += ("(");
+            output += ("x=" + node.nodeData.position.x + ", ");
+            output += ("y=" + node.nodeData.position.y + ", ");
+            output += ("tileX=" + node.nodeData.position.x + ", ");
+            output += ("tileY=" + node.nodeData.position.y);
+            output += (")");
         }
         foreach (Index2EdgeDataLinker edge in m_edges)
         {
-            output +=(" ");
-            output +=(edge.edgeData.symbol);
-            output +=("(");
-            output +=(edge.edgeData.fromNode + ", ");
+            output += (" ");
+            output += (edge.edgeData.symbol);
+            output += ("(");
+            output += (edge.edgeData.fromNode + ", ");
             output += (edge.edgeData.toNode);
-            if(!edge.edgeData.directional)
+            if (!edge.edgeData.directional)
                 output += (", d=" + edge.edgeData.directional.ToString().ToLower());
             output += (")");
         }
         foreach (Index2StoredNodeDataLinker node in m_storedNodes)
         {
-            output +=(" ");
-            output +=(node.storedNodeData.symbol);
-            output +=(" contain");
-            output +=("(");
-            output +=(node.index + ", ");
-            output +=(node.storedNodeData.parentIndex + ", ");
-            output +=("c=true");
-            output +=(")");
+            output += (" ");
+            output += (node.storedNodeData.symbol);
+            output += (" contain");
+            output += ("(");
+            output += (node.index + ", ");
+            output += (node.storedNodeData.parentIndex + ", ");
+            output += ("c=true");
+            output += (")");
         }
         Debug.Log(output);
+    }
+
+    private void RuleApplied(bool ruleApplied)
+    {
+        m_ruleApplied = ruleApplied;
+    }
+    private void PathFound(List<Index2NodeDataLinker> pathList)
+    {
+        m_pathList = pathList;
+    }
+
+    private void OnEnable()
+    {
+        Rule.OnRuleApplied += RuleApplied;
+        PathFinder.OnValidPathList += PathFound;
+    }
+    private void OnDisable()
+    {
+        Rule.OnRuleApplied -= RuleApplied;
+        PathFinder.OnValidPathList -= PathFound;
     }
 
 }

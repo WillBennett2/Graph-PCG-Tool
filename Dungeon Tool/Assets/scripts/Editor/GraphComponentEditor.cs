@@ -15,7 +15,7 @@ public class GraphComponentEditor : Editor
 
         if (GUILayout.Button("Run Rule."))
         {
-            graphComponent.Reset();
+            graphComponent. Reset();
             bool generated = graphComponent.Generate();
             
             if(generated)

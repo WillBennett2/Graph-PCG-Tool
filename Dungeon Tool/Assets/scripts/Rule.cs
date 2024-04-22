@@ -1,16 +1,15 @@
+using System;
 using System.Collections.Generic;
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 using static Alphabet;
 using static Graph;
 using static RuleScriptableObject;
+using Random = UnityEngine.Random;
 
 [ExecuteInEditMode]
 public class Rule : MonoBehaviour
 {
-    private GraphSpace m_graphSpace;
+    public static event Action<bool> OnRuleApplied;
     private Alphabet m_alphabet;
     [HideInInspector] private RuleScriptableObject m_rule;
     [SerializeField] private List<RuleScriptableObject> m_rules;
@@ -34,13 +33,29 @@ public class Rule : MonoBehaviour
     private int m_lastNodeIndex = -1;
     public RuleScriptableObject m_ruleRef { get; private set; }
 
+    private void OnEnable()
+    {
+        GraphComponent.OnClearData += Clear;
+        GraphComponent.OnRunGraphGrammar += RunRule;
+    }
+    private void OnDisable()
+    {
+        GraphComponent.OnClearData -= Clear;
+        GraphComponent.OnRunGraphGrammar -= RunRule;
+    }
     private void Start()
     {
         m_ruleRef = m_rule;
         m_alphabet = GraphInfo.graphInfo.m_alphabet;
-        m_graphSpace = GetComponent<GraphSpace>();
     }
-
+    private void Clear()
+    {
+        m_nodeGraph.Clear();
+        m_matchingNodes.Clear();
+        m_nodesToChange.Clear();
+        m_nodeStore.Clear();
+        m_edgeGraph.Clear();
+    }
     private void SetOrientation()
     {
         int direction = Random.Range(0, 4);
@@ -78,7 +93,7 @@ public class Rule : MonoBehaviour
         }
         return -1;
     }
-    public bool RunRule(List<Index2NodeDataLinker> nodes,List<Index2StoredNodeDataLinker> storedNodes ,List<Index2EdgeDataLinker> edges)
+    public void RunRule(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges)
     {
         bool ruleRun = false;
         foreach (RuleScriptableObject rule in m_rules)
@@ -99,9 +114,8 @@ public class Rule : MonoBehaviour
                 }
             }
         }
-        //m_graphSpace.CreateSpace(nodes,storedNodes,edges);
 
-        return ruleRun;
+        OnRuleApplied?.Invoke(ruleRun);
     }
     private bool Replace(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes, List<Index2EdgeDataLinker> edges, RuleScriptableObject rule)
     {
@@ -250,16 +264,16 @@ public class Rule : MonoBehaviour
         switch (m_orientation)
         {
             case ("Up"):
-                direction = new Vector3(direction.x, 0,direction.y);
+                direction = new Vector3(direction.x, 0, direction.y);
                 break;
             case ("Right"):
-                direction = new Vector3(direction.y, 0,direction.x * -1);
+                direction = new Vector3(direction.y, 0, direction.x * -1);
                 break;
             case ("Left"):
-                direction = new Vector3(direction.y * -1, 0,direction.x);
+                direction = new Vector3(direction.y * -1, 0, direction.x);
                 break;
             case ("Down"):
-                direction = new Vector3(direction.x * -1, 0,direction.y * -1);
+                direction = new Vector3(direction.x * -1, 0, direction.y * -1);
                 break;
         }
         return direction;
@@ -283,7 +297,7 @@ public class Rule : MonoBehaviour
 
         return node;
     }
-    private void SetNodeData(RightHand rightHand,int i, Index2NodeDataLinker matchingNode)
+    private void SetNodeData(RightHand rightHand, int i, Index2NodeDataLinker matchingNode)
     {
         m_nodesToChange.Add(matchingNode);
         Index2NodeDataLinker nodeData = new Index2NodeDataLinker(matchingNode.index, matchingNode.nodeData);
@@ -347,10 +361,10 @@ public class Rule : MonoBehaviour
         {
             for (int i = 0; i < rule.m_leftHandEdge.Count; i++)
             {
-                if(rightHand.m_LoopNode == false && (i == rule.m_leftHandEdge.Count-1 && rule.m_leftHandEdge.Count>1))
+                if (rightHand.m_LoopNode == false && (i == rule.m_leftHandEdge.Count - 1 && rule.m_leftHandEdge.Count > 1))
                 {
                     break;
-                }    
+                }
                 if ((edgeData.edgeData.graphFromNode == rule.m_leftHandEdge[i].m_fromNode
                     && edgeData.edgeData.graphToNode == rule.m_leftHandEdge[i].m_toNode)
                     || (edgeData.edgeData.graphToNode == rule.m_leftHandEdge[i].m_fromNode
@@ -366,7 +380,7 @@ public class Rule : MonoBehaviour
     }
     private void ResetRule(RuleScriptableObject rule)
     {
-        Debug.LogWarning(rule.name+" can't be applied");
+        Debug.LogWarning(rule.name + " can't be applied");
         if (m_nodeStore.Count == 0)
             return;
         for (int i = 0; i < m_nodesToChange.Count; i++)
@@ -430,7 +444,7 @@ public class Rule : MonoBehaviour
                 Index2StoredNodeDataLinker newStoredNode = new Index2StoredNodeDataLinker(GraphInfo.graphInfo.nodeIndexCounter, storedNode);
                 newStoredNode.storedNodeData.parentIndex = m_nodesToChange[i].index;
                 float randomPosMod = Random.Range(-0.25f, 0.25f);
-                newStoredNode.storedNodeData.position = new Vector3(m_nodesToChange[i].nodeData.position.x + randomPosMod,1f,m_nodesToChange[i].nodeData.position.z + randomPosMod);
+                newStoredNode.storedNodeData.position = new Vector3(m_nodesToChange[i].nodeData.position.x + randomPosMod, 1f, m_nodesToChange[i].nodeData.position.z + randomPosMod);
                 foreach (AlphabetLinker data in m_alphabet.m_alphabet)
                 {
                     if (newStoredNode.storedNodeData.symbol == data.m_symbol)

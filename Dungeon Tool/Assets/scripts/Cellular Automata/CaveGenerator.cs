@@ -7,8 +7,10 @@ using Random = UnityEngine.Random;
 
 public class CaveGenerator : MonoBehaviour
 {
-    EntitySpawner m_entityScript;
-    TileMap m_tileMapGen;
+    public static event Action<int[,]> OnSetMapData;
+    public static event Action<Vector3> OnSetTileData;
+    //EntitySpawner m_entityScript;
+    //TileMap m_tileMapGen;
 
     private int m_width;
     private int m_height;
@@ -37,25 +39,34 @@ public class CaveGenerator : MonoBehaviour
     int[,] m_map;
     private List<Index2NodeDataLinker> m_nodes;
     private List<Index2EdgeDataLinker> m_edges;
+
+    private void OnEnable()
+    {
+        GraphComponent.OnClearData += Clear;
+        GraphComponent.OnGenerateEnvrionment += GenerateCave;
+    }
+    private void OnDisable()
+    {
+        GraphComponent.OnClearData -= Clear;
+        GraphComponent.OnGenerateEnvrionment -= GenerateCave;
+    }
     public void Clear()
     {
         m_map = null;
-        m_nodes.Clear();
-        m_edges.Clear();
+        if(m_nodes!=null)
+            m_nodes.Clear();
+        if (m_edges != null)
+            m_edges.Clear();
         foreach (GameObject room in m_createdRooms)
         {
             Destroy(room);
         }
         m_createdRooms.Clear();
     }
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            GenerateCave();
-    }
 
-    public void GenerateCave()
+    public void GenerateCave(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges, int width, int height, int offset, int scale)
     {
+        SetUpFromGraph(nodes,edges,width,height,offset,scale);
         m_map = new int[m_width, m_height];
         ApplyGraphData();
 
@@ -63,31 +74,32 @@ public class CaveGenerator : MonoBehaviour
         {
             SmoothMap();
         }
+        Vector3 tileData;
         for (int x = 0; x < m_map.GetLength(0); x++)
         {
             for (int y = 0; y < m_map.GetLength(1); y++)
             {
                 if (m_map[x, y] <= 0)
                 {
-                    m_tileMapGen.SetTile(x, 0, y);
+                    tileData = new Vector3(x, 0, y);
                 }
                 else if(m_map[x, y] == 2)
                 {
-                    m_tileMapGen.SetTile(x, 5, y);
+                    tileData = new Vector3(x, 5, y);
                 }
                 else if (m_map[x,y]==100)
                 {
-                    m_tileMapGen.SetTile(x, 100, y);
+                    tileData = new Vector3(x, 100, y);
                 }
                 else
                 {
-                    m_tileMapGen.SetTile(x, 10, y);
+                    tileData = new Vector3(x, 10, y);
                 }
+                OnSetTileData?.Invoke(tileData);
             }
         }
 
-        m_entityScript.SetMapData(m_map);
-
+        OnSetMapData?.Invoke(m_map);
     }
 
     void ApplyGraphData()
@@ -162,7 +174,7 @@ public class CaveGenerator : MonoBehaviour
         }
     }
 
-    public void SetUpFromGraph(List<Index2NodeDataLinker> nodes,List<Index2EdgeDataLinker> edges, int width, int height,int offset,int scale,EntitySpawner entityScript, TileMap tileMapScript)
+    public void SetUpFromGraph(List<Index2NodeDataLinker> nodes,List<Index2EdgeDataLinker> edges, int width, int height,int offset,int scale)
     {
         m_nodes = nodes;
         m_edges = edges;
@@ -172,9 +184,6 @@ public class CaveGenerator : MonoBehaviour
 
         m_graphWidth = width;
         m_graphHeight = height;
-
-        m_entityScript = entityScript;
-        m_tileMapGen = tileMapScript;
     }
 
     void SmoothMap()
@@ -301,7 +310,6 @@ public class CaveGenerator : MonoBehaviour
             }
         }
     }
-
 
     void SetRoomCells(int gridX, int gridY, Index2NodeDataLinker node, int value)
     {
@@ -467,7 +475,6 @@ public class CaveGenerator : MonoBehaviour
             m_createdRooms.Add(blockerObj);
         }
     }
-
     private void ChangeMapValue(int posX,int posY, int value)
     {
         if ( 0 == m_map[posX, posY] || m_map[posX,posY]==1)

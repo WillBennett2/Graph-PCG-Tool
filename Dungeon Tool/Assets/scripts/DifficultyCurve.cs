@@ -5,31 +5,31 @@ using static Graph;
 
 public class DifficultyCurve : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve m_difficultyCurve;
+    private AnimationCurve m_difficultyCurve;
 
     private List<Index2NodeDataLinker> m_pathList;
-    private void AdjustCurve(int maxLength)
+    private void OnEnable()
     {
-        Debug.Log("key value = " + m_difficultyCurve.Evaluate(m_difficultyCurve.length));
-
-        int keyIndex = m_difficultyCurve.length - 1;
-        Keyframe lastKey = m_difficultyCurve[keyIndex];
-
-        lastKey.time = maxLength;
-        //m_difficultyCurve.RemoveKey(keyIndex);
-        m_difficultyCurve.MoveKey(keyIndex, lastKey);
-
-        //adjust all keys throughout to keep curve shape
-       
+        GraphComponent.OnApplyDifficultyCurve += ApplyCurve;
     }
-    public void ApplyCurve(List<Index2NodeDataLinker> pathList)
+    private void OnDisable()
+    {
+        GraphComponent.OnApplyDifficultyCurve -= ApplyCurve;
+    }
+
+    public void ApplyCurve(List<Index2NodeDataLinker> pathList, AnimationCurve animCurve,int interval)
     {
         m_pathList = pathList;
-        AdjustCurve(m_pathList.Count);
+        m_difficultyCurve = animCurve;
+        //AdjustCurve(m_pathList.Count);
 
-        for (int i = 0; i < m_pathList.Count; i++)
+        for (float i = 0; i < m_pathList.Count; i++)
         {
-            m_pathList[i].nodeData.difficultyRating += Mathf.RoundToInt(m_difficultyCurve.Evaluate(i));
+            float randomInterval = Random.Range(
+                (m_difficultyCurve.Evaluate(i / m_pathList.Count) - interval)<0 ? 0:(m_difficultyCurve.Evaluate(i / m_pathList.Count) - interval),
+                m_difficultyCurve.Evaluate(i / m_pathList.Count) + interval);
+            Debug.Log("node "+i+" has a diff value of "+Mathf.RoundToInt(m_difficultyCurve.Evaluate(i / m_pathList.Count) )+" with rand inter diff of "+ randomInterval + " at value "+ i / m_pathList.Count );
+            m_pathList[(int)i].nodeData.difficultyRating += Mathf.RoundToInt(randomInterval); ;
         }
     }
 }

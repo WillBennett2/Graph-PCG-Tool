@@ -31,3 +31,7 @@ MonoBehaviour:
     m_symbol: End
   - m_colour: {r: 0, g: 0, b: 0, a: 1}
     m_symbol: Start
+  - m_colour: {r: 0, g: 0, b: 0, a: 1}
+    m_symbol: SCStart
+  - m_colour: {r: 0, g: 0, b: 0, a: 1}
+    m_symbol: SCPossibility

@@ -1,18 +1,26 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 using static Graph;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class PathFinder : MonoBehaviour
+public class PathFinder :MonoBehaviour
 {
+    public static event Action<List<Index2NodeDataLinker>> OnValidPathList;
+
     int m_graphWidth;
     List<Index2NodeDataLinker> m_pathList;
 
+    private void OnEnable()
+    {
+        GraphComponent.OnClearData += Clear;
+        GraphComponent.OnFindValidPaths += RunSearch;
+    }
+    private void OnDisable()
+    {
+        GraphComponent.OnClearData -= Clear;
+        GraphComponent.OnFindValidPaths -= RunSearch;
+    }
     void Bfs(List<Index2NodeDataLinker> nodes, Index2NodeDataLinker endVertex, Index2NodeDataLinker startVertex)
     {
         bool[] visited = new bool[nodes.Count];
@@ -30,7 +38,6 @@ public class PathFinder : MonoBehaviour
 
             foreach (var neighbor in neighbors)
             {
-                //Debug.Log(neighbor.nodeData.symbol);
                 if (neighbor.nodeData.symbol == startVertex.nodeData.symbol)
                     continue;
                 queue.Enqueue(neighbor);
@@ -39,9 +46,6 @@ public class PathFinder : MonoBehaviour
     }
     List<Index2NodeDataLinker> GetNeighbors(List<Index2NodeDataLinker> nodes, Index2NodeDataLinker cell)
     {
-        // Implement logic to get neighboring cells (up, down, left, right, and diagonals)
-        // based on your grid representation.
-        // Return a list of valid neighboring cells.
         List<Index2NodeDataLinker> validCells = new List<Index2NodeDataLinker>();
 
         //get up
@@ -65,12 +69,17 @@ public class PathFinder : MonoBehaviour
         }
         return validCells;
     }
-    public List<Index2NodeDataLinker> RunSearch(List<Index2NodeDataLinker> nodes, Index2NodeDataLinker endNode, Index2NodeDataLinker startNode, int graphWidth)
+    public void RunSearch(List<Index2NodeDataLinker> nodes, Index2NodeDataLinker endNode, Index2NodeDataLinker startNode, int graphWidth)
     {
         m_pathList = new List<Index2NodeDataLinker>();
         m_graphWidth = graphWidth;
-        Bfs(nodes, endNode,startNode);
-
-        return m_pathList;
+        Bfs(nodes, endNode, startNode);
+        OnValidPathList?.Invoke(m_pathList);
+    }
+    public void Clear()
+    {
+        if(m_pathList!=null)
+            m_pathList.Clear();
     }
 }
+

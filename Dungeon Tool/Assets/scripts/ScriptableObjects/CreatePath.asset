@@ -46,60 +46,60 @@ MonoBehaviour:
     m_symbol: u
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 16
-    m_toNode: 10
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 10
-    m_toNode: 4
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 4
-    m_toNode: 3
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 3
-    m_toNode: 2
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 2
-    m_toNode: 1
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 1
-    m_toNode: 0
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 0
-    m_toNode: 6
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 6
-    m_toNode: 12
-    m_directional: 0
-  - m_symbol: edge
     m_fromNode: 12
     m_toNode: 18
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 18
-    m_toNode: 19
+    m_toNode: 24
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 19
-    m_toNode: 20
+    m_fromNode: 24
+    m_toNode: 25
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 20
-    m_toNode: 21
+    m_fromNode: 25
+    m_toNode: 26
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 21
+    m_fromNode: 26
+    m_toNode: 27
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 27
+    m_toNode: 28
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 28
     m_toNode: 22
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 22
     m_toNode: 16
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 16
+    m_toNode: 10
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 10
+    m_toNode: 9
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 9
+    m_toNode: 8
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 8
+    m_toNode: 7
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 7
+    m_toNode: 6
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 6
+    m_toNode: 12
     m_directional: 0
   m_rightHand:
   - m_rightHandProbability: 1
@@ -134,21 +134,21 @@ MonoBehaviour:
         colour: {r: 0, g: 0, b: 0, a: 0}
         parentIndex: 0
         entitySet: {fileID: 11400000, guid: 2308d553b4922274fa487861b09cba51, type: 2}
-    - symbol: Water
+    - symbol: SCPossibility
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
       storedNodes: []
-    - symbol: Water
+    - symbol: SCPossibility
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
       storedNodes: []
-    - symbol: Water
+    - symbol: SCPossibility
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1

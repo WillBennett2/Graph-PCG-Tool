@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 using static Alphabet;
 
@@ -16,7 +15,7 @@ public class Graph
         {
             this.index = index;
             this.storedNodeData = storedNodeData;
-            this.storedNodeData.colour = storedNodeData.colour;      
+            this.storedNodeData.colour = storedNodeData.colour;
             this.storedNodeData.position = storedNodeData.position;
         }
     }
@@ -56,7 +55,7 @@ public class Graph
             this.index = index;
             this.nodeData = nodedata;
             this.nodeData.colour = nodedata.colour;
-            if(nodedata.terrain<0 || 1< nodedata.terrain)
+            if (nodedata.terrain < 0 || 1 < nodedata.terrain)
             {
                 this.nodeData.terrain = nodedata.terrain;
             }
@@ -108,7 +107,7 @@ public class Graph
     private int m_graphSize;
     public int nodeIndexCounter;
 
-    public Graph(int rows, int columns, int scale,int offset, string defaultSymbol, Alphabet alphabet)
+    public Graph(int rows, int columns, int scale, int offset, string defaultSymbol, Alphabet alphabet)
     {
         m_alphabet = alphabet;
         m_scale = scale;
@@ -123,8 +122,8 @@ public class Graph
             for (int z = 0; z < columns; z++)
             {
                 NodeData data = new NodeData();
-                data.gridCoordinates = new Vector2 (x,z);
-                data.position = new Vector3((x+ m_offset) * scale, 0,(z + m_offset) * scale);
+                data.gridCoordinates = new Vector2(x, z);
+                data.position = new Vector3((x + m_offset) * scale, 0, (z + m_offset) * scale);
                 data.symbol = defaultSymbol;
                 var node = new Index2NodeDataLinker(index, data);
                 nodes.Add(node);
@@ -199,7 +198,7 @@ public class Graph
                 if (nodes[i].nodeData.symbol == data.m_symbol)
                     nodes[i].nodeData.colour = data.m_colour;
             }
-            for (int j = 0; j <storedNodes.Count; j++)
+            for (int j = 0; j < storedNodes.Count; j++)
             {
                 if (storedNodes[j].storedNodeData.symbol == data.m_symbol)
                     storedNodes[j].storedNodeData.colour = data.m_colour;
@@ -217,22 +216,22 @@ public class Graph
     public Quaternion SetRotation(EdgeData data)
     {
         //figure out direction needed
-        if(data.toNode - data.fromNode == 1)
+        if (data.toNode - data.fromNode == 1)
         {
             //set data rotation to upward
             data.rotation = Quaternion.Euler(90, 0, 0);
         }
-        else if(data.toNode - data.fromNode == -1)
+        else if (data.toNode - data.fromNode == -1)
         {
             //set data rotation to downward
             data.rotation = Quaternion.Euler(-90, 0, 0);
         }
-        else if(data.toNode - data.fromNode == Mathf.Round( Mathf.Sqrt(m_graphSize)))
+        else if (data.toNode - data.fromNode == Mathf.Round(Mathf.Sqrt(m_graphSize)))
         {
             //right
             data.rotation = Quaternion.Euler(90, 0, -90);
         }
-        else if(data.toNode - data.fromNode == -Mathf.Round(Mathf.Sqrt(m_graphSize)))
+        else if (data.toNode - data.fromNode == -Mathf.Round(Mathf.Sqrt(m_graphSize)))
         {
             //left
             data.rotation = Quaternion.Euler(90, 0, 90);

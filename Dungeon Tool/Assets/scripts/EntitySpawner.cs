@@ -14,20 +14,34 @@ public class EntitySpawner : MonoBehaviour
     int[,] m_PDEntityMap;
     int[,] m_JGEntityMap;
 
-    public bool m_usePoisson;
-    public bool m_useJitter;
+    bool m_usePoisson;
+    bool m_useJitter;
 
     List<GameObject> m_entities = new List<GameObject>();
 
-
-
     private List<Index2NodeDataLinker> m_nodes;
     private List<Index2StoredNodeDataLinker> m_storedNodes;
+    private void OnEnable()
+    {
+        GraphComponent.OnClearData += ClearData;
+        GraphComponent.OnSpawnEntities += SetData;
+        CaveGenerator.OnSetMapData += SetMapData;
+    }
+    private void OnDisable()
+    {
+        GraphComponent.OnClearData -= ClearData;
+        GraphComponent.OnSpawnEntities -= SetData;
+        CaveGenerator.OnSetMapData -= SetMapData;
+    }
 
-    public void SetGraphData(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes)
+    public void SetData(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes,bool usePoisson, bool useJitter)
     {
         m_nodes = nodes;
         m_storedNodes = storedNodes;
+        m_usePoisson = usePoisson;
+        m_useJitter = useJitter;
+
+        CreateEntity();
     }
     public void SetMapData(int[,] map)
     {
@@ -41,8 +55,6 @@ public class EntitySpawner : MonoBehaviour
                 m_map[x,y] = map[x,y];
                 m_PDEntityMap[x, y] = 0;
                 m_JGEntityMap[x, y] = 0;
-
-
             }
         }
     }
