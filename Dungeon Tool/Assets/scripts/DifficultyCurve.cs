@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using static Graph;
 
@@ -17,19 +18,32 @@ public class DifficultyCurve : MonoBehaviour
         GraphComponent.OnApplyDifficultyCurve -= ApplyCurve;
     }
 
-    public void ApplyCurve(List<Index2NodeDataLinker> pathList, AnimationCurve animCurve,int interval)
+    public void ApplyCurve(List<Index2NodeDataLinker> pathList, AnimationCurve animCurve, bool applyCurve ,bool useInterval)
     {
         m_pathList = pathList;
         m_difficultyCurve = animCurve;
-        //AdjustCurve(m_pathList.Count);
 
         for (float i = 0; i < m_pathList.Count; i++)
         {
-            float randomInterval = Random.Range(
-                (m_difficultyCurve.Evaluate(i / m_pathList.Count) - interval)<0 ? 0:(m_difficultyCurve.Evaluate(i / m_pathList.Count) - interval),
-                m_difficultyCurve.Evaluate(i / m_pathList.Count) + interval);
-            Debug.Log("node "+i+" has a diff value of "+Mathf.RoundToInt(m_difficultyCurve.Evaluate(i / m_pathList.Count) )+" with rand inter diff of "+ randomInterval + " at value "+ i / m_pathList.Count );
-            m_pathList[(int)i].nodeData.difficultyRating += Mathf.RoundToInt(randomInterval); ;
+            float difficultyValue=0;
+            if (useInterval&&applyCurve)
+            { 
+                difficultyValue = Random.Range(
+                    (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval) < 0 ? 0 : (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval),
+                    m_difficultyCurve.Evaluate(i / m_pathList.Count) + m_pathList[(int)i].nodeData.difficultyInterval);
+            }
+            else if(useInterval)
+            {
+                difficultyValue = Random.Range(0,m_pathList[(int)i].nodeData.difficultyInterval);
+            }
+            else
+            {
+                difficultyValue = m_difficultyCurve.Evaluate(i / m_pathList.Count);
+            }
+            //Debug.Log("node "+i+" has a diff value of "+Mathf.RoundToInt(m_difficultyCurve.Evaluate(i / m_pathList.Count) )+" with rand inter diff of "+ randomInterval + " at value "+ i / m_pathList.Count );
+            m_pathList[(int)i].nodeData.difficultyRating += Mathf.RoundToInt(difficultyValue);
+            if (m_pathList[(int)i].nodeData.difficultyRating < 0)
+                m_pathList[(int)i].nodeData.difficultyRating = 0;
         }
     }
 }

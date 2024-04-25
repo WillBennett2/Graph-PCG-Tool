@@ -16,7 +16,7 @@ public class GraphComponent : MonoBehaviour
     public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, List<Index2EdgeDataLinker>> OnRunGraphGrammar;
     public static event Action<List<Index2NodeDataLinker>, Index2NodeDataLinker, Index2NodeDataLinker, int> OnFindValidPaths;
 
-    public static event Action<List<Index2NodeDataLinker>,AnimationCurve,int> OnApplyDifficultyCurve;
+    public static event Action<List<Index2NodeDataLinker>,AnimationCurve,bool,bool> OnApplyDifficultyCurve;
 
 
     [Header("Graph Values")]
@@ -36,11 +36,10 @@ public class GraphComponent : MonoBehaviour
 
     [Header("Difficulty Curve")]
     [SerializeField] bool m_applyCurve = true;
+    [Tooltip("Apply node interval value to difficulty value")]
+    [SerializeField] bool m_applyIntervalValue = true;
     [Tooltip("X axis should be 0 to 1")]
     [SerializeField] private AnimationCurve m_difficultyCurve;
-    [Tooltip("Value represents range applied to difficulty applied")]
-    [Min(0)]
-    [SerializeField] private int m_difficultyInterval;
 
     [Header("Entity Spawn Data")]
     [SerializeField]bool m_usePoisson;
@@ -89,8 +88,7 @@ public class GraphComponent : MonoBehaviour
             OnFindValidPaths?.Invoke(m_nodes, endNode, startNode, m_rows);
             m_pathList.Add(startNode);
             m_pathList.Reverse();
-            if(m_applyCurve)
-                OnApplyDifficultyCurve?.Invoke(m_pathList,m_difficultyCurve,m_difficultyInterval);
+            OnApplyDifficultyCurve?.Invoke(m_pathList,m_difficultyCurve, m_applyCurve ,m_applyIntervalValue);
 
             return true;
         }

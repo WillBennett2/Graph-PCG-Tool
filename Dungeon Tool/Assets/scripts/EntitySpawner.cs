@@ -21,6 +21,8 @@ public class EntitySpawner : MonoBehaviour
 
     private List<Index2NodeDataLinker> m_nodes;
     private List<Index2StoredNodeDataLinker> m_storedNodes;
+
+    private GameObject m_entityContainer;
     private void OnEnable()
     {
         GraphComponent.OnClearData += ClearData;
@@ -36,6 +38,7 @@ public class EntitySpawner : MonoBehaviour
 
     public void SetData(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes,bool usePoisson, bool useJitter)
     {
+        m_entityContainer = new GameObject("EntityHolder");
         m_nodes = nodes;
         m_storedNodes = storedNodes;
         m_usePoisson = usePoisson;
@@ -84,7 +87,7 @@ public class EntitySpawner : MonoBehaviour
                         position = GetJitterEmptySpace(entity, m_nodes[m_storedNodes[index].storedNodeData.parentIndex].nodeData, posX, posY);
                     if (position.x != -1 && position.y != -1)
                     { 
-                        GameObject entityRef = Instantiate(entity.m_entityPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity);
+                        GameObject entityRef = Instantiate(entity.m_entityPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity, m_entityContainer.transform);
                         m_entities.Add(entityRef);
                     }
                 }

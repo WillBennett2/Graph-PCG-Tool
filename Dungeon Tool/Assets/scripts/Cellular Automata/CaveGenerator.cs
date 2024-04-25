@@ -40,6 +40,7 @@ public class CaveGenerator : MonoBehaviour
     private List<Index2NodeDataLinker> m_nodes;
     private List<Index2EdgeDataLinker> m_edges;
 
+    private GameObject m_roomContainer;
     private void OnEnable()
     {
         GraphComponent.OnClearData += Clear;
@@ -66,6 +67,7 @@ public class CaveGenerator : MonoBehaviour
 
     public void GenerateCave(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges, int width, int height, int offset, int scale)
     {
+        
         SetUpFromGraph(nodes,edges,width,height,offset,scale);
         m_map = new int[m_width, m_height];
         ApplyGraphData();
@@ -104,6 +106,9 @@ public class CaveGenerator : MonoBehaviour
 
     void ApplyGraphData()
     {
+        m_roomContainer = new GameObject("Room holder");
+        //Instantiate(m_roomContainer);
+
         if (m_useRandomSeed)
         {
             m_seed = System.DateTime.Now.ToString();
@@ -332,7 +337,7 @@ public class CaveGenerator : MonoBehaviour
                         roomWidth = room.m_roomWidth/2;
                         roomHeight = room.m_roomHeight/2;
                         roomPrefab = room.m_roomPrefab;
-                        GameObject roomObject = Instantiate(roomPrefab, new Vector3(gridX + 0.5f, 0, gridY + 0.5f), Quaternion.identity);
+                        GameObject roomObject = Instantiate(roomPrefab, new Vector3(gridX + 0.5f, 0, gridY + 0.5f), Quaternion.identity, m_roomContainer.transform);
                         m_createdRooms.Add(roomObject);
                         break;
 
@@ -419,7 +424,7 @@ public class CaveGenerator : MonoBehaviour
             m_map[posX, posY] = -1;
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+0.5f, 0, posY), Quaternion.identity);
+            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+0.5f, 0, posY), Quaternion.identity,m_roomContainer.transform);
             m_createdRooms.Add(blockerObj);
         }
     }
@@ -431,7 +436,7 @@ public class CaveGenerator : MonoBehaviour
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX, 0, posY+0.5f), Quaternion.identity);
+            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX, 0, posY+0.5f), Quaternion.identity, m_roomContainer.transform);
             m_createdRooms.Add(blockerObj);
         }
     }
@@ -445,13 +450,13 @@ public class CaveGenerator : MonoBehaviour
             }
             else
             {
-                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity);
+                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
                 m_createdRooms.Add(blockerObj);
             }
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity);
+            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
             m_createdRooms.Add(blockerObj);
         }
     }
@@ -465,13 +470,13 @@ public class CaveGenerator : MonoBehaviour
             }
             else
             {
-                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+1f, 0, posY+0.5f), Quaternion.identity);
+                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+1f, 0, posY+0.5f), Quaternion.identity, m_roomContainer.transform);
                 m_createdRooms.Add(blockerObj);
             }
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 1f, 0, posY + 0.5f), Quaternion.identity);
+            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 1f, 0, posY + 0.5f), Quaternion.identity, m_roomContainer.transform);
             m_createdRooms.Add(blockerObj);
         }
     }

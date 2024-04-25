@@ -18,17 +18,7 @@ MonoBehaviour:
   m_leftHand:
   - m_nodePosition: {x: -1, y: -1}
     m_symbol: SCPossibility
-  - m_nodePosition: {x: -1, y: 0}
-    m_symbol: u
-  m_leftHandEdge:
-  - m_symbol: edge
-    m_fromNode: 0
-    m_toNode: 0
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 0
-    m_toNode: 0
-    m_directional: 0
+  m_leftHandEdge: []
   m_rightHand:
   - m_rightHandProbability: 1
     m_LoopNode: 1
@@ -40,35 +30,4 @@ MonoBehaviour:
       preAuthored: 0
       difficultyModifier: -5
       storedNodes: []
-    - symbol: u
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      terrain: 0
-      preAuthored: 0
-      difficultyModifier: 0
-      storedNodes: []
-    m_edgeDataList:
-    - symbol: Path
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      graphFromNode: 0
-      graphToNode: 0
-      rotation: {x: 0, y: 0, z: 0, w: 0}
-      fromNode: 0
-      toNode: 0
-      fromPos: {x: 0, y: 0, z: 0}
-      toPos: {x: 0, y: 0, z: 0}
-      directional: 0
-      terrian: -1
-    - symbol: edge
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      graphFromNode: 0
-      graphToNode: 0
-      rotation: {x: 0, y: 0, z: 0, w: 0}
-      fromNode: 0
-      toNode: 0
-      fromPos: {x: 0, y: 0, z: 0}
-      toPos: {x: 0, y: 0, z: 0}
-      directional: 0
-      terrian: 0
+    m_edgeDataList: []

@@ -150,6 +150,19 @@ public class Rule : MonoBehaviour
                     SetEdge(rule);
 
                 }
+                else if (rule.m_leftHand.Count == 1)
+                {
+                    matchingNode = GetMatchingNodes();
+                    if (matchingNode == null)
+                    {
+                        break;
+                    }
+                    SetNodeData(rule.m_rightHand[rightHandIndex], i, matchingNode);
+                    SetFromNode(matchingNode.index);
+                    m_firstNodeIndex = m_fromNodeIndex;
+                    SetOrientation();
+
+                }
                 else if (1 < rule.m_leftHand.Count)
                 {
                     matchingNode = GetMatchingNodes();
@@ -312,6 +325,7 @@ public class Rule : MonoBehaviour
         }
         matchingNode.nodeData.terrain = rightHand.m_nodeDataList[i].terrain;
         matchingNode.nodeData.difficultyRating = rightHand.m_nodeDataList[i].difficultyModifier;
+        matchingNode.nodeData.difficultyInterval = rightHand.m_nodeDataList[i].difficultyInterval;
         matchingNode.nodeData.preAuthored = rightHand.m_nodeDataList[i].preAuthored;
     }
     private void LoopEdge(RuleScriptableObject rule)
@@ -393,6 +407,8 @@ public class Rule : MonoBehaviour
             }
             m_nodesToChange[i].nodeData.terrain = m_nodeStore[i].nodeData.terrain;
             m_nodesToChange[i].nodeData.preAuthored = m_nodeStore[i].nodeData.preAuthored;
+            m_nodesToChange[i].nodeData.difficultyRating = m_nodeStore[i].nodeData.difficultyRating;
+            m_nodesToChange[i].nodeData.difficultyInterval = m_nodeStore[i].nodeData.difficultyInterval;
         }
 
         m_nodeStore.Clear();

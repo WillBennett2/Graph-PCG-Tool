@@ -28,20 +28,20 @@ MonoBehaviour:
     m_symbol: Water
   m_leftHandEdge:
   - m_symbol: edge
+    m_fromNode: 8
+    m_toNode: 7
+    m_directional: 0
+  - m_symbol: edge
     m_fromNode: 7
-    m_toNode: 6
+    m_toNode: 13
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 6
-    m_toNode: 12
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 12
-    m_toNode: 18
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 18
+    m_fromNode: 13
     m_toNode: 19
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 19
+    m_toNode: 20
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 13
@@ -56,30 +56,40 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
+      difficultyModifier: 0
+      difficultyInterval: 0
       storedNodes: []
     - symbol: Path
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 1
+      difficultyModifier: 0
+      difficultyInterval: 12
       storedNodes: []
     - symbol: Path
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 1
+      difficultyModifier: 0
+      difficultyInterval: 12
       storedNodes: []
     - symbol: Path
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 1
+      difficultyModifier: 0
+      difficultyInterval: 12
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
+      difficultyModifier: 0
+      difficultyInterval: 0
       storedNodes: []
     m_edgeDataList:
     - symbol: Path

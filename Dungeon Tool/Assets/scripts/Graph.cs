@@ -43,6 +43,9 @@ public class Graph
         public int spaceWidth;
         public int spaceHeight;
         public int difficultyRating;
+        [Tooltip("Value represents range applied to difficulty applied")]
+        [Min(0)]
+        public int difficultyInterval;
     }
     [Serializable]
     public class Index2NodeDataLinker

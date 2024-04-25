@@ -69,6 +69,7 @@ public class RuleScriptableObject : ScriptableObject
         public bool preAuthored;
         [Tooltip("Leave at 0 to apply no modifier")]
         public int difficultyModifier;
+        public int difficultyInterval;
         public List<StoredNodeData> storedNodes;
     }
     [Serializable]

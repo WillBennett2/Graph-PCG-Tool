@@ -221,6 +221,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 1
     nodeData:
       symbol: u
@@ -262,6 +263,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 2
     nodeData:
       symbol: u
@@ -303,6 +305,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 3
     nodeData:
       symbol: u
@@ -344,6 +347,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 4
     nodeData:
       symbol: u
@@ -385,6 +389,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 5
     nodeData:
       symbol: u
@@ -426,6 +431,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 6
     nodeData:
       symbol: u
@@ -467,6 +473,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 7
     nodeData:
       symbol: u
@@ -508,6 +515,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 8
     nodeData:
       symbol: u
@@ -549,6 +557,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 9
     nodeData:
       symbol: u
@@ -590,6 +599,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 10
     nodeData:
       symbol: u
@@ -631,6 +641,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 11
     nodeData:
       symbol: u
@@ -672,6 +683,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 12
     nodeData:
       symbol: u
@@ -713,6 +725,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 13
     nodeData:
       symbol: u
@@ -754,6 +767,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 14
     nodeData:
       symbol: u
@@ -795,6 +809,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 15
     nodeData:
       symbol: u
@@ -836,6 +851,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 16
     nodeData:
       symbol: u
@@ -877,6 +893,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 17
     nodeData:
       symbol: u
@@ -918,6 +935,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 18
     nodeData:
       symbol: u
@@ -959,6 +977,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 19
     nodeData:
       symbol: u
@@ -1000,6 +1019,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 20
     nodeData:
       symbol: u
@@ -1041,6 +1061,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 21
     nodeData:
       symbol: u
@@ -1082,6 +1103,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 22
     nodeData:
       symbol: u
@@ -1123,6 +1145,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 23
     nodeData:
       symbol: u
@@ -1164,6 +1187,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 24
     nodeData:
       symbol: u
@@ -1205,6 +1229,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 25
     nodeData:
       symbol: u
@@ -1246,6 +1271,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 26
     nodeData:
       symbol: u
@@ -1287,6 +1313,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 27
     nodeData:
       symbol: u
@@ -1328,6 +1355,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 28
     nodeData:
       symbol: u
@@ -1369,6 +1397,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 29
     nodeData:
       symbol: u
@@ -1410,6 +1439,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 30
     nodeData:
       symbol: u
@@ -1451,6 +1481,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 31
     nodeData:
       symbol: u
@@ -1492,6 +1523,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 32
     nodeData:
       symbol: u
@@ -1533,6 +1565,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 33
     nodeData:
       symbol: u
@@ -1574,6 +1607,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 34
     nodeData:
       symbol: u
@@ -1615,6 +1649,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 35
     nodeData:
       symbol: u
@@ -1656,6 +1691,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   m_edges:
   - index: 0
     edgeData:
@@ -2500,21 +2536,22 @@ MonoBehaviour:
   m_storedNodes: []
   m_pathList: []
   m_applyCurve: 1
+  m_applyIntervalValue: 0
   m_difficultyCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 5.075272
-      outSlope: 5.075272
+      inSlope: 19.07714
+      outSlope: 19.07714
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.20254844
-      value: 1.0279884
+      time: 0.24568504
+      value: 4.6869683
       inSlope: 16.950705
       outSlope: 16.950705
       tangentMode: 0
@@ -2522,28 +2559,28 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.13611895
     - serializedVersion: 3
-      time: 0.4896
-      value: 7.5342436
-      inSlope: 106.29485
-      outSlope: 106.29485
+      time: 0.5056206
+      value: 9.9558
+      inSlope: 71.554214
+      outSlope: 71.554214
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.05433566
-      outWeight: 0.33333334
+      inWeight: 0.07981573
+      outWeight: 0.15850274
     - serializedVersion: 3
-      time: 0.67146015
-      value: 18.242027
-      inSlope: 32.232445
-      outSlope: 32.232445
-      tangentMode: 34
+      time: 0.6606303
+      value: 18.284916
+      inSlope: 33.63813
+      outSlope: 14.991449
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.14691195
+      outWeight: 0.13427979
     - serializedVersion: 3
       time: 0.99821335
-      value: 20.067163
-      inSlope: 5.585672
-      outSlope: 5.585672
+      value: 20
+      inSlope: 5.08048
+      outSlope: 5.08048
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -2551,7 +2588,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_difficultyInterval: 1
   m_usePoisson: 1
   m_useJitter: 0
 --- !u!114 &36570847
@@ -2615,6 +2651,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 15
     nodeData:
       symbol: u
@@ -2656,6 +2693,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 14
     nodeData:
       symbol: u
@@ -2697,6 +2735,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
   - index: 13
     nodeData:
       symbol: Water
@@ -2738,6 +2777,7 @@ MonoBehaviour:
       spaceWidth: 0
       spaceHeight: 0
       difficultyRating: 0
+      difficultyInterval: 0
 --- !u!114 &36570853
 MonoBehaviour:
   m_ObjectHideFlags: 0

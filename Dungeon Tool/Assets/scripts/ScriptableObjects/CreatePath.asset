@@ -46,39 +46,31 @@ MonoBehaviour:
     m_symbol: u
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 12
-    m_toNode: 18
+    m_fromNode: 33
+    m_toNode: 34
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 18
-    m_toNode: 24
+    m_fromNode: 34
+    m_toNode: 35
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 24
-    m_toNode: 25
+    m_fromNode: 35
+    m_toNode: 29
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 25
-    m_toNode: 26
+    m_fromNode: 29
+    m_toNode: 23
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 26
-    m_toNode: 27
+    m_fromNode: 23
+    m_toNode: 17
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 27
-    m_toNode: 28
+    m_fromNode: 17
+    m_toNode: 11
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 28
-    m_toNode: 22
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 22
-    m_toNode: 16
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 16
+    m_fromNode: 11
     m_toNode: 10
     m_directional: 0
   - m_symbol: edge
@@ -91,15 +83,23 @@ MonoBehaviour:
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 8
-    m_toNode: 7
+    m_toNode: 14
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 7
-    m_toNode: 6
+    m_fromNode: 14
+    m_toNode: 20
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 6
-    m_toNode: 12
+    m_fromNode: 20
+    m_toNode: 26
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 26
+    m_toNode: 32
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 32
+    m_toNode: 33
     m_directional: 0
   m_rightHand:
   - m_rightHandProbability: 1
@@ -110,7 +110,8 @@ MonoBehaviour:
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 1
-      difficultyModifier: 0
+      difficultyModifier: -1
+      difficultyInterval: 0
       storedNodes:
       - symbol: e
         position: {x: 0, y: 0, z: 0}
@@ -123,6 +124,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 1
       storedNodes:
       - symbol: e
         position: {x: 0, y: 0, z: 0}
@@ -134,12 +136,13 @@ MonoBehaviour:
         colour: {r: 0, g: 0, b: 0, a: 0}
         parentIndex: 0
         entitySet: {fileID: 11400000, guid: 2308d553b4922274fa487861b09cba51, type: 2}
-    - symbol: SCPossibility
+    - symbol: Water
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 2
       storedNodes: []
     - symbol: SCPossibility
       position: {x: 0, y: 0, z: 0}
@@ -147,6 +150,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 2
       storedNodes: []
     - symbol: SCPossibility
       position: {x: 0, y: 0, z: 0}
@@ -154,6 +158,15 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 2
+      storedNodes: []
+    - symbol: SCPossibility
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      difficultyModifier: 0
+      difficultyInterval: 3
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -161,6 +174,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 3
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -168,13 +182,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
-      storedNodes: []
-    - symbol: Water
-      position: {x: 0, y: 0, z: 0}
-      colour: {r: 0, g: 0, b: 0, a: 0}
-      terrain: -1
-      preAuthored: 0
-      difficultyModifier: 0
+      difficultyInterval: 3
       storedNodes:
       - symbol: Path
         position: {x: 0, y: 0, z: 0}
@@ -187,6 +195,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 4
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -194,6 +203,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 4
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -201,6 +211,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 4
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -208,6 +219,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 5
       storedNodes: []
     - symbol: Water
       position: {x: 0, y: 0, z: 0}
@@ -215,6 +227,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 5
       storedNodes: []
     - symbol: End
       position: {x: 0, y: 0, z: 0}
@@ -222,6 +235,7 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: 0
+      difficultyInterval: 0
       storedNodes: []
     m_edgeDataList:
     - symbol: Path
