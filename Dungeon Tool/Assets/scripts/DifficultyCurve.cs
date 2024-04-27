@@ -29,7 +29,8 @@ public class DifficultyCurve : MonoBehaviour
             if (useInterval&&applyCurve)
             { 
                 difficultyValue = Random.Range(
-                    (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval) < 0 ? 0 : (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval),
+                    (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval) < 0 
+                    ? 0 : (m_difficultyCurve.Evaluate(i / m_pathList.Count) - m_pathList[(int)i].nodeData.difficultyInterval),
                     m_difficultyCurve.Evaluate(i / m_pathList.Count) + m_pathList[(int)i].nodeData.difficultyInterval);
             }
             else if(useInterval)
