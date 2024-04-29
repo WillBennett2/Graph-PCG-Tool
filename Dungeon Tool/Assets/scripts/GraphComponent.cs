@@ -11,6 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class GraphComponent : MonoBehaviour
 {
     public static event Action OnClearData;
+    public static event Action<List<RuleScriptableObject>,int> OnSetRecipe;
     public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, bool, bool> OnSpawnEntities;
     public static event System.Action<List<Index2NodeDataLinker>, List<Index2EdgeDataLinker>, int, int, int, int> OnGenerateEnvrionment;
     public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, List<Index2EdgeDataLinker>> OnRunGraphGrammar;
@@ -34,6 +35,10 @@ public class GraphComponent : MonoBehaviour
     public List<Index2NodeDataLinker> m_pathList;
     private bool m_ruleApplied;
 
+    [Header("Graph Rules")]
+    [SerializeField] private List<RuleScriptableObject> m_rules;
+    [SerializeField] private int m_maxTries = 10;
+
     [Header("Difficulty Curve")]
     [SerializeField] bool m_applyCurve = true;
     [Tooltip("Apply node interval value to difficulty value")]
@@ -47,7 +52,7 @@ public class GraphComponent : MonoBehaviour
 
     void Awake()
     {
-        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
+        GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
@@ -55,7 +60,7 @@ public class GraphComponent : MonoBehaviour
     }
     private void InitGraph()
     {
-        GraphInfo.graphInfo = new Graph(m_rows, m_columns, m_scale, m_offset, m_defaultSymbol, m_alphabet);
+        GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
@@ -64,10 +69,11 @@ public class GraphComponent : MonoBehaviour
     public bool Generate()
     {
         InitGraph();
+        OnSetRecipe?.Invoke(m_rules, m_maxTries);
         OnRunGraphGrammar?.Invoke(m_nodes, m_storedNodes, m_edges);
         if (m_ruleApplied)
         {
-            OnGenerateEnvrionment?.Invoke(m_nodes, m_edges, m_rows, m_columns, m_offset, m_scale);
+            OnGenerateEnvrionment?.Invoke(m_nodes, m_edges, m_columns, m_rows, m_offset, m_scale);
             m_usePoisson = (m_useJitter == true ? false : true);
             m_useJitter = (m_usePoisson == true ? false : true);
             OnSpawnEntities?.Invoke(m_nodes, m_storedNodes, m_usePoisson, m_useJitter);
@@ -164,7 +170,11 @@ public class GraphComponent : MonoBehaviour
                 {
                     if (m_storedNodes.Count == 0)
                         break;
-                    direction = m_nodes[edge.edgeData.toNode].nodeData.position - m_storedNodes[edge.edgeData.fromNode - (m_rows * m_columns) - 1].storedNodeData.position; // new Vector3(0, 0, -0.8f);
+                    int storedIndex = edge.edgeData.fromNode - (m_rows * m_columns) - 1;
+                    if(storedIndex<0)
+                        storedIndex = 0;
+
+                    direction = m_nodes[edge.edgeData.toNode].nodeData.position - m_storedNodes[storedIndex].storedNodeData.position; // new Vector3(0, 0, -0.8f);
                     positionModifier = new Vector3(0, 0, 0);
                 }
                 DrawArrow(new Vector3(edge.edgeData.position.x, edge.edgeData.position.y, edge.edgeData.position.z) + positionModifier,

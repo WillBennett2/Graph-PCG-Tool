@@ -110,7 +110,7 @@ public class Graph
     private int m_graphSize;
     public int nodeIndexCounter;
 
-    public Graph(int rows, int columns, int scale, int offset, string defaultSymbol, Alphabet alphabet)
+    public Graph(int columns, int rows, int scale, int offset, string defaultSymbol, Alphabet alphabet)
     {
         m_alphabet = alphabet;
         m_scale = scale;
@@ -120,9 +120,9 @@ public class Graph
         storedNodes = new List<Index2StoredNodeDataLinker>();
         edges = new List<Index2EdgeDataLinker>();
         int index = 0;
-        for (int x = 0; x < rows; x++)
+        for (int x = 0; x < columns; x++)
         {
-            for (int z = 0; z < columns; z++)
+            for (int z = 0; z < rows; z++)
             {
                 NodeData data = new NodeData();
                 data.gridCoordinates = new Vector2(x, z);
@@ -137,10 +137,10 @@ public class Graph
         int nodeIndex = 0;
         index = 0;
         int edgeFromIndex = 0;
-        int edgeToIndex = (int)MathF.Sqrt(rows * columns);
-        for (float x = 0; x < rows; x++)
+        int edgeToIndex = rows;
+        for (float x = 0; x < columns; x++)
         {
-            for (float z = 0; z < columns; z++)
+            for (float z = 0; z < rows; z++)
             {
                 EdgeData data = new EdgeData();
                 data.symbol = "edge";

@@ -137,6 +137,7 @@ public class CaveGenerator : MonoBehaviour
                             {
                                 if (m_edges[i].edgeData.terrian <= 0)
                                 {
+                                    
                                     ChangeMapValue(x, pathY, m_edges[i].edgeData.terrian);
                                 }
                             }
@@ -288,13 +289,13 @@ public class CaveGenerator : MonoBehaviour
                 ChangeMapValue((int)posDifference.x, posY, value);
             }
         }
-        if (nodeIndex - m_graphWidth > 0)
+        if (nodeIndex - m_graphHeight > 0)
         {
-            if (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.index != -1
-                && (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.directional || m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.symbol == "edge"))
+            if (m_nodes[nodeIndex - m_graphHeight].nodeData.rightEdge.index != -1
+                && (m_nodes[nodeIndex - m_graphHeight].nodeData.rightEdge.edgeData.directional || m_nodes[nodeIndex - m_graphHeight].nodeData.rightEdge.edgeData.symbol == "edge"))
             {
                 //create left blocker
-                Vector3 posDifference = (m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex - m_graphWidth].nodeData.rightEdge.edgeData.fromPos) / 2;
+                Vector3 posDifference = (m_nodes[nodeIndex - m_graphHeight].nodeData.rightEdge.edgeData.toPos + m_nodes[nodeIndex - m_graphHeight].nodeData.rightEdge.edgeData.fromPos) / 2;
                 for (int posY = (int)posDifference.z - depth / 2; posY < posDifference.z + depth / 2; posY++)
                 {
                     ChangeMapValue((int)posDifference.x, posY, value);
@@ -408,9 +409,9 @@ public class CaveGenerator : MonoBehaviour
             }
         }
         //left
-        if (0 < node.index - m_graphWidth)
+        if (0 < node.index - m_graphHeight)
         {
-            if (m_nodes[m_nodes[node.index - m_graphWidth].nodeData.rightEdge.edgeData.toNode].nodeData.preAuthored)
+            if (m_nodes[m_nodes[node.index - m_graphHeight].nodeData.rightEdge.edgeData.toNode].nodeData.preAuthored)
             {
                 return false;
             }
@@ -462,9 +463,9 @@ public class CaveGenerator : MonoBehaviour
     }
     void SetLeftDoor(Index2NodeDataLinker node, int posX, int posY, PreAuthoredRoomSO.Room roomRef)
     {
-        if (0 < node.index - m_graphWidth)
+        if (0 < node.index - m_graphHeight)
         {
-            if (m_nodes[node.index - m_graphWidth].nodeData.rightEdge.edgeData.terrian <= 0)
+            if (m_nodes[node.index - m_graphHeight].nodeData.rightEdge.edgeData.terrian <= 0)
             {
                 m_map[posX, posY] = -1;
             }

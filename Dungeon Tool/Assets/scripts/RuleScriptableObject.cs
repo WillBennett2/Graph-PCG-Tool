@@ -9,7 +9,7 @@ public class RuleScriptableObject : ScriptableObject
     [Serializable]
     public struct LeftHandNode
     {
-        public Vector2 m_nodePosition;
+        public Vector2 m_nodeGridCoord;
         public string m_symbol;
         //public List<char> m_storedNodes;
     }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714a501dc5f4de640937f614a4a5098a, type: 3}
+  m_Name: ConvertToPath
+  m_EditorClassIdentifier: 
+  m_runOnce: 0
+  m_maxIterations: 100
+  m_probability: 1
+  m_leftHand:
+  - m_nodeGridCoord: {x: -1, y: -1}
+    m_symbol: Blank
+  m_leftHandEdge: []
+  m_rightHand:
+  - m_rightHandProbability: 1
+    m_LoopNode: 0
+    m_nodeDataList:
+    - symbol: Path
+      position: {x: 0, y: 0, z: 0}
+      colour: {r: 0, g: 0, b: 0, a: 0}
+      terrain: -1
+      preAuthored: 0
+      difficultyModifier: 0
+      difficultyInterval: 0
+      storedNodes: []
+    m_edgeDataList: []

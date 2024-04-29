@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Reflection;
 using UnityEngine;
 using static Alphabet;
 using static Graph;
@@ -11,16 +13,16 @@ public class Rule : MonoBehaviour
 {
     public static event Action<bool> OnRuleApplied;
     private Alphabet m_alphabet;
-    [HideInInspector] private RuleScriptableObject m_rule;
-    [SerializeField] private List<RuleScriptableObject> m_rules;
+    private RuleScriptableObject m_rule;
+    private List<RuleScriptableObject> m_rules;
     private string m_orientation;
-    [SerializeField] private int m_maxTries = 10;
+    private int m_maxTries = 10;
 
     private int m_originFoundIndex;
     private List<Index2NodeDataLinker> m_nodeGraph = new List<Index2NodeDataLinker>();
     private List<Index2NodeDataLinker> m_matchingNodes = new List<Index2NodeDataLinker>();
     private List<Index2NodeDataLinker> m_nodesToChange = new List<Index2NodeDataLinker>();
-    [SerializeField] private List<Index2NodeDataLinker> m_nodeStore = new List<Index2NodeDataLinker>();
+    private List<Index2NodeDataLinker> m_nodeStore = new List<Index2NodeDataLinker>();
 
     private List<Index2StoredNodeDataLinker> m_storedNodesGraph;
 
@@ -36,11 +38,13 @@ public class Rule : MonoBehaviour
     private void OnEnable()
     {
         GraphComponent.OnClearData += Clear;
+        GraphComponent.OnSetRecipe += SetRecipe;
         GraphComponent.OnRunGraphGrammar += RunRule;
     }
     private void OnDisable()
     {
         GraphComponent.OnClearData -= Clear;
+        GraphComponent.OnSetRecipe -= SetRecipe;
         GraphComponent.OnRunGraphGrammar -= RunRule;
     }
     private void Start()
@@ -55,6 +59,11 @@ public class Rule : MonoBehaviour
         m_nodesToChange.Clear();
         m_nodeStore.Clear();
         m_edgeGraph.Clear();
+    }
+    private void SetRecipe(List<RuleScriptableObject> rules, int maxTries)
+    {
+        m_rules = rules;
+        m_maxTries = maxTries;
     }
     private void SetOrientation()
     {
@@ -234,8 +243,8 @@ public class Rule : MonoBehaviour
         foreach (Index2NodeDataLinker node in nodes)
         {
             if (node.nodeData.symbol == rule.m_leftHand[index].m_symbol
-                && (node.nodeData.position == new Vector3(rule.m_leftHand[index].m_nodePosition.x, rule.m_leftHand[index].m_nodePosition.y)
-                || rule.m_leftHand[index].m_nodePosition == new Vector2(-1, -1)))
+                && (node.nodeData.gridCoordinates == new Vector2(rule.m_leftHand[index].m_nodeGridCoord.x, rule.m_leftHand[index].m_nodeGridCoord.y)
+                || rule.m_leftHand[index].m_nodeGridCoord == new Vector2(-1, -1)))
             {
                 m_matchingNodes.Add(node);
             }
@@ -259,10 +268,39 @@ public class Rule : MonoBehaviour
     {
         Index2NodeDataLinker node = null;
         Index2NodeDataLinker lastNode = m_nodeGraph[m_originFoundIndex];
+        Vector2 lastNodeGridCoord = lastNode.nodeData.gridCoordinates;
+        Vector2 directionToCheck = new Vector2(-1,-1);
+        if (rule.m_leftHand[index].m_nodeGridCoord == new Vector2(-1,-1))
+        {
 
-        Vector3 directionToCheck = lastNode.nodeData.position + ChangeOrientation(rule.m_leftHand[index].m_nodePosition * GraphInfo.graphInfo.m_scale);
-        node = CheckNode(rule, m_nodeGraph, index, directionToCheck);
-        if (node != null)
+            for (int i = 0; i < 4; i++)//check each direction
+            {
+                switch (i)
+                {
+                    case 0://check left
+                        directionToCheck = lastNodeGridCoord + new Vector2(-1, 0); break;
+                    case 1://check up
+                        directionToCheck = lastNodeGridCoord + new Vector2(0, 1); break;
+                    case 2://check right
+                        directionToCheck = lastNodeGridCoord + new Vector2(1, 0); break;
+                    case 3://check down
+                        directionToCheck = lastNodeGridCoord + new Vector2(-0, -1); break;
+                }
+                node = CheckNode(rule, m_nodeGraph, index, directionToCheck);
+                if(node!=null)
+                        break;
+            }
+
+
+        }
+        else
+        {
+            directionToCheck = lastNodeGridCoord + ChangeOrientation(rule.m_leftHand[index].m_nodeGridCoord);
+            node = CheckNode(rule, m_nodeGraph, index, directionToCheck);
+        }
+
+        
+        if(node!=null)
         {
             m_originFoundIndex = node.index;
         }
@@ -272,33 +310,33 @@ public class Rule : MonoBehaviour
         }
         return node;
     }
-    private Vector3 ChangeOrientation(Vector3 direction)
+    private Vector2 ChangeOrientation(Vector3 direction)
     {
         switch (m_orientation)
         {
             case ("Up"):
-                direction = new Vector3(direction.x, 0, direction.y);
+                direction = new Vector3(direction.x,  direction.y);
                 break;
             case ("Right"):
-                direction = new Vector3(direction.y, 0, direction.x * -1);
+                direction = new Vector3(direction.y,  direction.x * -1);
                 break;
             case ("Left"):
-                direction = new Vector3(direction.y * -1, 0, direction.x);
+                direction = new Vector3(direction.y * -1, direction.x);
                 break;
             case ("Down"):
-                direction = new Vector3(direction.x * -1, 0, direction.y * -1);
+                direction = new Vector3(direction.x * -1, direction.y * -1);
                 break;
         }
         return direction;
     }
-    private Index2NodeDataLinker CheckNode(RuleScriptableObject rule, List<Index2NodeDataLinker> graph, int index, Vector3 direction)
+    private Index2NodeDataLinker CheckNode(RuleScriptableObject rule, List<Index2NodeDataLinker> graph, int index, Vector2 direction)
     {
         Index2NodeDataLinker node = null;
         Index2NodeDataLinker nodeToCheck = null;
 
         foreach (Index2NodeDataLinker vertex in graph)
         {
-            if (vertex.nodeData.position == direction)
+            if (vertex.nodeData.gridCoordinates == direction)
             {
                 nodeToCheck = vertex;
             }
