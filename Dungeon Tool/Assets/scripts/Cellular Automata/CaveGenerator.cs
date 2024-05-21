@@ -63,6 +63,7 @@ public class CaveGenerator : MonoBehaviour
             Destroy(room);
         }
         m_createdRooms.Clear();
+        Destroy(m_roomContainer);
     }
 
     public void GenerateCave(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges, int width, int height, int offset, int scale)

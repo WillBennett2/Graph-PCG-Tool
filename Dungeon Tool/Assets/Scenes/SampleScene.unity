@@ -17363,13 +17363,11 @@ MonoBehaviour:
   m_pathList: []
   m_rules:
   - {fileID: 11400000, guid: 43c659c8309668c4e8fac97373c75bb1, type: 2}
-  - {fileID: 11400000, guid: 0e09e30102db02a4d98e736da256765e, type: 2}
-  - {fileID: 11400000, guid: 9e288683c7ad4a948b67375f777b7224, type: 2}
+  - {fileID: 11400000, guid: 0674bb585b63ee141abcb1f3313201a8, type: 2}
   - {fileID: 11400000, guid: ea0e493b8ec061f4aaaa4599cb8a2fe7, type: 2}
-  - {fileID: 11400000, guid: 5e458832810cbe64a98f170bf471259f, type: 2}
   m_maxTries: 20
   m_applyCurve: 1
-  m_applyIntervalValue: 0
+  m_applyIntervalValue: 1
   m_difficultyCurve:
     serializedVersion: 2
     m_Curve:

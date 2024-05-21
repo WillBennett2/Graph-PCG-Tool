@@ -231,6 +231,7 @@ public class EntitySpawner : MonoBehaviour
             Destroy(entity);
         }
         m_entities.Clear();
+        Destroy(m_entityContainer);
     }
 
 }
