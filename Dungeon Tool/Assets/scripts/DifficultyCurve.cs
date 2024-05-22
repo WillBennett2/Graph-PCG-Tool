@@ -4,7 +4,8 @@ using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using static Graph;
 
-public class DifficultyCurve : MonoBehaviour
+[ExecuteInEditMode]
+public class DifficultyCurve 
 {
     private AnimationCurve m_difficultyCurve;
 
@@ -12,10 +13,17 @@ public class DifficultyCurve : MonoBehaviour
     private void OnEnable()
     {
         GraphComponent.OnApplyDifficultyCurve += ApplyCurve;
+        GraphComponent.OnDisableScripts += OnDisable;
     }
     private void OnDisable()
     {
         GraphComponent.OnApplyDifficultyCurve -= ApplyCurve;
+        GraphComponent.OnDisableScripts -= OnDisable;
+    }
+
+    public DifficultyCurve()
+    {
+        OnEnable();
     }
 
     public void ApplyCurve(List<Index2NodeDataLinker> pathList, AnimationCurve animCurve, bool applyCurve ,bool useInterval)

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
+[ExecuteInEditMode]
 public class TileMap : MonoBehaviour
 {
 

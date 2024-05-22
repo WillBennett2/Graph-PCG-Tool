@@ -3,37 +3,37 @@ using System;
 using static Graph;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
+using UnityEngine.Scripting;
 
-
-public class CaveGenerator : MonoBehaviour
+[ExecuteInEditMode]
+public class CaveGenerator
 {
+    public static event Action<GameObject, Vector3, Quaternion, Transform> OnInstantiate;
+    public static event Action<GameObject> OnImmediateDestroy;
     public static event Action<int[,]> OnSetMapData;
     public static event Action<Vector3> OnSetTileData;
-    //EntitySpawner m_entityScript;
-    //TileMap m_tileMapGen;
 
     private int m_width;
     private int m_height;
     private int m_scale;
     private int m_graphWidth;
     private int m_graphHeight;
-    public int m_borderSize = 1;
+    int m_borderSize = 1;
 
-    [Header("CA values")]
-    public string m_seed;
-    public bool m_useRandomSeed = true;
-    public bool m_useRandom = true;
-    [Range(0, 100)] public int m_randomFillPercent;
-    [SerializeField] private int m_smoothIterations = 5;
+    string m_seed;
+    bool m_useRandomSeed = true;
+    bool m_useRandom = true;
+    int m_randomFillPercent;
+    private int m_smoothIterations = 5;
 
-    [Header("Cave values")]
-    [SerializeField][Min(1)] private int m_depth = 1;
-    [Tooltip("Equal values to not use random")]
-    [SerializeField][Min(1)] private int m_randomNodeDepthMin = 1;
-    [SerializeField][Min(1)] private int m_randomNodeDepthMax = 1;
-    [Header("Pre-authored Rooms")]
-    [SerializeField] private PreAuthoredRoomSO m_roomSets;
-    private List<GameObject> m_createdRooms = new List<GameObject>();
+
+    private int m_depth = 1;
+
+    private int m_randomNodeDepthMin = 1;
+    private int m_randomNodeDepthMax = 1;
+    
+    private PreAuthoredRoomSO m_roomSets;
+    //private List<GameObject> m_createdRooms = new List<GameObject>();
 
 
     int[,] m_map;
@@ -44,32 +44,57 @@ public class CaveGenerator : MonoBehaviour
     private void OnEnable()
     {
         GraphComponent.OnClearData += Clear;
-        GraphComponent.OnGenerateEnvrionment += GenerateCave;
+        GraphComponent.OnDisableScripts += OnDisable;
+        GraphComponent.OnPassEnvrionmentData += SetGeneratorData;
+        GraphComponent.OnGenerateEnvrionment += GenerateEnvrionment;
     }
     private void OnDisable()
     {
         GraphComponent.OnClearData -= Clear;
-        GraphComponent.OnGenerateEnvrionment -= GenerateCave;
+        GraphComponent.OnPassEnvrionmentData -= SetGeneratorData;
+        GraphComponent.OnGenerateEnvrionment -= GenerateEnvrionment;
+        GraphComponent.OnDisableScripts -= OnDisable;
     }
-    public void Clear()
+    public CaveGenerator()
+    {
+        OnEnable();
+    }
+
+    private void Clear()
     {
         m_map = null;
         if(m_nodes!=null)
             m_nodes.Clear();
         if (m_edges != null)
             m_edges.Clear();
-        foreach (GameObject room in m_createdRooms)
-        {
-            Destroy(room);
-        }
-        m_createdRooms.Clear();
-        Destroy(m_roomContainer);
+        OnImmediateDestroy?.Invoke(m_roomContainer);
     }
-
-    public void GenerateCave(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges, int width, int height, int offset, int scale)
+    private void SetGeneratorData(List<Index2NodeDataLinker> nodes, List<Index2EdgeDataLinker> edges, int width, int height, int offset, int scale, int borderSize, string seed, bool useRandSeed, bool useRandom, int randomFillPercent, int smoothIterations,
+        int depth, int randNodeDepthMin, int randomNodeDepthMax, PreAuthoredRoomSO roomSet)
     {
-        
-        SetUpFromGraph(nodes,edges,width,height,offset,scale);
+        m_nodes = nodes;
+        m_edges = edges;
+        m_width = ((width + offset) * (scale));
+        m_height = ((height + offset) * (scale));
+        m_scale = scale;
+
+        m_graphWidth = width;
+        m_graphHeight = height;
+        m_borderSize = borderSize;
+        m_seed = seed;
+        m_useRandomSeed = useRandSeed;
+        m_useRandom = useRandom;
+        m_randomFillPercent = randomFillPercent;
+        m_smoothIterations = smoothIterations;
+
+        m_depth = depth;
+        m_randomNodeDepthMin = randNodeDepthMin;
+        m_randomNodeDepthMax = randomNodeDepthMax;
+
+        m_roomSets = roomSet;
+    }
+    private void GenerateEnvrionment()
+    {
         m_map = new int[m_width, m_height];
         ApplyGraphData();
 
@@ -175,23 +200,12 @@ public class CaveGenerator : MonoBehaviour
                 m_nodes[i].nodeData.spaceWidth = m_nodes[i].nodeData.spaceHeight = randomDepth;
                 if (m_useRandom)
                     SetRandomSurroundingCells((int)m_nodes[i].nodeData.position.x, (int)m_nodes[i].nodeData.position.z, randomDepth, rand);
-                SetCaveDeadZones(i, m_scale, 2);
+                SetCADeadZones(i, m_scale, 2);
             }
 
         }
     }
 
-    public void SetUpFromGraph(List<Index2NodeDataLinker> nodes,List<Index2EdgeDataLinker> edges, int width, int height,int offset,int scale)
-    {
-        m_nodes = nodes;
-        m_edges = edges;
-        m_width = ((width + offset) * (scale));
-        m_height = ((height + offset) * (scale));
-        m_scale = scale;
-
-        m_graphWidth = width;
-        m_graphHeight = height;
-    }
 
     void SmoothMap()
     {
@@ -268,7 +282,7 @@ public class CaveGenerator : MonoBehaviour
             }
         }
     }
-    void SetCaveDeadZones(int nodeIndex, int depth, int value)
+    void SetCADeadZones(int nodeIndex, int depth, int value)
     {
         if (m_nodes[nodeIndex].nodeData.upperEdge.index != -1
             && (m_nodes[nodeIndex].nodeData.upperEdge.edgeData.directional || m_nodes[nodeIndex].nodeData.upperEdge.edgeData.symbol == "edge"))
@@ -339,8 +353,7 @@ public class CaveGenerator : MonoBehaviour
                         roomWidth = room.m_roomWidth/2;
                         roomHeight = room.m_roomHeight/2;
                         roomPrefab = room.m_roomPrefab;
-                        GameObject roomObject = Instantiate(roomPrefab, new Vector3(gridX + 0.5f, 0, gridY + 0.5f), Quaternion.identity, m_roomContainer.transform);
-                        m_createdRooms.Add(roomObject);
+                        OnInstantiate?.Invoke(roomPrefab, new Vector3(gridX + 0.5f, 0, gridY + 0.5f), Quaternion.identity, m_roomContainer.transform);
                         break;
 
                     }
@@ -426,8 +439,7 @@ public class CaveGenerator : MonoBehaviour
             m_map[posX, posY] = -1;
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+0.5f, 0, posY), Quaternion.identity,m_roomContainer.transform);
-            m_createdRooms.Add(blockerObj);
+            OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY), Quaternion.identity, m_roomContainer.transform);
         }
     }
     void SetRightDoor(Index2NodeDataLinker node, int posX, int posY, PreAuthoredRoomSO.Room roomRef)
@@ -438,8 +450,7 @@ public class CaveGenerator : MonoBehaviour
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX, 0, posY+0.5f), Quaternion.identity, m_roomContainer.transform);
-            m_createdRooms.Add(blockerObj);
+            OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX, 0, posY + 0.5f), Quaternion.identity, m_roomContainer.transform);
         }
     }
     void SetDownDoor(Index2NodeDataLinker node, int posX, int posY, PreAuthoredRoomSO.Room roomRef)
@@ -452,14 +463,12 @@ public class CaveGenerator : MonoBehaviour
             }
             else
             {
-                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
-                m_createdRooms.Add(blockerObj);
+                OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
             }
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
-            m_createdRooms.Add(blockerObj);
+            OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 0.5f, 0, posY + 1f), Quaternion.identity, m_roomContainer.transform);
         }
     }
     void SetLeftDoor(Index2NodeDataLinker node, int posX, int posY, PreAuthoredRoomSO.Room roomRef)
@@ -472,14 +481,13 @@ public class CaveGenerator : MonoBehaviour
             }
             else
             {
-                GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+1f, 0, posY+0.5f), Quaternion.identity, m_roomContainer.transform);
-                m_createdRooms.Add(blockerObj);
+                OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX+1f, 0, posY+0.5f), Quaternion.identity, m_roomContainer.transform);
+                
             }
         }
         else
         {
-            GameObject blockerObj = Instantiate(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 1f, 0, posY + 0.5f), Quaternion.identity, m_roomContainer.transform);
-            m_createdRooms.Add(blockerObj);
+            OnInstantiate?.Invoke(roomRef.m_roomDoorBlockerPrefab, new Vector3(posX + 1f, 0, posY + 0.5f), Quaternion.identity, m_roomContainer.transform);
         }
     }
     private void ChangeMapValue(int posX,int posY, int value)

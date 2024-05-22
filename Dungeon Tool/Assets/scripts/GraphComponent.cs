@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static Graph;
+using static PreAuthoredRoomSO;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -11,13 +13,17 @@ using Vector3 = UnityEngine.Vector3;
 public class GraphComponent : MonoBehaviour
 {
     public static event Action OnClearData;
+    public static event Action OnDisableScripts;
     public static event Action<List<RuleScriptableObject>,int> OnSetRecipe;
     public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, bool, bool> OnSpawnEntities;
-    public static event System.Action<List<Index2NodeDataLinker>, List<Index2EdgeDataLinker>, int, int, int, int> OnGenerateEnvrionment;
+
+    public static event System.Action<List<Index2NodeDataLinker>, List<Index2EdgeDataLinker>, int, int, int, int, int,string,bool,bool,int,int,int,int,int,PreAuthoredRoomSO> OnPassEnvrionmentData;
+    public static event Action OnGenerateEnvrionment;
     public static event Action<List<Index2NodeDataLinker>, List<Index2StoredNodeDataLinker>, List<Index2EdgeDataLinker>> OnRunGraphGrammar;
     public static event Action<List<Index2NodeDataLinker>, Index2NodeDataLinker, Index2NodeDataLinker, int> OnFindValidPaths;
 
     public static event Action<List<Index2NodeDataLinker>,AnimationCurve,bool,bool> OnApplyDifficultyCurve;
+
 
 
     [Header("Graph Values")]
@@ -39,6 +45,23 @@ public class GraphComponent : MonoBehaviour
     [SerializeField] private List<RuleScriptableObject> m_rules;
     [SerializeField] private int m_maxTries = 10;
 
+    [Header("CA values")]
+    public int m_borderSize = 1;
+    public string m_seed;
+    public bool m_useRandomSeed = true;
+    public bool m_useRandom = true;
+    [Range(0, 100)] public int m_randomFillPercent;
+    [SerializeField] private int m_smoothIterations = 5;
+
+    [Header("Cave values")]
+    [SerializeField][Min(1)] private int m_depth = 1;
+    [Tooltip("Equal values to not use random")]
+    [SerializeField][Min(1)] private int m_randomNodeDepthMin = 1;
+    [SerializeField][Min(1)] private int m_randomNodeDepthMax = 1;
+
+    [Header("Pre-authored Rooms")]
+    [SerializeField] private PreAuthoredRoomSO m_roomSets;
+
     [Header("Difficulty Curve")]
     [SerializeField] bool m_applyCurve = true;
     [Tooltip("Apply node interval value to difficulty value")]
@@ -50,12 +73,20 @@ public class GraphComponent : MonoBehaviour
     [SerializeField]bool m_usePoisson;
     [SerializeField]bool m_useJitter;
 
+    private List<GameObject> m_instantiatedObjects = new List<GameObject>();
+
     void Awake()
     {
         GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
+
+        new Rule();
+        new PathFinder();
+        new DifficultyCurve();
+        new CaveGenerator();
+        new EntitySpawner();
 
     }
     private void InitGraph()
@@ -73,7 +104,9 @@ public class GraphComponent : MonoBehaviour
         OnRunGraphGrammar?.Invoke(m_nodes, m_storedNodes, m_edges);
         if (m_ruleApplied)
         {
-            OnGenerateEnvrionment?.Invoke(m_nodes, m_edges, m_columns, m_rows, m_offset, m_scale);
+            OnPassEnvrionmentData?.Invoke(m_nodes, m_edges, m_columns, m_rows, m_offset, m_scale,
+                m_borderSize, m_seed, m_useRandomSeed, m_useRandom, m_randomFillPercent, m_smoothIterations, m_depth, m_randomNodeDepthMin, m_randomNodeDepthMax, m_roomSets);
+            OnGenerateEnvrionment?.Invoke();
             m_usePoisson = (m_useJitter == true ? false : true);
             m_useJitter = (m_usePoisson == true ? false : true);
             OnSpawnEntities?.Invoke(m_nodes, m_storedNodes, m_usePoisson, m_useJitter);
@@ -109,6 +142,11 @@ public class GraphComponent : MonoBehaviour
         m_nodes.Clear();
         m_storedNodes.Clear();
         m_edges.Clear();
+        foreach (GameObject room in m_instantiatedObjects)
+        {
+            DestroyImmediate(room);
+        }
+        m_instantiatedObjects.Clear();
         //clear tilemap
         //clear cave
         //clear entites done
@@ -186,6 +224,7 @@ public class GraphComponent : MonoBehaviour
                 Gizmos.DrawLine(edge.edgeData.fromPos, edge.edgeData.toPos);
             }
         }
+
         //check if directional and then add a second small diag line
     }
 
@@ -254,11 +293,32 @@ public class GraphComponent : MonoBehaviour
     {
         Rule.OnRuleApplied += RuleApplied;
         PathFinder.OnValidPathList += PathFound;
+        CaveGenerator.OnInstantiate += InstantiateObject;
+        CaveGenerator.OnImmediateDestroy += DestroyObject;
+        EntitySpawner.OnInstantiate += InstantiateObject;
+        EntitySpawner.OnImmediateDestroy += DestroyObject;
+        
     }
     private void OnDisable()
     {
         Rule.OnRuleApplied -= RuleApplied;
         PathFinder.OnValidPathList -= PathFound;
+        OnDisableScripts?.Invoke();
+        CaveGenerator.OnInstantiate -= InstantiateObject;
+        CaveGenerator.OnImmediateDestroy -= DestroyObject;
+        EntitySpawner.OnInstantiate -= InstantiateObject;
+        EntitySpawner.OnImmediateDestroy -= DestroyObject;
+        
+    }
+
+    private void InstantiateObject(GameObject gameObject, Vector3 pos, Quaternion rot, Transform container)
+    {
+        m_instantiatedObjects.Add( Instantiate(gameObject, pos, rot, container));
+    }
+
+    private void DestroyObject(GameObject gameobject)
+    {
+        DestroyImmediate(gameobject);
     }
 
 }

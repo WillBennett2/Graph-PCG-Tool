@@ -4,7 +4,8 @@ using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using static Graph;
 
-public class PathFinder :MonoBehaviour
+[ExecuteInEditMode]
+public class PathFinder
 {
     public static event Action<List<Index2NodeDataLinker>> OnValidPathList;
 
@@ -14,12 +15,18 @@ public class PathFinder :MonoBehaviour
     private void OnEnable()
     {
         GraphComponent.OnClearData += Clear;
+        GraphComponent.OnDisableScripts += OnDisable;
         GraphComponent.OnFindValidPaths += RunSearch;
     }
     private void OnDisable()
     {
         GraphComponent.OnClearData -= Clear;
+        GraphComponent.OnDisableScripts -= OnDisable;
         GraphComponent.OnFindValidPaths -= RunSearch;
+    }
+    public PathFinder()
+    {
+        OnEnable();
     }
     void Bfs(List<Index2NodeDataLinker> nodes, Index2NodeDataLinker endVertex, Index2NodeDataLinker startVertex)
     {

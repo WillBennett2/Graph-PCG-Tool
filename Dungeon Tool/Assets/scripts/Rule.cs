@@ -9,7 +9,7 @@ using static RuleScriptableObject;
 using Random = UnityEngine.Random;
 
 [ExecuteInEditMode]
-public class Rule : MonoBehaviour
+public class Rule
 {
     public static event Action<bool> OnRuleApplied;
     private Alphabet m_alphabet;
@@ -35,9 +35,15 @@ public class Rule : MonoBehaviour
     private int m_lastNodeIndex = -1;
     public RuleScriptableObject m_ruleRef { get; private set; }
 
+    public Rule()
+    {
+        OnEnable();
+        Start();
+    }
     private void OnEnable()
     {
         GraphComponent.OnClearData += Clear;
+        GraphComponent.OnDisableScripts += OnDisable;
         GraphComponent.OnSetRecipe += SetRecipe;
         GraphComponent.OnRunGraphGrammar += RunRule;
     }
@@ -46,6 +52,7 @@ public class Rule : MonoBehaviour
         GraphComponent.OnClearData -= Clear;
         GraphComponent.OnSetRecipe -= SetRecipe;
         GraphComponent.OnRunGraphGrammar -= RunRule;
+        GraphComponent.OnDisableScripts -= OnDisable;
     }
     private void Start()
     {

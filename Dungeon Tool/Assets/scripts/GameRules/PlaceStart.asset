@@ -22,8 +22,8 @@ MonoBehaviour:
     m_symbol: Blank
   m_leftHandEdge:
   - m_symbol: Path
-    m_fromNode: 146
-    m_toNode: 134
+    m_fromNode: 165
+    m_toNode: 153
     m_directional: 0
   - m_symbol: Path
     m_fromNode: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       colour: {r: 0, g: 0, b: 0, a: 0}
       terrain: -1
-      preAuthored: 0
+      preAuthored: 1
       difficultyModifier: 0
       difficultyInterval: 0
       storedNodes: []

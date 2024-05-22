@@ -8,16 +8,17 @@ using UnityEngine.UIElements;
 using static Graph;
 using Random = UnityEngine.Random;
 
-public class EntitySpawner : MonoBehaviour
+[ExecuteInEditMode]
+public class EntitySpawner
 {
+    public static event Action<GameObject, Vector3, Quaternion, Transform> OnInstantiate;
+    public static event Action<GameObject> OnImmediateDestroy;
     int[,] m_map;
     int[,] m_PDEntityMap;
     int[,] m_JGEntityMap;
 
     bool m_usePoisson;
     bool m_useJitter;
-
-    List<GameObject> m_entities = new List<GameObject>();
 
     private List<Index2NodeDataLinker> m_nodes;
     private List<Index2StoredNodeDataLinker> m_storedNodes;
@@ -26,14 +27,22 @@ public class EntitySpawner : MonoBehaviour
     private void OnEnable()
     {
         GraphComponent.OnClearData += ClearData;
+        GraphComponent.OnDisableScripts += OnDisable;
         GraphComponent.OnSpawnEntities += SetData;
         CaveGenerator.OnSetMapData += SetMapData;
     }
     private void OnDisable()
     {
         GraphComponent.OnClearData -= ClearData;
+        GraphComponent.OnDisableScripts -= OnDisable;
         GraphComponent.OnSpawnEntities -= SetData;
         CaveGenerator.OnSetMapData -= SetMapData;
+
+    }
+
+    public EntitySpawner()
+    {
+        OnEnable();
     }
 
     public void SetData(List<Index2NodeDataLinker> nodes, List<Index2StoredNodeDataLinker> storedNodes,bool usePoisson, bool useJitter)
@@ -87,8 +96,8 @@ public class EntitySpawner : MonoBehaviour
                         position = GetJitterEmptySpace(entity, m_nodes[m_storedNodes[index].storedNodeData.parentIndex].nodeData, posX, posY);
                     if (position.x != -1 && position.y != -1)
                     { 
-                        GameObject entityRef = Instantiate(entity.m_entityPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity, m_entityContainer.transform);
-                        m_entities.Add(entityRef);
+                        OnInstantiate?.Invoke(entity.m_entityPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity, m_entityContainer.transform);
+                        //m_entities.Add(entityRef);
                     }
                 }
                 break;
@@ -226,12 +235,7 @@ public class EntitySpawner : MonoBehaviour
         m_JGEntityMap = null;
         m_nodes=null;
         m_storedNodes = null;
-        foreach (GameObject entity in m_entities)
-        {
-            Destroy(entity);
-        }
-        m_entities.Clear();
-        Destroy(m_entityContainer);
+        OnImmediateDestroy?.Invoke(m_entityContainer);
     }
 
 }
