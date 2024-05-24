@@ -26,52 +26,52 @@ public class GraphComponent : MonoBehaviour
 
 
 
-    [Header("Graph Values")]
-    [SerializeField] private int m_rows;
-    [SerializeField] private int m_columns;
-    [SerializeField] private string m_defaultSymbol = "unused";
-    [SerializeField] private int m_scale = 1;
-    [SerializeField] private int m_offset = 1;
+    //[Header("Graph Values")]
+    [SerializeField] public int m_rows;
+    [SerializeField] public int m_columns;
+    [SerializeField] public string m_defaultSymbol = "unused";
+    [SerializeField] public int m_scale = 1;
+    [SerializeField] public int m_offset = 1;
 
-    [Header("Graph Data")]
-    public Alphabet m_alphabet;
-    public List<Index2NodeDataLinker> m_nodes = null;
-    public List<Index2EdgeDataLinker> m_edges = null;
-    public List<Index2StoredNodeDataLinker> m_storedNodes = null;
-    public List<Index2NodeDataLinker> m_pathList;
+    //[Header("Graph Data")]
+    [SerializeField] public Alphabet m_alphabet;
+    [SerializeField] public List<Index2NodeDataLinker> m_nodes = null;
+    [SerializeField] public List<Index2EdgeDataLinker> m_edges = null;
+    [SerializeField] public List<Index2StoredNodeDataLinker> m_storedNodes = null;
+    [SerializeField] public List<Index2NodeDataLinker> m_pathList;
     private bool m_ruleApplied;
 
-    [Header("Graph Rules")]
-    [SerializeField] private List<RuleScriptableObject> m_rules;
-    [SerializeField] private int m_maxTries = 10;
+    //[Header("Graph Rules")]
+    [SerializeField] public List<RuleScriptableObject> m_rules;
+    [SerializeField] public int m_maxTries = 10;
 
-    [Header("CA values")]
-    public int m_borderSize = 1;
-    public string m_seed;
-    public bool m_useRandomSeed = true;
-    public bool m_useRandom = true;
-    [Range(0, 100)] public int m_randomFillPercent;
-    [SerializeField] private int m_smoothIterations = 5;
+    //[Header("CA values")]
+    [SerializeField] public int m_borderSize = 1;
+    [SerializeField] public string m_seed;
+    [SerializeField] public bool m_useRandomSeed = true;
+    [SerializeField] public bool m_useRandom = true;
+    [SerializeField][Range(0, 100)] public int m_randomFillPercent;
+    [SerializeField] public int m_smoothIterations = 5;
 
-    [Header("Cave values")]
-    [SerializeField][Min(1)] private int m_depth = 1;
+    //[Header("Cave values")]
+    [SerializeField][Min(1)] public int m_depth = 1;
     [Tooltip("Equal values to not use random")]
-    [SerializeField][Min(1)] private int m_randomNodeDepthMin = 1;
-    [SerializeField][Min(1)] private int m_randomNodeDepthMax = 1;
+    [SerializeField][Min(1)] public int m_randomNodeDepthMin = 1;
+    [SerializeField][Min(1)] public int m_randomNodeDepthMax = 1;
 
-    [Header("Pre-authored Rooms")]
-    [SerializeField] private PreAuthoredRoomSO m_roomSets;
+    //[Header("Pre-authored Rooms")]
+    [SerializeField] public PreAuthoredRoomSO m_roomSets;
 
-    [Header("Difficulty Curve")]
-    [SerializeField] bool m_applyCurve = true;
+    //[Header("Difficulty Curve")]
+    [SerializeField] public bool m_applyCurve = true;
     [Tooltip("Apply node interval value to difficulty value")]
-    [SerializeField] bool m_applyIntervalValue = true;
+    [SerializeField] public bool m_applyIntervalValue = true;
     [Tooltip("X axis should be 0 to 1")]
-    [SerializeField] private AnimationCurve m_difficultyCurve;
+    [SerializeField] public AnimationCurve m_difficultyCurve;
 
-    [Header("Entity Spawn Data")]
-    [SerializeField]bool m_usePoisson;
-    [SerializeField]bool m_useJitter;
+    //[Header("Entity Spawn Data")]
+    [SerializeField] public bool m_usePoisson;
+    [SerializeField] public bool m_useJitter;
 
     private List<GameObject> m_instantiatedObjects = new List<GameObject>();
 
@@ -91,7 +91,7 @@ public class GraphComponent : MonoBehaviour
     }
     private void InitGraph()
     {
-        GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
+        //GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
@@ -295,8 +295,8 @@ public class GraphComponent : MonoBehaviour
         PathFinder.OnValidPathList += PathFound;
         CaveGenerator.OnInstantiate += InstantiateObject;
         CaveGenerator.OnImmediateDestroy += DestroyObject;
-        EntitySpawner.OnInstantiate += InstantiateObject;
-        EntitySpawner.OnImmediateDestroy += DestroyObject;
+        //EntitySpawner.OnInstantiate += InstantiateObject;
+        //EntitySpawner.OnImmediateDestroy += DestroyObject;
         
     }
     private void OnDisable()
@@ -306,8 +306,8 @@ public class GraphComponent : MonoBehaviour
         OnDisableScripts?.Invoke();
         CaveGenerator.OnInstantiate -= InstantiateObject;
         CaveGenerator.OnImmediateDestroy -= DestroyObject;
-        EntitySpawner.OnInstantiate -= InstantiateObject;
-        EntitySpawner.OnImmediateDestroy -= DestroyObject;
+        //EntitySpawner.OnInstantiate -= InstantiateObject;
+        //EntitySpawner.OnImmediateDestroy -= DestroyObject;
         
     }
 

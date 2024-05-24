@@ -4,7 +4,7 @@ using UnityEngine;
 using static Alphabet;
 
 [Serializable]
-public class Graph
+public class Graph 
 {
     [Serializable]
     public class Index2StoredNodeDataLinker
@@ -215,7 +215,6 @@ public class Graph
 
 
     }
-
     public Quaternion SetRotation(EdgeData data)
     {
         //figure out direction needed
@@ -272,7 +271,9 @@ public class Graph
 
 }
 [Serializable]
-public static class GraphInfo
+public class GraphInfo : MonoBehaviour
 {
     public static Graph graphInfo;
 }
+
+
