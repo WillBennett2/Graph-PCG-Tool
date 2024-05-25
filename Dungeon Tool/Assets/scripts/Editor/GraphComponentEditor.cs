@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(GraphComponent))]
-[CanEditMultipleObjects]
+[CustomEditor(typeof(GraphComponent)), CanEditMultipleObjects]
 public class GraphComponentEditor : Editor
 {
 

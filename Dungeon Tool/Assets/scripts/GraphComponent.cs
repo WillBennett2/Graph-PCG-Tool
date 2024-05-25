@@ -91,7 +91,7 @@ public class GraphComponent : MonoBehaviour
     }
     private void InitGraph()
     {
-        //GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
+        GraphInfo.graphInfo = new Graph(m_columns, m_rows, m_scale, m_offset, m_defaultSymbol, m_alphabet);
         m_nodes = GraphInfo.graphInfo.nodes;
         m_storedNodes = GraphInfo.graphInfo.storedNodes;
         m_edges = GraphInfo.graphInfo.edges;
@@ -295,8 +295,8 @@ public class GraphComponent : MonoBehaviour
         PathFinder.OnValidPathList += PathFound;
         CaveGenerator.OnInstantiate += InstantiateObject;
         CaveGenerator.OnImmediateDestroy += DestroyObject;
-        //EntitySpawner.OnInstantiate += InstantiateObject;
-        //EntitySpawner.OnImmediateDestroy += DestroyObject;
+        EntitySpawner.OnInstantiate += InstantiateObject;
+        EntitySpawner.OnImmediateDestroy += DestroyObject;
         
     }
     private void OnDisable()
@@ -306,8 +306,8 @@ public class GraphComponent : MonoBehaviour
         OnDisableScripts?.Invoke();
         CaveGenerator.OnInstantiate -= InstantiateObject;
         CaveGenerator.OnImmediateDestroy -= DestroyObject;
-        //EntitySpawner.OnInstantiate -= InstantiateObject;
-        //EntitySpawner.OnImmediateDestroy -= DestroyObject;
+        EntitySpawner.OnInstantiate -= InstantiateObject;
+        EntitySpawner.OnImmediateDestroy -= DestroyObject;
         
     }
 

@@ -16,35 +16,79 @@ MonoBehaviour:
   m_maxIterations: 1
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodeGridCoord: {x: -1, y: -1}
     m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodeGridCoord: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodeGridCoord: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodeGridCoord: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodeGridCoord: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: -1, y: 0}
+  - m_nodeGridCoord: {x: -1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: -1, y: 0}
+  - m_nodeGridCoord: {x: -1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: -1, y: 0}
+  - m_nodeGridCoord: {x: -1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodeGridCoord: {x: 0, y: -1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodeGridCoord: {x: 0, y: -1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodeGridCoord: {x: 0, y: -1}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodeGridCoord: {x: 0, y: -1}
     m_symbol: u
   m_leftHandEdge:
+  - m_symbol: edge
+    m_fromNode: 29
+    m_toNode: 23
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 23
+    m_toNode: 17
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 17
+    m_toNode: 16
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 16
+    m_toNode: 15
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 15
+    m_toNode: 14
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 14
+    m_toNode: 13
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 13
+    m_toNode: 19
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 19
+    m_toNode: 25
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 25
+    m_toNode: 31
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 31
+    m_toNode: 32
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 32
+    m_toNode: 33
+    m_directional: 0
   - m_symbol: edge
     m_fromNode: 33
     m_toNode: 34
@@ -56,50 +100,6 @@ MonoBehaviour:
   - m_symbol: edge
     m_fromNode: 35
     m_toNode: 29
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 29
-    m_toNode: 23
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 23
-    m_toNode: 17
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 17
-    m_toNode: 11
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 11
-    m_toNode: 10
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 10
-    m_toNode: 9
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 9
-    m_toNode: 8
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 8
-    m_toNode: 14
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 14
-    m_toNode: 20
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 20
-    m_toNode: 26
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 26
-    m_toNode: 32
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 32
-    m_toNode: 33
     m_directional: 0
   m_rightHand:
   - m_rightHandProbability: 1

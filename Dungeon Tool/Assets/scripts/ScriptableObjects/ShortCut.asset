@@ -16,26 +16,26 @@ MonoBehaviour:
   m_maxIterations: 1
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodeGridCoord: {x: -1, y: -1}
     m_symbol: SCStart
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: Water
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 3
-    m_toNode: 9
+    m_fromNode: 16
+    m_toNode: 22
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 9
-    m_toNode: 15
+    m_fromNode: 22
+    m_toNode: 28
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 15
-    m_toNode: 21
+    m_fromNode: 28
+    m_toNode: 34
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 0

@@ -271,7 +271,7 @@ public class Graph
 
 }
 [Serializable]
-public class GraphInfo : MonoBehaviour
+public static class GraphInfo
 {
     public static Graph graphInfo;
 }

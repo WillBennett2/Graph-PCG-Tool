@@ -16,32 +16,32 @@ MonoBehaviour:
   m_maxIterations: 1
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodeGridCoord: {x: -1, y: -1}
     m_symbol: Water
-  - m_nodePosition: {x: 0, y: 1}
+  - m_nodeGridCoord: {x: 0, y: 1}
     m_symbol: u
-  - m_nodePosition: {x: -1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: -1, y: 0}
+  - m_nodeGridCoord: {x: 1, y: 0}
     m_symbol: u
-  - m_nodePosition: {x: 0, y: -1}
+  - m_nodeGridCoord: {x: 0, y: -1}
     m_symbol: Water
   m_leftHandEdge:
   - m_symbol: edge
-    m_fromNode: 8
-    m_toNode: 7
+    m_fromNode: 31
+    m_toNode: 30
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 7
-    m_toNode: 13
+    m_fromNode: 30
+    m_toNode: 24
     m_directional: 0
   - m_symbol: edge
-    m_fromNode: 13
+    m_fromNode: 24
+    m_toNode: 18
+    m_directional: 0
+  - m_symbol: edge
+    m_fromNode: 18
     m_toNode: 19
-    m_directional: 0
-  - m_symbol: edge
-    m_fromNode: 19
-    m_toNode: 20
     m_directional: 0
   - m_symbol: edge
     m_fromNode: 13

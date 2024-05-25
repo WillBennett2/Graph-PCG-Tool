@@ -16,7 +16,7 @@ MonoBehaviour:
   m_maxIterations: 1
   m_probability: 1
   m_leftHand:
-  - m_nodePosition: {x: -1, y: -1}
+  - m_nodeGridCoord: {x: -1, y: -1}
     m_symbol: SCPossibility
   m_leftHandEdge: []
   m_rightHand:
@@ -29,5 +29,6 @@ MonoBehaviour:
       terrain: -1
       preAuthored: 0
       difficultyModifier: -5
+      difficultyInterval: 0
       storedNodes: []
     m_edgeDataList: []

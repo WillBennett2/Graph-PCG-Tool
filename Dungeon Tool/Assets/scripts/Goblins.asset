@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Goblins
   m_EditorClassIdentifier: 
   m_entitySets:
-  - m_chanceOfAppearing: 100
+  - m_chanceOfAppearing: 50
     m_entities:
     - m_entityPrefab: {fileID: 7790602726539123300, guid: ef7435b289433dd43a111c69a30b6627, type: 3}
       m_widthOfEntity: 2
@@ -24,7 +24,7 @@ MonoBehaviour:
     - m_entityPrefab: {fileID: 7790602726539123300, guid: ef7435b289433dd43a111c69a30b6627, type: 3}
       m_widthOfEntity: 2
       m_lengthOfEntity: 2
-  - m_chanceOfAppearing: 0
+  - m_chanceOfAppearing: 100
     m_entities:
     - m_entityPrefab: {fileID: 7790602726539123300, guid: ef7435b289433dd43a111c69a30b6627, type: 3}
       m_widthOfEntity: 2
